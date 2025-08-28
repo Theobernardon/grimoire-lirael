@@ -1,1 +1,641 @@
-
+<!DOCTYPE html>
+    <html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Personnage - Liraël "Tonne-feu" Etoile-Cendre</title>
+        <style>
+    .page {
+        padding: 20px;
+        box-sizing: border-box;
+        width: 100%; /* Largeur responsive */
+        max-width: 21cm; /* Maximum de 21cm */
+        margin: 0 auto;
+        background: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        display: none; /* Cacher toutes les pages par défaut */
+    }
+    .page.active {
+        display: block; /* Afficher uniquement la page active */
+    }
+    .page-header {
+        text-align: center;
+        border-bottom: 2px solid #5E0000;
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+    }
+    h1, h2, h3, h4 {
+        font-family: 'Pathfinder', 'Times New Roman', serif;
+        margin-top: 0;
+        color: #5E0000;
+    }
+    h1 {
+        font-size: 24pt;
+        margin-bottom: 10px;
+    }
+    h2 {
+        font-size: 18pt;
+        border-bottom: 1px solid #5E0000;
+        padding-bottom: 5px;
+        margin-top: 20px;
+    }
+    h3 {
+        font-size: 14pt;
+        margin-bottom: 5px;
+    }
+    .section-title {
+        font-size: 18pt;
+        border-bottom: 1px solid #5E0000;
+        padding-bottom: 5px;
+        margin-top: 0px;
+        column-span: all; /* L'élément s'étend sur toutes les colonnes */
+    }
+    .section {
+        columns: 2;
+        gap: 10px;
+        background-color: #F0E6D2;
+        border: 1px solid #D4C8B0;
+        border-radius: 5px;
+        padding: 10px;
+        margin-bottom: 15px;
+        width: calc(100% - 20px);
+        break-inside: avoid-page;
+    }
+    .section-item-unique {
+        gap: 10px;
+        background-color: #F0E6D2;
+        border: 1px solid #D4C8B0;
+        border-radius: 5px;
+        padding: 10px;
+        margin-bottom: 15px;
+        width: calc(100% - 20px);
+        break-inside: avoid-page;
+    }
+    .item {
+        margin-bottom: 10px;
+        background-color: #FFFFFF;
+        border: 1px solid #E0D8C0;
+        border-radius: 5px;
+        padding: 10px;
+        box-sizing: border-box;
+        break-inside: avoid-column;
+    }
+    .item-long {
+        margin-bottom: 10px;
+        background-color: #FFFFFF;
+        border: 1px solid #E0D8C0;
+        border-radius: 5px;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+    /* Cacher les URL et autres informations ajoutées automatiquement */
+    :root {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+    .item-header {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid #E0D8C0;
+        padding-bottom: 5px;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+    .item-traits {
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+    .trait {
+        display: inline-block;
+        background-color: #F0E6D2;
+        border: 1px solid #D4C8B0;
+        border-radius: 3px;
+        padding: 2px 5px;
+        margin-right: 5px;
+        font-size: 9pt;
+        color: #5E0000;
+    }
+    .item-description {
+        margin-top: 8px;
+        font-size: 10pt;
+    }
+    .metadata {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        font-size: 10pt;
+        color: #666;
+        margin-top: 5px;
+    }
+    .meta-item {
+        margin-right: 10px;
+    }
+    .actions {
+        color: #5E0000;
+        font-weight: bold;
+    }
+    
+    /* Styles pour la barre de navigation */
+    .nav-bar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: #5E0000;
+        color: white;
+        padding: 10px 0;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        z-index: 100;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .nav-bar a {
+        color: white;
+        text-decoration: none;
+        padding: 8px 16px;
+        margin: 0 5px;
+        border-radius: 3px;
+        transition: background-color 0.3s;
+    }
+    .nav-bar a:hover {
+        background-color: #7E2020;
+    }
+    .nav-bar a.active {
+        background-color: #7E2020;
+        font-weight: bold;
+    }
+    .content {
+        margin-top: 60px; /* Espace pour la barre de navigation */
+        padding-bottom: 20px;
+    }
+    @media (max-width: 768px) {
+    .section {
+        columns: 1 !important; /* Forcer une seule colonne sur petits écrans */
+    }
+    
+    /* Ajuster la taille des textes */
+    h1 {
+        font-size: 20pt;
+    }
+    
+    h2 {
+        font-size: 16pt;
+    }
+    
+    /* Ajuster l'espacement */
+    .item {
+        margin-bottom: 8px;
+        padding: 8px;
+    }
+}
+    @media print {
+        body {
+            background: none;
+            margin: 0;
+            padding: 0;
+        }
+        .page {
+            display: block !important; /* Afficher toutes les pages pour l'impression */
+            box-shadow: none;
+            margin: 0;
+            width: 100%;
+            height: auto;
+            page-break-after: always;
+        }
+        .nav-bar {
+            display: none; /* Cacher la barre de navigation pour l'impression */
+        }
+        .content {
+            margin-top: 0;
+        }
+    }
+    @page {
+        margin: 0.5cm;
+        size: A4;
+        /* Supprimer les en-têtes et pieds de page par défaut du navigateur */
+        margin-header: 0;
+        margin-footer: 0;
+    }
+    </style>
+    </head>
+    <body>
+        <!-- Barre de navigation -->
+        <div class="nav-bar">
+            <a href="#" data-page="spellbook" class="active">Grimoire</a>
+            <a href="#" data-page="inventory">Inventaire</a>
+            <a href="#" data-page="feats">Dons</a>
+        </div>
+        
+        <!-- Conteneur principal -->
+        <div class="content">
+    
+    <div id="spellbook" class="page active">
+        <div class="page-header">
+            <h1>Grimoire de Liraël "Tonne-feu" Etoile-Cendre</h1>
+            <h3>Niveau 3 Magus</h3>
+        </div>
+    
+        <div class=section>
+        <h2 class="section-title">Tours de magie</h2>
+        
+    <div class="item">
+        <div class="item-header">
+            <div>Bouclier (Shield)</div>
+            <div class="actions">1</div>
+        </div>
+    <div class="item-traits"><span class="trait">cantrip</span><span class="trait">concentrate</span><span class="trait">force</span></div><div class="item-description">Vous levez un bouclier de force magique. Ceci compte comme si vous utilisiez Lever un bouclier, vous octroyant un bonus de circonstances de +1 à la CA jusqu'au début de votre prochain tour, mais cela ne nécessite aucune main pour l'utiliser.<br>
+Tant que le sort est actif, vous pouvez utiliser la réaction <strong>Blocage au bouclier</strong> avec votre bouclier magique. Le bouclier possède une Solidité de 5. Vous pouvez utiliser la réaction du sort pour réduire les dégâts de tout sort ou effet magique, même s'il n'inflige pas des dégâts physiques. Après avoir effectué Blocage au bouclier, le sort se termine et vous ne pouvez plus le lancer de nouveau pendant 10 minutes.<br>
+<hr />
+<strong>Effet : Bouclier</strong><br>
+<strong>Effet : Immunité à bouclier</strong><br>
+<hr />
+<strong>Intensifié (+2)</strong> La Solidité du bouclier augmente de 5.<br></div></div>
+    <div class="item">
+        <div class="item-header">
+            <div>Détection des métaux (Detect Metal)</div>
+            <div class="actions">2</div>
+        </div>
+    <div class="item-traits"><span class="trait">cantrip</span><span class="trait">concentrate</span><span class="trait">detection</span><span class="trait">manipulate</span><span class="trait">metal</span></div><div class="item-description">Vous vous harmonisez aux champs magnétiques, devenant conscient de la présence ou de l'absence d'objets, de veines et de dépôts métalliques dans la zone. Vous pouvez choisir d'ignorer les métaux dont vous avez conscience, comme l'équipement que vous et vos alliés portez.<br>
+Vous détectez des métaux cachés par des illusions (comme <strong>Invisibilité</strong>) uniquement si l'illusion possède un rang inférieur à celui de votre sort <em>Détection des métaux</em>. Contre les illusions trompeuses <em>Détection des métaux</em> remarque toujours une absence de métal lorsqu'un objet métallique est transformé en objet non métallique. Quoi qu'il en soit si la tromperie implique de déguiser une objet métallique pour le transformer en un autre, comme prétendre qu'une pièce de cuivre est composée d'or, <em>Détection des métaux</em> ne retient que la présence de métal et pas son type, même si le rang de votre sort de <em>Détection des métaux</em> est supérieur à celui de l'effet d'illusion.<br>
+<hr />
+<strong>Intensifié (3e)</strong> Vous pouvez discerner tous les types de métaux que vous avez détecté. Votre sort peut surmonter les sorts illusoires trompeurs qui cache un métal en un autre si le rang d'effet de la magie est inférieur à celui de votre sort de <em>Détection des métaux</em>.<br></div></div>
+    <div class="item">
+        <div class="item-header">
+            <div>Explosion caustique (Caustic Blast)</div>
+            <div class="actions">2</div>
+        </div>
+    <div class="item-traits"><span class="trait">acid</span><span class="trait">cantrip</span><span class="trait">concentrate</span><span class="trait">manipulate</span></div><div class="item-description">Vous projetez une grosse boule d'acide qui explose immédiatement, aspergeant les créatures proches. Les créatures dans la zone subissent 1d8 dégâts d'acide avec un jet de Réflexes basique. Sur un échec critique, la créature subit aussi <strong>1 dégât d'acide persistant</strong>.<br>
+<hr />
+<strong>Intensifié (+2)</strong> Les dégâts initiaux augmentent de 1d8 et les dégâts persistants sur un échec critique augmente de 1.<br></div></div>
+    <div class="item">
+        <div class="item-header">
+            <div>Fil électrique vivant (Live Wire)</div>
+            <div class="actions">2</div>
+        </div>
+    <div class="item-traits"><span class="trait">attack</span><span class="trait">cantrip</span><span class="trait">concentrate</span><span class="trait">electricity</span><span class="trait">manipulate</span><span class="trait">metal</span></div><div class="item-description">Vous faites surgir un filament de cuivre effilé, bourdonnant de courant électrique, qui frappe votre ennemi. Le filament inflige 1d4 dégâts tranchants et 1d4 dégâts d'électricité, dépendant de votre résultat d'attaque de sort contre la CA de votre cible.<br>
+<hr />
+<strong>Succès critique</strong> La cible subit le double des dégâts et <strong>1d4 dégâts d'électricité persistants</strong> supplémentaires.<br>
+<strong>Succès</strong> La cible subit la totalité des dégâts.<br>
+<strong>Échec</strong> La cible subit les dégâts d'électricité, mais pas les dégâts tranchants.<br>
+<strong>Échec critique</strong> La cible n'est pas affectée.<br>
+<hr />
+<strong>Intensifié (+2)</strong> Les dégâts tranchants, les dégâts initiaux d'électricité et les dégâts persistants d'électricité en cas de coup critique augmentent chacun de 1d4.<br></div></div>
+    <div class="item">
+        <div class="item-header">
+            <div>Gouge griffue (Gouging Claw)</div>
+            <div class="actions">2</div>
+        </div>
+    <div class="item-traits"><span class="trait">attack</span><span class="trait">cantrip</span><span class="trait">concentrate</span><span class="trait">manipulate</span><span class="trait">morph</span></div><div class="item-description">Vous transformez temporairement votre membre en un appendice griffu. Faites un jet d'attaque de sort au corps-à-corps contre la CA de votre cible. Si vous touchez, vous infligez à votre choix 2d6 dégâts tranchants ou 2d6 dégâts perforants, plus 2 dégâts de saignement. En cas de succès critique, vous infligez le double des dégâts plus le double des dégâts de saignement.<br>
+<hr />
+<strong>Intensifié (+1)</strong> Les dégâts augmentent de 1d6 et les dégâts de saignement augmentent de 1.<br></div></div>
+    <div class="item">
+        <div class="item-header">
+            <div>Manipulation télékinésique (Telekinetic Hand)</div>
+            <div class="actions">2</div>
+        </div>
+    <div class="item-traits"><span class="trait">cantrip</span><span class="trait">concentrate</span><span class="trait">manipulate</span></div><div class="item-description">Vous créez une main flottante magique, soit invisible soit fantomatique, qui saisit l'objet ciblé et le déplace lentement jusqu'à 6 mètres dans n'importe quelle direction. Lorsque vous Maintenez le sort, Vous pouvez déplacer l'objet de 6 mètres supplémentaires. Si l'objet est en l'air lorsque le sort se termine, il tombe.<br>
+<hr />
+<strong>Intensifié (3e)</strong> Vous pouvez cibler un objet non porté d'Encombrement 1 ou inférieur.<br>
+<strong>Intensifié (5e)</strong> La portée passe à 18 m et vous pouvez cibler un objet non porté d'Encombrement 1 ou inférieur.<br>
+<strong>Intensifié (7e)</strong> La portée passe à 18 m et vous pouvez cibler un objet non porté d'Encombrement 2 ou inférieur.<br></div></div>
+    <div class="item">
+        <div class="item-header">
+            <div>Message</div>
+            <div class="actions">1</div>
+        </div>
+    <div class="item-traits"><span class="trait">auditory</span><span class="trait">cantrip</span><span class="trait">concentrate</span><span class="trait">illusion</span><span class="trait">linguistic</span><span class="trait">mental</span><span class="trait">subtle</span></div><div class="item-description">Votre bouche prononce des mots à voix basse, mais au lieu de sortir de votre bouche, ils sont transférés directement aux oreilles de la cible. Bien que les autres ne puissent entendre mieux vos paroles que si vous les prononciez normalement, la cible peut entendre vos paroles comme si elle se tenait à côté de vous. La cible peut répondre brièvement par une réaction ou par une action gratuite lors de son prochain tour si elle le souhaite, mais elle doit pouvoir vous voir et se trouver dans la portée de votre sort pour le faire. Si elle répond, sa réponse est transférée directement dans vos oreilles, exactement comme le message initial.<br>
+<hr />
+<strong>Intensifié (3e)</strong> La portée du sort passe à 150 mètres.<br></div></div>
+    <div class="item">
+        <div class="item-header">
+            <div>Prestidigitation</div>
+            <div class="actions">2</div>
+        </div>
+    <div class="item-traits"><span class="trait">cantrip</span><span class="trait">concentrate</span><span class="trait">manipulate</span></div><div class="item-description">Même la plus simple des magies peut vous servir. Vous pouvez accomplir des effets magiques simples tant que vous Maintenez le sort. Chaque fois que vous Maintenez le sort, vous pouvez choisir une parmi quatre options :<br>
+<ul>
+<li><strong>Cuisine</strong> Réchauffe, refroidit ou aromatise 500 g de matériau non vivant.</li>
+<li><strong>Soulève</strong> Soulève lentement à 30 cm au-dessus du sol un objet non porté d'Encombrement léger ou moins.</li>
+<li><strong>Fabrique</strong> Crée un objet temporaire d'Encombrement négligeable, composé de substance magique congelée. L'objet paraît grossier, artificiel et extrêmement fragile — Il ne peut servir d'outil, ni d'arme, ni de locus, ni de coût pour un sort.</li>
+<li><strong>Nettoie</strong> Colorise, nettoie ou salit un objet d'Encombrement léger ou moins. Vous pouvez affecter un objet d'Encombrement 1 après 10 rounds de concentration et un objet encore plus grand avec 1 minute par Encombrement.</li>
+</ul>
+<em>Prestidigitation</em> ne peut pas infliger de dégâts ou provoquer des états défavorables. Tout changement réel apporté à un objet (en plus de ceux précisés plus haut) persiste tant que vous Maintenez le sort.<br></div></div></div>
+        <div class=section-item-unique>
+        <h2 class="section-title">Sorts focalisés</h2>
+        
+    <div class="item">
+        <div class="item-header">
+            <div>Étoile tirée (Shooting Star)</div>
+            <div class="actions">1</div>
+        </div>
+    <div class="item-traits"><span class="trait">concentrate</span><span class="trait">focus</span><span class="trait">magus</span></div><div class="item-description">Vous lâchez un projectile qui vole droit et laisse derrière lui la traînée flamboyante d'un météore. Effectuez une Frappe à distance, en ignorant le camouflage de la cible et en réduisant son abri d'un degré pour cette Frappe uniquement (important à standard, standard à partiel et partiel à nul). Si le coup touche, la traînée de météores reste suspendue dans l'air. Cela annule les effets d'un camouflage et donne l'avantage de la réduction de la couverture à toutes les attaques effectuées contre la créature (par n'importe qui) jusqu'au début de votre prochain tour.<br></div></div></div>
+            <div class=section>
+            <h2 class="section-title">Sorts de niveau 1</h2>
+            
+    <div class="item">
+        <div class="item-header">
+            <div>Arme conductrice (Conductive Weapon)</div>
+            <div class="actions">2</div>
+        </div>
+    <div class="item-traits"><span class="trait">concentrate</span><span class="trait">electricity</span><span class="trait">manipulate</span><span class="trait">metal</span></div><div class="item-description">Vous canalisez un puissant courant électrique à travers le métal d'une arme, en électrisant tous ceux que l'arme atteint. La cible devient une arme <em>de foudre +1</em>. Si la cible d'une attaque avec l'arme porte une armure de métal ou est principalement constituée de métal, le dé de dégât de la rune de foudre est de 1d12.<br>
+<strong>Effet : Arme conductrice</strong><br></div></div>
+    <div class="item">
+        <div class="item-header">
+            <div>Embrouiller (Befuddle)</div>
+            <div class="actions">2</div>
+        </div>
+    <div class="item-traits"><span class="trait">concentrate</span><span class="trait">emotion</span><span class="trait">manipulate</span><span class="trait">mental</span></div><div class="item-description">Vous semez les graines de la confusion dans l'esprit de la cible, de sorte que ses actions et ses pensées sont maladroites.<br>
+<hr />
+<strong>Succès critique</strong> La cible n'est pas affectée.<br>
+<strong>Succès</strong> La cible est <strong>Maladroite 1</strong> et <strong>Stupéfiée 1</strong>.<br>
+<strong>Échec</strong> La cible est <strong>Maladroite 2</strong> et Stupéfiée 2.<br>
+<strong>Échec critique</strong> La cible est <strong>Maladroite 3</strong>, Stupéfiée 3 et <strong>Confuse</strong>.<br></div></div>
+    <div class="item">
+        <div class="item-header">
+            <div>Forge</div>
+            <div class="actions">2</div>
+        </div>
+    <div class="item-traits"><span class="trait">fire</span></div><div class="item-description">Développée avant l'introduction du Lagon de fer, ce tour de magie pour chauffer à blanc le métal a aussi trouvé une utilisation au combat inestimable. Vous chauffez à blanc la cible, lui infligeant 3d6 dégâts de feu. Si la cible est un objet métallique, réduisez sa solidité d'un montant égal aux dégâts infligés jusqu'à la fin de votre prochain tour.<br>
+<hr />
+<strong>Succès critique</strong> La cible n'est pas affectée.<br>
+<strong>Succès</strong> La cible ne subit que la moitié des dégâts.<br>
+<strong>Échec</strong> La cible subit la totalité des dégâts.<br>
+<strong>Échec critique</strong> La cible subit le double des dégâts et si c'est une créature métallique, elle obtient une faiblesse 2 contre les dégâts physiques jusqu'à la fin de votre prochain tour.<br>
+<hr />
+<strong>Intensifié (+1)</strong> Les dégâts augmentent de 2d6 et la faiblesse sur un coup critique augmente de 2.<br>
+<strong>Effet : Forge (Échec critique)</strong><br></div></div>
+    <div class="item">
+        <div class="item-header">
+            <div>Gemme explosive (Shattering Gem)</div>
+            <div class="actions">2</div>
+        </div>
+    <div class="item-traits"><span class="trait">concentrate</span><span class="trait">earth</span><span class="trait">manipulate</span></div><div class="item-description">Une grande gemme flotte autour de la cible selon un schéma erratique. La gemme possède 5 Points de vie. Chaque fois qu'une créature Frappe la cible, la cible fait un <strong>Check flat dc:11</strong>. En cas de succès, la gemme bloque l'attaque, de sorte que l'attaque cause d'abord des dégâts à la gemme puis applique tous les éventuels dégâts restants à la cible. Si la gemme est réduite à 0 Point de vie, elle explose, infligeant immédiatement à la créature qui l'a détruite 1d8 dégâts tranchants (Jet de Réflexes basique), tant que la créature est à moins de 3 mètres de la cible.<br>
+<hr />
+<strong>Intensifié (+1)</strong> La gemme possède 5 Points de vie supplémentaires et les dégâts infligés par sa détonation augmentent de 1d8.<br></div></div>
+    <div class="item">
+        <div class="item-header">
+            <div>Pas de plomb (Leaden Steps)</div>
+            <div class="actions">2</div>
+        </div>
+    <div class="item-traits"><span class="trait">concentrate</span><span class="trait">manipulate</span><span class="trait">metal</span><span class="trait">morph</span></div><div class="item-description">Vous transformez en partie les pieds de vos ennemis avec des morceaux de métal encombrants, ralentissant leur marche. La cible effectue une Jet de Vigueur.<br>
+<hr />
+<strong>Succès critique</strong> La cible n'est pas affectée<br>
+<strong>Succès</strong> La cible est <strong>Surchargée</strong> et obtient une faiblesse de 2 à l'électricité jusqu'à la fin de votre prochain tour.<br>
+<strong>Échec</strong> La cible est Encombrée et obtient une faiblesse de 2 à l'électricité.<br>
+<strong>Échec critique</strong> La cible est Encombrée et obtient une faiblesse de 3 à l'électricité.<br>
+<strong>Effet : Pas de plomb</strong><br>
+<hr />
+<strong>Intensifié (+1)</strong> La faiblesse augmente de 1.<br></div></div>
+    <div class="item">
+        <div class="item-header">
+            <div>Sbire fantasmagorique (Phantasmal Minion)</div>
+            <div class="actions">3</div>
+        </div>
+    <div class="item-traits"><span class="trait">concentrate</span><span class="trait">manipulate</span><span class="trait">summon</span></div><div class="item-description">Vous convoquez un <strong>Sbire fantasmagorique</strong>. Le sbire possède la forme approximative d'un humanoïde. Vous pouvez choisir de le rendre invisible ou de lui donner une apparence éphémère, mais il s'agit visiblement d'un effet magique, pas d'une créature réelle.<br></div></div></div>
+            <div class=section>
+            <h2 class="section-title">Sorts de niveau 2</h2>
+            
+    <div class="item">
+        <div class="item-header">
+            <div>Arsenal embrasé (Blazing Armory)</div>
+            <div class="actions">2</div>
+        </div>
+    <div class="item-traits"><span class="trait">concentrate</span><span class="trait">fire</span><span class="trait">manipulate</span></div><div class="item-description">Tant que vous disposez de magie, vous n'êtes jamais désarmé. Vous matérialisez un simulacre enflammé de n'importe quel arme courante simple ou de guerre dans la main de la cible. La cible doit avoir une main libre pour tenir l'arme, sinon l'arme tombe au sol dans l'espace de la cible. L'arsenal enflammé fonctionne comme une <em>arme de frappe +1</em> et son type de dégâts se change en feu. Le type de dégâts ne peut être changé en utilisant le trait polyvalent, le trait configurable ou des méthodes similaires.<br>
+Une arme de jet se rematérialise dans la main de la cible après avoir terminé la Frappe. Si vous choisissez une arme à distance qui utilise des munitions, le porteur doit toujours recharger en utilisant le nombre normal d'actions, bien que cela génère des munitions de manière automatique. Cela fonctionne comme des munitions normales et <em>Arsenal embrasé</em> ne peut utiliser d'autres types de munitions.<br>
+Toute créature autre que vous ou la cible qui tente de toucher, de Faire une Frappe avec ou de <strong>Désarmer</strong> l'arme subit <strong>1d6 dégâts de feu</strong> à chaque fois.<br>
+<hr />
+<strong>Intensifié (4e)</strong> Vous pouvez cibler jusqu'à 5 créatures consentantes et choisir une arme différente pour chaque cible. L'arme fonctionne comme une arme <em>de frappe enflammée +1</em>.<br>
+<strong>Intensifié (6e)</strong> comme au rang 4, mais les armes fonctionnent comme des armes <em>enflammées de frappe supérieure +2</em>.<br>
+<strong>Intensifié (8e)</strong> comme au rang 4, mais les armes fonctionnent comme des armes <em>enflammées supérieures de frappe supérieure +3</em>.<br>
+<strong>Intensifié (10e)</strong> comme au rang 4, mais les armes fonctionnent comme des armes <em>enflammées supérieures de frappe majeure +3</em>.<br></div></div>
+    <div class="item">
+        <div class="item-header">
+            <div>Regret du combattant (Warrior's Regret)</div>
+            <div class="actions">2</div>
+        </div>
+    <div class="item-traits"><span class="trait">concentrate</span><span class="trait">curse</span><span class="trait">emotion</span><span class="trait">manipulate</span><span class="trait">mental</span></div><div class="item-description">Les regrets rongent l'esprit de la cible, la punissant de sa violence jusqu'à ce qu'elle cesse les hostilités. La cible doit tenter un jet de Volonté.<br>
+<hr />
+<strong>Succès critique</strong> La cible n'est pas affectée.<br>
+<strong>Succès</strong> À la fin de son prochain tour, la cible subit 1d8 dégâts par créature différente qu'elle a intentionnellement blessée lors de ce tour (1d8 si elle a blessé une créature, 2d8 si elle a blessé deux créatures différentes et ainsi de suite). Le maximum est de 4d8 si elle a blessé 4 créatures différentes.<br>
+<strong>Échec</strong> Comme en cas de succès, sauf que la malédiction blesse la cible à la fin de chacun de ses tours et dure jusqu'à ce que la cible passe un tour complet sans blesser intentionnellement une autre créature.<br>
+<strong>Échec critique</strong> Comme en cas de succès, sauf que la malédiction blesse la cible à la fin de chacun de ses tours et dure jusqu'à ce que la cible passe 24 heures à expier les regrets perçus.<br>
+<hr />
+<strong>Intensifié (+2)</strong> Le montant des dégâts mentaux que la cible subit pour chaque créature qu'elle a endommagée au cours de ce tour augmente de 1d8 et les dégâts maximum que la cible peut subir par tour augmentent de 4d8.<br></div></div></div></div>
+    <div id="inventory" class="page">
+        <div class="page-header">
+            <h1>Inventaire de Liraël "Tonne-feu" Etoile-Cendre</h1>
+            <h3>Niveau 3 Magus</h3>
+        </div>
+    
+            <div class=section-item-unique>
+            <h2 class="section-title">Armes</h2>
+            
+    <div class="item">
+        <div class="item-header">
+            <div>Pistolet de duel (Dueling Pistol)</div>
+    <div>1d6 piercing</div></div><div class="item-traits"><span class="trait">concealable</span><span class="trait">concussive</span><span class="trait">fatal-d10</span></div><div class="metadata"><span class="meta-item">Portée: 60</span><span class="meta-item">Encombrement: 0.1</span></div><div class="item-description"><p>Conçues pour régler les disputes lorsque la diplomatie échoue, les pistolets de duel sont finement fabriqués et conçus pour se glisser facilement dans un étui ou une poche. Les marchands nobles et riches d'Alkenastre et de Fort Dongun possèdent souvent des paires de pistolets de duel assortis au cas où ils seraient appelés à relever un défi - bien que cette pratique soit devenue de plus en plus rare à l'époque moderne.</p>
+<hr />
+<p>Cette arme utilise des <strong>Munitions (Pistolet de duel)</strong></p></div></div></div>
+            <div class=section-item-unique>
+            <h2 class="section-title">Armures</h2>
+            
+    <div class="item">
+        <div class="item-header">
+            <div>Vêtements d'explorateur (Explorer's Clothing)</div>
+    <div>CA +0</div></div><div class="item-traits"><span class="trait">comfort</span></div><div class="metadata"><span class="meta-item">Limite Dex: 5</span><span class="meta-item">Encombrement: 0.1</span></div><div class="item-description"><p>Les aventuriers qui ne portent pas d'armure voyagent dans des tenues durables. Bien qu'ils ne constituent pas une armure et qu'ils utilisent votre degré de maîtrise en défense sans armures, les <em>vêtements d'explorateur</em> ont toujours un bonus de dextérité maximum et ils peuvent accorder un bonus d'objet à la CA s'ils sont gravés avec des runes de puissance.</p></div></div></div></div>
+    <div id="feats" class="page">
+        <div class="page-header">
+            <h1>Dons et capacités de Liraël "Tonne-feu" Etoile-Cendre</h1>
+            <h3>Niveau 3 Magus</h3>
+        </div>
+    
+            <div class=section-item-unique>
+            <h2 class="section-title">Dons d'ascendance</h2>
+            
+    <div class="item">
+        <div class="item-header">
+            <div>Ailes évanescentes (Evanescent Wings)</div>
+            <div>Niveau 1</div>
+        </div>
+    <div class="item-traits"><span class="trait">sprite</span></div><div class="item-description"><p>Vous avez fait apparaître des ailes qui peuvent battre pendant un bref instant. Vous Volez. Si vous ne possédez pas normalement une vitesse de vol, vous obtenez une vitesse de vol de 4,50 mètres pour ce déplacement. Si vous n'êtes par sur un sol solide à la fin de ce déplacement, vous chutez.</p></div></div></div>
+            <div class=section>
+            <h2 class="section-title">Dons de classe</h2>
+            
+    <div class="item">
+        <div class="item-header">
+            <div>Dévouement : Franc-tireur (Gunslinger Dedication)</div>
+            <div>Niveau 2</div>
+        </div>
+    <div class="item-traits"><span class="trait">archetype</span><span class="trait">dedication</span><span class="trait">multiclass</span></div><div class="metadata"><span class="meta-item">Prérequis: Dextérité +2</span></div><div class="item-description"><p>Vous excellez dans l'utilisation de certains types d'armes à distance. Vous avez une familiarité avec les arbalètes de guerre et les armes à feu, les considérant comme des armes simples en ce qui concerne la maîtrise.</p>
+<p>Vous obtenez l'accès aux arbalètes peu courantes simples et de guerre et aux armes à feu qui ne possèdent pas un trait ancestral. Vous êtes qualifié dans le DD de classe de Franc-tireur.</p> 
+<p>Choisissez une Voie de Franc-tireur. Vous devenez qualifié dans la compétence associée. Si vous l'étiez déjà, vous êtes qualifié dans une compétence de votre choix. Vous n'obtenez aucune autre capacité provenant de votre choix de voie.</p>
+<p><strong>Franc-tireur</strong>.</p></div></div>
+    <div class="item">
+        <div class="item-header">
+            <div>Frappe de sort étendue (Expansive Spellstrike)</div>
+            <div>Niveau 2</div>
+        </div>
+    <div class="item-traits"><span class="trait">magus</span></div><div class="metadata"><span class="meta-item">Prérequis: Frappe de sort</span></div><div class="item-description"><p>Vous pouvez projeter l'énergie d'un sort autour de la cible de votre attaque. Lorsque vous faites une Frappe de sort avec un sort qui possède pour zone une explosion, un cône ou une ligne, le sort crée une zone au lieu de n'affecter que la cible. La cible doit être dans la zone. Une explosion est centrée sur un coin de la case de la cible. Si la cible est de taille Grande ou supérieure, l'explosion doit utiliser le coin de la case la plus proche du centre de kla cible est choisir si plus plus d'un est éligible. Un cône ou une ligne émane de vous et doit inclure la cible. Si vous n'êtes pas adjacent à la cible (en utilisant une arme à allonge ou Portée des étoiles, par exemple), choisissez toute case adjacente à la cible en tant que source. Le sort affecte toutes les créatures dans la zone comme à l'ordinaire mais la Frappe ne cible toujours qu'une seule créature.</p></div></div></div>
+            <div class=section>
+            <h2 class="section-title">Dons de compétence</h2>
+            
+    <div class="item">
+        <div class="item-header">
+            <div>Évaluation de l'artisan (Crafter's Appraisal)</div>
+            <div>Niveau 1</div>
+        </div>
+    <div class="item-traits"><span class="trait">general</span><span class="trait">skill</span></div><div class="metadata"><span class="meta-item">Prérequis: qualifié en Artisanat</span></div><div class="item-description"><p>Votre connaissance de la conception des objets vous permet de discerner également leurs effets magiques. Vous pouvez utiliser Artisanat au lieu d'une compétence associée à une tradition magique pour <strong>Identifier la magie</strong> sur les objets magiques, mais pas l'utiliser sur toute autre sorte de magie.</p></div></div>
+    <div class="item">
+        <div class="item-header">
+            <div>Artisanat magique (Magical Crafting)</div>
+            <div>Niveau 2</div>
+        </div>
+    <div class="item-traits"><span class="trait">general</span><span class="trait">skill</span></div><div class="metadata"><span class="meta-item">Prérequis: expert en Artisanat</span></div><div class="item-description"><p>Vous pouvez <strong>Fabriquer</strong> des objets magiques, bien que certains aient d'autres conditions. Quand vous sélectionnez ce don, vous obtenez les formules de quatre objets magiques courants de niveau 2 ou inférieur.</p></div></div>
+    <div class="item">
+        <div class="item-header">
+            <div>Identification rapide (Quick Identification)</div>
+            <div>Niveau 1</div>
+        </div>
+    <div class="item-traits"><span class="trait">general</span><span class="trait">skill</span></div><div class="metadata"><span class="meta-item">Prérequis: qualifié en Arcanes, Nature, Occultisme ou Religion</span></div><div class="item-description"><p>Vous pouvez Identifier la magie rapidement. Quand vous utilisez Identifier la magie, vous ne mettez que 1 minute pour déterminer les propriétés d'un objet, d'un effet en cours ou d'un lieu, au lieu de 10 minutes. Si vous êtes un maître, cela prend une activité de 3 actions, et si vous êtes légendaire, cela prend 1 action.</p></div></div></div>
+            <div class=section-item-unique>
+            <h2 class="section-title">Ancestryfeature</h2>
+            
+    <div class="item">
+        <div class="item-header">
+            <div>Frappes magiques (Magical Strikes)</div>
+            <div>Niveau 1</div>
+        </div>
+    <div class="item-traits"><span class="trait">sprite</span></div><div class="item-description"><p>Votre magie intrinsèque se répand dans votre être tout entier. Toutes vos Frappes sont magiques, qu'il s'agisse des Frappes à mains nues ou avec armes.</p></div></div></div>
+            <div class=section>
+            <h2 class="section-title">Classfeature</h2>
+            
+    <div class="item">
+        <div class="item-header">
+            <div>Cascade arcanique (Arcane Cascade)</div>
+            <div>Niveau 1</div>
+        </div>
+    <div class="item-traits"><span class="trait">magus</span></div><div class="item-description"><p>Après avoir manié la magie, vous pouvez adopter une posture spéciale pour rendre vos attaques plus efficaces. Vous obtenez l'action Cascade arcanique.</p>
+<p><strong>Cascade arcanique</strong></p></div></div>
+    <div class="item-long">
+        <div class="item-header">
+            <div>Frappe de sort (Spellstrike)</div>
+            <div>Niveau 1</div>
+        </div>
+    <div class="item-traits"><span class="trait">magus</span></div><div class="item-description"><p>Vous avez appris la technique fondamentale du magus qui vous permet de combiner les attaques magiques et physiques ensemble. Vous obtenez l'activité <strong>Frappe de sort</strong>.</p>
+<h3>Particularités de Frappe de sort</h3>
+<p>Bien que la Frappe de sort de base corresponde à la plupart des sorts, des modifications variées s'appliquent à des sorts plus complexes lorsqu'ils sont chargés dans votre poing, votre lame ou toute autre attaque.</p>
+<p><strong>Une cible</strong> Le sort n'affecte que la cible de votre Frappe, même s'il permettrait normalement d'affecter plus de cibles. Ceci inclut les sorts de zone, contre lesquels seuls la cible tente un jet de sauvegarde. Tous les effets persistants de la zone, comme le terrain difficile de <em>Projection d'éboulis</em>, n'affecte que l'espace de la cible. Certains dons vous permettent d'affecter davantage de créatures.</p>
+<p><strong>Allonge</strong> Le sort couplé affecte la cible en utilisant l'allonge de votre arme ou de l'attaque à mains nues avec laquelle vous avez porté la Frappe de sort. Par exemple, <em>Gouge griffue</em> affectera une créature au-delà de l'allonge de votre main si vous avez utilisé une arme disposant d'une allonge et <em>Morsure du froid</em> n'affectera qu'une créature dans l'allonge de votre arme même si la portée du sort est bien supérieure.</p>
+<p><strong>Effets secondaires</strong> Votre sort dispose toujours des effets non ciblés qui pourraient affecter des créatures autres que la cible, ainsi que tout autre effet qui se poursuit à partir du moment où votre Frappe a touché. Par exemple, <em>Projection d'éboulis</em> créera toujours un terrain difficile dans l'espace de la cible (comme indiqué plus haut) et la pénalité de circonstances de <em>Lianes gênantes</em> s'appliquera pendant sa durée normale. Le sort prend effet après que la Frappe a infligé ses dégâts. Si la Frappe possède d'autres effets spéciaux, le MJ détermine s'ils se produisent avant ou après ceux du sort.</p>
+<p><strong>Défenses multiples</strong> Tout jet supplémentaire après l'attaque initiale du sort se produit normalement, comme le jet de Vigueur tenté par la cible d'un sort de <em>Désintégration</em>. De même, un sort qui vous permet d'attaquer à nouveau en l'utilisant lors des rounds suivants ne se combinera avec une Frappe qu'avec son jet d'attaque initial et non avec les suivants.</p>
+<p><strong>Cible invalide ou immunisée</strong> Si la cible que vous Frappez ne devrait pas être une cible valide pour le sort, le sort est toujours dépensé mais n'affecte pas la cible. Si la cible est immunisée à votre attaque mais pas au sort, elle peut toujours être affectée par le sort.</p>
+<p><strong>Actions variables</strong> Certains sorts ont des effets différents en fonction du nombre d'actions que vous avez dépensé pour les lancer. Vous choisissez d'utiliser les effets d'une version à 1 ou 2 actions du sort lorsque vous faites une Frappe de sort. Un sort doit prendre exactement 1 ou 2 actions. Vous ne pouvez pas utiliser Frappe de sort avec un sort qui utilise une action gratuite, une réaction ou au moins 3 actions.</p>
+<p><strong>mutamagie</strong> Vous ne pouvez typiquement pas utiliser de mutamagie avec Frappe de sort car les actions de mutamagie nécessitent que votre action suivante ne consiste qu'à simplement Lancer un sort alors que Frappe de sort est une activité combinée qui ne permet pas de remplir cette condition.</p></div></div>
+    <div class="item">
+        <div class="item-header">
+            <div>Études hybridées (Hybrid Study)</div>
+            <div>Niveau 1</div>
+        </div>
+    <div class="item-traits"><span class="trait">magus</span></div><div class="item-description"><p>Votre entraînement physique intense et votre magie soigneusement choisie se combinent pour former un style de combat unique et dangereux qui est bien plus que la somme de ses deux aspects. Vous choisissez un champ d'études hybridées pour représenter cette combinaison particulière de compétences. Vos études hybridées vous donnent droit à une capacité spéciale, habituellement liée à Frappe de sort ou à Cascade arcanique et qui détermine votre sort de confluence initial. Les études hybridées sont les suivantes.</p>
+<ul>
+<li><strong>Acier inexorable</strong></li>
+<li><strong>Arbre tordu</strong></li>
+<li><strong>Firmament distant</strong></li>
+<li><strong>Foulard déroulant</strong></li>
+<li><strong>Maelström résurgent</strong> (rare)</li>
+<li><strong>Ombre ricanante</strong></li>
+<li><strong>Portée des étoiles</strong></li>
+<li><strong>Targe étincelante</strong></li>
+</ul></div></div>
+    <div class="item">
+        <div class="item-header">
+            <div>Portée des étoiles (Starlit Span)</div>
+            <div>Niveau 1</div>
+        </div>
+    <div class="item-traits"><span class="trait">magus</span></div><div class="item-description"><p>Avec la magie, le ciel est la limite et vous ne pouvez être lié aux contingences de la proximité physique. Votre puissance se déploie aussi loin que vos sens peuvent percevoir, transcendant l'espace entre vous et votre cible, même avec les sorts qui nécessiteraient normalement un contact physique direct.</p>
+<p>Lorsque vous utilisez Frappe de sort, vous pouvez faire une Frappe avec une arme à distance ou une Frappe à main nue à distance, tant que la cible est dans le premier facteur de portée de votre arme à distance ou de votre attaque à mains nues à distance. Vous pouvez délivrer le sort même si sa portée est plus courte que le facteur de portée de votre attaque à distance.</p>
+<p><strong>Sort de confluence</strong> <strong>Étoile tirée</strong></p></div></div>
+    <div class="item-long">
+        <div class="item-header">
+            <div>Incantation arcanique (Magus) (Arcane Spellcasting (Magus))</div>
+            <div>Niveau 1</div>
+        </div>
+    <div class="item-traits"><span class="trait">magus</span></div><div class="item-description"><p>Vous étudiez les sorts de sorte à pouvoir les combiner avec vos attaques ou à résoudre les problèmes que la seule force des bras ne peut surmonter. Vous pouvez lancer des sorts arcaniques en utilisant l'activité Lancer un sort et vous pouvez fournir les composantes matérielles, somatiques et verbales lorsque vous incantez les sorts.</p>
+<p>Comme vous êtes un magus, vous pouvez dessiner des symboles de remplacement avec la pointe de votre arme ou avec une main libre pour les sorts qui nécessitent des composantes matérielles, en remplaçant avec des composantes somatiques au lieu de devoir disposer d'une bourse à composantes.</p>
+<p>Au niveau 1, vous pouvez préparer un sort de rang 1 et cinq tours de magie tirés des sorts de votre grimoire. Les sorts préparés vous sont disponibles jusqu'à ce que vous les ayez lancés ou jusqu'à ce que vous fassiez de nouveau vos préparatifs quotidiens. Le nombre de sorts que vous pouvez préparer est représenté par vos emplacements de sort.</p>
+<p>Quand vous gagnez des niveaux en tant que magus, votre nombre d'emplacements de sort et le rang maximal des sorts à lancer depuis ces emplacements augmentent. Comme votre concentration se divise entre l'entraînement physique et les études magiques, vous n'avez pas plus de deux emplacements de sorts de votre plus haut rang et si vous pouvez lancer des sorts de rang supérieur ou égal à 2, deux sorts d'un rang inférieur à votre plus haut rang de sort. Pour tout ce qui requiert la capacité de lancer des sorts d'un certain rang qui est inférieur aux emplacements du rang le plus élevé que vous possédez, vous vous qualifiez toujours même si vous ne disposez plus des emplacements de sorts de ces rangs.</p>
+<p>Certains sorts exigent un jet d'attaque de sort pour déterminer leur efficacité ou obligent vos ennemis à faire un jet contre leur DD (en général un jet de sauvegarde). Votre jet d'attaque de sort et votre DD de sort utilisent votre modificateur d'Intelligence.</p>
+<h3>L'intensification de sorts</h3>
+<p>Lorsque vous obtenez des emplacements de sorts de rang 2 et supérieur, vous pouvez remplir ces emplacements avec des versions plus puissantes de sorts de rang inférieur. Ceci augmente le rang du sort, l'intensifiant pour correspondre à l'emplacement du sort. Nombre de sorts possèdent des améliorations spécifiques lorsqu'ils sont intensifiés à certains rangs.</p>
+<h3>Les tours de magie</h3>
+<p>Un tour de magie est un type spécifique de sort qui n'utilise pas d'emplacement de sort. Vous pouvez lancer un tour de magie à volonté, n'importe quel nombre de fois par jour. Un tour de magie est toujours intensifié automatiquement à la moitié de votre niveau arrondi au supérieur — c'est habituellement égal au plus haut rang de vos emplacements de sorts de magus que vous possédez. Par exemple, en tant que magus de niveau 1, vos tours de magie sont de rang 1 et en tant que magus de niveau 5, vos tours de magie sont des sorts de rang 3.</p>
+<h3>Le grimoire</h3>
+<p>Chaque sort arcanique possède une version écrite, que vous pouvez enregistrer dans votre grimoire. Vous débutez avec un grimoire d'une valeur inférieure ou égale à 10 pa, que vous recevez gratuitement et devez étudier chaque jour pour préparer vos sorts. Le grimoire contient 8 tours de magie et 4 sorts arcaniques de rang 1 de votre choix. Vous les choisissez parmi les sorts courants de la liste de sorts arcaniques ou parmi les sorts arcaniques auxquels vous avez accès. La forme et le nom de votre grimoire sont à votre seule appréciation. Il peut s'agir d'un livre solide à la fermeture sécurisé intitulé "Thèses sur les stratagèmes de la guerre surnaturelle" ou d'une collection de fascicules d'entraînement en lambeaux avec votre nom griffonné sur la couverture.</p>
+<p>Chaque fois que vous obtenez un niveau, vous ajoutez deux sorts arcaniques à votre grimoire, de n'importe quel rang de sort que vous pouvez lancer. Vous pouvez également utiliser la compétence Arcanes pour ajouter d'autres sorts que vous trouvez durant vos aventures. Bien que vous perdiez quelques emplacements de sorts inférieurs à mesure que vous gagnez en niveau, vous conservez les sorts dans votre grimoire et pouvez les préparer dans vos emplacements de rang supérieur comme à l'ordinaire.</p>
+<p>Si vous possédez un grimoire par de multiples sources (comme en étant un magus avec le don Dévouement : Magicien), vous pouvez utiliser le même grimoire pour tous vos sorts.</p></div></div>
+    <div class="item">
+        <div class="item-header">
+            <div>Sorts de confluence (Conflux Spells)</div>
+            <div>Niveau 1</div>
+        </div>
+    <div class="item-traits"><span class="trait">magus</span></div><div class="item-description"><p>Vous apprenez un sort de confluence avec vos études hybridées et vous pouvez lancer des sorts de confluence supplémentaires en choisissant certains dons. Les sorts de confluence sont des sorts spécifiques aux magus créés pour le combat et sont un type de sorts focalisés. Il faut dépenser 1 Point de Focalisation pour lancer un sort focalisé et vous débutez avec une réserve de focalisation de 1 Point de Focalisation. Vous remplissez votre réserve de focalisation au cours de vos préparatifs quotidiens et vous pouvez regagner 1 Point de Focalisation en dépensant 10 minutes en utilisant l'activité Refocaliser en étudiant votre grimoire et en accomplissant une activité physique.</p>
+<p>Les sorts focalisés sont automatiquement intensifiés à la moitié de votre niveau arrondi au supérieur. Les sorts focalisés ne nécessitent pas d'emplacement de sort et vous ne pouvez pas les lancer en utilisant des emplacements de sort. Prendre des dons peut vous donner plus de points de focalisation et augmenter la taille de votre réserve de focalisation, bien que cette dernière ne puisse jamais contenir plus de 3 points.</p></div></div>
+    <div class="item">
+        <div class="item-header">
+            <div>Voies du franc-tireur (Gunslinger's Way)</div>
+            <div>Niveau 1</div>
+        </div>
+    <div class="item-traits"><span class="trait">gunslinger</span></div><div class="item-description"><p>Tous les francs-tireurs suivent une voie particulière, une combinaison d'une philosophie et d'un style de combat qui définit à la fois la manière dont ils combattent et les armes avec lesquelles ils excellent. Au niveau 1, votre voie vous accorde un exploit initial, une unique action de recharge appelée un <em>rechargement du tireur</em> et une compétence avec une compétence particulière. Vous obtenez aussi des exploits avancés et supérieurs aux niveaux supérieurs, ainsi qu'un accès à des dons propres à chaque voie. Les voies du franc-tireur sont les suivantes.</p>
+<p><strong><strong>Voie de l'avant-garde</strong></strong> Vous comptez sur un style brutal de combat qui utilise des armes lourdes et des attaques explosives.</p>
+<p><strong><strong>Voie du pistolame</strong></strong> Vous préférez les armes à feu qui fonctionnent bien à la fois au corps-à-corps et au combat à distance, particulièrement celles qui vous permettent de faire preuve d'un peu de style et d'élégance.</p>
+<p><strong><strong>Voie du pistoléro</strong></strong> Vous gardez soigneusement vos distances - les 10 pas du duelliste - pistolet en main.</p>
+<p><strong><strong>Voie du sortiléro</strong></strong> (archétype de classe) Vous utilisez un petit peu de magie et beaucoup de puissance de feu pour apposer votre marque sur le monde.</p>
+<p><strong><strong>Voie du tireur d'élite</strong></strong> Vous pratiquez un style méthodique de tir, frappant d'un abri lointain.</p>
+<p><strong><strong>Voie du vagabond</strong></strong> Vous errez sur le champ de bataille, autant à votre aise dans la mêlée et en dehors.</p></div></div>
+    <div class="item">
+        <div class="item-header">
+            <div>Voie du pistoléro (Way of the Pistolero)</div>
+            <div>Niveau 1</div>
+        </div>
+    <div class="item-traits"><span class="trait">gunslinger</span></div><div class="item-description"><p>Que vous soyez un duelliste professionnel ou un amuseur faisant tournoyer votre pistolet, vous avez des pieds et des mains rapides qui ne semblent jamais vous faire défaut ainsi qu'un esprit et une langue tout aussi aiguisés qui déstabilisent vos ennemis. Vous pouvez laisser une main libre ou cultiver l'ambidextrie avec des armes jumelles. Dans tous les cas, vous restez suffisamment proche de vos ennemis pour profiter de vos réflexes supérieurs tout en laissant suffisamment d'espace pour pouvoir tirer en toute sécurité.</p>
+<p><strong>Compétence de voie</strong> choisissez entre Duperie et Intimidation</p>
+<p><strong>Rechargement du tireur</strong> <strong>Rechargement du baratineur</strong></p>
+<p><strong>Exploits</strong> <em>Initial</em> <strong>Dix pas</strong> <em>Avancé</em> <strong>Réplique du pistoléro</strong> <em>Supérieur</em> <strong>Sinistre assurance</strong></p></div></div></div></div>
+        </div>
+        <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Fonction pour afficher une page et masquer les autres
+        function showPage(pageId) {
+            // Masquer toutes les pages
+            document.querySelectorAll('.page').forEach(function(page) {
+                page.classList.remove('active');
+            });
+            
+            // Afficher la page sélectionnée
+            document.getElementById(pageId).classList.add('active');
+            
+            // Mettre à jour les liens actifs dans la barre de navigation
+            document.querySelectorAll('.nav-bar a').forEach(function(link) {
+                if (link.getAttribute('data-page') === pageId) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
+        }
+        
+        // Ajouter des écouteurs d'événements pour les liens de navigation
+        document.querySelectorAll('.nav-bar a').forEach(function(link) {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                showPage(this.getAttribute('data-page'));
+            });
+        });
+        
+        // Afficher la première page par défaut
+        showPage('spellbook');
+    });
+    </script>
+    </body>
+    </html>
+    
