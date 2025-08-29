@@ -1,0 +1,4944 @@
+{
+  "prototypeToken": {
+    "actorLink": true,
+    "flags": {
+      "pf2e": {
+        "linkToActorSize": true,
+        "autoscale": true
+      },
+      "healthEstimate": {
+        "dontMarkDead": false,
+        "hideHealthEstimate": false,
+        "hideName": false
+      }
+    },
+    "height": 0.5,
+    "width": 0.5,
+    "sight": {
+      "enabled": true,
+      "range": 0,
+      "angle": 360,
+      "visionMode": "basic",
+      "color": null,
+      "attenuation": 0.1,
+      "brightness": 0,
+      "saturation": 0,
+      "contrast": 0
+    },
+    "name": "Theo",
+    "displayName": 20,
+    "texture": {
+      "src": "assets/Lira%C3%ABlt.png",
+      "anchorX": 0.5,
+      "anchorY": 0.5,
+      "offsetX": 0,
+      "offsetY": 0,
+      "fit": "contain",
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "tint": "#ffffff",
+      "alphaThreshold": 0.75
+    },
+    "lockRotation": true,
+    "rotation": 0,
+    "alpha": 1,
+    "disposition": -1,
+    "displayBars": 20,
+    "bar1": {
+      "attribute": "attributes.hp"
+    },
+    "bar2": {
+      "attribute": null
+    },
+    "light": {
+      "negative": false,
+      "priority": 0,
+      "alpha": 0.5,
+      "angle": 360,
+      "bright": 0,
+      "color": null,
+      "coloration": 1,
+      "dim": 0,
+      "attenuation": 0.5,
+      "luminosity": 0.5,
+      "saturation": 0,
+      "contrast": 0,
+      "shadows": 0,
+      "animation": {
+        "type": null,
+        "speed": 5,
+        "intensity": 5,
+        "reverse": false
+      },
+      "darkness": {
+        "min": 0,
+        "max": 1
+      }
+    },
+    "detectionModes": [],
+    "occludable": {
+      "radius": 0
+    },
+    "ring": {
+      "enabled": false,
+      "colors": {
+        "ring": null,
+        "background": null
+      },
+      "effects": 0,
+      "subject": {
+        "scale": 1,
+        "texture": null
+      }
+    },
+    "turnMarker": {
+      "mode": 1,
+      "animation": null,
+      "src": null,
+      "disposition": false
+    },
+    "movementAction": null,
+    "randomImg": false,
+    "appendNumber": false,
+    "prependAdjective": false
+  },
+  "name": "Liraël \"Tonne-feu\" Etoile-Cendre",
+  "type": "character",
+  "effects": [],
+  "system": {
+    "attributes": {
+      "hp": {
+        "value": 39,
+        "temp": 0
+      },
+      "speed": {
+        "value": 25,
+        "otherSpeeds": []
+      }
+    },
+    "initiative": {
+      "statistic": "perception"
+    },
+    "details": {
+      "languages": {
+        "value": [
+          "elven",
+          "gnomish",
+          "goblin",
+          "dwarven"
+        ],
+        "details": ""
+      },
+      "level": {
+        "value": 3
+      },
+      "biography": {
+        "appearance": "",
+        "backstory": "",
+        "birthPlace": "",
+        "attitude": "",
+        "beliefs": "",
+        "anathema": [],
+        "edicts": [],
+        "likes": "",
+        "dislikes": "",
+        "catchphrases": "",
+        "campaignNotes": "",
+        "allies": "",
+        "enemies": "",
+        "organizations": "",
+        "visibility": {
+          "appearance": true,
+          "backstory": false,
+          "personality": false,
+          "campaign": false
+        }
+      },
+      "keyability": {
+        "value": "str"
+      },
+      "xp": {
+        "value": 0,
+        "min": 0,
+        "max": 1000,
+        "pct": 0
+      },
+      "age": {
+        "value": ""
+      },
+      "height": {
+        "value": ""
+      },
+      "weight": {
+        "value": ""
+      },
+      "gender": {
+        "value": ""
+      },
+      "ethnicity": {
+        "value": ""
+      },
+      "nationality": {
+        "value": ""
+      },
+      "alliance": "party"
+    },
+    "resources": {
+      "heroPoints": {
+        "value": 1,
+        "max": 3
+      },
+      "focus": {
+        "value": 1
+      }
+    },
+    "_migration": {
+      "version": 0.941,
+      "previous": null
+    },
+    "abilities": null,
+    "skills": {
+      "acrobatics": {
+        "rank": 1
+      },
+      "diplomacy": {
+        "rank": 1
+      },
+      "deception": {
+        "rank": 1
+      },
+      "stealth": {
+        "rank": 1
+      },
+      "society": {
+        "rank": 1
+      },
+      "thievery": {
+        "rank": 1
+      },
+      "intimidation": {
+        "rank": 0
+      },
+      "crafting": {
+        "rank": 2
+      }
+    },
+    "pfs": {
+      "playerNumber": null,
+      "characterNumber": null,
+      "levelBump": false,
+      "currentFaction": "EA",
+      "school": null,
+      "reputation": {
+        "EA": null,
+        "GA": null,
+        "HH": null,
+        "VS": null,
+        "RO": null,
+        "VW": null
+      }
+    },
+    "exploration": [],
+    "build": {
+      "attributes": {
+        "boosts": {
+          "1": [
+            "dex",
+            "con",
+            "int",
+            "cha"
+          ],
+          "5": [
+            "int",
+            "con"
+          ],
+          "10": [
+            "dex",
+            "con",
+            "int",
+            "cha"
+          ],
+          "15": [
+            "dex",
+            "con",
+            "int",
+            "cha"
+          ],
+          "20": [
+            "dex",
+            "con"
+          ]
+        }
+      }
+    },
+    "crafting": {
+      "formulas": [
+        {
+          "uuid": "Compendium.pf2e.equipment-srd.Item.ZIs2lAIDasxshMCf"
+        },
+        {
+          "uuid": "Compendium.pf2e.equipment-srd.Item.DKWuJb2rSgiotOG7"
+        },
+        {
+          "uuid": "Compendium.pf2e.equipment-srd.Item.UaOrOGrjcXgSeBvr"
+        },
+        {
+          "uuid": "Compendium.pf2e.equipment-srd.Item.FYv6k2zkd0MJ93la"
+        }
+      ]
+    }
+  },
+  "img": "assets/Lirael.png",
+  "items": [
+    {
+      "_id": "8qw9fFowfTijDXXe",
+      "img": "systems/pf2e/icons/default-icons/alternatives/ancestries/sprite.svg",
+      "name": "Sprite",
+      "system": {
+        "description": {
+          "gm": "",
+          "value": "<p><em>Les sprites sont des créatures minuscules, fantaisistes et exubérantes du royaume des fées connus sous le nom de Premier monde. Ils adorent jouer des tours, explorer de nouvelles choses et embrasser tout ce qui a trait à la magie.</em></p>\n<p><em>@UUID[Compendium.pf2e.journals.JournalEntry.45SK8rdbbxvEHfMn.JournalEntryPage.rvbMGyBr6y5K7HDP]{Sprite}</em></p>"
+        },
+        "rules": [],
+        "slug": "sprite",
+        "_migration": {
+          "version": 0.941,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "fey",
+            "sprite"
+          ],
+          "rarity": "rare"
+        },
+        "publication": {
+          "title": "Pathfinder Lost Omens Ancestry Guide",
+          "authors": "",
+          "license": "OGL",
+          "remaster": false
+        },
+        "hp": 6,
+        "size": "tiny",
+        "reach": 0,
+        "speed": 20,
+        "boosts": {
+          "0": {
+            "value": [
+              "dex"
+            ]
+          },
+          "1": {
+            "value": [
+              "int"
+            ]
+          },
+          "2": {
+            "value": [
+              "str",
+              "dex",
+              "con",
+              "int",
+              "wis",
+              "cha"
+            ],
+            "selected": "con"
+          }
+        },
+        "flaws": {
+          "0": {
+            "value": [
+              "str"
+            ]
+          }
+        },
+        "languages": {
+          "value": [
+            "common",
+            "fey"
+          ],
+          "custom": ""
+        },
+        "additionalLanguages": {
+          "count": 0,
+          "value": [
+            "draconic",
+            "elven",
+            "empyrean",
+            "gnomish",
+            "goblin",
+            "jotun"
+          ],
+          "custom": ""
+        },
+        "items": {
+          "uu6ze": {
+            "img": "systems/pf2e/icons/default-icons/feat.svg",
+            "level": 1,
+            "name": "Magical Strikes",
+            "uuid": "Compendium.pf2e.ancestryfeatures.Item.TRw4oBZBFZG96jKO"
+          }
+        },
+        "vision": "low-light-vision",
+        "voluntary": {
+          "flaws": []
+        }
+      },
+      "type": "ancestry",
+      "_stats": {
+        "coreVersion": "13.347",
+        "systemId": "pf2e",
+        "systemVersion": "7.3.1",
+        "lastModifiedBy": null
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "flags": {
+        "babele": {
+          "translated": true,
+          "hasTranslation": true,
+          "originalName": "Sprite"
+        }
+      }
+    },
+    {
+      "img": "icons/creatures/magical/fae-fairy-winged-glowing-green.webp",
+      "name": "Frappes magiques (Magical Strikes)",
+      "system": {
+        "actionType": {
+          "value": "passive"
+        },
+        "actions": {
+          "value": null
+        },
+        "category": "ancestryfeature",
+        "description": {
+          "value": "<p>Votre magie intrinsèque se répand dans votre être tout entier. Toutes vos Frappes sont magiques, qu'il s'agisse des Frappes à mains nues ou avec armes.</p>",
+          "gm": ""
+        },
+        "level": {
+          "value": 1
+        },
+        "prerequisites": {
+          "value": []
+        },
+        "publication": {
+          "license": "OGL",
+          "remaster": false,
+          "title": "Pathfinder Lost Omens Ancestry Guide",
+          "authors": ""
+        },
+        "rules": [
+          {
+            "key": "AdjustStrike",
+            "mode": "add",
+            "property": "traits",
+            "value": "magical"
+          }
+        ],
+        "traits": {
+          "rarity": "common",
+          "value": [
+            "sprite"
+          ],
+          "otherTags": []
+        },
+        "slug": "magical-strikes",
+        "_migration": {
+          "version": 0.941,
+          "previous": null
+        },
+        "onlyLevel1": false,
+        "maxTakable": 1,
+        "subfeatures": {
+          "proficiencies": {},
+          "senses": {},
+          "suppressedFeatures": []
+        },
+        "location": "8qw9fFowfTijDXXe"
+      },
+      "type": "feat",
+      "_stats": {
+        "coreVersion": "13.347",
+        "systemId": "pf2e",
+        "systemVersion": "7.3.1",
+        "lastModifiedBy": null
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "flags": {
+        "babele": {
+          "translated": true,
+          "hasTranslation": true,
+          "originalName": "Magical Strikes"
+        }
+      },
+      "_id": "q2TrDUKEX5LyMtMQ"
+    },
+    {
+      "_id": "s0ytvZJS1lwVALZa",
+      "folder": "swBqRqcxrbrK94y7",
+      "img": "systems/pf2e/icons/default-icons/heritage.svg",
+      "name": "Sprite lumineux (Luminous Sprite)",
+      "system": {
+        "ancestry": {
+          "name": "Sprite",
+          "slug": "sprite",
+          "uuid": "Compendium.pf2e.ancestries.Item.TRqoeYfGAFjQbviF"
+        },
+        "description": {
+          "value": "<p>Vous brillez avec une luminosité magique. Vous diffusez naturellement de la lumière comme une @UUID[Compendium.pf2e.equipment-srd.Item.8Jdw4yAzWYylGePS]{Torche} ; cette lumière possède les traits évocation, lumière et primordial. Vous pouvez éteindre, rallumer ou changer la couleur de cette lumière en utilisant une unique action qui possède le trait concentration.</p>",
+          "gm": ""
+        },
+        "publication": {
+          "license": "OGL",
+          "remaster": false,
+          "title": "Pathfinder Lost Omens Ancestry Guide",
+          "authors": ""
+        },
+        "rules": [
+          {
+            "key": "RollOption",
+            "label": "PF2E.SpecificRule.Sprite.LuminousSprite.Light",
+            "option": "luminous",
+            "toggleable": true,
+            "value": false
+          },
+          {
+            "key": "TokenLight",
+            "predicate": [
+              "luminous"
+            ],
+            "value": {
+              "animation": {
+                "intensity": 4,
+                "speed": 1,
+                "type": "torch"
+              },
+              "bright": 20,
+              "color": "#9b7337",
+              "dim": 40,
+              "luminosity": 0.4,
+              "shadows": 0.2
+            }
+          }
+        ],
+        "traits": {
+          "rarity": "common",
+          "value": [],
+          "otherTags": []
+        },
+        "slug": "luminous-sprite",
+        "_migration": {
+          "version": 0.941,
+          "previous": null
+        }
+      },
+      "type": "heritage",
+      "_stats": {
+        "coreVersion": "13.347",
+        "systemId": "pf2e",
+        "systemVersion": "7.3.1",
+        "lastModifiedBy": null
+      },
+      "effects": [],
+      "sort": 0,
+      "flags": {
+        "babele": {
+          "translated": true,
+          "hasTranslation": true,
+          "originalName": "Luminous Sprite"
+        }
+      }
+    },
+    {
+      "_id": "FNgpPhHxErZIShOI",
+      "img": "systems/pf2e/icons/classes/magus.webp",
+      "name": "Magus",
+      "system": {
+        "ancestryFeatLevels": {
+          "value": [
+            1,
+            5,
+            9,
+            13,
+            17
+          ]
+        },
+        "attacks": {
+          "advanced": 0,
+          "martial": 1,
+          "other": {
+            "name": "",
+            "rank": 0
+          },
+          "simple": 1,
+          "unarmed": 1
+        },
+        "classFeatLevels": {
+          "value": [
+            2,
+            4,
+            6,
+            8,
+            10,
+            12,
+            14,
+            16,
+            18,
+            20
+          ]
+        },
+        "defenses": {
+          "heavy": 0,
+          "light": 1,
+          "medium": 1,
+          "unarmored": 1
+        },
+        "description": {
+          "value": "<p><em>En combinant le physique et la technique d'un combattant avec la capacité de lancer de la magie arcanique, vous cherchez à perfectionner l'art de fusionner sort et frappe. Bien que le lourd tome que vous transportez reflète les heures passées à mener des recherches arcaniques, vos ennemis n'ont aucun mal à se souvenir de votre entraînement. Ils le reconnaissent lorsque vous les abattez.</em></p>\n<p><em>@UUID[Compendium.pf2e.journals.JournalEntry.kzxu2dI7tFxv6Ix6.JournalEntryPage.YVoyzV9v4QyP2UIC]{Magus}</em></p>",
+          "gm": ""
+        },
+        "generalFeatLevels": {
+          "value": [
+            3,
+            7,
+            11,
+            15,
+            19
+          ]
+        },
+        "hp": 8,
+        "items": {
+          "06frE": {
+            "img": "icons/sundries/documents/document-torn-diagram-tan.webp",
+            "level": 7,
+            "name": "Studious Spells",
+            "uuid": "Compendium.pf2e.classfeatures.Item.6HCI2iHyBZAr7a4P"
+          },
+          "31b86": {
+            "img": "systems/pf2e/icons/features/classes/weapon-expertise.webp",
+            "level": 5,
+            "name": "Weapon Expertise",
+            "uuid": "Compendium.pf2e.classfeatures.Item.9XLUh9iMepZesdmc"
+          },
+          "5q48r": {
+            "img": "icons/sundries/books/book-eye-purple.webp",
+            "level": 1,
+            "name": "Arcane Spellcasting (Magus)",
+            "uuid": "Compendium.pf2e.classfeatures.Item.wXaz41gwqNtTn6tf"
+          },
+          "8jtpc": {
+            "img": "icons/magic/symbols/symbol-lightning-bolt.webp",
+            "level": 5,
+            "name": "Lightning Reflexes",
+            "uuid": "Compendium.pf2e.classfeatures.Item.TUOeATt52P43r5W0"
+          },
+          "EZGEs": {
+            "img": "systems/pf2e/icons/features/classes/arcane-cascade.webp",
+            "level": 1,
+            "name": "Arcane Cascade",
+            "uuid": "Compendium.pf2e.classfeatures.Item.09iL38CZZEa0q0Mt"
+          },
+          "GP1fi": {
+            "img": "icons/skills/melee/blade-tips-double-blue.webp",
+            "level": 19,
+            "name": "Double Spellstrike",
+            "uuid": "Compendium.pf2e.classfeatures.Item.VmPIJomEdmgGrCMS"
+          },
+          "OaBCQ": {
+            "img": "systems/pf2e/icons/features/classes/spellstrike.webp",
+            "level": 1,
+            "name": "Spellstrike",
+            "uuid": "Compendium.pf2e.classfeatures.Item.KVj5ofUwu3VJSrVw"
+          },
+          "PXu7W": {
+            "img": "icons/equipment/chest/breastplate-collared-steel.webp",
+            "level": 17,
+            "name": "Medium Armor Mastery",
+            "uuid": "Compendium.pf2e.classfeatures.Item.cGMSYAErbUG5E8X2"
+          },
+          "e0xpi": {
+            "img": "icons/sundries/books/book-backed-silver-gold.webp",
+            "level": 9,
+            "name": "Expert Spellcaster",
+            "uuid": "Compendium.pf2e.classfeatures.Item.cD3nSupdCvONuHiE"
+          },
+          "enge3": {
+            "img": "icons/skills/trades/academics-book-study-purple.webp",
+            "level": 17,
+            "name": "Master Spellcaster",
+            "uuid": "Compendium.pf2e.classfeatures.Item.l1InYvhnQSz6Ucxc"
+          },
+          "hqK13": {
+            "img": "icons/skills/melee/blade-tip-chipped-blood-red.webp",
+            "level": 13,
+            "name": "Weapon Mastery",
+            "uuid": "Compendium.pf2e.classfeatures.Item.ejP4jVQkS48uKRFz"
+          },
+          "jbg78": {
+            "img": "icons/magic/symbols/question-stone-yellow.webp",
+            "level": 1,
+            "name": "Hybrid Study",
+            "uuid": "Compendium.pf2e.classfeatures.Item.FTeIs1Z1Qeli4BIF"
+          },
+          "jg9zn": {
+            "img": "icons/equipment/chest/breastplate-quilted-brown.webp",
+            "level": 11,
+            "name": "Medium Armor Expertise",
+            "uuid": "Compendium.pf2e.classfeatures.Item.FCEp9jjxxgRJDJV3"
+          },
+          "k9o6o": {
+            "img": "systems/pf2e/icons/features/classes/weapon-specialization.webp",
+            "level": 7,
+            "name": "Weapon Specialization",
+            "uuid": "Compendium.pf2e.classfeatures.Item.9EqIasqfI8YIM3Pt"
+          },
+          "nkff5": {
+            "img": "icons/skills/melee/hand-grip-sword-orange.webp",
+            "level": 15,
+            "name": "Greater Weapon Specialization (Level 15)",
+            "uuid": "Compendium.pf2e.classfeatures.Item.Z7HX6TeFsaup7Dx9"
+          },
+          "r4QQP": {
+            "img": "systems/pf2e/icons/features/classes/conflux-spells.webp",
+            "level": 1,
+            "name": "Conflux Spells",
+            "uuid": "Compendium.pf2e.classfeatures.Item.FkbFgmoVz5lHhSMo"
+          },
+          "tkzi2": {
+            "img": "icons/creatures/eyes/human-single-blue.webp",
+            "level": 9,
+            "name": "Alertness",
+            "uuid": "Compendium.pf2e.classfeatures.Item.D8CSi8c9XiRpVc5M"
+          },
+          "uoxoe": {
+            "img": "icons/creatures/mammals/bull-horns-eyes-glowin-orange.webp",
+            "level": 9,
+            "name": "Resolve",
+            "uuid": "Compendium.pf2e.classfeatures.Item.JQAujUXjczVnYDEI"
+          },
+          "x3em9": {
+            "img": "icons/creatures/mammals/bull-horned-blue.webp",
+            "level": 15,
+            "name": "Juggernaut",
+            "uuid": "Compendium.pf2e.classfeatures.Item.OMZs5y16jZRW9KQK"
+          }
+        },
+        "keyAbility": {
+          "value": [
+            "dex",
+            "str"
+          ],
+          "selected": "dex"
+        },
+        "perception": 1,
+        "publication": {
+          "license": "OGL",
+          "remaster": false,
+          "title": "Pathfinder Secrets of Magic",
+          "authors": ""
+        },
+        "rules": [],
+        "savingThrows": {
+          "fortitude": 2,
+          "reflex": 1,
+          "will": 2
+        },
+        "skillFeatLevels": {
+          "value": [
+            2,
+            4,
+            6,
+            8,
+            10,
+            12,
+            14,
+            16,
+            18,
+            20
+          ]
+        },
+        "skillIncreaseLevels": {
+          "value": [
+            3,
+            5,
+            7,
+            9,
+            11,
+            13,
+            15,
+            17,
+            19
+          ]
+        },
+        "spellcasting": 1,
+        "trainedSkills": {
+          "additional": 2,
+          "value": [
+            "arcana"
+          ]
+        },
+        "traits": {
+          "rarity": "common",
+          "otherTags": []
+        },
+        "slug": "magus",
+        "_migration": {
+          "version": 0.941,
+          "previous": null
+        }
+      },
+      "type": "class",
+      "_stats": {
+        "coreVersion": "13.347",
+        "systemId": "pf2e",
+        "systemVersion": "7.3.1",
+        "lastModifiedBy": null
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "flags": {
+        "babele": {
+          "translated": true,
+          "hasTranslation": true,
+          "originalName": "Magus"
+        }
+      }
+    },
+    {
+      "img": "systems/pf2e/icons/features/classes/arcane-cascade.webp",
+      "name": "Cascade arcanique (Arcane Cascade)",
+      "system": {
+        "actionType": {
+          "value": "passive"
+        },
+        "actions": {
+          "value": null
+        },
+        "category": "classfeature",
+        "description": {
+          "value": "<p>Après avoir manié la magie, vous pouvez adopter une posture spéciale pour rendre vos attaques plus efficaces. Vous obtenez l'action Cascade arcanique.</p>\n<p>@UUID[Compendium.pf2e.actionspf2e.Item.HbejhIywqIufrmVM]{Cascade arcanique}</p>",
+          "gm": ""
+        },
+        "level": {
+          "value": 1
+        },
+        "prerequisites": {
+          "value": []
+        },
+        "publication": {
+          "license": "OGL",
+          "remaster": false,
+          "title": "Pathfinder Secrets of Magic",
+          "authors": ""
+        },
+        "rules": [
+          {
+            "key": "GrantItem",
+            "uuid": "Compendium.pf2e.actionspf2e.Item.HbejhIywqIufrmVM",
+            "flag": "arcaneCascade"
+          },
+          {
+            "key": "ActiveEffectLike",
+            "mode": "override",
+            "path": "flags.pf2e.arcaneCascade.damageType",
+            "priority": -100,
+            "value": "untyped"
+          }
+        ],
+        "traits": {
+          "rarity": "common",
+          "value": [
+            "magus"
+          ],
+          "otherTags": []
+        },
+        "slug": "arcane-cascade",
+        "_migration": {
+          "version": 0.941,
+          "previous": null
+        },
+        "onlyLevel1": false,
+        "maxTakable": 1,
+        "subfeatures": {
+          "proficiencies": {},
+          "senses": {},
+          "suppressedFeatures": []
+        },
+        "location": "FNgpPhHxErZIShOI"
+      },
+      "type": "feat",
+      "_stats": {
+        "coreVersion": "13.347",
+        "systemId": "pf2e",
+        "systemVersion": "7.3.1",
+        "lastModifiedBy": null
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 100,
+      "flags": {
+        "babele": {
+          "translated": true,
+          "hasTranslation": true,
+          "originalName": "Arcane Cascade"
+        },
+        "pf2e": {
+          "itemGrants": {
+            "arcaneCascade": {
+              "id": "8ol7eKuQOCZoCJNH",
+              "onDelete": "detach"
+            }
+          }
+        }
+      },
+      "_id": "qnnwPqFRyPXR5XKs"
+    },
+    {
+      "img": "systems/pf2e/icons/features/classes/spellstrike.webp",
+      "name": "Frappe de sort (Spellstrike)",
+      "system": {
+        "actionType": {
+          "value": "passive"
+        },
+        "actions": {
+          "value": null
+        },
+        "category": "classfeature",
+        "description": {
+          "value": "<p>Vous avez appris la technique fondamentale du magus qui vous permet de combiner les attaques magiques et physiques ensemble. Vous obtenez l'activité @UUID[Compendium.pf2e.actionspf2e.Item.QDW9H8XLIjuW2fE4]{Frappe de sort}.</p>\n<h3>Particularités de Frappe de sort</h3>\n<p>Bien que la Frappe de sort de base corresponde à la plupart des sorts, des modifications variées s'appliquent à des sorts plus complexes lorsqu'ils sont chargés dans votre poing, votre lame ou toute autre attaque.</p>\n<p><strong>Une cible</strong> Le sort n'affecte que la cible de votre Frappe, même s'il permettrait normalement d'affecter plus de cibles. Ceci inclut les sorts de zone, contre lesquels seuls la cible tente un jet de sauvegarde. Tous les effets persistants de la zone, comme le terrain difficile de <em>Projection d'éboulis</em>, n'affecte que l'espace de la cible. Certains dons vous permettent d'affecter davantage de créatures.</p>\n<p><strong>Allonge</strong> Le sort couplé affecte la cible en utilisant l'allonge de votre arme ou de l'attaque à mains nues avec laquelle vous avez porté la Frappe de sort. Par exemple, <em>Gouge griffue</em> affectera une créature au-delà de l'allonge de votre main si vous avez utilisé une arme disposant d'une allonge et <em>Morsure du froid</em> n'affectera qu'une créature dans l'allonge de votre arme même si la portée du sort est bien supérieure.</p>\n<p><strong>Effets secondaires</strong> Votre sort dispose toujours des effets non ciblés qui pourraient affecter des créatures autres que la cible, ainsi que tout autre effet qui se poursuit à partir du moment où votre Frappe a touché. Par exemple, <em>Projection d'éboulis</em> créera toujours un terrain difficile dans l'espace de la cible (comme indiqué plus haut) et la pénalité de circonstances de <em>Lianes gênantes</em> s'appliquera pendant sa durée normale. Le sort prend effet après que la Frappe a infligé ses dégâts. Si la Frappe possède d'autres effets spéciaux, le MJ détermine s'ils se produisent avant ou après ceux du sort.</p>\n<p><strong>Défenses multiples</strong> Tout jet supplémentaire après l'attaque initiale du sort se produit normalement, comme le jet de Vigueur tenté par la cible d'un sort de <em>Désintégration</em>. De même, un sort qui vous permet d'attaquer à nouveau en l'utilisant lors des rounds suivants ne se combinera avec une Frappe qu'avec son jet d'attaque initial et non avec les suivants.</p>\n<p><strong>Cible invalide ou immunisée</strong> Si la cible que vous Frappez ne devrait pas être une cible valide pour le sort, le sort est toujours dépensé mais n'affecte pas la cible. Si la cible est immunisée à votre attaque mais pas au sort, elle peut toujours être affectée par le sort.</p>\n<p><strong>Actions variables</strong> Certains sorts ont des effets différents en fonction du nombre d'actions que vous avez dépensé pour les lancer. Vous choisissez d'utiliser les effets d'une version à 1 ou 2 actions du sort lorsque vous faites une Frappe de sort. Un sort doit prendre exactement 1 ou 2 actions. Vous ne pouvez pas utiliser Frappe de sort avec un sort qui utilise une action gratuite, une réaction ou au moins 3 actions.</p>\n<p><strong>mutamagie</strong> Vous ne pouvez typiquement pas utiliser de mutamagie avec Frappe de sort car les actions de mutamagie nécessitent que votre action suivante ne consiste qu'à simplement Lancer un sort alors que Frappe de sort est une activité combinée qui ne permet pas de remplir cette condition.</p>",
+          "gm": ""
+        },
+        "level": {
+          "value": 1
+        },
+        "prerequisites": {
+          "value": []
+        },
+        "publication": {
+          "license": "OGL",
+          "remaster": false,
+          "title": "Pathfinder Secrets of Magic",
+          "authors": ""
+        },
+        "rules": [
+          {
+            "key": "GrantItem",
+            "uuid": "Compendium.pf2e.actionspf2e.Item.QDW9H8XLIjuW2fE4",
+            "flag": "spellstrike"
+          }
+        ],
+        "traits": {
+          "rarity": "common",
+          "value": [
+            "magus"
+          ],
+          "otherTags": []
+        },
+        "slug": "spellstrike",
+        "_migration": {
+          "version": 0.941,
+          "previous": null
+        },
+        "onlyLevel1": false,
+        "maxTakable": 1,
+        "subfeatures": {
+          "proficiencies": {},
+          "senses": {},
+          "suppressedFeatures": []
+        },
+        "location": "FNgpPhHxErZIShOI"
+      },
+      "type": "feat",
+      "_stats": {
+        "coreVersion": "13.347",
+        "systemId": "pf2e",
+        "systemVersion": "7.3.1",
+        "lastModifiedBy": null
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 200,
+      "flags": {
+        "babele": {
+          "translated": true,
+          "hasTranslation": true,
+          "originalName": "Spellstrike"
+        },
+        "pf2e": {
+          "itemGrants": {
+            "spellstrike": {
+              "id": "vu4adg2ygE339nLK",
+              "onDelete": "detach"
+            }
+          }
+        }
+      },
+      "_id": "ut0W2ukdQkKgWGok"
+    },
+    {
+      "img": "icons/magic/symbols/question-stone-yellow.webp",
+      "name": "Études hybridées (Hybrid Study)",
+      "system": {
+        "actionType": {
+          "value": "passive"
+        },
+        "actions": {
+          "value": null
+        },
+        "category": "classfeature",
+        "description": {
+          "value": "<p>Votre entraînement physique intense et votre magie soigneusement choisie se combinent pour former un style de combat unique et dangereux qui est bien plus que la somme de ses deux aspects. Vous choisissez un champ d'études hybridées pour représenter cette combinaison particulière de compétences. Vos études hybridées vous donnent droit à une capacité spéciale, habituellement liée à Frappe de sort ou à Cascade arcanique et qui détermine votre sort de confluence initial. Les études hybridées sont les suivantes.</p>\n<ul>\n<li>@UUID[Compendium.pf2e.classfeatures.Item.ZslXrvYRxHBXc1Ds]{Acier inexorable}</li>\n<li>@UUID[Compendium.pf2e.classfeatures.Item.6YJ8KFl7THkVy6Gm]{Arbre tordu}</li>\n<li>@UUID[Compendium.pf2e.classfeatures.Item.9CC5Ek0Mq768Lhgx]{Firmament distant}</li>\n<li>@UUID[Compendium.pf2e.classfeatures.Item.y0WQzzshwGIymZsr]{Foulard déroulant}</li>\n<li>@UUID[Compendium.pf2e.classfeatures.Item.X3nPGnqh6rkRJ75i]{Maelström résurgent} (rare)</li>\n<li>@UUID[Compendium.pf2e.classfeatures.Item.3gVDqDPSz4fB5T9G]{Ombre ricanante}</li>\n<li>@UUID[Compendium.pf2e.classfeatures.Item.Pew7duAozEeAemif]{Portée des étoiles}</li>\n<li>@UUID[Compendium.pf2e.classfeatures.Item.maGzhKLmgubAdUlN]{Targe étincelante}</li>\n</ul>",
+          "gm": ""
+        },
+        "level": {
+          "value": 1
+        },
+        "prerequisites": {
+          "value": []
+        },
+        "publication": {
+          "license": "OGL",
+          "remaster": false,
+          "title": "Pathfinder Secrets of Magic",
+          "authors": ""
+        },
+        "rules": [
+          {
+            "adjustName": false,
+            "choices": {
+              "filter": [
+                "item:tag:magus-hybrid-study",
+                {
+                  "or": [
+                    {
+                      "and": [
+                        "class:magus",
+                        "item:tag:magus-hybrid-study"
+                      ]
+                    },
+                    {
+                      "and": [
+                        "item:tag:magus-hybrid-study",
+                        {
+                          "not": "item:tag:class-archetype"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "flag": "hybridStudy",
+            "key": "ChoiceSet",
+            "prompt": "PF2E.SpecificRule.Magus.HybridStudy.Prompt",
+            "selection": "Compendium.pf2e.classfeatures.Item.Pew7duAozEeAemif"
+          },
+          {
+            "key": "GrantItem",
+            "uuid": "{item|flags.pf2e.rulesSelections.hybridStudy}",
+            "flag": "starlitSpan"
+          }
+        ],
+        "traits": {
+          "rarity": "common",
+          "value": [
+            "magus"
+          ],
+          "otherTags": []
+        },
+        "slug": "hybrid-study",
+        "_migration": {
+          "version": 0.941,
+          "previous": null
+        },
+        "onlyLevel1": false,
+        "maxTakable": 1,
+        "subfeatures": {
+          "proficiencies": {},
+          "senses": {},
+          "suppressedFeatures": []
+        },
+        "location": "FNgpPhHxErZIShOI"
+      },
+      "type": "feat",
+      "_stats": {
+        "coreVersion": "13.347",
+        "systemId": "pf2e",
+        "systemVersion": "7.3.1",
+        "lastModifiedBy": null
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 300,
+      "flags": {
+        "babele": {
+          "translated": true,
+          "hasTranslation": true,
+          "originalName": "Hybrid Study"
+        },
+        "pf2e": {
+          "itemGrants": {
+            "starlitSpan": {
+              "id": "CNh7ReIZCTiAKL44",
+              "onDelete": "detach"
+            }
+          }
+        }
+      },
+      "_id": "T1W2otNjrabWWozG"
+    },
+    {
+      "img": "systems/pf2e/icons/actions/OneAction.webp",
+      "name": "Cascade arcanique (Arcane Cascade)",
+      "system": {
+        "actionType": {
+          "value": "action"
+        },
+        "actions": {
+          "value": 1
+        },
+        "category": "offensive",
+        "description": {
+          "value": "<p><strong>Conditions</strong> Vous avez utilisé votre plus récente action lors de ce tour pour Lancer un sort ou effectuer une @UUID[Compendium.pf2e.actionspf2e.Item.QDW9H8XLIjuW2fE4]{Frappe de sort}. Vous avez besoin de remplir cette condition seulement pour adopter cette posture, pas pour y rester.</p>\n<hr />\n<p>Vous détournez une partie de la puissance magique du sort pour la faire circuler dans votre corps et votre arme en utilisant des gestes, une respiration ou un jeu de jambes particuliers. Tant que vous êtes dans cette posture, vos Frappes au corps-à-corps infligent 1 dégât supplémentaire. Ces dégâts passent à 2 si vous avez Spécialisation martiale et à 3 si vous avez Spécialisation martiale supérieure. Toute Frappe qui bénéficie de ces dégâts obtient le trait arcanique, ce qui la rend magique.</p>\n<p>Si votre dernier sort avant d'adopter la posture était un sort qui peut infliger des dégâts, les dégâts de la posture sont du même type que ceux que le sort pouvait infliger (ou d'un type de votre choix si le sort pouvait infliger plusieurs types de dégâts).</p>",
+          "gm": ""
+        },
+        "publication": {
+          "license": "OGL",
+          "remaster": false,
+          "title": "Pathfinder Secrets of Magic",
+          "authors": ""
+        },
+        "rules": [],
+        "selfEffect": {
+          "name": "Stance: Arcane Cascade",
+          "uuid": "Compendium.pf2e.feat-effects.Item.fsjO5oTKttsbpaKl"
+        },
+        "traits": {
+          "value": [
+            "concentrate",
+            "magus",
+            "stance"
+          ],
+          "otherTags": []
+        },
+        "slug": "arcane-cascade",
+        "_migration": {
+          "version": 0.941,
+          "previous": null
+        }
+      },
+      "type": "action",
+      "_stats": {
+        "coreVersion": "13.347",
+        "systemId": "pf2e",
+        "systemVersion": "7.3.1",
+        "lastModifiedBy": null
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "flags": {
+        "babele": {
+          "translated": true,
+          "hasTranslation": true,
+          "originalName": "Arcane Cascade"
+        },
+        "pf2e": {
+          "grantedBy": {
+            "id": "qnnwPqFRyPXR5XKs",
+            "onDelete": "cascade"
+          }
+        }
+      },
+      "_id": "8ol7eKuQOCZoCJNH"
+    },
+    {
+      "img": "systems/pf2e/icons/actions/TwoActions.webp",
+      "name": "Frappe de sort (Spellstrike)",
+      "system": {
+        "actionType": {
+          "value": "action"
+        },
+        "actions": {
+          "value": 2
+        },
+        "category": "offensive",
+        "description": {
+          "value": "<p><strong>Fréquence</strong> Jusqu'à ce qu'elle soit rechargée (voir ci-dessous)</p>\n<hr />\n<p>Vous canalisez un sort dans un coup de poing ou un coup d'épée pour délivrer une attaque combinée. Vous Lancez un sort qui prend 1 ou 2 actions pour être lancé et qui nécessite soit un jet d'attaque de sort, soit un jet de sauvegarde. Vous imprégnez ses effets dans une attaque à la place d'exécuter le sort normalement. Faites une Frappe au corps-à-corps avec une arme ou une attaque à mains nues. Cela est comptabilisé comme deux attaques pour déterminer votre pénalité d'attaques multiples mais vous n'appliquez pas cette pénalité avant d'avoir terminé la Frappe de sort. L'incorporation de l'énergie du sort accorde à votre Frappe le trait arcanique et la rend magique. Si le sort a requis un jet d'attaque de sort utilisez le résultat de votre Frappe pour déterminer les effets de la Frappe et du sort. S'il a requis un jet de sauvegarde, la cible du jet de la Frappe lance normalement son jet de sauvegarde, bien que si votre Frappe a été un échec critique, la cible ne soit pas affectée.</p>\n<p>Après avoir utilisé Frappe de sort, vous ne pouvez pas recommencer avant d'avoir rechargé votre Frappe de sort par une action unique qui possède le trait concentration. Vous rechargez aussi votre Frappe de sort lorsque vous utilisez un sort de confluence qui nécessite que vous dépensiez au moins une action pour être lancé. Lancer un sort focalisé d'un autre type ne recharge pas votre Frappe de sort.</p>",
+          "gm": ""
+        },
+        "publication": {
+          "license": "OGL",
+          "remaster": false,
+          "title": "Pathfinder Secrets of Magic",
+          "authors": ""
+        },
+        "rules": [
+          {
+            "itemType": "spell",
+            "key": "ItemAlteration",
+            "mode": "add",
+            "predicate": [
+              {
+                "gte": [
+                  "item:cast:actions",
+                  1
+                ]
+              },
+              "item:trait:focus",
+              "item:trait:magus"
+            ],
+            "property": "description",
+            "value": [
+              {
+                "text": "PF2E.SpecificRule.Magus.Spellstrike.RechargeNote"
+              }
+            ]
+          }
+        ],
+        "traits": {
+          "value": [],
+          "otherTags": []
+        },
+        "slug": "spellstrike",
+        "_migration": {
+          "version": 0.941,
+          "previous": null
+        }
+      },
+      "type": "action",
+      "_stats": {
+        "coreVersion": "13.347",
+        "systemId": "pf2e",
+        "systemVersion": "7.3.1",
+        "lastModifiedBy": null
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "flags": {
+        "babele": {
+          "translated": true,
+          "hasTranslation": true,
+          "originalName": "Spellstrike"
+        },
+        "pf2e": {
+          "grantedBy": {
+            "id": "ut0W2ukdQkKgWGok",
+            "onDelete": "cascade"
+          }
+        }
+      },
+      "_id": "vu4adg2ygE339nLK"
+    },
+    {
+      "img": "icons/skills/ranged/arrows-flying-salvo-blue-light.webp",
+      "name": "Portée des étoiles (Starlit Span)",
+      "system": {
+        "actionType": {
+          "value": "passive"
+        },
+        "actions": {
+          "value": null
+        },
+        "category": "classfeature",
+        "description": {
+          "value": "<p>Avec la magie, le ciel est la limite et vous ne pouvez être lié aux contingences de la proximité physique. Votre puissance se déploie aussi loin que vos sens peuvent percevoir, transcendant l'espace entre vous et votre cible, même avec les sorts qui nécessiteraient normalement un contact physique direct.</p>\n<p>Lorsque vous utilisez Frappe de sort, vous pouvez faire une Frappe avec une arme à distance ou une Frappe à main nue à distance, tant que la cible est dans le premier facteur de portée de votre arme à distance ou de votre attaque à mains nues à distance. Vous pouvez délivrer le sort même si sa portée est plus courte que le facteur de portée de votre attaque à distance.</p>\n<p><strong>Sort de confluence</strong> @UUID[Compendium.pf2e.spells-srd.Item.nVfP43Xbs6I1PO8v]{Étoile tirée}</p>",
+          "gm": ""
+        },
+        "level": {
+          "value": 1
+        },
+        "prerequisites": {
+          "value": []
+        },
+        "publication": {
+          "license": "OGL",
+          "remaster": false,
+          "title": "Pathfinder Secrets of Magic",
+          "authors": ""
+        },
+        "rules": [],
+        "traits": {
+          "otherTags": [
+            "magus-hybrid-study"
+          ],
+          "rarity": "common",
+          "value": [
+            "magus"
+          ]
+        },
+        "slug": "starlit-span",
+        "_migration": {
+          "version": 0.941,
+          "previous": null
+        },
+        "onlyLevel1": false,
+        "maxTakable": 1,
+        "subfeatures": {
+          "proficiencies": {},
+          "senses": {},
+          "suppressedFeatures": []
+        },
+        "location": null
+      },
+      "type": "feat",
+      "_stats": {
+        "coreVersion": "13.347",
+        "systemId": "pf2e",
+        "systemVersion": "7.3.1",
+        "lastModifiedBy": null
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "flags": {
+        "babele": {
+          "translated": true,
+          "hasTranslation": true,
+          "originalName": "Starlit Span"
+        },
+        "pf2e": {
+          "grantedBy": {
+            "id": "T1W2otNjrabWWozG",
+            "onDelete": "cascade"
+          }
+        }
+      },
+      "_id": "CNh7ReIZCTiAKL44"
+    },
+    {
+      "img": "icons/sundries/books/book-eye-purple.webp",
+      "name": "Incantation arcanique (Magus) (Arcane Spellcasting (Magus))",
+      "system": {
+        "actionType": {
+          "value": "passive"
+        },
+        "actions": {
+          "value": null
+        },
+        "category": "classfeature",
+        "description": {
+          "value": "<p>Vous étudiez les sorts de sorte à pouvoir les combiner avec vos attaques ou à résoudre les problèmes que la seule force des bras ne peut surmonter. Vous pouvez lancer des sorts arcaniques en utilisant l'activité Lancer un sort et vous pouvez fournir les composantes matérielles, somatiques et verbales lorsque vous incantez les sorts.</p>\n<p>Comme vous êtes un magus, vous pouvez dessiner des symboles de remplacement avec la pointe de votre arme ou avec une main libre pour les sorts qui nécessitent des composantes matérielles, en remplaçant avec des composantes somatiques au lieu de devoir disposer d'une bourse à composantes.</p>\n<p>Au niveau 1, vous pouvez préparer un sort de rang 1 et cinq tours de magie tirés des sorts de votre grimoire. Les sorts préparés vous sont disponibles jusqu'à ce que vous les ayez lancés ou jusqu'à ce que vous fassiez de nouveau vos préparatifs quotidiens. Le nombre de sorts que vous pouvez préparer est représenté par vos emplacements de sort.</p>\n<p>Quand vous gagnez des niveaux en tant que magus, votre nombre d'emplacements de sort et le rang maximal des sorts à lancer depuis ces emplacements augmentent. Comme votre concentration se divise entre l'entraînement physique et les études magiques, vous n'avez pas plus de deux emplacements de sorts de votre plus haut rang et si vous pouvez lancer des sorts de rang supérieur ou égal à 2, deux sorts d'un rang inférieur à votre plus haut rang de sort. Pour tout ce qui requiert la capacité de lancer des sorts d'un certain rang qui est inférieur aux emplacements du rang le plus élevé que vous possédez, vous vous qualifiez toujours même si vous ne disposez plus des emplacements de sorts de ces rangs.</p>\n<p>Certains sorts exigent un jet d'attaque de sort pour déterminer leur efficacité ou obligent vos ennemis à faire un jet contre leur DD (en général un jet de sauvegarde). Votre jet d'attaque de sort et votre DD de sort utilisent votre modificateur d'Intelligence.</p>\n<h3>L'intensification de sorts</h3>\n<p>Lorsque vous obtenez des emplacements de sorts de rang 2 et supérieur, vous pouvez remplir ces emplacements avec des versions plus puissantes de sorts de rang inférieur. Ceci augmente le rang du sort, l'intensifiant pour correspondre à l'emplacement du sort. Nombre de sorts possèdent des améliorations spécifiques lorsqu'ils sont intensifiés à certains rangs.</p>\n<h3>Les tours de magie</h3>\n<p>Un tour de magie est un type spécifique de sort qui n'utilise pas d'emplacement de sort. Vous pouvez lancer un tour de magie à volonté, n'importe quel nombre de fois par jour. Un tour de magie est toujours intensifié automatiquement à la moitié de votre niveau arrondi au supérieur — c'est habituellement égal au plus haut rang de vos emplacements de sorts de magus que vous possédez. Par exemple, en tant que magus de niveau 1, vos tours de magie sont de rang 1 et en tant que magus de niveau 5, vos tours de magie sont des sorts de rang 3.</p>\n<h3>Le grimoire</h3>\n<p>Chaque sort arcanique possède une version écrite, que vous pouvez enregistrer dans votre grimoire. Vous débutez avec un grimoire d'une valeur inférieure ou égale à 10 pa, que vous recevez gratuitement et devez étudier chaque jour pour préparer vos sorts. Le grimoire contient 8 tours de magie et 4 sorts arcaniques de rang 1 de votre choix. Vous les choisissez parmi les sorts courants de la liste de sorts arcaniques ou parmi les sorts arcaniques auxquels vous avez accès. La forme et le nom de votre grimoire sont à votre seule appréciation. Il peut s'agir d'un livre solide à la fermeture sécurisé intitulé \"Thèses sur les stratagèmes de la guerre surnaturelle\" ou d'une collection de fascicules d'entraînement en lambeaux avec votre nom griffonné sur la couverture.</p>\n<p>Chaque fois que vous obtenez un niveau, vous ajoutez deux sorts arcaniques à votre grimoire, de n'importe quel rang de sort que vous pouvez lancer. Vous pouvez également utiliser la compétence Arcanes pour ajouter d'autres sorts que vous trouvez durant vos aventures. Bien que vous perdiez quelques emplacements de sorts inférieurs à mesure que vous gagnez en niveau, vous conservez les sorts dans votre grimoire et pouvez les préparer dans vos emplacements de rang supérieur comme à l'ordinaire.</p>\n<p>Si vous possédez un grimoire par de multiples sources (comme en étant un magus avec le don Dévouement : Magicien), vous pouvez utiliser le même grimoire pour tous vos sorts.</p>",
+          "gm": ""
+        },
+        "level": {
+          "value": 1
+        },
+        "prerequisites": {
+          "value": []
+        },
+        "publication": {
+          "license": "OGL",
+          "remaster": false,
+          "title": "Pathfinder Secrets of Magic",
+          "authors": ""
+        },
+        "rules": [],
+        "traits": {
+          "rarity": "common",
+          "value": [
+            "magus"
+          ],
+          "otherTags": []
+        },
+        "slug": "arcane-spellcasting-magus",
+        "_migration": {
+          "version": 0.941,
+          "previous": null
+        },
+        "onlyLevel1": false,
+        "maxTakable": 1,
+        "subfeatures": {
+          "proficiencies": {},
+          "senses": {},
+          "suppressedFeatures": []
+        },
+        "location": "FNgpPhHxErZIShOI"
+      },
+      "type": "feat",
+      "_stats": {
+        "coreVersion": "13.347",
+        "systemId": "pf2e",
+        "systemVersion": "7.3.1",
+        "lastModifiedBy": null
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "flags": {
+        "babele": {
+          "translated": true,
+          "hasTranslation": true,
+          "originalName": "Arcane Spellcasting (Magus)"
+        }
+      },
+      "_id": "NzZD2nySjpbn7shy"
+    },
+    {
+      "img": "systems/pf2e/icons/features/classes/conflux-spells.webp",
+      "name": "Sorts de confluence (Conflux Spells)",
+      "system": {
+        "actionType": {
+          "value": "passive"
+        },
+        "actions": {
+          "value": null
+        },
+        "category": "classfeature",
+        "description": {
+          "value": "<p>Vous apprenez un sort de confluence avec vos études hybridées et vous pouvez lancer des sorts de confluence supplémentaires en choisissant certains dons. Les sorts de confluence sont des sorts spécifiques aux magus créés pour le combat et sont un type de sorts focalisés. Il faut dépenser 1 Point de Focalisation pour lancer un sort focalisé et vous débutez avec une réserve de focalisation de 1 Point de Focalisation. Vous remplissez votre réserve de focalisation au cours de vos préparatifs quotidiens et vous pouvez regagner 1 Point de Focalisation en dépensant 10 minutes en utilisant l'activité Refocaliser en étudiant votre grimoire et en accomplissant une activité physique.</p>\n<p>Les sorts focalisés sont automatiquement intensifiés à la moitié de votre niveau arrondi au supérieur. Les sorts focalisés ne nécessitent pas d'emplacement de sort et vous ne pouvez pas les lancer en utilisant des emplacements de sort. Prendre des dons peut vous donner plus de points de focalisation et augmenter la taille de votre réserve de focalisation, bien que cette dernière ne puisse jamais contenir plus de 3 points.</p>",
+          "gm": ""
+        },
+        "level": {
+          "value": 1
+        },
+        "prerequisites": {
+          "value": []
+        },
+        "publication": {
+          "license": "OGL",
+          "remaster": false,
+          "title": "Pathfinder Secrets of Magic",
+          "authors": ""
+        },
+        "rules": [],
+        "traits": {
+          "rarity": "common",
+          "value": [
+            "magus"
+          ],
+          "otherTags": []
+        },
+        "slug": "conflux-spells",
+        "_migration": {
+          "version": 0.941,
+          "previous": null
+        },
+        "onlyLevel1": false,
+        "maxTakable": 1,
+        "subfeatures": {
+          "proficiencies": {},
+          "senses": {},
+          "suppressedFeatures": []
+        },
+        "location": "FNgpPhHxErZIShOI"
+      },
+      "type": "feat",
+      "_stats": {
+        "coreVersion": "13.347",
+        "systemId": "pf2e",
+        "systemVersion": "7.3.1",
+        "lastModifiedBy": null
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 400,
+      "flags": {
+        "babele": {
+          "translated": true,
+          "hasTranslation": true,
+          "originalName": "Conflux Spells"
+        }
+      },
+      "_id": "8QyWa1ArIX6Ho8P3"
+    },
+    {
+      "_id": "v5brSw02cC1X6Tcu",
+      "img": "systems/pf2e/icons/default-icons/background.svg",
+      "name": "Chasseur de tresors",
+      "system": {
+        "description": {
+          "gm": "",
+          "value": "<p>Parce que le loot </p><p>Choisissez deux primes d'attributs. Une de ces primes doit être de <strong>Dex </strong>ou de <strong>Int</strong> et l'autre est une prime d'attribut libre.</p><p>Vous êtes qualifié en Artisanat et en Connaissance des trésors. Vous obtenez le don de compétence @UUID[Compendium.pf2e.feats-srd.Item.voYr7ygVcWmlg1f4]{Évaluation de l'artisan (Crafter's Appraisal)}</p>"
+        },
+        "rules": [],
+        "slug": "hunter",
+        "_migration": {
+          "version": 0.941,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [],
+          "rarity": "common"
+        },
+        "publication": {
+          "title": "Pathfinder Player Core",
+          "authors": "",
+          "license": "ORC",
+          "remaster": true
+        },
+        "boosts": {
+          "0": {
+            "value": [
+              "dex",
+              "int"
+            ],
+            "selected": "int"
+          },
+          "1": {
+            "value": [
+              "cha",
+              "con",
+              "dex",
+              "int",
+              "str",
+              "wis"
+            ],
+            "selected": "dex"
+          }
+        },
+        "items": {
+          "WGkDs": {
+            "uuid": "Compendium.pf2e.feats-srd.Item.voYr7ygVcWmlg1f4",
+            "img": "icons/sundries/books/book-red-exclamation.webp",
+            "name": "Évaluation de l'artisan (Crafter's Appraisal)",
+            "level": 1
+          }
+        },
+        "trainedSkills": {
+          "value": [
+            "crafting"
+          ],
+          "lore": [
+            "Connaissance des trésors"
+          ]
+        }
+      },
+      "type": "background",
+      "_stats": {
+        "coreVersion": "13.347",
+        "systemId": "pf2e",
+        "systemVersion": "7.3.1",
+        "lastModifiedBy": null
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "flags": {
+        "babele": {
+          "translated": true,
+          "hasTranslation": true,
+          "originalName": "Hunter"
+        }
+      }
+    },
+    {
+      "_id": "BPf6raoNMUOFdf5G",
+      "folder": "A1FTK66O47zvWear",
+      "img": "icons/sundries/books/book-red-exclamation.webp",
+      "name": "Ailes évanescentes (Evanescent Wings)",
+      "system": {
+        "actionType": {
+          "value": "action"
+        },
+        "actions": {
+          "value": 1
+        },
+        "category": "ancestry",
+        "description": {
+          "value": "<p>Vous avez fait apparaître des ailes qui peuvent battre pendant un bref instant. Vous Volez. Si vous ne possédez pas normalement une vitesse de vol, vous obtenez une vitesse de vol de 4,50 mètres pour ce déplacement. Si vous n'êtes par sur un sol solide à la fin de ce déplacement, vous chutez.</p>",
+          "gm": ""
+        },
+        "frequency": {
+          "max": 1,
+          "per": "round"
+        },
+        "level": {
+          "value": 1,
+          "taken": 1
+        },
+        "prerequisites": {
+          "value": []
+        },
+        "publication": {
+          "license": "OGL",
+          "remaster": false,
+          "title": "Pathfinder Lost Omens Ancestry Guide",
+          "authors": ""
+        },
+        "rules": [
+          {
+            "key": "RollOption",
+            "option": "evanescent-wings",
+            "predicate": [
+              {
+                "not": "feat:heros-wings"
+              }
+            ],
+            "toggleable": true,
+            "value": false
+          },
+          {
+            "key": "BaseSpeed",
+            "predicate": [
+              "evanescent-wings"
+            ],
+            "selector": "fly",
+            "value": 15
+          }
+        ],
+        "traits": {
+          "rarity": "common",
+          "value": [
+            "sprite"
+          ],
+          "otherTags": []
+        },
+        "slug": "evanescent-wings",
+        "_migration": {
+          "version": 0.941,
+          "previous": null
+        },
+        "onlyLevel1": false,
+        "maxTakable": 1,
+        "subfeatures": {
+          "proficiencies": {},
+          "senses": {},
+          "suppressedFeatures": []
+        },
+        "location": "ancestry-1"
+      },
+      "type": "feat",
+      "_stats": {
+        "coreVersion": "13.347",
+        "systemId": "pf2e",
+        "systemVersion": "7.3.1",
+        "lastModifiedBy": null
+      },
+      "effects": [],
+      "sort": 0,
+      "flags": {
+        "babele": {
+          "translated": true,
+          "hasTranslation": true,
+          "originalName": "Evanescent Wings"
+        }
+      }
+    },
+    {
+      "_id": "xyvVXt7MV10zQTcO",
+      "folder": "y1yqadf5jPHJk1jW",
+      "img": "icons/sundries/books/book-red-exclamation.webp",
+      "name": "Évaluation de l'artisan (Crafter's Appraisal)",
+      "system": {
+        "actionType": {
+          "value": "passive"
+        },
+        "actions": {
+          "value": null
+        },
+        "category": "skill",
+        "description": {
+          "value": "<p>Votre connaissance de la conception des objets vous permet de discerner également leurs effets magiques. Vous pouvez utiliser Artisanat au lieu d'une compétence associée à une tradition magique pour @UUID[Compendium.pf2e.actionspf2e.Item.eReSHVEPCsdkSL4G]{Identifier la magie} sur les objets magiques, mais pas l'utiliser sur toute autre sorte de magie.</p>",
+          "gm": ""
+        },
+        "level": {
+          "value": 1,
+          "taken": 1
+        },
+        "prerequisites": {
+          "value": [
+            {
+              "value": "qualifié en Artisanat"
+            }
+          ]
+        },
+        "publication": {
+          "license": "ORC",
+          "remaster": true,
+          "title": "Pathfinder Player Core 2",
+          "authors": ""
+        },
+        "rules": [],
+        "traits": {
+          "rarity": "common",
+          "value": [
+            "general",
+            "skill"
+          ],
+          "otherTags": []
+        },
+        "slug": "crafters-appraisal",
+        "_migration": {
+          "version": 0.941,
+          "previous": null
+        },
+        "onlyLevel1": false,
+        "maxTakable": 1,
+        "subfeatures": {
+          "proficiencies": {},
+          "senses": {},
+          "suppressedFeatures": []
+        },
+        "location": "v5brSw02cC1X6Tcu"
+      },
+      "type": "feat",
+      "_stats": {
+        "coreVersion": "13.347",
+        "systemId": "pf2e",
+        "systemVersion": "7.3.1",
+        "lastModifiedBy": null
+      },
+      "effects": [],
+      "sort": 0,
+      "flags": {
+        "babele": {
+          "translated": true,
+          "hasTranslation": true,
+          "originalName": "Crafter's Appraisal"
+        }
+      }
+    },
+    {
+      "img": "systems/pf2e/icons/equipment/weapons/dueling-pistol.webp",
+      "name": "Pistolet de duel (Dueling Pistol)",
+      "system": {
+        "description": {
+          "gm": "",
+          "value": "<p>Conçues pour régler les disputes lorsque la diplomatie échoue, les pistolets de duel sont finement fabriqués et conçus pour se glisser facilement dans un étui ou une poche. Les marchands nobles et riches d'Alkenastre et de Fort Dongun possèdent souvent des paires de pistolets de duel assortis au cas où ils seraient appelés à relever un défi - bien que cette pratique soit devenue de plus en plus rare à l'époque moderne.</p>\n<hr />\n<p>Cette arme utilise des @UUID[Compendium.pf2e.equipment-srd.Item.FKPuzveKRNJhA1mi]{Munitions (Pistolet de duel)}</p>"
+        },
+        "rules": [],
+        "slug": "dueling-pistol",
+        "_migration": {
+          "version": 0.941,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "concealable",
+            "concussive",
+            "fatal-d10"
+          ],
+          "rarity": "uncommon"
+        },
+        "publication": {
+          "title": "Pathfinder Guns & Gears",
+          "authors": "",
+          "license": "ORC",
+          "remaster": true
+        },
+        "level": {
+          "value": 1
+        },
+        "quantity": 2,
+        "baseItem": "dueling-pistol",
+        "bulk": {
+          "value": 0.1
+        },
+        "hp": {
+          "value": 0,
+          "max": 0
+        },
+        "hardness": 0,
+        "price": {
+          "value": {
+            "gp": 12
+          }
+        },
+        "equipped": {
+          "carryType": "held",
+          "invested": null,
+          "handsHeld": 1
+        },
+        "containerId": null,
+        "size": "tiny",
+        "material": {
+          "type": null,
+          "grade": null
+        },
+        "identification": {
+          "status": "identified",
+          "unidentified": {
+            "name": "",
+            "img": "",
+            "data": {
+              "description": {
+                "value": ""
+              }
+            }
+          },
+          "misidentified": {}
+        },
+        "usage": {
+          "value": "held-in-one-hand"
+        },
+        "category": "martial",
+        "group": "firearm",
+        "bonus": {
+          "value": 0
+        },
+        "damage": {
+          "dice": 1,
+          "die": "d6",
+          "damageType": "piercing",
+          "persistent": null
+        },
+        "splashDamage": {
+          "value": 0
+        },
+        "range": 60,
+        "expend": 1,
+        "reload": {
+          "value": "1"
+        },
+        "runes": {
+          "potency": 0,
+          "striking": 0,
+          "property": []
+        },
+        "specific": null,
+        "subitems": [],
+        "bonusDamage": {
+          "value": 0
+        }
+      },
+      "type": "weapon",
+      "_stats": {
+        "coreVersion": "13.347",
+        "systemId": "pf2e",
+        "systemVersion": "7.3.1",
+        "lastModifiedBy": null
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "flags": {
+        "babele": {
+          "translated": true,
+          "hasTranslation": true,
+          "originalName": "Dueling Pistol"
+        }
+      },
+      "_id": "0UaHdcfAJr8pl6Sg"
+    },
+    {
+      "_id": "r6jdxUeU3tBBTXVG",
+      "folder": "mxeDA21feNRRstOp",
+      "img": "systems/pf2e/icons/deities/torag.webp",
+      "name": "Torag",
+      "system": {
+        "description": {
+          "gm": "",
+          "value": "<p>\"Subtil comme un marteau\" est une phrase couramment prononcée à propos des adorateurs de Torag et du dieu lui-même. Torag, bien qu'il ne soit pas la seule divinité naine, est sans doute la plus connue parmi les autres peuples de Golarion. Son culte est le plus général au sein du Sang de la pierre, moins centré sur des aspects spécifiques du culte et plus sur le socle sur lequel les autres dépendent. Il est souvent représenté comme un nain plus âgé, visiblement robuste et puissant dans son armure runique et balafrée. Son marteau, Kaglemros, est gravé de son visage imposant, les yeux brillant d'un feu intérieur plus chaud que n'importe quelle forge. Il compte parmi ses plus fervents adeptes les artisans, qu'ils travaillent le métal, la pierre ou le tissu. Ne voulant pas être éclipsés, les soldats et les mercenaires prient souvent Torag dans son aspect de protecteur, priant pour que nul mal ne leur arrive, à eux ou à leurs compagnons, alors qu'ils affrontent ceux qui souhaitent du mal à ce qu'ils défendent. Dans son aspect secondaire de stratège défensif, il accorde la sagesse du combat à ses adeptes, leur permettant de voir les stratégies et d'exploiter les vulnérabilités de leurs adversaires sur le champ de bataille.</p>\n<p><strong>Titre</strong> Père de la Création</p>\n<p><strong>Préoccupations</strong> forge, protection, stratégie</p>\n<p><strong>Édits</strong> Être honorable et direct, tenir sa parole, respecter la forge, servir son peuple</p>\n<p><strong>Anathèmes</strong> Proférer des mensonges ou tromper quelqu'un, créer intentionnellement des œuvres inférieures, montrer une miséricorde continue envers les ennemis de son peuple lorsque ces ennemis prouvent qu'ils en sont indignes</p>\n<p><strong>Symbole Religieux</strong> marteau de fer</p>\n<p><strong>Animal sacré</strong> blaireau</p>\n<p><strong>Couleurs sacrées</strong> or, gris</p>"
+        },
+        "rules": [],
+        "slug": "torag",
+        "_migration": {
+          "version": 0.941,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": []
+        },
+        "publication": {
+          "title": "Pathfinder Lost Omens Divine Mysteries",
+          "authors": "",
+          "license": "ORC",
+          "remaster": true
+        },
+        "category": "deity",
+        "sanctification": {
+          "modal": "can",
+          "what": [
+            "holy"
+          ]
+        },
+        "domains": {
+          "primary": [
+            "creation",
+            "earth",
+            "family",
+            "protection"
+          ],
+          "alternate": [
+            "duty",
+            "metal"
+          ]
+        },
+        "font": [
+          "heal"
+        ],
+        "attribute": [
+          "con",
+          "wis"
+        ],
+        "skill": [
+          "crafting"
+        ],
+        "weapons": [
+          "warhammer"
+        ],
+        "spells": {
+          "1": "Compendium.pf2e.spells-srd.Item.D442XMADp01qJ7Cs",
+          "3": "Compendium.pf2e.spells-srd.Item.gPvtmKMRpg9I9D7H",
+          "4": "Compendium.pf2e.spells-srd.Item.TUj8eugNqAvB1vVR"
+        }
+      },
+      "type": "deity",
+      "_stats": {
+        "coreVersion": "13.347",
+        "systemId": "pf2e",
+        "systemVersion": "7.3.1",
+        "lastModifiedBy": null
+      },
+      "effects": [],
+      "sort": 0,
+      "flags": {
+        "babele": {
+          "translated": true,
+          "hasTranslation": true,
+          "originalName": "Torag"
+        }
+      }
+    },
+    {
+      "type": "lore",
+      "name": "Connaissance des trésors",
+      "effects": [],
+      "system": {
+        "description": {
+          "gm": "",
+          "value": ""
+        },
+        "rules": [],
+        "slug": null,
+        "_migration": {
+          "version": 0.941,
+          "lastMigration": null
+        },
+        "traits": {
+          "otherTags": []
+        },
+        "publication": {
+          "title": "",
+          "authors": "",
+          "license": "OGL",
+          "remaster": false
+        },
+        "mod": {
+          "value": 0
+        },
+        "proficient": {
+          "value": 1
+        }
+      },
+      "_id": "qog5hvuUWZwRYMSF",
+      "img": "systems/pf2e/icons/default-icons/lore.svg",
+      "folder": null,
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "13.347",
+        "systemId": "pf2e",
+        "systemVersion": "7.3.1",
+        "lastModifiedBy": null
+      }
+    },
+    {
+      "_id": "uApydRQHZf69d56w",
+      "folder": "cbsBMDCgI7cZ31xm",
+      "img": "icons/sundries/books/book-red-exclamation.webp",
+      "name": "Dévouement : Franc-tireur (Gunslinger Dedication)",
+      "system": {
+        "actionType": {
+          "value": "passive"
+        },
+        "actions": {
+          "value": null
+        },
+        "category": "class",
+        "description": {
+          "value": "<p>Vous excellez dans l'utilisation de certains types d'armes à distance. Vous avez une familiarité avec les arbalètes de guerre et les armes à feu, les considérant comme des armes simples en ce qui concerne la maîtrise.</p>\n<p>Vous obtenez l'accès aux arbalètes peu courantes simples et de guerre et aux armes à feu qui ne possèdent pas un trait ancestral. Vous êtes qualifié dans le DD de classe de Franc-tireur.</p> \n<p>Choisissez une Voie de Franc-tireur. Vous devenez qualifié dans la compétence associée. Si vous l'étiez déjà, vous êtes qualifié dans une compétence de votre choix. Vous n'obtenez aucune autre capacité provenant de votre choix de voie.</p>\n<p>@UUID[Compendium.pf2e.journals.JournalEntry.vx5FGEG34AxI2dow.JournalEntryPage.CSVoyUvynmM5LzPW]{Franc-tireur}.</p>",
+          "gm": ""
+        },
+        "level": {
+          "value": 2,
+          "taken": 2
+        },
+        "prerequisites": {
+          "value": [
+            {
+              "value": "Dextérité +2"
+            }
+          ]
+        },
+        "publication": {
+          "license": "ORC",
+          "remaster": true,
+          "title": "Pathfinder Guns & Gears",
+          "authors": ""
+        },
+        "rules": [
+          {
+            "key": "GrantItem",
+            "uuid": "Compendium.pf2e.classfeatures.Item.LDqVxLKrwEqSegiu",
+            "flag": "gunslingersWay"
+          },
+          {
+            "definition": [
+              "item:category:martial",
+              {
+                "or": [
+                  "item:group:firearm",
+                  "item:group:crossbow"
+                ]
+              }
+            ],
+            "key": "MartialProficiency",
+            "label": "PF2E.SpecificRule.MartialProficiency.MartialFirearmsCrossbows",
+            "sameAs": "simple",
+            "slug": "martial-firearms-crossbows"
+          }
+        ],
+        "subfeatures": {
+          "proficiencies": {
+            "gunslinger": {
+              "attribute": "dex",
+              "rank": 1
+            }
+          },
+          "senses": {},
+          "suppressedFeatures": []
+        },
+        "traits": {
+          "rarity": "uncommon",
+          "value": [
+            "archetype",
+            "dedication",
+            "multiclass"
+          ],
+          "otherTags": []
+        },
+        "slug": "gunslinger-dedication",
+        "_migration": {
+          "version": 0.941,
+          "previous": null
+        },
+        "onlyLevel1": false,
+        "maxTakable": 1,
+        "location": "archetype-2"
+      },
+      "type": "feat",
+      "_stats": {
+        "coreVersion": "13.347",
+        "systemId": "pf2e",
+        "systemVersion": "7.3.1",
+        "lastModifiedBy": null
+      },
+      "effects": [],
+      "sort": 0,
+      "flags": {
+        "babele": {
+          "translated": true,
+          "hasTranslation": true,
+          "originalName": "Gunslinger Dedication"
+        },
+        "pf2e": {
+          "itemGrants": {
+            "gunslingersWay": {
+              "id": "wzMHSd1U9pbAeNUH",
+              "onDelete": "detach"
+            }
+          }
+        }
+      }
+    },
+    {
+      "img": "icons/magic/symbols/question-stone-yellow.webp",
+      "name": "Voies du franc-tireur (Gunslinger's Way)",
+      "system": {
+        "actionType": {
+          "value": "passive"
+        },
+        "actions": {
+          "value": null
+        },
+        "category": "classfeature",
+        "description": {
+          "value": "<p>Tous les francs-tireurs suivent une voie particulière, une combinaison d'une philosophie et d'un style de combat qui définit à la fois la manière dont ils combattent et les armes avec lesquelles ils excellent. Au niveau 1, votre voie vous accorde un exploit initial, une unique action de recharge appelée un <em>rechargement du tireur</em> et une compétence avec une compétence particulière. Vous obtenez aussi des exploits avancés et supérieurs aux niveaux supérieurs, ainsi qu'un accès à des dons propres à chaque voie. Les voies du franc-tireur sont les suivantes.</p>\n<p><strong>@UUID[Compendium.pf2e.classfeatures.Item.vB0yVFxJVZwalt2g]{Voie de l'avant-garde}</strong> Vous comptez sur un style brutal de combat qui utilise des armes lourdes et des attaques explosives.</p>\n<p><strong>@UUID[Compendium.pf2e.classfeatures.Item.YryaWAGcHeaRnXzS]{Voie du pistolame}</strong> Vous préférez les armes à feu qui fonctionnent bien à la fois au corps-à-corps et au combat à distance, particulièrement celles qui vous permettent de faire preuve d'un peu de style et d'élégance.</p>\n<p><strong>@UUID[Compendium.pf2e.classfeatures.Item.qRLRrHf0kzaJ7xt0]{Voie du pistoléro}</strong> Vous gardez soigneusement vos distances - les 10 pas du duelliste - pistolet en main.</p>\n<p><strong>@UUID[Compendium.pf2e.classfeatures.Item.OmgtSDV1FubDUqWR]{Voie du sortiléro}</strong> (archétype de classe) Vous utilisez un petit peu de magie et beaucoup de puissance de feu pour apposer votre marque sur le monde.</p>\n<p><strong>@UUID[Compendium.pf2e.classfeatures.Item.QWXvksGJhOjXbBqi]{Voie du tireur d'élite}</strong> Vous pratiquez un style méthodique de tir, frappant d'un abri lointain.</p>\n<p><strong>@UUID[Compendium.pf2e.classfeatures.Item.a3pSIKkDVTvvNSRO]{Voie du vagabond}</strong> Vous errez sur le champ de bataille, autant à votre aise dans la mêlée et en dehors.</p>",
+          "gm": ""
+        },
+        "level": {
+          "value": 1
+        },
+        "prerequisites": {
+          "value": []
+        },
+        "publication": {
+          "license": "ORC",
+          "remaster": true,
+          "title": "Pathfinder Guns & Gears",
+          "authors": ""
+        },
+        "rules": [
+          {
+            "adjustName": false,
+            "choices": {
+              "filter": [
+                "item:tag:gunslinger-way",
+                {
+                  "or": [
+                    {
+                      "and": [
+                        "class:gunslinger",
+                        "item:tag:gunslinger-way"
+                      ]
+                    },
+                    {
+                      "and": [
+                        "item:tag:gunslinger-way",
+                        {
+                          "not": "item:tag:class-archetype"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "flag": "way",
+            "key": "ChoiceSet",
+            "prompt": "PF2E.SpecificRule.Gunslinger.Way.Prompt",
+            "selection": "Compendium.pf2e.classfeatures.Item.qRLRrHf0kzaJ7xt0"
+          },
+          {
+            "key": "GrantItem",
+            "uuid": "{item|flags.pf2e.rulesSelections.way}",
+            "flag": "wayOfThePistolero"
+          }
+        ],
+        "traits": {
+          "rarity": "common",
+          "value": [
+            "gunslinger"
+          ],
+          "otherTags": []
+        },
+        "slug": "gunslingers-way",
+        "_migration": {
+          "version": 0.941,
+          "previous": null
+        },
+        "onlyLevel1": false,
+        "maxTakable": 1,
+        "subfeatures": {
+          "proficiencies": {},
+          "senses": {},
+          "suppressedFeatures": []
+        },
+        "location": null
+      },
+      "type": "feat",
+      "_stats": {
+        "coreVersion": "13.347",
+        "systemId": "pf2e",
+        "systemVersion": "7.3.1",
+        "lastModifiedBy": null
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "flags": {
+        "babele": {
+          "translated": true,
+          "hasTranslation": true,
+          "originalName": "Gunslinger's Way"
+        },
+        "pf2e": {
+          "grantedBy": {
+            "id": "uApydRQHZf69d56w",
+            "onDelete": "cascade"
+          },
+          "itemGrants": {
+            "wayOfThePistolero": {
+              "id": "st7l3a1cgTQVtUsG",
+              "onDelete": "detach"
+            }
+          }
+        }
+      },
+      "_id": "wzMHSd1U9pbAeNUH"
+    },
+    {
+      "img": "systems/pf2e/icons/features/classes/way-of-the-pistolero.webp",
+      "name": "Voie du pistoléro (Way of the Pistolero)",
+      "system": {
+        "actionType": {
+          "value": "passive"
+        },
+        "actions": {
+          "value": null
+        },
+        "category": "classfeature",
+        "description": {
+          "value": "<p>Que vous soyez un duelliste professionnel ou un amuseur faisant tournoyer votre pistolet, vous avez des pieds et des mains rapides qui ne semblent jamais vous faire défaut ainsi qu'un esprit et une langue tout aussi aiguisés qui déstabilisent vos ennemis. Vous pouvez laisser une main libre ou cultiver l'ambidextrie avec des armes jumelles. Dans tous les cas, vous restez suffisamment proche de vos ennemis pour profiter de vos réflexes supérieurs tout en laissant suffisamment d'espace pour pouvoir tirer en toute sécurité.</p>\n<p><strong>Compétence de voie</strong> choisissez entre Duperie et Intimidation</p>\n<p><strong>Rechargement du tireur</strong> @UUID[Compendium.pf2e.actionspf2e.Item.RADNqsvAt4gP9FOX]{Rechargement du baratineur}</p>\n<p><strong>Exploits</strong> <em>Initial</em> @UUID[Compendium.pf2e.actionspf2e.Item.EeM0Czaep7G5ZSh5]{Dix pas} <em>Avancé</em> @UUID[Compendium.pf2e.actionspf2e.Item.bCDMuu3tE4d6KHrJ]{Réplique du pistoléro} <em>Supérieur</em> @UUID[Compendium.pf2e.actionspf2e.Item.rI2MSXR1MQzgQUO7]{Sinistre assurance}</p>",
+          "gm": ""
+        },
+        "level": {
+          "value": 1
+        },
+        "prerequisites": {
+          "value": []
+        },
+        "publication": {
+          "license": "ORC",
+          "remaster": true,
+          "title": "Pathfinder Guns & Gears",
+          "authors": ""
+        },
+        "rules": [
+          {
+            "key": "GrantItem",
+            "predicate": [
+              "class:gunslinger"
+            ],
+            "uuid": "Compendium.pf2e.actionspf2e.Item.RADNqsvAt4gP9FOX",
+            "flag": "raconteursReload"
+          },
+          {
+            "key": "GrantItem",
+            "predicate": [
+              "class:gunslinger"
+            ],
+            "uuid": "Compendium.pf2e.actionspf2e.Item.EeM0Czaep7G5ZSh5",
+            "flag": "tenPaces"
+          },
+          {
+            "adjustName": false,
+            "choices": [
+              {
+                "label": "PF2E.Skill.Deception",
+                "value": "deception"
+              },
+              {
+                "label": "PF2E.Skill.Intimidation",
+                "value": "intimidation"
+              }
+            ],
+            "flag": "skill",
+            "key": "ChoiceSet",
+            "prompt": "PF2E.SpecificRule.Prompt.Skill",
+            "selection": "intimidation"
+          },
+          {
+            "key": "ActiveEffectLike",
+            "mode": "upgrade",
+            "path": "system.skills.{item|flags.pf2e.rulesSelections.skill}.rank",
+            "value": 1
+          }
+        ],
+        "traits": {
+          "otherTags": [
+            "gunslinger-way"
+          ],
+          "rarity": "common",
+          "value": [
+            "gunslinger"
+          ]
+        },
+        "slug": "way-of-the-pistolero",
+        "_migration": {
+          "version": 0.941,
+          "previous": null
+        },
+        "onlyLevel1": false,
+        "maxTakable": 1,
+        "subfeatures": {
+          "proficiencies": {},
+          "senses": {},
+          "suppressedFeatures": []
+        },
+        "location": null
+      },
+      "type": "feat",
+      "_stats": {
+        "coreVersion": "13.347",
+        "systemId": "pf2e",
+        "systemVersion": "7.3.1",
+        "lastModifiedBy": null
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "flags": {
+        "babele": {
+          "translated": true,
+          "hasTranslation": true,
+          "originalName": "Way of the Pistolero"
+        },
+        "pf2e": {
+          "grantedBy": {
+            "id": "wzMHSd1U9pbAeNUH",
+            "onDelete": "cascade"
+          }
+        }
+      },
+      "_id": "st7l3a1cgTQVtUsG"
+    },
+    {
+      "_id": "eHEXs0N926n669Mc",
+      "folder": "mUrIweFvJcun3xUo",
+      "img": "icons/sundries/books/book-red-exclamation.webp",
+      "name": "Frappe de sort étendue (Expansive Spellstrike)",
+      "system": {
+        "actionType": {
+          "value": "passive"
+        },
+        "actions": {
+          "value": null
+        },
+        "category": "class",
+        "description": {
+          "value": "<p>Vous pouvez projeter l'énergie d'un sort autour de la cible de votre attaque. Lorsque vous faites une Frappe de sort avec un sort qui possède pour zone une explosion, un cône ou une ligne, le sort crée une zone au lieu de n'affecter que la cible. La cible doit être dans la zone. Une explosion est centrée sur un coin de la case de la cible. Si la cible est de taille Grande ou supérieure, l'explosion doit utiliser le coin de la case la plus proche du centre de kla cible est choisir si plus plus d'un est éligible. Un cône ou une ligne émane de vous et doit inclure la cible. Si vous n'êtes pas adjacent à la cible (en utilisant une arme à allonge ou Portée des étoiles, par exemple), choisissez toute case adjacente à la cible en tant que source. Le sort affecte toutes les créatures dans la zone comme à l'ordinaire mais la Frappe ne cible toujours qu'une seule créature.</p>",
+          "gm": ""
+        },
+        "level": {
+          "value": 2,
+          "taken": 2
+        },
+        "prerequisites": {
+          "value": [
+            {
+              "value": "Frappe de sort"
+            }
+          ]
+        },
+        "publication": {
+          "license": "OGL",
+          "remaster": false,
+          "title": "Pathfinder Secrets of Magic",
+          "authors": ""
+        },
+        "rules": [],
+        "traits": {
+          "rarity": "common",
+          "value": [
+            "magus"
+          ],
+          "otherTags": []
+        },
+        "slug": "expansive-spellstrike",
+        "_migration": {
+          "version": 0.941,
+          "previous": null
+        },
+        "onlyLevel1": false,
+        "maxTakable": 1,
+        "subfeatures": {
+          "proficiencies": {},
+          "senses": {},
+          "suppressedFeatures": []
+        },
+        "location": "class-2"
+      },
+      "type": "feat",
+      "_stats": {
+        "coreVersion": "13.347",
+        "systemId": "pf2e",
+        "systemVersion": "7.3.1",
+        "lastModifiedBy": null
+      },
+      "effects": [],
+      "sort": 0,
+      "flags": {
+        "babele": {
+          "translated": true,
+          "hasTranslation": true,
+          "originalName": "Expansive Spellstrike"
+        }
+      }
+    },
+    {
+      "_id": "KkuPhzoMgDk58SVC",
+      "folder": "y1yqadf5jPHJk1jW",
+      "img": "icons/sundries/books/book-red-exclamation.webp",
+      "name": "Artisanat magique (Magical Crafting)",
+      "system": {
+        "actionType": {
+          "value": "passive"
+        },
+        "actions": {
+          "value": null
+        },
+        "category": "skill",
+        "description": {
+          "value": "<p>Vous pouvez @UUID[Compendium.pf2e.actionspf2e.Item.rmwa3OyhTZ2i2AHl]{Fabriquer} des objets magiques, bien que certains aient d'autres conditions. Quand vous sélectionnez ce don, vous obtenez les formules de quatre objets magiques courants de niveau 2 ou inférieur.</p>",
+          "gm": ""
+        },
+        "level": {
+          "value": 2,
+          "taken": 3
+        },
+        "prerequisites": {
+          "value": [
+            {
+              "value": "expert en Artisanat"
+            }
+          ]
+        },
+        "publication": {
+          "license": "ORC",
+          "remaster": true,
+          "title": "Pathfinder Player Core",
+          "authors": ""
+        },
+        "rules": [],
+        "traits": {
+          "rarity": "common",
+          "value": [
+            "general",
+            "skill"
+          ],
+          "otherTags": []
+        },
+        "slug": "magical-crafting",
+        "_migration": {
+          "version": 0.941,
+          "previous": null
+        },
+        "onlyLevel1": false,
+        "maxTakable": 1,
+        "subfeatures": {
+          "proficiencies": {},
+          "senses": {},
+          "suppressedFeatures": []
+        },
+        "location": "general-3"
+      },
+      "type": "feat",
+      "_stats": {
+        "coreVersion": "13.347",
+        "systemId": "pf2e",
+        "systemVersion": "7.3.1",
+        "lastModifiedBy": null
+      },
+      "effects": [],
+      "sort": 0,
+      "flags": {
+        "babele": {
+          "translated": true,
+          "hasTranslation": true,
+          "originalName": "Magical Crafting"
+        }
+      }
+    },
+    {
+      "_id": "H2bf9nicW2ppPFge",
+      "folder": "y1yqadf5jPHJk1jW",
+      "img": "icons/sundries/books/book-red-exclamation.webp",
+      "name": "Identification rapide (Quick Identification)",
+      "system": {
+        "actionType": {
+          "value": "passive"
+        },
+        "actions": {
+          "value": null
+        },
+        "category": "skill",
+        "description": {
+          "value": "<p>Vous pouvez Identifier la magie rapidement. Quand vous utilisez Identifier la magie, vous ne mettez que 1 minute pour déterminer les propriétés d'un objet, d'un effet en cours ou d'un lieu, au lieu de 10 minutes. Si vous êtes un maître, cela prend une activité de 3 actions, et si vous êtes légendaire, cela prend 1 action.</p>",
+          "gm": ""
+        },
+        "level": {
+          "value": 1,
+          "taken": 2
+        },
+        "prerequisites": {
+          "value": [
+            {
+              "value": "qualifié en Arcanes, Nature, Occultisme ou Religion"
+            }
+          ]
+        },
+        "publication": {
+          "license": "ORC",
+          "remaster": true,
+          "title": "Pathfinder Player Core",
+          "authors": ""
+        },
+        "rules": [],
+        "traits": {
+          "rarity": "common",
+          "value": [
+            "general",
+            "skill"
+          ],
+          "otherTags": []
+        },
+        "slug": "quick-identification",
+        "_migration": {
+          "version": 0.941,
+          "previous": null
+        },
+        "onlyLevel1": false,
+        "maxTakable": 1,
+        "subfeatures": {
+          "proficiencies": {},
+          "senses": {},
+          "suppressedFeatures": []
+        },
+        "location": "skill-2"
+      },
+      "type": "feat",
+      "_stats": {
+        "coreVersion": "13.347",
+        "systemId": "pf2e",
+        "systemVersion": "7.3.1",
+        "lastModifiedBy": null
+      },
+      "effects": [],
+      "sort": 0,
+      "flags": {
+        "babele": {
+          "translated": true,
+          "hasTranslation": true,
+          "originalName": "Quick Identification"
+        }
+      }
+    },
+    {
+      "img": "icons/equipment/chest/shirt-collared-pink.webp",
+      "name": "Vêtements d'explorateur (Explorer's Clothing)",
+      "system": {
+        "description": {
+          "gm": "",
+          "value": "<p>Les aventuriers qui ne portent pas d'armure voyagent dans des tenues durables. Bien qu'ils ne constituent pas une armure et qu'ils utilisent votre degré de maîtrise en défense sans armures, les <em>vêtements d'explorateur</em> ont toujours un bonus de dextérité maximum et ils peuvent accorder un bonus d'objet à la CA s'ils sont gravés avec des runes de puissance.</p>"
+        },
+        "rules": [],
+        "slug": "explorers-clothing",
+        "_migration": {
+          "version": 0.941,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "comfort"
+          ],
+          "rarity": "common"
+        },
+        "publication": {
+          "title": "Pathfinder Player Core",
+          "authors": "",
+          "license": "ORC",
+          "remaster": true
+        },
+        "level": {
+          "value": 0
+        },
+        "quantity": 1,
+        "baseItem": "explorers-clothing",
+        "bulk": {
+          "value": 0.1
+        },
+        "hp": {
+          "value": 0,
+          "max": 0
+        },
+        "hardness": 0,
+        "price": {
+          "value": {
+            "sp": 1
+          }
+        },
+        "equipped": {
+          "carryType": "worn",
+          "invested": null,
+          "handsHeld": 0,
+          "inSlot": true
+        },
+        "containerId": null,
+        "size": "tiny",
+        "material": {
+          "type": null,
+          "grade": null
+        },
+        "identification": {
+          "status": "identified",
+          "unidentified": {
+            "name": "",
+            "img": "",
+            "data": {
+              "description": {
+                "value": ""
+              }
+            }
+          },
+          "misidentified": {}
+        },
+        "category": "unarmored",
+        "group": "cloth",
+        "acBonus": 0,
+        "strength": null,
+        "dexCap": 5,
+        "checkPenalty": 0,
+        "speedPenalty": 0,
+        "runes": {
+          "potency": 0,
+          "resilient": 0,
+          "property": []
+        },
+        "subitems": []
+      },
+      "type": "armor",
+      "_stats": {
+        "coreVersion": "13.347",
+        "systemId": "pf2e",
+        "systemVersion": "7.3.1",
+        "createdTime": 1756219096305,
+        "modifiedTime": 1756219100816,
+        "lastModifiedBy": "87SnZLj4hGkSav9U"
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "flags": {
+        "babele": {
+          "translated": true,
+          "hasTranslation": true,
+          "originalName": "Explorer's Clothing"
+        }
+      },
+      "_id": "Pu6F5waNHdIV8oXZ"
+    },
+    {
+      "name": "Sort Arcanique Préparé",
+      "type": "spellcastingEntry",
+      "system": {
+        "description": {
+          "gm": "",
+          "value": ""
+        },
+        "rules": [],
+        "slug": null,
+        "_migration": {
+          "version": 0.941,
+          "lastMigration": null
+        },
+        "traits": {
+          "otherTags": []
+        },
+        "publication": {
+          "title": "",
+          "authors": "",
+          "license": "OGL",
+          "remaster": false
+        },
+        "ability": {
+          "value": "int"
+        },
+        "spelldc": {
+          "value": 0,
+          "dc": 0
+        },
+        "tradition": {
+          "value": "arcane"
+        },
+        "prepared": {
+          "value": "prepared",
+          "flexible": false
+        },
+        "showSlotlessLevels": {
+          "value": false
+        },
+        "proficiency": {
+          "value": 1,
+          "slug": ""
+        },
+        "slots": {
+          "slot0": {
+            "prepared": [
+              {
+                "id": "B93sXwBUV87gqnpK",
+                "expended": false
+              },
+              {
+                "id": "d9SlRVKWZ6J7ddKP",
+                "expended": false
+              },
+              {
+                "id": "tf5MDxKLfx6xmGPB",
+                "expended": false
+              },
+              {
+                "id": "yM6j0NCiNKire3C9",
+                "expended": false
+              },
+              {
+                "id": "Xr6TTsitiS8xuAKW",
+                "expended": false
+              }
+            ],
+            "value": 0,
+            "max": 5
+          },
+          "slot1": {
+            "prepared": [
+              {
+                "id": "dPkJKgEUvI4E0oaA",
+                "expended": false
+              },
+              {
+                "id": "6JjzNGZRyo7XnsCk",
+                "expended": false
+              }
+            ],
+            "value": 0,
+            "max": 2
+          },
+          "slot2": {
+            "prepared": [
+              {
+                "id": "LPdl3JMIX3vryfw4",
+                "expended": false
+              }
+            ],
+            "value": 0,
+            "max": 1
+          },
+          "slot3": {
+            "prepared": [],
+            "value": 0,
+            "max": 0
+          },
+          "slot4": {
+            "prepared": [],
+            "value": 0,
+            "max": 0
+          },
+          "slot5": {
+            "prepared": [],
+            "value": 0,
+            "max": 0
+          },
+          "slot6": {
+            "prepared": [],
+            "value": 0,
+            "max": 0
+          },
+          "slot7": {
+            "prepared": [],
+            "value": 0,
+            "max": 0
+          },
+          "slot8": {
+            "prepared": [],
+            "value": 0,
+            "max": 0
+          },
+          "slot9": {
+            "prepared": [],
+            "value": 0,
+            "max": 0
+          },
+          "slot10": {
+            "prepared": [],
+            "value": 0,
+            "max": 0
+          },
+          "slot11": {
+            "prepared": [],
+            "value": 0,
+            "max": 0
+          }
+        },
+        "autoHeightenLevel": {
+          "value": null
+        }
+      },
+      "_id": "Eyv8zuG4dRsf1Q1X",
+      "img": "systems/pf2e/icons/default-icons/spellcastingEntry.svg",
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "13.347",
+        "systemId": "pf2e",
+        "systemVersion": "7.3.1",
+        "createdTime": 1756223006367,
+        "modifiedTime": 1756223532266,
+        "lastModifiedBy": "87SnZLj4hGkSav9U"
+      }
+    },
+    {
+      "folder": "D7UVaOiB40wTR6kv",
+      "img": "systems/pf2e/icons/spells/shield.webp",
+      "name": "Bouclier (Shield)",
+      "system": {
+        "description": {
+          "gm": "",
+          "value": "<p>Vous levez un bouclier de force magique. Ceci compte comme si vous utilisiez Lever un bouclier, vous octroyant un bonus de circonstances de +1 à la CA jusqu'au début de votre prochain tour, mais cela ne nécessite aucune main pour l'utiliser.</p>\n<p>Tant que le sort est actif, vous pouvez utiliser la réaction @UUID[Compendium.pf2e.feats-srd.Item.jM72TjJ965jocBV8]{Blocage au bouclier} avec votre bouclier magique. Le bouclier possède une Solidité de 5. Vous pouvez utiliser la réaction du sort pour réduire les dégâts de tout sort ou effet magique, même s'il n'inflige pas des dégâts physiques. Après avoir effectué Blocage au bouclier, le sort se termine et vous ne pouvez plus le lancer de nouveau pendant 10 minutes.</p>\n<hr />\n<p>@UUID[Compendium.pf2e.spell-effects.Item.Jemq5UknGdMO7b73]{Effet : Bouclier}</p>\n<p>@UUID[Compendium.pf2e.spell-effects.Item.QF6RDlCoTvkVHRo4]{Effet : Immunité à bouclier}</p>\n<hr />\n<p><strong>Intensifié (+2)</strong> La Solidité du bouclier augmente de 5.</p>"
+        },
+        "rules": [],
+        "slug": "shield",
+        "_migration": {
+          "version": 0.941,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "cantrip",
+            "concentrate",
+            "force"
+          ],
+          "rarity": "common",
+          "traditions": [
+            "arcane",
+            "divine",
+            "occult"
+          ]
+        },
+        "publication": {
+          "title": "Pathfinder Player Core",
+          "authors": "",
+          "license": "ORC",
+          "remaster": true
+        },
+        "level": {
+          "value": 1
+        },
+        "requirements": "",
+        "target": {
+          "value": ""
+        },
+        "range": {
+          "value": ""
+        },
+        "area": null,
+        "time": {
+          "value": "1"
+        },
+        "duration": {
+          "value": "jusqu'au début de votre prochain tour",
+          "sustained": false
+        },
+        "damage": {},
+        "defense": null,
+        "cost": {
+          "value": ""
+        },
+        "location": {
+          "value": "Eyv8zuG4dRsf1Q1X"
+        },
+        "counteraction": false
+      },
+      "type": "spell",
+      "_stats": {
+        "coreVersion": "13.347",
+        "systemId": "pf2e",
+        "systemVersion": "7.3.1",
+        "createdTime": 1756223229657,
+        "modifiedTime": 1756223229657,
+        "lastModifiedBy": "87SnZLj4hGkSav9U"
+      },
+      "effects": [],
+      "sort": 0,
+      "flags": {
+        "babele": {
+          "translated": true,
+          "hasTranslation": true,
+          "originalName": "Shield"
+        }
+      },
+      "_id": "B93sXwBUV87gqnpK"
+    },
+    {
+      "_id": "yM6j0NCiNKire3C9",
+      "folder": "D7UVaOiB40wTR6kv",
+      "img": "icons/magic/acid/orb-bubble-smoke-drip.webp",
+      "name": "Explosion caustique (Caustic Blast)",
+      "system": {
+        "description": {
+          "gm": "",
+          "value": "<p>Vous projetez une grosse boule d'acide qui explose immédiatement, aspergeant les créatures proches. Les créatures dans la zone subissent 1d8 dégâts d'acide avec un jet de Réflexes basique. Sur un échec critique, la créature subit aussi @Damage[(1+floor((@item.rank -1)/2))[persistent,acid]]{1 dégât d'acide persistant}.</p>\n<hr />\n<p><strong>Intensifié (+2)</strong> Les dégâts initiaux augmentent de 1d8 et les dégâts persistants sur un échec critique augmente de 1.</p>"
+        },
+        "rules": [],
+        "slug": "caustic-blast",
+        "_migration": {
+          "version": 0.941,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "acid",
+            "cantrip",
+            "concentrate",
+            "manipulate"
+          ],
+          "rarity": "common",
+          "traditions": [
+            "arcane",
+            "primal"
+          ]
+        },
+        "publication": {
+          "title": "Pathfinder Player Core",
+          "authors": "",
+          "license": "ORC",
+          "remaster": true
+        },
+        "level": {
+          "value": 1
+        },
+        "requirements": "",
+        "target": {
+          "value": ""
+        },
+        "range": {
+          "value": "9 mètres"
+        },
+        "area": {
+          "type": "burst",
+          "value": 5
+        },
+        "time": {
+          "value": "2"
+        },
+        "duration": {
+          "value": "",
+          "sustained": false
+        },
+        "damage": {
+          "yI4fzrhnbFxup4Ep": {
+            "applyMod": false,
+            "category": null,
+            "formula": "1d8",
+            "kinds": [
+              "damage"
+            ],
+            "materials": [],
+            "type": "acid"
+          }
+        },
+        "defense": {
+          "save": {
+            "basic": true,
+            "statistic": "reflex"
+          }
+        },
+        "cost": {
+          "value": ""
+        },
+        "location": {
+          "value": "Eyv8zuG4dRsf1Q1X"
+        },
+        "counteraction": false,
+        "heightening": {
+          "area": 0,
+          "damage": {
+            "yI4fzrhnbFxup4Ep": "1d8"
+          },
+          "interval": 2,
+          "type": "interval"
+        }
+      },
+      "type": "spell",
+      "_stats": {
+        "coreVersion": "13.347",
+        "systemId": "pf2e",
+        "systemVersion": "7.3.1",
+        "createdTime": 1756223236086,
+        "modifiedTime": 1756223236086,
+        "lastModifiedBy": "87SnZLj4hGkSav9U"
+      },
+      "effects": [],
+      "sort": 200000,
+      "flags": {
+        "babele": {
+          "translated": true,
+          "hasTranslation": true,
+          "originalName": "Caustic Blast"
+        }
+      }
+    },
+    {
+      "_id": "tf5MDxKLfx6xmGPB",
+      "folder": "D7UVaOiB40wTR6kv",
+      "img": "icons/magic/lightning/strike-arrow-spear-red.webp",
+      "name": "Fil électrique vivant (Live Wire)",
+      "system": {
+        "description": {
+          "gm": "",
+          "value": "<p>Vous faites surgir un filament de cuivre effilé, bourdonnant de courant électrique, qui frappe votre ennemi. Le filament inflige 1d4 dégâts tranchants et 1d4 dégâts d'électricité, dépendant de votre résultat d'attaque de sort contre la CA de votre cible.</p>\n<hr />\n<p><strong>Succès critique</strong> La cible subit le double des dégâts et @Damage[(ceil(@item.rank / 2))d4[persistent,electricity]]{1d4 dégâts d'électricité persistants} supplémentaires.</p>\n<p><strong>Succès</strong> La cible subit la totalité des dégâts.</p>\n<p><strong>Échec</strong> La cible subit les dégâts d'électricité, mais pas les dégâts tranchants.</p>\n<p><strong>Échec critique</strong> La cible n'est pas affectée.</p>\n<hr />\n<p><strong>Intensifié (+2)</strong> Les dégâts tranchants, les dégâts initiaux d'électricité et les dégâts persistants d'électricité en cas de coup critique augmentent chacun de 1d4.</p>"
+        },
+        "rules": [],
+        "slug": "live-wire",
+        "_migration": {
+          "version": 0.941,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "attack",
+            "cantrip",
+            "concentrate",
+            "electricity",
+            "manipulate",
+            "metal"
+          ],
+          "rarity": "common",
+          "traditions": [
+            "arcane",
+            "primal"
+          ]
+        },
+        "publication": {
+          "title": "Pathfinder Player Core 2",
+          "authors": "",
+          "license": "ORC",
+          "remaster": true
+        },
+        "level": {
+          "value": 1
+        },
+        "requirements": "",
+        "target": {
+          "value": "1 créature"
+        },
+        "range": {
+          "value": "9 mètres"
+        },
+        "area": null,
+        "time": {
+          "value": "2"
+        },
+        "duration": {
+          "value": "",
+          "sustained": false
+        },
+        "damage": {
+          "6jB29A0HYmZ5Sndk": {
+            "applyMod": false,
+            "category": null,
+            "formula": "1d4",
+            "kinds": [
+              "damage"
+            ],
+            "materials": [],
+            "type": "slashing"
+          },
+          "u8FtIoasOdjfSdy4": {
+            "applyMod": false,
+            "category": null,
+            "formula": "1d4",
+            "kinds": [
+              "damage"
+            ],
+            "materials": [],
+            "type": "electricity"
+          }
+        },
+        "defense": null,
+        "cost": {
+          "value": ""
+        },
+        "location": {
+          "value": "Eyv8zuG4dRsf1Q1X"
+        },
+        "counteraction": false,
+        "heightening": {
+          "damage": {
+            "6jB29A0HYmZ5Sndk": "1d4",
+            "u8FtIoasOdjfSdy4": "1d4"
+          },
+          "interval": 2,
+          "type": "interval"
+        }
+      },
+      "type": "spell",
+      "_stats": {
+        "coreVersion": "13.347",
+        "systemId": "pf2e",
+        "systemVersion": "7.3.1",
+        "createdTime": 1756223237648,
+        "modifiedTime": 1756223237648,
+        "lastModifiedBy": "87SnZLj4hGkSav9U"
+      },
+      "effects": [],
+      "sort": 300000,
+      "flags": {
+        "babele": {
+          "translated": true,
+          "hasTranslation": true,
+          "originalName": "Live Wire"
+        }
+      }
+    },
+    {
+      "_id": "84gvQ5DZpeBkbUKQ",
+      "folder": "D7UVaOiB40wTR6kv",
+      "img": "icons/commodities/metal/ingot-plain-steel.webp",
+      "name": "Détection des métaux (Detect Metal)",
+      "system": {
+        "description": {
+          "gm": "",
+          "value": "<p>Vous vous harmonisez aux champs magnétiques, devenant conscient de la présence ou de l'absence d'objets, de veines et de dépôts métalliques dans la zone. Vous pouvez choisir d'ignorer les métaux dont vous avez conscience, comme l'équipement que vous et vos alliés portez.</p>\n<p>Vous détectez des métaux cachés par des illusions (comme @UUID[Compendium.pf2e.spells-srd.Item.XXqE1eY3w3z6xJCB]{Invisibilité}) uniquement si l'illusion possède un rang inférieur à celui de votre sort <em>Détection des métaux</em>. Contre les illusions trompeuses <em>Détection des métaux</em> remarque toujours une absence de métal lorsqu'un objet métallique est transformé en objet non métallique. Quoi qu'il en soit si la tromperie implique de déguiser une objet métallique pour le transformer en un autre, comme prétendre qu'une pièce de cuivre est composée d'or, <em>Détection des métaux</em> ne retient que la présence de métal et pas son type, même si le rang de votre sort de <em>Détection des métaux</em> est supérieur à celui de l'effet d'illusion.</p>\n<hr />\n<p><strong>Intensifié (3e)</strong> Vous pouvez discerner tous les types de métaux que vous avez détecté. Votre sort peut surmonter les sorts illusoires trompeurs qui cache un métal en un autre si le rang d'effet de la magie est inférieur à celui de votre sort de <em>Détection des métaux</em>.</p>"
+        },
+        "rules": [],
+        "slug": "detect-metal",
+        "_migration": {
+          "version": 0.941,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "cantrip",
+            "concentrate",
+            "detection",
+            "manipulate",
+            "metal"
+          ],
+          "rarity": "common",
+          "traditions": [
+            "arcane",
+            "divine",
+            "occult",
+            "primal"
+          ]
+        },
+        "publication": {
+          "title": "Pathfinder Rage of Elements",
+          "authors": "",
+          "license": "OGL",
+          "remaster": true
+        },
+        "level": {
+          "value": 1
+        },
+        "requirements": "",
+        "target": {
+          "value": ""
+        },
+        "range": {
+          "value": ""
+        },
+        "area": {
+          "type": "emanation",
+          "value": 30
+        },
+        "time": {
+          "value": "2"
+        },
+        "duration": {
+          "value": "",
+          "sustained": false
+        },
+        "damage": {},
+        "defense": null,
+        "cost": {
+          "value": ""
+        },
+        "location": {
+          "value": "Eyv8zuG4dRsf1Q1X"
+        },
+        "counteraction": false
+      },
+      "type": "spell",
+      "_stats": {
+        "coreVersion": "13.347",
+        "systemId": "pf2e",
+        "systemVersion": "7.3.1",
+        "createdTime": 1756223239306,
+        "modifiedTime": 1756223239306,
+        "lastModifiedBy": "87SnZLj4hGkSav9U"
+      },
+      "effects": [],
+      "sort": 400000,
+      "flags": {
+        "babele": {
+          "translated": true,
+          "hasTranslation": true,
+          "originalName": "Detect Metal"
+        }
+      }
+    },
+    {
+      "_id": "d9SlRVKWZ6J7ddKP",
+      "folder": "D7UVaOiB40wTR6kv",
+      "img": "icons/creatures/claws/claw-hooked-curved.webp",
+      "name": "Gouge griffue (Gouging Claw)",
+      "system": {
+        "description": {
+          "gm": "",
+          "value": "<p>Vous transformez temporairement votre membre en un appendice griffu. Faites un jet d'attaque de sort au corps-à-corps contre la CA de votre cible. Si vous touchez, vous infligez à votre choix 2d6 dégâts tranchants ou 2d6 dégâts perforants, plus 2 dégâts de saignement. En cas de succès critique, vous infligez le double des dégâts plus le double des dégâts de saignement.</p>\n<hr />\n<p><strong>Intensifié (+1)</strong> Les dégâts augmentent de 1d6 et les dégâts de saignement augmentent de 1.</p>"
+        },
+        "rules": [],
+        "slug": "gouging-claw",
+        "_migration": {
+          "version": 0.941,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "attack",
+            "cantrip",
+            "concentrate",
+            "manipulate",
+            "morph"
+          ],
+          "rarity": "common",
+          "traditions": [
+            "arcane",
+            "primal"
+          ]
+        },
+        "publication": {
+          "title": "Pathfinder Player Core",
+          "authors": "",
+          "license": "ORC",
+          "remaster": true
+        },
+        "level": {
+          "value": 1
+        },
+        "requirements": "",
+        "target": {
+          "value": "1 créature"
+        },
+        "range": {
+          "value": "contact"
+        },
+        "area": null,
+        "time": {
+          "value": "2"
+        },
+        "duration": {
+          "value": "",
+          "sustained": false
+        },
+        "damage": {
+          "0": {
+            "applyMod": false,
+            "category": null,
+            "formula": "2d6",
+            "kinds": [
+              "damage"
+            ],
+            "materials": [],
+            "type": "untyped"
+          },
+          "3Pz4NTLXD2rzKgf4": {
+            "applyMod": false,
+            "category": "persistent",
+            "formula": "2",
+            "kinds": [
+              "damage"
+            ],
+            "materials": [],
+            "type": "bleed"
+          }
+        },
+        "defense": null,
+        "cost": {
+          "value": ""
+        },
+        "location": {
+          "value": "Eyv8zuG4dRsf1Q1X"
+        },
+        "counteraction": false,
+        "heightening": {
+          "damage": {
+            "0": "1d6",
+            "3Pz4NTLXD2rzKgf4": "1"
+          },
+          "interval": 1,
+          "type": "interval"
+        },
+        "overlays": {
+          "URQWpedXx9fB1fR7": {
+            "name": "Gouge griffue (Perforant)",
+            "overlayType": "override",
+            "sort": 1,
+            "system": {
+              "damage": {
+                "0": {
+                  "category": null,
+                  "type": "piercing"
+                }
+              },
+              "defense": null
+            }
+          },
+          "wQHuRGaDDW2MemlK": {
+            "_id": "wQHuRGaDDW2MemlK",
+            "name": "Gouge griffue (Tranchant)",
+            "overlayType": "override",
+            "sort": 2,
+            "system": {
+              "damage": {
+                "0": {
+                  "category": null,
+                  "type": "slashing"
+                }
+              }
+            }
+          }
+        }
+      },
+      "type": "spell",
+      "_stats": {
+        "coreVersion": "13.347",
+        "systemId": "pf2e",
+        "systemVersion": "7.3.1",
+        "createdTime": 1756223251822,
+        "modifiedTime": 1756223251822,
+        "lastModifiedBy": "87SnZLj4hGkSav9U"
+      },
+      "effects": [],
+      "sort": 500000,
+      "flags": {
+        "babele": {
+          "translated": true,
+          "hasTranslation": true,
+          "originalName": "Gouging Claw"
+        }
+      }
+    },
+    {
+      "_id": "fEhXkuP32LrsD16Z",
+      "folder": "D7UVaOiB40wTR6kv",
+      "img": "systems/pf2e/icons/spells/mage-hand.webp",
+      "name": "Manipulation télékinésique (Telekinetic Hand)",
+      "system": {
+        "description": {
+          "gm": "",
+          "value": "<p>Vous créez une main flottante magique, soit invisible soit fantomatique, qui saisit l'objet ciblé et le déplace lentement jusqu'à 6 mètres dans n'importe quelle direction. Lorsque vous Maintenez le sort, Vous pouvez déplacer l'objet de 6 mètres supplémentaires. Si l'objet est en l'air lorsque le sort se termine, il tombe.</p>\n<hr />\n<p><strong>Intensifié (3e)</strong> Vous pouvez cibler un objet non porté d'Encombrement 1 ou inférieur.</p>\n<p><strong>Intensifié (5e)</strong> La portée passe à 18 m et vous pouvez cibler un objet non porté d'Encombrement 1 ou inférieur.</p>\n<p><strong>Intensifié (7e)</strong> La portée passe à 18 m et vous pouvez cibler un objet non porté d'Encombrement 2 ou inférieur.</p>"
+        },
+        "rules": [],
+        "slug": "telekinetic-hand",
+        "_migration": {
+          "version": 0.941,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "cantrip",
+            "concentrate",
+            "manipulate"
+          ],
+          "rarity": "common",
+          "traditions": [
+            "arcane",
+            "occult"
+          ]
+        },
+        "publication": {
+          "title": "Pathfinder Player Core",
+          "authors": "",
+          "license": "ORC",
+          "remaster": true
+        },
+        "level": {
+          "value": 1
+        },
+        "requirements": "",
+        "target": {
+          "value": "1 objet non tenu d'Encombrement léger ou inférieur"
+        },
+        "range": {
+          "value": "9 mètres"
+        },
+        "area": null,
+        "time": {
+          "value": "2"
+        },
+        "duration": {
+          "value": "",
+          "sustained": true
+        },
+        "damage": {},
+        "defense": null,
+        "cost": {
+          "value": ""
+        },
+        "location": {
+          "value": "Eyv8zuG4dRsf1Q1X"
+        },
+        "counteraction": false,
+        "heightening": {
+          "levels": {
+            "3": {
+              "target": {
+                "value": "1 objet non tenu d'Encombrement 1 ou inférieur"
+              }
+            },
+            "5": {
+              "range": {
+                "value": "18 mètres"
+              }
+            },
+            "7": {
+              "target": {
+                "value": "objet non tenu d'Encombrement 2 ou inférieur"
+              }
+            }
+          },
+          "type": "fixed"
+        }
+      },
+      "type": "spell",
+      "_stats": {
+        "coreVersion": "13.347",
+        "systemId": "pf2e",
+        "systemVersion": "7.3.1",
+        "createdTime": 1756223253332,
+        "modifiedTime": 1756223253332,
+        "lastModifiedBy": "87SnZLj4hGkSav9U"
+      },
+      "effects": [],
+      "sort": 600000,
+      "flags": {
+        "babele": {
+          "translated": true,
+          "hasTranslation": true,
+          "originalName": "Telekinetic Hand"
+        }
+      }
+    },
+    {
+      "_id": "Xr6TTsitiS8xuAKW",
+      "folder": "D7UVaOiB40wTR6kv",
+      "img": "systems/pf2e/icons/spells/message.webp",
+      "name": "Message",
+      "system": {
+        "description": {
+          "gm": "",
+          "value": "<p>Votre bouche prononce des mots à voix basse, mais au lieu de sortir de votre bouche, ils sont transférés directement aux oreilles de la cible. Bien que les autres ne puissent entendre mieux vos paroles que si vous les prononciez normalement, la cible peut entendre vos paroles comme si elle se tenait à côté de vous. La cible peut répondre brièvement par une réaction ou par une action gratuite lors de son prochain tour si elle le souhaite, mais elle doit pouvoir vous voir et se trouver dans la portée de votre sort pour le faire. Si elle répond, sa réponse est transférée directement dans vos oreilles, exactement comme le message initial.</p>\n<hr />\n<p><strong>Intensifié (3e)</strong> La portée du sort passe à 150 mètres.</p>"
+        },
+        "rules": [],
+        "slug": "message",
+        "_migration": {
+          "version": 0.941,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "auditory",
+            "cantrip",
+            "concentrate",
+            "illusion",
+            "linguistic",
+            "mental",
+            "subtle"
+          ],
+          "rarity": "common",
+          "traditions": [
+            "arcane",
+            "divine",
+            "occult"
+          ]
+        },
+        "publication": {
+          "title": "Pathfinder Player Core",
+          "authors": "",
+          "license": "ORC",
+          "remaster": true
+        },
+        "level": {
+          "value": 1
+        },
+        "requirements": "",
+        "target": {
+          "value": "1 créature"
+        },
+        "range": {
+          "value": "36 mètres"
+        },
+        "area": null,
+        "time": {
+          "value": "1"
+        },
+        "duration": {
+          "value": "voir texte",
+          "sustained": false
+        },
+        "damage": {},
+        "defense": null,
+        "cost": {
+          "value": ""
+        },
+        "location": {
+          "value": "Eyv8zuG4dRsf1Q1X"
+        },
+        "counteraction": false,
+        "heightening": {
+          "levels": {
+            "3": {
+              "range": {
+                "value": "150 mètres"
+              }
+            }
+          },
+          "type": "fixed"
+        }
+      },
+      "type": "spell",
+      "_stats": {
+        "coreVersion": "13.347",
+        "systemId": "pf2e",
+        "systemVersion": "7.3.1",
+        "createdTime": 1756223254739,
+        "modifiedTime": 1756223254739,
+        "lastModifiedBy": "87SnZLj4hGkSav9U"
+      },
+      "effects": [],
+      "sort": 700000,
+      "flags": {
+        "babele": {
+          "translated": true,
+          "hasTranslation": true,
+          "originalName": "Message"
+        }
+      }
+    },
+    {
+      "_id": "HPM8bKaExqqXHLsf",
+      "folder": "D7UVaOiB40wTR6kv",
+      "img": "icons/magic/symbols/runes-triangle-blue.webp",
+      "name": "Prestidigitation",
+      "system": {
+        "description": {
+          "gm": "",
+          "value": "<p>Même la plus simple des magies peut vous servir. Vous pouvez accomplir des effets magiques simples tant que vous Maintenez le sort. Chaque fois que vous Maintenez le sort, vous pouvez choisir une parmi quatre options :</p>\n<ul>\n<li><strong>Cuisine</strong> Réchauffe, refroidit ou aromatise 500 g de matériau non vivant.</li>\n<li><strong>Soulève</strong> Soulève lentement à 30 cm au-dessus du sol un objet non porté d'Encombrement léger ou moins.</li>\n<li><strong>Fabrique</strong> Crée un objet temporaire d'Encombrement négligeable, composé de substance magique congelée. L'objet paraît grossier, artificiel et extrêmement fragile — Il ne peut servir d'outil, ni d'arme, ni de locus, ni de coût pour un sort.</li>\n<li><strong>Nettoie</strong> Colorise, nettoie ou salit un objet d'Encombrement léger ou moins. Vous pouvez affecter un objet d'Encombrement 1 après 10 rounds de concentration et un objet encore plus grand avec 1 minute par Encombrement.</li>\n</ul>\n<p><em>Prestidigitation</em> ne peut pas infliger de dégâts ou provoquer des états défavorables. Tout changement réel apporté à un objet (en plus de ceux précisés plus haut) persiste tant que vous Maintenez le sort.</p>"
+        },
+        "rules": [],
+        "slug": "prestidigitation",
+        "_migration": {
+          "version": 0.941,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "cantrip",
+            "concentrate",
+            "manipulate"
+          ],
+          "rarity": "common",
+          "traditions": [
+            "arcane",
+            "divine",
+            "occult",
+            "primal"
+          ]
+        },
+        "publication": {
+          "title": "Pathfinder Player Core",
+          "authors": "",
+          "license": "ORC",
+          "remaster": true
+        },
+        "level": {
+          "value": 1
+        },
+        "requirements": "",
+        "target": {
+          "value": "1 objet (cuisine, soulève ou nettoie uniquement)"
+        },
+        "range": {
+          "value": "3 mètres"
+        },
+        "area": null,
+        "time": {
+          "value": "2"
+        },
+        "duration": {
+          "value": "",
+          "sustained": true
+        },
+        "damage": {},
+        "defense": null,
+        "cost": {
+          "value": ""
+        },
+        "location": {
+          "value": "Eyv8zuG4dRsf1Q1X"
+        },
+        "counteraction": false
+      },
+      "type": "spell",
+      "_stats": {
+        "coreVersion": "13.347",
+        "systemId": "pf2e",
+        "systemVersion": "7.3.1",
+        "createdTime": 1756223256201,
+        "modifiedTime": 1756223256201,
+        "lastModifiedBy": "87SnZLj4hGkSav9U"
+      },
+      "effects": [],
+      "sort": 800000,
+      "flags": {
+        "babele": {
+          "translated": true,
+          "hasTranslation": true,
+          "originalName": "Prestidigitation"
+        }
+      }
+    },
+    {
+      "_id": "dPkJKgEUvI4E0oaA",
+      "folder": "T8AzYUgNIAgTJ9Iz",
+      "img": "icons/weapons/swords/sword-flanged-lightning.webp",
+      "name": "Arme conductrice (Conductive Weapon)",
+      "system": {
+        "description": {
+          "gm": "",
+          "value": "<p>Vous canalisez un puissant courant électrique à travers le métal d'une arme, en électrisant tous ceux que l'arme atteint. La cible devient une arme <em>de foudre +1</em>. Si la cible d'une attaque avec l'arme porte une armure de métal ou est principalement constituée de métal, le dé de dégât de la rune de foudre est de 1d12.</p>\n<p>@UUID[Compendium.pf2e.spell-effects.Item.WdXLgPashH5in5eB]{Effet : Arme conductrice}</p>"
+        },
+        "rules": [],
+        "slug": "conductive-weapon",
+        "_migration": {
+          "version": 0.941,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "concentrate",
+            "electricity",
+            "manipulate",
+            "metal"
+          ],
+          "rarity": "common",
+          "traditions": [
+            "arcane",
+            "primal"
+          ]
+        },
+        "publication": {
+          "title": "Pathfinder Rage of Elements",
+          "authors": "",
+          "license": "OGL",
+          "remaster": true
+        },
+        "level": {
+          "value": 1
+        },
+        "requirements": "",
+        "target": {
+          "value": "1 arme de métal qui n'est pas tenue ou est maniée par vous ou un allié consentant"
+        },
+        "range": {
+          "value": "contact"
+        },
+        "area": null,
+        "time": {
+          "value": "2"
+        },
+        "duration": {
+          "value": "1 minute",
+          "sustained": false
+        },
+        "damage": {},
+        "defense": null,
+        "cost": {
+          "value": ""
+        },
+        "location": {
+          "value": "Eyv8zuG4dRsf1Q1X"
+        },
+        "counteraction": false
+      },
+      "type": "spell",
+      "_stats": {
+        "coreVersion": "13.347",
+        "systemId": "pf2e",
+        "systemVersion": "7.3.1",
+        "createdTime": 1756223259055,
+        "modifiedTime": 1756223259055,
+        "lastModifiedBy": "87SnZLj4hGkSav9U"
+      },
+      "effects": [],
+      "sort": 900000,
+      "flags": {
+        "babele": {
+          "translated": true,
+          "hasTranslation": true,
+          "originalName": "Conductive Weapon"
+        }
+      }
+    },
+    {
+      "_id": "b2ePnvf3VloRHaLN",
+      "folder": "T8AzYUgNIAgTJ9Iz",
+      "img": "icons/magic/control/fear-fright-white.webp",
+      "name": "Embrouiller (Befuddle)",
+      "system": {
+        "description": {
+          "gm": "",
+          "value": "<p>Vous semez les graines de la confusion dans l'esprit de la cible, de sorte que ses actions et ses pensées sont maladroites.</p>\n<hr />\n<p><strong>Succès critique</strong> La cible n'est pas affectée.</p>\n<p><strong>Succès</strong> La cible est @UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{Maladroite 1} et @UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{Stupéfiée 1}.</p>\n<p><strong>Échec</strong> La cible est @UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{Maladroite 2} et Stupéfiée 2.</p>\n<p><strong>Échec critique</strong> La cible est @UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{Maladroite 3}, Stupéfiée 3 et @UUID[Compendium.pf2e.conditionitems.Item.yblD8fOR1J8rDwEQ]{Confuse}.</p>"
+        },
+        "rules": [],
+        "slug": "befuddle",
+        "_migration": {
+          "version": 0.941,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "concentrate",
+            "emotion",
+            "manipulate",
+            "mental"
+          ],
+          "rarity": "common",
+          "traditions": [
+            "arcane",
+            "occult"
+          ]
+        },
+        "publication": {
+          "title": "Pathfinder Lost Omens Divine Mysteries",
+          "authors": "",
+          "license": "ORC",
+          "remaster": true
+        },
+        "level": {
+          "value": 1
+        },
+        "requirements": "",
+        "target": {
+          "value": "1 créature"
+        },
+        "range": {
+          "value": "9 mètres"
+        },
+        "area": null,
+        "time": {
+          "value": "2"
+        },
+        "duration": {
+          "value": "1 round",
+          "sustained": false
+        },
+        "damage": {},
+        "defense": {
+          "save": {
+            "basic": false,
+            "statistic": "will"
+          }
+        },
+        "cost": {
+          "value": ""
+        },
+        "location": {
+          "value": "Eyv8zuG4dRsf1Q1X"
+        },
+        "counteraction": false
+      },
+      "type": "spell",
+      "_stats": {
+        "coreVersion": "13.347",
+        "systemId": "pf2e",
+        "systemVersion": "7.3.1",
+        "createdTime": 1756223260793,
+        "modifiedTime": 1756223260793,
+        "lastModifiedBy": "87SnZLj4hGkSav9U"
+      },
+      "effects": [],
+      "sort": 1000000,
+      "flags": {
+        "babele": {
+          "translated": true,
+          "hasTranslation": true,
+          "originalName": "Befuddle"
+        }
+      }
+    },
+    {
+      "_id": "aw2uECoFeeyJLPZM",
+      "folder": "T8AzYUgNIAgTJ9Iz",
+      "img": "icons/tools/smithing/furnace-fire-metal-orange.webp",
+      "name": "Forge",
+      "system": {
+        "description": {
+          "gm": "",
+          "value": "<p>Développée avant l'introduction du Lagon de fer, ce tour de magie pour chauffer à blanc le métal a aussi trouvé une utilisation au combat inestimable. Vous chauffez à blanc la cible, lui infligeant 3d6 dégâts de feu. Si la cible est un objet métallique, réduisez sa solidité d'un montant égal aux dégâts infligés jusqu'à la fin de votre prochain tour.</p>\n<hr />\n<p><strong>Succès critique</strong> La cible n'est pas affectée.</p>\n<p><strong>Succès</strong> La cible ne subit que la moitié des dégâts.</p>\n<p><strong>Échec</strong> La cible subit la totalité des dégâts.</p>\n<p><strong>Échec critique</strong> La cible subit le double des dégâts et si c'est une créature métallique, elle obtient une faiblesse 2 contre les dégâts physiques jusqu'à la fin de votre prochain tour.</p>\n<hr />\n<p><strong>Intensifié (+1)</strong> Les dégâts augmentent de 2d6 et la faiblesse sur un coup critique augmente de 2.</p>\n<p>@UUID[Compendium.pf2e.spell-effects.Item.zbTpf11NtbmizuzR]{Effet : Forge (Échec critique)}</p>"
+        },
+        "rules": [],
+        "slug": "forge",
+        "_migration": {
+          "version": 0.941,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "fire"
+          ],
+          "rarity": "uncommon",
+          "traditions": [
+            "arcane",
+            "primal"
+          ]
+        },
+        "publication": {
+          "title": "Pathfinder Lost Omens Highhelm",
+          "authors": "",
+          "license": "OGL",
+          "remaster": false
+        },
+        "level": {
+          "value": 1
+        },
+        "requirements": "",
+        "target": {
+          "value": "1 créature ou un objet non tenu"
+        },
+        "range": {
+          "value": "9 mètres"
+        },
+        "area": null,
+        "time": {
+          "value": "2"
+        },
+        "duration": {
+          "value": "",
+          "sustained": false
+        },
+        "damage": {
+          "ugQLPWwEq70gVBNG": {
+            "applyMod": false,
+            "category": null,
+            "formula": "3d6",
+            "kinds": [
+              "damage"
+            ],
+            "materials": [],
+            "type": "fire"
+          }
+        },
+        "defense": {
+          "save": {
+            "basic": false,
+            "statistic": "fortitude"
+          }
+        },
+        "cost": {
+          "value": ""
+        },
+        "location": {
+          "value": "Eyv8zuG4dRsf1Q1X"
+        },
+        "counteraction": false,
+        "heightening": {
+          "damage": {
+            "ugQLPWwEq70gVBNG": "2d6"
+          },
+          "interval": 1,
+          "type": "interval"
+        }
+      },
+      "type": "spell",
+      "_stats": {
+        "coreVersion": "13.347",
+        "systemId": "pf2e",
+        "systemVersion": "7.3.1",
+        "createdTime": 1756223262527,
+        "modifiedTime": 1756223262527,
+        "lastModifiedBy": "87SnZLj4hGkSav9U"
+      },
+      "effects": [],
+      "sort": 1100000,
+      "flags": {
+        "babele": {
+          "translated": true,
+          "hasTranslation": true,
+          "originalName": "Forge"
+        }
+      }
+    },
+    {
+      "_id": "LPdl3JMIX3vryfw4",
+      "folder": "T8AzYUgNIAgTJ9Iz",
+      "img": "icons/magic/lightning/barrier-shield-orb-pink.webp",
+      "name": "Gemme explosive (Shattering Gem)",
+      "system": {
+        "description": {
+          "gm": "",
+          "value": "<p>Une grande gemme flotte autour de la cible selon un schéma erratique. La gemme possède 5 Points de vie. Chaque fois qu'une créature Frappe la cible, la cible fait un @Check[flat|dc:11|showDC:all]. En cas de succès, la gemme bloque l'attaque, de sorte que l'attaque cause d'abord des dégâts à la gemme puis applique tous les éventuels dégâts restants à la cible. Si la gemme est réduite à 0 Point de vie, elle explose, infligeant immédiatement à la créature qui l'a détruite 1d8 dégâts tranchants (Jet de Réflexes basique), tant que la créature est à moins de 3 mètres de la cible.</p>\n<hr />\n<p><strong>Intensifié (+1)</strong> La gemme possède 5 Points de vie supplémentaires et les dégâts infligés par sa détonation augmentent de 1d8.</p>"
+        },
+        "rules": [],
+        "slug": "shattering-gem",
+        "_migration": {
+          "version": 0.941,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "concentrate",
+            "earth",
+            "manipulate"
+          ],
+          "rarity": "common",
+          "traditions": [
+            "arcane",
+            "primal"
+          ]
+        },
+        "publication": {
+          "title": "Pathfinder Lost Omens Divine Mysteries",
+          "authors": "",
+          "license": "ORC",
+          "remaster": true
+        },
+        "level": {
+          "value": 1
+        },
+        "requirements": "",
+        "target": {
+          "value": "1 créature"
+        },
+        "range": {
+          "value": "contact"
+        },
+        "area": null,
+        "time": {
+          "value": "2"
+        },
+        "duration": {
+          "value": "1 minute",
+          "sustained": false
+        },
+        "damage": {
+          "0": {
+            "applyMod": false,
+            "category": null,
+            "formula": "1d8",
+            "kinds": [
+              "damage"
+            ],
+            "materials": [],
+            "type": "slashing"
+          }
+        },
+        "defense": {
+          "save": {
+            "basic": true,
+            "statistic": "reflex"
+          }
+        },
+        "cost": {
+          "value": ""
+        },
+        "location": {
+          "value": "Eyv8zuG4dRsf1Q1X"
+        },
+        "counteraction": false,
+        "heightening": {
+          "damage": {
+            "0": "1d8"
+          },
+          "interval": 1,
+          "type": "interval"
+        }
+      },
+      "type": "spell",
+      "_stats": {
+        "coreVersion": "13.347",
+        "systemId": "pf2e",
+        "systemVersion": "7.3.1",
+        "createdTime": 1756223264052,
+        "modifiedTime": 1756223264052,
+        "lastModifiedBy": "87SnZLj4hGkSav9U"
+      },
+      "effects": [],
+      "sort": 1200000,
+      "flags": {
+        "babele": {
+          "translated": true,
+          "hasTranslation": true,
+          "originalName": "Shattering Gem"
+        }
+      }
+    },
+    {
+      "_id": "6JjzNGZRyo7XnsCk",
+      "folder": "T8AzYUgNIAgTJ9Iz",
+      "img": "icons/equipment/feet/boots-armored-banded-steel.webp",
+      "name": "Pas de plomb (Leaden Steps)",
+      "system": {
+        "description": {
+          "gm": "",
+          "value": "<p>Vous transformez en partie les pieds de vos ennemis avec des morceaux de métal encombrants, ralentissant leur marche. La cible effectue une Jet de Vigueur.</p>\n<hr />\n<p><strong>Succès critique</strong> La cible n'est pas affectée</p>\n<p><strong>Succès</strong> La cible est @UUID[Compendium.pf2e.conditionitems.Item.D5mg6Tc7Jzrj6ro7]{Surchargée} et obtient une faiblesse de 2 à l'électricité jusqu'à la fin de votre prochain tour.</p>\n<p><strong>Échec</strong> La cible est Encombrée et obtient une faiblesse de 2 à l'électricité.</p>\n<p><strong>Échec critique</strong> La cible est Encombrée et obtient une faiblesse de 3 à l'électricité.</p>\n<p>@UUID[Compendium.pf2e.spell-effects.Item.QjZ1PpYIeWh9SbmD]{Effet : Pas de plomb}</p>\n<hr />\n<p><strong>Intensifié (+1)</strong> La faiblesse augmente de 1.</p>"
+        },
+        "rules": [],
+        "slug": "leaden-steps",
+        "_migration": {
+          "version": 0.941,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "concentrate",
+            "manipulate",
+            "metal",
+            "morph"
+          ],
+          "rarity": "common",
+          "traditions": [
+            "arcane",
+            "primal"
+          ]
+        },
+        "publication": {
+          "title": "Pathfinder Player Core 2",
+          "authors": "",
+          "license": "ORC",
+          "remaster": true
+        },
+        "level": {
+          "value": 1
+        },
+        "requirements": "",
+        "target": {
+          "value": "1 créature"
+        },
+        "range": {
+          "value": "9 mètres"
+        },
+        "area": null,
+        "time": {
+          "value": "2"
+        },
+        "duration": {
+          "value": "1 minute",
+          "sustained": true
+        },
+        "damage": {},
+        "defense": {
+          "save": {
+            "basic": false,
+            "statistic": "fortitude"
+          }
+        },
+        "cost": {
+          "value": ""
+        },
+        "location": {
+          "value": "Eyv8zuG4dRsf1Q1X"
+        },
+        "counteraction": false
+      },
+      "type": "spell",
+      "_stats": {
+        "coreVersion": "13.347",
+        "systemId": "pf2e",
+        "systemVersion": "7.3.1",
+        "createdTime": 1756223265897,
+        "modifiedTime": 1756223265897,
+        "lastModifiedBy": "87SnZLj4hGkSav9U"
+      },
+      "effects": [],
+      "sort": 1300000,
+      "flags": {
+        "babele": {
+          "translated": true,
+          "hasTranslation": true,
+          "originalName": "Leaden Steps"
+        }
+      }
+    },
+    {
+      "_id": "OGONpv9FB0CRr1tA",
+      "folder": "T8AzYUgNIAgTJ9Iz",
+      "img": "icons/magic/control/silhouette-hold-change-blue.webp",
+      "name": "Sbire fantasmagorique (Phantasmal Minion)",
+      "system": {
+        "description": {
+          "gm": "",
+          "value": "<p>Vous convoquez un @UUID[Compendium.pf2e.pathfinder-bestiary.Actor.j7NNPfZwD19BwSEZ]{Sbire fantasmagorique}. Le sbire possède la forme approximative d'un humanoïde. Vous pouvez choisir de le rendre invisible ou de lui donner une apparence éphémère, mais il s'agit visiblement d'un effet magique, pas d'une créature réelle.</p>"
+        },
+        "rules": [],
+        "slug": "phantasmal-minion",
+        "_migration": {
+          "version": 0.941,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "concentrate",
+            "manipulate",
+            "summon"
+          ],
+          "rarity": "common",
+          "traditions": [
+            "arcane",
+            "occult"
+          ]
+        },
+        "publication": {
+          "title": "Pathfinder Player Core",
+          "authors": "",
+          "license": "ORC",
+          "remaster": true
+        },
+        "level": {
+          "value": 1
+        },
+        "requirements": "",
+        "target": {
+          "value": ""
+        },
+        "range": {
+          "value": "18 mètres"
+        },
+        "area": null,
+        "time": {
+          "value": "3"
+        },
+        "duration": {
+          "value": "",
+          "sustained": true
+        },
+        "damage": {},
+        "defense": null,
+        "cost": {
+          "value": ""
+        },
+        "location": {
+          "value": "Eyv8zuG4dRsf1Q1X"
+        },
+        "counteraction": false
+      },
+      "type": "spell",
+      "_stats": {
+        "coreVersion": "13.347",
+        "systemId": "pf2e",
+        "systemVersion": "7.3.1",
+        "createdTime": 1756223268238,
+        "modifiedTime": 1756223268238,
+        "lastModifiedBy": "87SnZLj4hGkSav9U"
+      },
+      "effects": [],
+      "sort": 1400000,
+      "flags": {
+        "babele": {
+          "translated": true,
+          "hasTranslation": true,
+          "originalName": "Phantasmal Minion"
+        }
+      }
+    },
+    {
+      "_id": "VhrPcBUfbW6IzC1O",
+      "folder": "lPzcDrjGDFbzuF2r",
+      "img": "icons/magic/fire/dagger-rune-enchant-flame-strong-red.webp",
+      "name": "Arsenal embrasé (Blazing Armory)",
+      "system": {
+        "description": {
+          "gm": "",
+          "value": "<p>Tant que vous disposez de magie, vous n'êtes jamais désarmé. Vous matérialisez un simulacre enflammé de n'importe quel arme courante simple ou de guerre dans la main de la cible. La cible doit avoir une main libre pour tenir l'arme, sinon l'arme tombe au sol dans l'espace de la cible. L'arsenal enflammé fonctionne comme une <em>arme de frappe +1</em> et son type de dégâts se change en feu. Le type de dégâts ne peut être changé en utilisant le trait polyvalent, le trait configurable ou des méthodes similaires.</p>\n<p>Une arme de jet se rematérialise dans la main de la cible après avoir terminé la Frappe. Si vous choisissez une arme à distance qui utilise des munitions, le porteur doit toujours recharger en utilisant le nombre normal d'actions, bien que cela génère des munitions de manière automatique. Cela fonctionne comme des munitions normales et <em>Arsenal embrasé</em> ne peut utiliser d'autres types de munitions.</p>\n<p>Toute créature autre que vous ou la cible qui tente de toucher, de Faire une Frappe avec ou de @UUID[Compendium.pf2e.actionspf2e.Item.Dt6B1slsBy8ipJu9]{Désarmer} l'arme subit @Damage[1d6[fire]]{1d6 dégâts de feu} à chaque fois.</p>\n<hr />\n<p><strong>Intensifié (4e)</strong> Vous pouvez cibler jusqu'à 5 créatures consentantes et choisir une arme différente pour chaque cible. L'arme fonctionne comme une arme <em>de frappe enflammée +1</em>.</p>\n<p><strong>Intensifié (6e)</strong> comme au rang 4, mais les armes fonctionnent comme des armes <em>enflammées de frappe supérieure +2</em>.</p>\n<p><strong>Intensifié (8e)</strong> comme au rang 4, mais les armes fonctionnent comme des armes <em>enflammées supérieures de frappe supérieure +3</em>.</p>\n<p><strong>Intensifié (10e)</strong> comme au rang 4, mais les armes fonctionnent comme des armes <em>enflammées supérieures de frappe majeure +3</em>.</p>"
+        },
+        "rules": [],
+        "slug": "blazing-armory",
+        "_migration": {
+          "version": 0.941,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "concentrate",
+            "fire",
+            "manipulate"
+          ],
+          "rarity": "common",
+          "traditions": [
+            "arcane",
+            "divine",
+            "primal"
+          ]
+        },
+        "publication": {
+          "title": "Pathfinder Rage of Elements",
+          "authors": "",
+          "license": "OGL",
+          "remaster": true
+        },
+        "level": {
+          "value": 2
+        },
+        "requirements": "",
+        "target": {
+          "value": "1 créature consentante"
+        },
+        "range": {
+          "value": "9 mètres"
+        },
+        "area": null,
+        "time": {
+          "value": "2"
+        },
+        "duration": {
+          "value": "5 minutes",
+          "sustained": false
+        },
+        "damage": {},
+        "defense": null,
+        "cost": {
+          "value": ""
+        },
+        "location": {
+          "value": "Eyv8zuG4dRsf1Q1X"
+        },
+        "counteraction": false
+      },
+      "type": "spell",
+      "_stats": {
+        "coreVersion": "13.347",
+        "systemId": "pf2e",
+        "systemVersion": "7.3.1",
+        "createdTime": 1756223336648,
+        "modifiedTime": 1756223336648,
+        "lastModifiedBy": "87SnZLj4hGkSav9U"
+      },
+      "effects": [],
+      "sort": 1500000,
+      "flags": {
+        "babele": {
+          "translated": true,
+          "hasTranslation": true,
+          "originalName": "Blazing Armory"
+        }
+      }
+    },
+    {
+      "folder": "lPzcDrjGDFbzuF2r",
+      "img": "icons/magic/perception/hand-eye-fire-blue.webp",
+      "name": "Regret du combattant (Warrior's Regret)",
+      "system": {
+        "description": {
+          "gm": "",
+          "value": "<p>Les regrets rongent l'esprit de la cible, la punissant de sa violence jusqu'à ce qu'elle cesse les hostilités. La cible doit tenter un jet de Volonté.</p>\n<hr />\n<p><strong>Succès critique</strong> La cible n'est pas affectée.</p>\n<p><strong>Succès</strong> À la fin de son prochain tour, la cible subit 1d8 dégâts par créature différente qu'elle a intentionnellement blessée lors de ce tour (1d8 si elle a blessé une créature, 2d8 si elle a blessé deux créatures différentes et ainsi de suite). Le maximum est de 4d8 si elle a blessé 4 créatures différentes.</p>\n<p><strong>Échec</strong> Comme en cas de succès, sauf que la malédiction blesse la cible à la fin de chacun de ses tours et dure jusqu'à ce que la cible passe un tour complet sans blesser intentionnellement une autre créature.</p>\n<p><strong>Échec critique</strong> Comme en cas de succès, sauf que la malédiction blesse la cible à la fin de chacun de ses tours et dure jusqu'à ce que la cible passe 24 heures à expier les regrets perçus.</p>\n<hr />\n<p><strong>Intensifié (+2)</strong> Le montant des dégâts mentaux que la cible subit pour chaque créature qu'elle a endommagée au cours de ce tour augmente de 1d8 et les dégâts maximum que la cible peut subir par tour augmentent de 4d8.</p>"
+        },
+        "rules": [],
+        "slug": "warriors-regret",
+        "_migration": {
+          "version": 0.941,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "concentrate",
+            "curse",
+            "emotion",
+            "manipulate",
+            "mental"
+          ],
+          "rarity": "common",
+          "traditions": [
+            "arcane",
+            "divine",
+            "occult"
+          ]
+        },
+        "publication": {
+          "title": "Pathfinder Secrets of Magic",
+          "authors": "",
+          "license": "OGL",
+          "remaster": false
+        },
+        "level": {
+          "value": 2
+        },
+        "requirements": "",
+        "target": {
+          "value": "1 créature"
+        },
+        "range": {
+          "value": "contact"
+        },
+        "area": null,
+        "time": {
+          "value": "2"
+        },
+        "duration": {
+          "value": "",
+          "sustained": false
+        },
+        "damage": {
+          "0": {
+            "applyMod": false,
+            "category": null,
+            "formula": "1d8",
+            "kinds": [
+              "damage"
+            ],
+            "materials": [],
+            "type": "untyped"
+          }
+        },
+        "defense": {
+          "save": {
+            "basic": false,
+            "statistic": "will"
+          }
+        },
+        "cost": {
+          "value": ""
+        },
+        "location": {
+          "value": "Eyv8zuG4dRsf1Q1X"
+        },
+        "counteraction": false,
+        "heightening": {
+          "damage": {
+            "0": "1d8"
+          },
+          "interval": 2,
+          "type": "interval"
+        }
+      },
+      "type": "spell",
+      "_stats": {
+        "coreVersion": "13.347",
+        "systemId": "pf2e",
+        "systemVersion": "7.3.1",
+        "createdTime": 1756223345861,
+        "modifiedTime": 1756223345861,
+        "lastModifiedBy": "87SnZLj4hGkSav9U"
+      },
+      "effects": [],
+      "sort": 1600000,
+      "flags": {
+        "babele": {
+          "translated": true,
+          "hasTranslation": true,
+          "originalName": "Warrior's Regret"
+        }
+      },
+      "_id": "PG5O7dAJ2MDedA2v"
+    },
+    {
+      "name": "Sort Arcanique Focalisation",
+      "type": "spellcastingEntry",
+      "system": {
+        "description": {
+          "gm": "",
+          "value": ""
+        },
+        "rules": [],
+        "slug": null,
+        "_migration": {
+          "version": 0.941,
+          "lastMigration": null
+        },
+        "traits": {
+          "otherTags": []
+        },
+        "publication": {
+          "title": "",
+          "authors": "",
+          "license": "OGL",
+          "remaster": false
+        },
+        "ability": {
+          "value": "int"
+        },
+        "spelldc": {
+          "value": 0,
+          "dc": 0
+        },
+        "tradition": {
+          "value": "arcane"
+        },
+        "prepared": {
+          "value": "focus"
+        },
+        "showSlotlessLevels": {
+          "value": true
+        },
+        "proficiency": {
+          "value": 1,
+          "slug": ""
+        },
+        "slots": {
+          "slot0": {
+            "prepared": [],
+            "value": 0,
+            "max": 0
+          },
+          "slot1": {
+            "prepared": [],
+            "value": 0,
+            "max": 0
+          },
+          "slot2": {
+            "prepared": [],
+            "value": 0,
+            "max": 0
+          },
+          "slot3": {
+            "prepared": [],
+            "value": 0,
+            "max": 0
+          },
+          "slot4": {
+            "prepared": [],
+            "value": 0,
+            "max": 0
+          },
+          "slot5": {
+            "prepared": [],
+            "value": 0,
+            "max": 0
+          },
+          "slot6": {
+            "prepared": [],
+            "value": 0,
+            "max": 0
+          },
+          "slot7": {
+            "prepared": [],
+            "value": 0,
+            "max": 0
+          },
+          "slot8": {
+            "prepared": [],
+            "value": 0,
+            "max": 0
+          },
+          "slot9": {
+            "prepared": [],
+            "value": 0,
+            "max": 0
+          },
+          "slot10": {
+            "prepared": [],
+            "value": 0,
+            "max": 0
+          },
+          "slot11": {
+            "prepared": [],
+            "value": 0,
+            "max": 0
+          }
+        },
+        "autoHeightenLevel": {
+          "value": null
+        }
+      },
+      "_id": "TjWAz8LeObRNLxxN",
+      "img": "systems/pf2e/icons/default-icons/spellcastingEntry.svg",
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "13.347",
+        "systemId": "pf2e",
+        "systemVersion": "7.3.1",
+        "createdTime": 1756224365939,
+        "modifiedTime": 1756224365939,
+        "lastModifiedBy": "JxXa7KZZD1GFhXka"
+      }
+    },
+    {
+      "folder": "wnvibtD90h7CStDC",
+      "img": "systems/pf2e/icons/spells/shooting-star.webp",
+      "name": "Étoile tirée (Shooting Star)",
+      "system": {
+        "description": {
+          "gm": "",
+          "value": "<p>Vous lâchez un projectile qui vole droit et laisse derrière lui la traînée flamboyante d'un météore. Effectuez une Frappe à distance, en ignorant le camouflage de la cible et en réduisant son abri d'un degré pour cette Frappe uniquement (important à standard, standard à partiel et partiel à nul). Si le coup touche, la traînée de météores reste suspendue dans l'air. Cela annule les effets d'un camouflage et donne l'avantage de la réduction de la couverture à toutes les attaques effectuées contre la créature (par n'importe qui) jusqu'au début de votre prochain tour.</p>"
+        },
+        "rules": [],
+        "slug": "shooting-star",
+        "_migration": {
+          "version": 0.941,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "concentrate",
+            "focus",
+            "magus"
+          ],
+          "rarity": "uncommon",
+          "traditions": []
+        },
+        "publication": {
+          "title": "Pathfinder Secrets of Magic",
+          "authors": "",
+          "license": "OGL",
+          "remaster": false
+        },
+        "level": {
+          "value": 1
+        },
+        "requirements": "Vous maniez une arme à distance ou une arme de jet.",
+        "target": {
+          "value": ""
+        },
+        "range": {
+          "value": ""
+        },
+        "area": null,
+        "time": {
+          "value": "1"
+        },
+        "duration": {
+          "value": "",
+          "sustained": false
+        },
+        "damage": {},
+        "defense": null,
+        "cost": {
+          "value": ""
+        },
+        "location": {
+          "value": "TjWAz8LeObRNLxxN"
+        },
+        "counteraction": false
+      },
+      "type": "spell",
+      "_stats": {
+        "coreVersion": "13.347",
+        "systemId": "pf2e",
+        "systemVersion": "7.3.1",
+        "createdTime": 1756224375906,
+        "modifiedTime": 1756224375906,
+        "lastModifiedBy": "JxXa7KZZD1GFhXka"
+      },
+      "effects": [],
+      "sort": 0,
+      "flags": {
+        "babele": {
+          "translated": true,
+          "hasTranslation": true,
+          "originalName": "Shooting Star"
+        }
+      },
+      "_id": "QOGETobZiXgHCou4"
+    },
+    {
+      "img": "systems/pf2e/icons/equipment/worn-items/other-worn-items/doubling-rings.webp",
+      "name": "Anneaux de doublement (Doubling Rings)",
+      "system": {
+        "description": {
+          "gm": "",
+          "value": "<p>Cet objet se compose de deux anneaux magiquement liés ; un anneau effilé d'or étincelant orné d'un rubis taillé en carré et un épais anneau de fer simple. Quand vous maniez une arme de corps-à-corps dans la main qui porte l'anneau d'or, les runes fondamentales de l'arme sont dupliquées sur l'éventuelle arme de corps-à-corps que vous maniez dans la main qui porte l'anneau de fer (les runes fondamentales sont celles de <em>puissance d'arme</em> et <em>de frappe</em>, qui confèrent respectivement un bonus d'objet aux jets d'attaque et ajoutent un ou plusieurs dé(s) de dégâts d'armes). Les éventuelles runes fondamentales sur l'arme dans la main portant l'anneau de fer sont réprimées.</p>\n<p>La reproduction fonctionne uniquement si vous portez les deux anneaux et prend fin dès que vous cessez de manier une arme de corps-à-corps dans l'une de vos mains. Par conséquent, l'avantage ne s'applique pas aux attaques de jet ou si vous tenez une arme mais que vous ne la maniez pas (comme quand vous tenez une arme dans une main qui nécessite deux mains pour la manier).</p>"
+        },
+        "rules": [],
+        "slug": "doubling-rings",
+        "_migration": {
+          "version": 0.941,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "invested",
+            "magical"
+          ],
+          "rarity": "common"
+        },
+        "publication": {
+          "title": "Pathfinder GM Core",
+          "authors": "",
+          "license": "ORC",
+          "remaster": true
+        },
+        "level": {
+          "value": 3
+        },
+        "quantity": 1,
+        "baseItem": null,
+        "bulk": {
+          "value": 0
+        },
+        "hp": {
+          "value": 0,
+          "max": 0
+        },
+        "hardness": 0,
+        "price": {
+          "value": {
+            "gp": 50
+          }
+        },
+        "equipped": {
+          "carryType": "worn",
+          "invested": null,
+          "handsHeld": 0,
+          "inSlot": false
+        },
+        "containerId": null,
+        "size": "med",
+        "material": {
+          "type": null,
+          "grade": null
+        },
+        "identification": {
+          "status": "identified",
+          "unidentified": {
+            "name": "",
+            "img": "",
+            "data": {
+              "description": {
+                "value": ""
+              }
+            }
+          },
+          "misidentified": {}
+        },
+        "usage": {
+          "value": "worn"
+        },
+        "subitems": []
+      },
+      "type": "equipment",
+      "_stats": {
+        "coreVersion": "13.347",
+        "systemId": "pf2e",
+        "systemVersion": "7.3.1",
+        "createdTime": 1756243274561,
+        "modifiedTime": 1756243274662,
+        "lastModifiedBy": "JxXa7KZZD1GFhXka"
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "flags": {
+        "babele": {
+          "translated": true,
+          "hasTranslation": true,
+          "originalName": "Doubling Rings"
+        }
+      },
+      "_id": "1mIcmutlWaFqaelg"
+    },
+    {
+      "img": "systems/pf2e/icons/equipment/treasure/currency/gold-pieces.webp",
+      "name": "Pièces d'or (Gold Pieces)",
+      "system": {
+        "description": {
+          "gm": "",
+          "value": ""
+        },
+        "rules": [],
+        "slug": "gold-pieces",
+        "_migration": {
+          "version": 0.941,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [],
+          "rarity": "common"
+        },
+        "publication": {
+          "title": "Pathfinder Player Core",
+          "authors": "",
+          "license": "ORC",
+          "remaster": true
+        },
+        "level": {
+          "value": 0
+        },
+        "quantity": 8,
+        "baseItem": null,
+        "bulk": {
+          "value": 1
+        },
+        "hp": {
+          "value": 0,
+          "max": 0
+        },
+        "hardness": 0,
+        "price": {
+          "value": {
+            "gp": 1
+          }
+        },
+        "equipped": {
+          "carryType": "worn"
+        },
+        "containerId": null,
+        "size": "med",
+        "material": {
+          "type": null,
+          "grade": null
+        },
+        "identification": {
+          "status": "identified",
+          "unidentified": {
+            "name": "",
+            "img": "",
+            "data": {
+              "description": {
+                "value": ""
+              }
+            }
+          },
+          "misidentified": {}
+        },
+        "stackGroup": "coins"
+      },
+      "type": "treasure",
+      "_stats": {
+        "coreVersion": "13.347",
+        "systemId": "pf2e",
+        "systemVersion": "7.3.1",
+        "createdTime": 1756243386251,
+        "modifiedTime": 1756243386251,
+        "lastModifiedBy": "JxXa7KZZD1GFhXka"
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "flags": {
+        "babele": {
+          "translated": true,
+          "hasTranslation": true,
+          "originalName": "Gold Pieces"
+        }
+      },
+      "_id": "wIw8g7vEDALaMJKG"
+    },
+    {
+      "img": "systems/pf2e/icons/equipment/treasure/currency/silver-pieces.webp",
+      "name": "Pièces d'argent (Silver Pieces)",
+      "system": {
+        "description": {
+          "gm": "",
+          "value": ""
+        },
+        "rules": [],
+        "slug": "silver-pieces",
+        "_migration": {
+          "version": 0.941,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [],
+          "rarity": "common"
+        },
+        "publication": {
+          "title": "Pathfinder Player Core",
+          "authors": "",
+          "license": "ORC",
+          "remaster": true
+        },
+        "level": {
+          "value": 0
+        },
+        "quantity": 6,
+        "baseItem": null,
+        "bulk": {
+          "value": 1
+        },
+        "hp": {
+          "value": 0,
+          "max": 0
+        },
+        "hardness": 0,
+        "price": {
+          "value": {
+            "sp": 1
+          }
+        },
+        "equipped": {
+          "carryType": "worn"
+        },
+        "containerId": null,
+        "size": "med",
+        "material": {
+          "type": null,
+          "grade": null
+        },
+        "identification": {
+          "status": "identified",
+          "unidentified": {
+            "name": "",
+            "img": "",
+            "data": {
+              "description": {
+                "value": ""
+              }
+            }
+          },
+          "misidentified": {}
+        },
+        "stackGroup": "coins"
+      },
+      "type": "treasure",
+      "_stats": {
+        "coreVersion": "13.347",
+        "systemId": "pf2e",
+        "systemVersion": "7.3.1",
+        "createdTime": 1756243386602,
+        "modifiedTime": 1756387603267,
+        "lastModifiedBy": "JxXa7KZZD1GFhXka"
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "flags": {
+        "babele": {
+          "translated": true,
+          "hasTranslation": true,
+          "originalName": "Silver Pieces"
+        }
+      },
+      "_id": "ThA5xKZB4Sw58nR2"
+    },
+    {
+      "img": "systems/pf2e/icons/equipment/treasure/currency/copper-pieces.webp",
+      "name": "Pièces de cuivre (Copper Pieces)",
+      "system": {
+        "description": {
+          "gm": "",
+          "value": ""
+        },
+        "rules": [],
+        "slug": "copper-pieces",
+        "_migration": {
+          "version": 0.941,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [],
+          "rarity": "common"
+        },
+        "publication": {
+          "title": "Pathfinder Player Core",
+          "authors": "",
+          "license": "ORC",
+          "remaster": true
+        },
+        "level": {
+          "value": 0
+        },
+        "quantity": 6,
+        "baseItem": null,
+        "bulk": {
+          "value": 1
+        },
+        "hp": {
+          "value": 0,
+          "max": 0
+        },
+        "hardness": 0,
+        "price": {
+          "value": {
+            "cp": 1
+          }
+        },
+        "equipped": {
+          "carryType": "worn"
+        },
+        "containerId": null,
+        "size": "med",
+        "material": {
+          "type": null,
+          "grade": null
+        },
+        "identification": {
+          "status": "identified",
+          "unidentified": {
+            "name": "",
+            "img": "",
+            "data": {
+              "description": {
+                "value": ""
+              }
+            }
+          },
+          "misidentified": {}
+        },
+        "stackGroup": "coins"
+      },
+      "type": "treasure",
+      "_stats": {
+        "coreVersion": "13.347",
+        "systemId": "pf2e",
+        "systemVersion": "7.3.1",
+        "createdTime": 1756243386971,
+        "modifiedTime": 1756387605885,
+        "lastModifiedBy": "JxXa7KZZD1GFhXka"
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "flags": {
+        "babele": {
+          "translated": true,
+          "hasTranslation": true,
+          "originalName": "Copper Pieces"
+        }
+      },
+      "_id": "kJkpH0UalCNrqqC7"
+    }
+  ],
+  "folder": null,
+  "flags": {},
+  "_stats": {
+    "coreVersion": "13.347",
+    "systemId": "pf2e",
+    "systemVersion": "7.3.1",
+    "createdTime": 1754479259726,
+    "modifiedTime": 1756222960573,
+    "lastModifiedBy": "87SnZLj4hGkSav9U",
+    "exportSource": {
+      "worldId": "oblivion",
+      "uuid": "Actor.DZn1wRiA7pCpEFLP",
+      "coreVersion": "13.347",
+      "systemId": "pf2e",
+      "systemVersion": "7.3.1"
+    }
+  }
+}
