@@ -771,7 +771,7 @@ def main():
                         }
                     )
                 except Exception as e:
-                    print(f"Erreur lors du traitement du fichier {json_file}: {str(e)}")
+                    raise Exception(f"Erreur lors du traitement du fichier {json_file}: {str(e)}")
 
     # Traiter les fichiers spécifiés
     for json_file in files_to_process:
@@ -802,7 +802,7 @@ def main():
             print(f"Fichier {char_info['filename']} généré avec succès.")
 
         except Exception as e:
-            print(f"Erreur lors du traitement du fichier {json_file}: {str(e)}")
+            raise Exception(f"Erreur lors du traitement du fichier {json_file}: {str(e)}")
 
     # Générer la page d'index avec toutes les informations des personnages
     try:
@@ -814,7 +814,7 @@ def main():
 
         print("Page d'index générée avec succès.")
     except Exception as e:
-        print(f"Erreur lors de la génération de la page d'index: {str(e)}")
+        raise Exception(f"Erreur lors de la génération de la page d'index: {str(e)}")
 
 
 if __name__ == "__main__":
