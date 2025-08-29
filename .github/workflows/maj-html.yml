@@ -25,5 +25,10 @@ jobs:
       - name: Génération du JSON
         run: python build_page.py
       
-      - name: push du nouveau contenu html
-        run: git add . && git commit -m "Mise à jour du contenu HTML" && git push
+      - name: Commit des changements
+        run: |
+          git config --global user.name 'GitHub Actions'
+          git config --global user.email 'actions@github.com'
+          git add *.html
+          git diff --staged --quiet || git commit -m "Mise à jour automatique des pages HTML"
+          git push

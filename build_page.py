@@ -1,3 +1,5 @@
+import glob
+import json
 import re
 
 
@@ -516,3 +518,205 @@ def format_feat_html(feat):
 
     html += "</div>"  # Fermeture de item
     return html
+
+
+def generate_index_page(character_files):
+    """
+    Génère la page d'index qui liste tous les personnages disponibles.
+
+    Args:
+        character_files (list): Liste de dictionnaires contenant les informations sur les personnages
+                               [{"name": "Nom", "filename": "fichier.html", "class": "Classe", "level": "Niveau", ...}]
+
+    Returns:
+        str: Le code HTML de la page d'index
+    """
+    character_cards_html = ""
+
+    for char in character_files:
+        # Création de la carte pour chaque personnage
+        image_style = f"background-color: {char.get('color', '#FFD700')};"
+        if "image" in char:
+            image_style = f"background-image: url('{char['image']}');"
+
+        character_cards_html += f"""
+        <a href="{char['filename']}" class="character-card">
+            <div class="character-image" style="{image_style}"></div>
+            <div class="character-name">{char['name']}</div>
+            <div class="character-info">{char.get('class', '')} {char.get('level', '')} | {char.get('subclass', '')}</div>
+        </a>
+        """
+
+    # Structure HTML de la page d'index
+    html = f"""<!DOCTYPE html>
+    <html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Grimoire de Pathfinder 2e</title>
+        <style>
+            body {{
+                font-family: 'Times New Roman', serif;
+                background-color: #F5F0E6;
+                margin: 0;
+                padding: 0;
+            }}
+            
+            .header {{
+                background-color: #5E0000;
+                color: white;
+                text-align: center;
+                padding: 20px 0;
+                margin-bottom: 30px;
+            }}
+            
+            .container {{
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 0 20px;
+            }}
+            
+            h1 {{
+                font-size: 32pt;
+                margin: 0;
+            }}
+            
+            .subtitle {{
+                font-style: italic;
+                margin-top: 10px;
+            }}
+            
+            .character-grid {{
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+                gap: 20px;
+                margin-top: 30px;
+            }}
+            
+            .character-card {{
+                background-color: #FFFFFF;
+                border: 1px solid #D4C8B0;
+                border-radius: 5px;
+                padding: 15px;
+                text-align: center;
+                transition: transform 0.3s, box-shadow 0.3s;
+                text-decoration: none;
+                color: inherit;
+                display: block;
+            }}
+            
+            .character-card:hover {{
+                transform: translateY(-5px);
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            }}
+            
+            .character-name {{
+                color: #5E0000;
+                font-size: 18pt;
+                margin: 10px 0;
+            }}
+            
+            .character-info {{
+                color: #666;
+                font-style: italic;
+            }}
+            
+            .character-image {{
+                width: 150px;
+                height: 150px;
+                border-radius: 50%;
+                object-fit: cover;
+                margin: 10px auto;
+                border: 3px solid #D4C8B0;
+                background-size: cover;
+                background-position: center;
+            }}
+            
+            .footer {{
+                text-align: center;
+                margin-top: 50px;
+                padding: 20px 0;
+                color: #666;
+                font-size: 10pt;
+                border-top: 1px solid #D4C8B0;
+            }}
+        </style>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Grimoire de Pathfinder 2e</h1>
+            <div class="subtitle">Sélectionnez un personnage pour consulter sa fiche</div>
+        </div>
+        
+        <div class="container">
+            <div class="character-grid">
+                {character_cards_html}
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>Grimoire de Pathfinder 2e - Généré automatiquement depuis Foundry VTT</p>
+        </div>
+    </body>
+    </html>
+    """
+
+    return html
+
+
+def main():
+    """
+    Fonction principale qui orchestre le processus de génération des pages HTML.
+    """
+    # 1. Récupérer la liste des fichiers JSON dans le dossier json/
+    json_files = glob.glob("json/*.json")
+    character_info_list = []
+
+    # 2. Pour chaque fichier JSON
+    for json_file in json_files:
+        # 3. Charger les données du personnage
+        with open(json_file, "r", encoding="utf-8") as f:
+            character_data = json.load(f)
+
+        # 4. Extraire le nom du personnage pour le nom de fichier
+        character_name = character_data["name"]
+        filename = (
+            character_name.lower()
+            .replace(" ", "_")
+            .replace("'", "")
+            .replace('"', "")
+            .replace("-", "_")
+            + ".html"
+        )
+
+        # 5. Collecter les informations pour l'index
+        char_info = {
+            "name": character_name,
+            "filename": filename,
+            "class": character_data.get("class", ""),
+            "level": character_data.get("level", ""),
+            "subclass": character_data.get("subclass", ""),
+        }
+        character_info_list.append(char_info)
+
+        # 6. Générer le HTML du personnage
+        html_content = generate_character_pages_html(character_data)
+
+        # 7. Écrire le fichier HTML du personnage
+        with open(filename, "w", encoding="utf-8") as f:
+            f.write(html_content)
+
+        print(f"Fichier {filename} généré avec succès.")
+
+    # 8. Générer la page d'index
+    index_html = generate_index_page(character_info_list)
+
+    # 9. Écrire la page d'index
+    with open("index.html", "w", encoding="utf-8") as f:
+        f.write(index_html)
+
+    print("Page d'index générée avec succès.")
+
+
+if __name__ == "__main__":
+    main()
