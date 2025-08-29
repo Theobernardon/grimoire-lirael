@@ -7,6 +7,9 @@ on:
     paths:
       - 'json/**'
 
+permissions:
+  contents: write
+  
 jobs:
   update-json:
     runs-on: ubuntu-latest
