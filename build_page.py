@@ -1,6 +1,7 @@
 import argparse
 import glob
 import json
+import re
 
 
 def parse_arguments():
