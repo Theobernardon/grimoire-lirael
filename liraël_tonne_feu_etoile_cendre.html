@@ -95,12 +95,27 @@ h3 {
     print-color-adjust: exact !important;
 }
 .item-header {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 10fr 1fr 1fr auto;
     border-bottom: 1px solid #E0D8C0;
     padding-bottom: 5px;
     margin-bottom: 5px;
     font-weight: bold;
+    /* afficher la description */
+    cursor: pointer;
+}
+/* Ajoute un indicateur visuel (triangle) */
+.item-header::after {
+    content: "▶"; /* Triangle pointant vers la droite quand fermé */
+    color: #5E0000;
+    margin-left: 10px;
+    font-size: 10pt;
+    align-self: center;
+}
+
+/* Change l'indicateur quand la description est affichée */
+.item-header.active::after {
+    content: "▼"; /* Triangle pointant vers le bas quand ouvert */
 }
 .item-traits {
     margin-top: 5px;
@@ -119,6 +134,8 @@ h3 {
 .item-description {
     margin-top: 8px;
     font-size: 10pt;
+    /* cacher le texte */
+    display: none;
 }
 .metadata {
     display: flex;
@@ -134,6 +151,8 @@ h3 {
 .actions {
     color: #5E0000;
     font-weight: bold;
+    align-self: center;
+    text-align: center;
 }
 
 /* Styles pour la barre de navigation */
@@ -628,37 +647,57 @@ Toute créature autre que vous ou la cible qui tente de toucher, de Faire une Fr
         </div>
         <script>
     document.addEventListener('DOMContentLoaded', function() {
-        // Fonction pour afficher une page et masquer les autres
-        function showPage(pageId) {
-            // Masquer toutes les pages
-            document.querySelectorAll('.page').forEach(function(page) {
-                page.classList.remove('active');
-            });
-            
-            // Afficher la page sélectionnée
-            document.getElementById(pageId).classList.add('active');
-            
-            // Mettre à jour les liens actifs dans la barre de navigation
-            document.querySelectorAll('.nav-bar a').forEach(function(link) {
-                if (link.getAttribute('data-page') === pageId) {
-                    link.classList.add('active');
-                } else {
-                    link.classList.remove('active');
-                }
-            });
-        }
-        
-        // Ajouter des écouteurs d'événements pour les liens de navigation
-        document.querySelectorAll('.nav-bar a').forEach(function(link) {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                showPage(this.getAttribute('data-page'));
-            });
+    // Code existant pour la navigation entre les pages
+    function showPage(pageId) {
+        // Cacher toutes les pages
+        document.querySelectorAll('.page').forEach(function(page) {
+            page.classList.remove('active');
         });
         
-        // Afficher la première page par défaut
-        showPage('spellbook');
+        // Afficher la page sélectionnée
+        document.getElementById(pageId).classList.add('active');
+        
+        // Mettre à jour les liens actifs dans la barre de navigation
+        document.querySelectorAll('.nav-bar a').forEach(function(link) {
+            if (link.getAttribute('data-page') === pageId) {
+                link.classList.add('active');
+            } else {
+                link.classList.remove('active');
+            }
+        });
+    }
+    
+    // Ajouter des écouteurs d'événements pour les liens de navigation
+    document.querySelectorAll('.nav-bar a').forEach(function(link) {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            showPage(this.getAttribute('data-page'));
+        });
     });
+    
+    // Afficher la première page par défaut
+    showPage('spellbook');
+    
+    // NOUVEAU CODE: Gestion du clic sur les en-têtes pour afficher/cacher les descriptions
+    document.querySelectorAll('.item-header').forEach(function(header) {
+        header.addEventListener('click', function() {
+            // Toggle la classe active sur l'en-tête (pour changer l'indicateur visuel)
+            this.classList.toggle('active');
+            
+            // Trouver la description associée à cet en-tête
+            var description = this.parentNode.querySelector('.item-description');
+            
+            // Afficher ou cacher la description
+            if (description) {
+                if (description.style.display === 'block') {
+                    description.style.display = 'none';
+                } else {
+                    description.style.display = 'block';
+                }
+            }
+        });
+    });
+});
     </script>
     </body>
     </html>
