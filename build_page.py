@@ -170,308 +170,6 @@ def text_cleaner(text):
     return text
 
 
-def generate_character_pages_html(character_data):
-    """
-    Génère une représentation HTML du grimoire de sorts, de l'inventaire et de la liste des dons.
-
-    Args:
-        character_data (dict): Les données du personnage au format JSON
-
-    Returns:
-        str: Le code HTML généré
-    """
-    css = """
-    
-.page {
-    padding: 20px;
-    box-sizing: border-box;
-    width: 100%; /* Largeur responsive */
-    max-width: 21cm; /* Maximum de 21cm */
-    margin: 0 auto;
-    background: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    display: none; /* Cacher toutes les pages par défaut */
-}
-.page.active {
-    display: block; /* Afficher uniquement la page active */
-}
-.page-header {
-    text-align: center;
-    border-bottom: 2px solid #5E0000;
-    padding-bottom: 10px;
-    margin-bottom: 20px;
-}
-h1, h2, h3, h4 {
-    font-family: 'Pathfinder', 'Times New Roman', serif;
-    margin-top: 0;
-    color: #5E0000;
-}
-h1 {
-    font-size: 24pt;
-    margin-bottom: 10px;
-}
-h2 {
-    font-size: 18pt;
-    border-bottom: 1px solid #5E0000;
-    padding-bottom: 5px;
-    margin-top: 20px;
-}
-h3 {
-    font-size: 14pt;
-    margin-bottom: 5px;
-}
-.section-title {
-    font-size: 18pt;
-    border-bottom: 1px solid #5E0000;
-    padding-bottom: 5px;
-    margin-top: 0px;
-    column-span: all; /* L'élément s'étend sur toutes les colonnes */
-}
-.section {
-    columns: 2;
-    gap: 10px;
-    background-color: #F0E6D2;
-    border: 1px solid #D4C8B0;
-    border-radius: 5px;
-    padding: 10px;
-    margin-bottom: 15px;
-    width: calc(100% - 20px);
-    break-inside: avoid-page;
-}
-.section-item-unique {
-    gap: 10px;
-    background-color: #F0E6D2;
-    border: 1px solid #D4C8B0;
-    border-radius: 5px;
-    padding: 10px;
-    margin-bottom: 15px;
-    width: calc(100% - 20px);
-    break-inside: avoid-page;
-}
-.item {
-    margin-bottom: 10px;
-    background-color: #FFFFFF;
-    border: 1px solid #E0D8C0;
-    border-radius: 5px;
-    padding: 10px;
-    box-sizing: border-box;
-    break-inside: avoid-column;
-}
-.item-long {
-    margin-bottom: 10px;
-    background-color: #FFFFFF;
-    border: 1px solid #E0D8C0;
-    border-radius: 5px;
-    padding: 10px;
-    box-sizing: border-box;
-}
-/* Cacher les URL et autres informations ajoutées automatiquement */
-:root {
-    -webkit-print-color-adjust: exact !important;
-    print-color-adjust: exact !important;
-}
-.item-header {
-    display: flex;
-    justify-content: space-between;
-    border-bottom: 1px solid #E0D8C0;
-    padding-bottom: 5px;
-    margin-bottom: 5px;
-    font-weight: bold;
-}
-.item-traits {
-    margin-top: 5px;
-    margin-bottom: 5px;
-}
-.trait {
-    display: inline-block;
-    background-color: #F0E6D2;
-    border: 1px solid #D4C8B0;
-    border-radius: 3px;
-    padding: 2px 5px;
-    margin-right: 5px;
-    font-size: 9pt;
-    color: #5E0000;
-}
-.item-description {
-    margin-top: 8px;
-    font-size: 10pt;
-}
-.metadata {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    font-size: 10pt;
-    color: #666;
-    margin-top: 5px;
-}
-.meta-item {
-    margin-right: 10px;
-}
-.actions {
-    color: #5E0000;
-    font-weight: bold;
-}
-
-/* Styles pour la barre de navigation */
-.nav-bar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: #5E0000;
-    color: white;
-    padding: 10px 0;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    z-index: 100;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.nav-bar a {
-    color: white;
-    text-decoration: none;
-    padding: 8px 16px;
-    margin: 0 5px;
-    border-radius: 3px;
-    transition: background-color 0.3s;
-}
-.nav-bar a:hover {
-    background-color: #7E2020;
-}
-.nav-bar a.active {
-    background-color: #7E2020;
-    font-weight: bold;
-}
-.content {
-    margin-top: 60px; /* Espace pour la barre de navigation */
-    padding-bottom: 20px;
-}
-@media (max-width: 768px) {
-.section {
-    columns: 1 !important; /* Forcer une seule colonne sur petits écrans */
-}
-
-/* Ajuster la taille des textes */
-h1 {
-    font-size: 20pt;
-}
-
-h2 {
-    font-size: 16pt;
-}
-
-/* Ajuster l'espacement */
-.item {
-    margin-bottom: 8px;
-    padding: 8px;
-}
-}
-@media print {
-    body {
-        background: none;
-        margin: 0;
-        padding: 0;
-    }
-    .page {
-        display: block !important; /* Afficher toutes les pages pour l'impression */
-        box-shadow: none;
-        margin: 0;
-        width: 100%;
-        height: auto;
-        page-break-after: always;
-    }
-    .nav-bar {
-        display: none; /* Cacher la barre de navigation pour l'impression */
-    }
-    .content {
-        margin-top: 0;
-    }
-}
-@page {
-    margin: 0.5cm;
-    size: A4;
-    /* Supprimer les en-têtes et pieds de page par défaut du navigateur */
-    margin-header: 0;
-    margin-footer: 0;
-}
-"""
-
-    # JavaScript pour la navigation
-    javascript = """
-    document.addEventListener('DOMContentLoaded', function() {
-        // Fonction pour afficher une page et masquer les autres
-        function showPage(pageId) {
-            // Masquer toutes les pages
-            document.querySelectorAll('.page').forEach(function(page) {
-                page.classList.remove('active');
-            });
-            
-            // Afficher la page sélectionnée
-            document.getElementById(pageId).classList.add('active');
-            
-            // Mettre à jour les liens actifs dans la barre de navigation
-            document.querySelectorAll('.nav-bar a').forEach(function(link) {
-                if (link.getAttribute('data-page') === pageId) {
-                    link.classList.add('active');
-                } else {
-                    link.classList.remove('active');
-                }
-            });
-        }
-        
-        // Ajouter des écouteurs d'événements pour les liens de navigation
-        document.querySelectorAll('.nav-bar a').forEach(function(link) {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                showPage(this.getAttribute('data-page'));
-            });
-        });
-        
-        // Afficher la première page par défaut
-        showPage('spellbook');
-    });
-    """
-
-    # Structure HTML de base
-    character_name = character_data["name"]
-    html = f"""<!DOCTYPE html>
-    <html lang="fr">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Personnage - {character_name}</title>
-        <style>{css}</style>
-    </head>
-    <body>
-        <!-- Barre de navigation -->
-        <div class="nav-bar">
-            <a href="#" data-page="spellbook" class="active">Grimoire</a>
-            <a href="#" data-page="inventory">Inventaire</a>
-            <a href="#" data-page="feats">Dons</a>
-        </div>
-        
-        <!-- Conteneur principal -->
-        <div class="content">
-    """
-
-    # Génération des différentes pages
-    html += generate_spellbook_page(character_data, page_id="spellbook")
-    html += generate_inventory_page(character_data, page_id="inventory")
-    html += generate_feats_page(character_data, page_id="feats")
-
-    html += (
-        """
-        </div>
-        <script>"""
-        + javascript
-        + """</script>
-    </body>
-    </html>
-    """
-    )
-    return html
-
-
 def generate_spellbook_page(character_data, page_id="spellbook"):
     """Génère la page de grimoire"""
     spellbook = build_spellbook(character_data)
@@ -769,6 +467,347 @@ def format_feat_html(feat):
     return html
 
 
+def generate_character_pages_html(character_data):
+    """
+    Génère une représentation HTML du grimoire de sorts, de l'inventaire et de la liste des dons.
+
+    Args:
+        character_data (dict): Les données du personnage au format JSON
+
+    Returns:
+        str: Le code HTML généré
+    """
+    css = """
+    
+.page {
+    padding: 20px;
+    box-sizing: border-box;
+    width: 100%; /* Largeur responsive */
+    max-width: 21cm; /* Maximum de 21cm */
+    margin: 0 auto;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    display: none; /* Cacher toutes les pages par défaut */
+}
+.page.active {
+    display: block; /* Afficher uniquement la page active */
+}
+.page-header {
+    text-align: center;
+    border-bottom: 2px solid #5E0000;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+h1, h2, h3, h4 {
+    font-family: 'Pathfinder', 'Times New Roman', serif;
+    margin-top: 0;
+    color: #5E0000;
+}
+h1 {
+    font-size: 24pt;
+    margin-bottom: 10px;
+}
+h2 {
+    font-size: 18pt;
+    border-bottom: 1px solid #5E0000;
+    padding-bottom: 5px;
+    margin-top: 20px;
+}
+h3 {
+    font-size: 14pt;
+    margin-bottom: 5px;
+}
+.section-title {
+    font-size: 18pt;
+    border-bottom: 1px solid #5E0000;
+    padding-bottom: 5px;
+    margin-top: 0px;
+    column-span: all; /* L'élément s'étend sur toutes les colonnes */
+}
+.section {
+    columns: 2;
+    gap: 10px;
+    background-color: #F0E6D2;
+    border: 1px solid #D4C8B0;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 15px;
+    width: calc(100% - 20px);
+    break-inside: avoid-page;
+}
+.section-item-unique {
+    gap: 10px;
+    background-color: #F0E6D2;
+    border: 1px solid #D4C8B0;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 15px;
+    width: calc(100% - 20px);
+    break-inside: avoid-page;
+}
+.item {
+    margin-bottom: 10px;
+    background-color: #FFFFFF;
+    border: 1px solid #E0D8C0;
+    border-radius: 5px;
+    padding: 10px;
+    box-sizing: border-box;
+    break-inside: avoid-column;
+}
+.item-long {
+    margin-bottom: 10px;
+    background-color: #FFFFFF;
+    border: 1px solid #E0D8C0;
+    border-radius: 5px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+/* Cacher les URL et autres informations ajoutées automatiquement */
+:root {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+}
+.item-header {
+    display: grid;
+    grid-template-columns: 10fr 1fr 1fr auto;
+    border-bottom: 1px solid #E0D8C0;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    /* afficher la description */
+    cursor: pointer;
+}
+/* Ajoute un indicateur visuel (triangle) */
+.item-header::after {
+    content: "▶"; /* Triangle pointant vers la droite quand fermé */
+    color: #5E0000;
+    margin-left: 10px;
+    font-size: 10pt;
+    align-self: center;
+}
+
+/* Change l'indicateur quand la description est affichée */
+.item-header.active::after {
+    content: "▼"; /* Triangle pointant vers le bas quand ouvert */
+}
+.item-traits {
+    margin-top: 5px;
+}
+.trait {
+    display: inline-block;
+    background-color: #F0E6D2;
+    border: 1px solid #D4C8B0;
+    border-radius: 3px;
+    padding: 2px 5px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    font-size: 9pt;
+    color: #5E0000;
+}
+.item-description {
+    margin-top: 8px;
+    font-size: 10pt;
+    /* cacher le texte */
+    display: none;
+}
+.metadata {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    font-size: 10pt;
+    color: #666;
+    margin-top: 5px;
+}
+.meta-item {
+    margin-right: 10px;
+}
+.actions {
+    color: #5E0000;
+    font-weight: bold;
+    align-self: center;
+    text-align: center;
+}
+
+/* Styles pour la barre de navigation */
+.nav-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #5E0000;
+    color: white;
+    padding: 10px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.nav-bar a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 16px;
+    margin: 0 5px;
+    border-radius: 3px;
+    transition: background-color 0.3s;
+}
+.nav-bar a:hover {
+    background-color: #7E2020;
+}
+.nav-bar a.active {
+    background-color: #7E2020;
+    font-weight: bold;
+}
+.content {
+    margin-top: 60px; /* Espace pour la barre de navigation */
+    padding-bottom: 20px;
+}
+@media (max-width: 768px) {
+.section {
+    columns: 1 !important; /* Forcer une seule colonne sur petits écrans */
+}
+
+/* Ajuster la taille des textes */
+h1 {
+    font-size: 20pt;
+}
+
+h2 {
+    font-size: 16pt;
+}
+
+/* Ajuster l'espacement */
+.item {
+    margin-bottom: 8px;
+    padding: 8px;
+}
+}
+@media print {
+    body {
+        background: none;
+        margin: 0;
+        padding: 0;
+    }
+    .page {
+        display: block !important; /* Afficher toutes les pages pour l'impression */
+        box-shadow: none;
+        margin: 0;
+        width: 100%;
+        height: auto;
+        page-break-after: always;
+    }
+    .nav-bar {
+        display: none; /* Cacher la barre de navigation pour l'impression */
+    }
+    .content {
+        margin-top: 0;
+    }
+}
+@page {
+    margin: 0.5cm;
+    size: A4;
+    /* Supprimer les en-têtes et pieds de page par défaut du navigateur */
+    margin-header: 0;
+    margin-footer: 0;
+}
+"""
+
+    # JavaScript pour la navigation
+    javascript = """
+    document.addEventListener('DOMContentLoaded', function() {
+    // Code existant pour la navigation entre les pages
+    function showPage(pageId) {
+        // Cacher toutes les pages
+        document.querySelectorAll('.page').forEach(function(page) {
+            page.classList.remove('active');
+        });
+        
+        // Afficher la page sélectionnée
+        document.getElementById(pageId).classList.add('active');
+        
+        // Mettre à jour les liens actifs dans la barre de navigation
+        document.querySelectorAll('.nav-bar a').forEach(function(link) {
+            if (link.getAttribute('data-page') === pageId) {
+                link.classList.add('active');
+            } else {
+                link.classList.remove('active');
+            }
+        });
+    }
+    
+    // Ajouter des écouteurs d'événements pour les liens de navigation
+    document.querySelectorAll('.nav-bar a').forEach(function(link) {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            showPage(this.getAttribute('data-page'));
+        });
+    });
+    
+    // Afficher la première page par défaut
+    showPage('spellbook');
+    
+    // NOUVEAU CODE: Gestion du clic sur les en-têtes pour afficher/cacher les descriptions
+    document.querySelectorAll('.item-header').forEach(function(header) {
+        header.addEventListener('click', function() {
+            // Toggle la classe active sur l'en-tête (pour changer l'indicateur visuel)
+            this.classList.toggle('active');
+            
+            // Trouver la description associée à cet en-tête
+            var description = this.parentNode.querySelector('.item-description');
+            
+            // Afficher ou cacher la description
+            if (description) {
+                if (description.style.display === 'block') {
+                    description.style.display = 'none';
+                } else {
+                    description.style.display = 'block';
+                }
+            }
+        });
+    });
+});
+    """
+
+    # Structure HTML de base
+    character_name = character_data["name"]
+    html = f"""<!DOCTYPE html>
+    <html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Personnage - {character_name}</title>
+        <style>{css}</style>
+    </head>
+    <body>
+        <!-- Barre de navigation -->
+        <div class="nav-bar">
+            <a href="#" data-page="spellbook" class="active">Grimoire</a>
+            <a href="#" data-page="inventory">Inventaire</a>
+            <a href="#" data-page="feats">Dons</a>
+        </div>
+        
+        <!-- Conteneur principal -->
+        <div class="content">
+    """
+
+    # Génération des différentes pages
+    html += generate_spellbook_page(character_data, page_id="spellbook")
+    html += generate_inventory_page(character_data, page_id="inventory")
+    html += generate_feats_page(character_data, page_id="feats")
+
+    html += (
+        """
+        </div>
+        <script>"""
+        + javascript
+        + """</script>
+    </body>
+    </html>
+    """
+    )
+    return html
+
+
 def generate_index_page(character_files):
     """
     Génère la page d'index qui liste tous les personnages disponibles.
@@ -784,15 +823,10 @@ def generate_index_page(character_files):
 
     for char in character_files:
         # Création de la carte pour chaque personnage
-        image_style = f"background-color: {char.get('color', '#FFD700')};"
-        if "image" in char:
-            image_style = f"background-image: url('{char['image']}');"
-
         character_cards_html += f"""
         <a href="{char['filename']}" class="character-card">
-            <div class="character-image" style="{image_style}"></div>
             <div class="character-name">{char['name']}</div>
-            <div class="character-info">{char.get('class', '')} {char.get('level', '')} | {char.get('subclass', '')}</div>
+            <div class="character-info">{char.get('class', '')} lv {char.get('level', '')}</div>
         </a>
         """
 
@@ -937,9 +971,8 @@ def get_character_info(json_file):
     return {
         "name": character_name,
         "filename": filename,
-        "class": character_data.get("class", ""),
-        "level": character_data.get("level", ""),
-        "subclass": character_data.get("subclass", ""),
+        "class": list_don_by_categ(character_data, "class")[0].get("name", ""),
+        "level": character_data["system"]["details"]["level"]["value"],
         "json_file": json_file,
         "data": character_data,
     }
@@ -983,7 +1016,6 @@ def main():
                             "filename": char_info["filename"],
                             "class": char_info["class"],
                             "level": char_info["level"],
-                            "subclass": char_info["subclass"],
                         }
                     )
                 except Exception as e:
@@ -1006,7 +1038,6 @@ def main():
                     "filename": char_info["filename"],
                     "class": char_info["class"],
                     "level": char_info["level"],
-                    "subclass": char_info["subclass"],
                 }
             )
 
