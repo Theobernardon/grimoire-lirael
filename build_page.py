@@ -1,6 +1,38 @@
+import argparse
 import glob
 import json
-import re
+
+
+def parse_arguments():
+    """
+    Parse les arguments de ligne de commande pour déterminer quels fichiers traiter.
+    """
+    parser = argparse.ArgumentParser(
+        description="Génère des pages HTML à partir de fichiers JSON de personnages."
+    )
+    parser.add_argument(
+        "--files",
+        type=str,
+        default="",
+        help="Liste des fichiers JSON à traiter, séparés par des espaces",
+    )
+    parser.add_argument(
+        "--all",
+        type=str,
+        default="false",
+        help='Si "true", traite tous les fichiers JSON',
+    )
+
+    args = parser.parse_args()
+
+    # Conversion de la chaîne en liste de fichiers
+    files_to_process = []
+    if args.files:
+        files_to_process = args.files.strip().split()
+
+    process_all = args.all.lower() == "true"
+
+    return files_to_process, process_all
 
 
 class Spell:
@@ -664,58 +696,124 @@ def generate_index_page(character_files):
     return html
 
 
+def get_character_info(json_file):
+    """
+    Extrait les informations de base d'un personnage depuis un fichier JSON.
+    Args:
+        json_file (str): Chemin du fichier JSON
+    Returns:
+        dict: Informations de base du personnage
+    """
+    with open(json_file, "r", encoding="utf-8") as f:
+        character_data = json.load(f)
+
+    character_name = character_data.get("name", "Sans nom")
+    filename = (
+        character_name.lower()
+        .replace(" ", "_")
+        .replace("'", "")
+        .replace('"', "")
+        .replace("-", "_")
+        + ".html"
+    )
+
+    return {
+        "name": character_name,
+        "filename": filename,
+        "class": character_data.get("class", ""),
+        "level": character_data.get("level", ""),
+        "subclass": character_data.get("subclass", ""),
+        "json_file": json_file,
+        "data": character_data,
+    }
+
+
 def main():
     """
     Fonction principale qui orchestre le processus de génération des pages HTML.
     """
-    # 1. Récupérer la liste des fichiers JSON dans le dossier json/
-    json_files = glob.glob("json/*.json")
-    character_info_list = []
+    # Récupérer les arguments
+    files_to_process, process_all = parse_arguments()
 
-    # 2. Pour chaque fichier JSON
-    for json_file in json_files:
-        # 3. Charger les données du personnage
-        with open(json_file, "r", encoding="utf-8") as f:
-            character_data = json.load(f)
-
-        # 4. Extraire le nom du personnage pour le nom de fichier
-        character_name = character_data["name"]
-        filename = (
-            character_name.lower()
-            .replace(" ", "_")
-            .replace("'", "")
-            .replace('"', "")
-            .replace("-", "_")
-            + ".html"
+    # Si aucun fichier spécifié et pas d'option "all", on cherche les fichiers modifiés récemment
+    if not files_to_process and not process_all:
+        print(
+            "Aucun fichier spécifié et option 'all' non activée. Veuillez spécifier des fichiers ou utiliser --all=true."
         )
+        return
 
-        # 5. Collecter les informations pour l'index
-        char_info = {
-            "name": character_name,
-            "filename": filename,
-            "class": character_data.get("class", ""),
-            "level": character_data.get("level", ""),
-            "subclass": character_data.get("subclass", ""),
-        }
-        character_info_list.append(char_info)
+    # Si on traite tous les fichiers, on récupère la liste complète
+    if process_all:
+        files_to_process = glob.glob("json/*.json")
 
-        # 6. Générer le HTML du personnage
-        html_content = generate_character_pages_html(character_data)
+    # Liste pour stocker les infos de tous les personnages (pour l'index)
+    all_character_info = []
 
-        # 7. Écrire le fichier HTML du personnage
-        with open(filename, "w", encoding="utf-8") as f:
-            f.write(html_content)
+    # Si on modifie seulement certains fichiers, on doit charger les infos de tous les personnages existants
+    if not process_all:
+        # Récupérer tous les fichiers JSON disponibles
+        all_json_files = glob.glob("json/*.json")
 
-        print(f"Fichier {filename} généré avec succès.")
+        # Pour chaque fichier JSON, extraire les infos de base pour l'index
+        for json_file in all_json_files:
+            if json_file not in files_to_process:
+                try:
+                    char_info = get_character_info(json_file)
+                    # On ne stocke que les infos nécessaires pour l'index
+                    all_character_info.append(
+                        {
+                            "name": char_info["name"],
+                            "filename": char_info["filename"],
+                            "class": char_info["class"],
+                            "level": char_info["level"],
+                            "subclass": char_info["subclass"],
+                        }
+                    )
+                except Exception as e:
+                    print(f"Erreur lors du traitement du fichier {json_file}: {str(e)}")
 
-    # 8. Générer la page d'index
-    index_html = generate_index_page(character_info_list)
+    # Traiter les fichiers spécifiés
+    for json_file in files_to_process:
+        try:
+            print(f"Traitement du fichier {json_file}...")
 
-    # 9. Écrire la page d'index
-    with open("index.html", "w", encoding="utf-8") as f:
-        f.write(index_html)
+            # Récupérer les informations du personnage
+            char_info = get_character_info(json_file)
 
-    print("Page d'index générée avec succès.")
+            # Ajouter aux infos pour l'index
+            all_character_info.append(
+                {
+                    "name": char_info["name"],
+                    "filename": char_info["filename"],
+                    "class": char_info["class"],
+                    "level": char_info["level"],
+                    "subclass": char_info["subclass"],
+                }
+            )
+
+            # Générer le HTML du personnage
+            html_content = generate_character_pages_html(char_info["data"])
+
+            # Écrire le fichier HTML du personnage
+            with open(char_info["filename"], "w", encoding="utf-8") as f:
+                f.write(html_content)
+
+            print(f"Fichier {char_info['filename']} généré avec succès.")
+
+        except Exception as e:
+            print(f"Erreur lors du traitement du fichier {json_file}: {str(e)}")
+
+    # Générer la page d'index avec toutes les informations des personnages
+    try:
+        print("Génération de la page d'index...")
+        index_html = generate_index_page(all_character_info)
+
+        with open("index.html", "w", encoding="utf-8") as f:
+            f.write(index_html)
+
+        print("Page d'index générée avec succès.")
+    except Exception as e:
+        print(f"Erreur lors de la génération de la page d'index: {str(e)}")
 
 
 if __name__ == "__main__":
