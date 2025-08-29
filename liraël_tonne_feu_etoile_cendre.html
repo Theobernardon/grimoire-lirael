@@ -4,6 +4,221 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Personnage - Liraël "Tonne-feu" Etoile-Cendre</title>
+        <style>
+    
+.page {
+    padding: 20px;
+    box-sizing: border-box;
+    width: 100%; /* Largeur responsive */
+    max-width: 21cm; /* Maximum de 21cm */
+    margin: 0 auto;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    display: none; /* Cacher toutes les pages par défaut */
+}
+.page.active {
+    display: block; /* Afficher uniquement la page active */
+}
+.page-header {
+    text-align: center;
+    border-bottom: 2px solid #5E0000;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+h1, h2, h3, h4 {
+    font-family: 'Pathfinder', 'Times New Roman', serif;
+    margin-top: 0;
+    color: #5E0000;
+}
+h1 {
+    font-size: 24pt;
+    margin-bottom: 10px;
+}
+h2 {
+    font-size: 18pt;
+    border-bottom: 1px solid #5E0000;
+    padding-bottom: 5px;
+    margin-top: 20px;
+}
+h3 {
+    font-size: 14pt;
+    margin-bottom: 5px;
+}
+.section-title {
+    font-size: 18pt;
+    border-bottom: 1px solid #5E0000;
+    padding-bottom: 5px;
+    margin-top: 0px;
+    column-span: all; /* L'élément s'étend sur toutes les colonnes */
+}
+.section {
+    columns: 2;
+    gap: 10px;
+    background-color: #F0E6D2;
+    border: 1px solid #D4C8B0;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 15px;
+    width: calc(100% - 20px);
+    break-inside: avoid-page;
+}
+.section-item-unique {
+    gap: 10px;
+    background-color: #F0E6D2;
+    border: 1px solid #D4C8B0;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 15px;
+    width: calc(100% - 20px);
+    break-inside: avoid-page;
+}
+.item {
+    margin-bottom: 10px;
+    background-color: #FFFFFF;
+    border: 1px solid #E0D8C0;
+    border-radius: 5px;
+    padding: 10px;
+    box-sizing: border-box;
+    break-inside: avoid-column;
+}
+.item-long {
+    margin-bottom: 10px;
+    background-color: #FFFFFF;
+    border: 1px solid #E0D8C0;
+    border-radius: 5px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+/* Cacher les URL et autres informations ajoutées automatiquement */
+:root {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+}
+.item-header {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #E0D8C0;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+.item-traits {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.trait {
+    display: inline-block;
+    background-color: #F0E6D2;
+    border: 1px solid #D4C8B0;
+    border-radius: 3px;
+    padding: 2px 5px;
+    margin-right: 5px;
+    font-size: 9pt;
+    color: #5E0000;
+}
+.item-description {
+    margin-top: 8px;
+    font-size: 10pt;
+}
+.metadata {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    font-size: 10pt;
+    color: #666;
+    margin-top: 5px;
+}
+.meta-item {
+    margin-right: 10px;
+}
+.actions {
+    color: #5E0000;
+    font-weight: bold;
+}
+
+/* Styles pour la barre de navigation */
+.nav-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #5E0000;
+    color: white;
+    padding: 10px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.nav-bar a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 16px;
+    margin: 0 5px;
+    border-radius: 3px;
+    transition: background-color 0.3s;
+}
+.nav-bar a:hover {
+    background-color: #7E2020;
+}
+.nav-bar a.active {
+    background-color: #7E2020;
+    font-weight: bold;
+}
+.content {
+    margin-top: 60px; /* Espace pour la barre de navigation */
+    padding-bottom: 20px;
+}
+@media (max-width: 768px) {
+.section {
+    columns: 1 !important; /* Forcer une seule colonne sur petits écrans */
+}
+
+/* Ajuster la taille des textes */
+h1 {
+    font-size: 20pt;
+}
+
+h2 {
+    font-size: 16pt;
+}
+
+/* Ajuster l'espacement */
+.item {
+    margin-bottom: 8px;
+    padding: 8px;
+}
+}
+@media print {
+    body {
+        background: none;
+        margin: 0;
+        padding: 0;
+    }
+    .page {
+        display: block !important; /* Afficher toutes les pages pour l'impression */
+        box-shadow: none;
+        margin: 0;
+        width: 100%;
+        height: auto;
+        page-break-after: always;
+    }
+    .nav-bar {
+        display: none; /* Cacher la barre de navigation pour l'impression */
+    }
+    .content {
+        margin-top: 0;
+    }
+}
+@page {
+    margin: 0.5cm;
+    size: A4;
+    /* Supprimer les en-têtes et pieds de page par défaut du navigateur */
+    margin-header: 0;
+    margin-footer: 0;
+}
+</style>
     </head>
     <body>
         <!-- Barre de navigation -->
