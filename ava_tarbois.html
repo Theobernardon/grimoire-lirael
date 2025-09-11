@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+    <html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Personnage - Ava Tarbois</title>
+        <style>
+    
+.page {
+    padding: 20px;
+    box-sizing: border-box;
+    width: 100%; /* Largeur responsive */
+    max-width: 21cm; /* Maximum de 21cm */
+    margin: 0 auto;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    display: none; /* Cacher toutes les pages par défaut */
+}
+.page.active {
+    display: block; /* Afficher uniquement la page active */
+}
+.page-header {
+    text-align: center;
+    border-bottom: 2px solid #5E0000;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+h1, h2, h3, h4 {
+    font-family: 'Pathfinder', 'Times New Roman', serif;
+    margin-top: 0;
+    color: #5E0000;
+}
+h1 {
+    font-size: 24pt;
+    margin-bottom: 10px;
+}
+h2 {
+    font-size: 18pt;
+    border-bottom: 1px solid #5E0000;
+    padding-bottom: 5px;
+    margin-top: 20px;
+}
+h3 {
+    font-size: 14pt;
+    margin-bottom: 5px;
+}
+.section-title {
+    font-size: 18pt;
+    border-bottom: 1px solid #5E0000;
+    padding-bottom: 5px;
+    margin-top: 0px;
+    column-span: all; /* L'élément s'étend sur toutes les colonnes */
+}
+.section {
+    columns: 2;
+    gap: 10px;
+    background-color: #F0E6D2;
+    border: 1px solid #D4C8B0;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 15px;
+    width: calc(100% - 20px);
+    break-inside: avoid-page;
+}
+.section-item-unique {
+    gap: 10px;
+    background-color: #F0E6D2;
+    border: 1px solid #D4C8B0;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 15px;
+    width: calc(100% - 20px);
+    break-inside: avoid-page;
+}
+.item {
+    margin-bottom: 10px;
+    background-color: #FFFFFF;
+    border: 1px solid #E0D8C0;
+    border-radius: 5px;
+    padding: 10px;
+    box-sizing: border-box;
+    break-inside: avoid-column;
+}
+.item-long {
+    margin-bottom: 10px;
+    background-color: #FFFFFF;
+    border: 1px solid #E0D8C0;
+    border-radius: 5px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+/* Cacher les URL et autres informations ajoutées automatiquement */
+:root {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+}
+.item-header {
+    display: grid;
+    grid-template-columns: 10fr 1fr 1fr auto;
+    border-bottom: 1px solid #E0D8C0;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    /* afficher la description */
+    cursor: pointer;
+}
+/* Ajoute un indicateur visuel (triangle) */
+.item-header::after {
+    content: "▶"; /* Triangle pointant vers la droite quand fermé */
+    color: #5E0000;
+    margin-left: 10px;
+    font-size: 10pt;
+    align-self: center;
+}
+
+/* Change l'indicateur quand la description est affichée */
+.item-header.active::after {
+    content: "▼"; /* Triangle pointant vers le bas quand ouvert */
+}
+.item-traits {
+    margin-top: 5px;
+}
+.trait {
+    display: inline-block;
+    background-color: #F0E6D2;
+    border: 1px solid #D4C8B0;
+    border-radius: 3px;
+    padding: 2px 5px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    font-size: 9pt;
+    color: #5E0000;
+}
+.item-description {
+    margin-top: 8px;
+    font-size: 10pt;
+    /* cacher le texte */
+    display: none;
+}
+.metadata {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    font-size: 10pt;
+    color: #666;
+    margin-top: 5px;
+}
+.meta-item {
+    margin-right: 10px;
+}
+.actions {
+    color: #5E0000;
+    font-weight: bold;
+    align-self: center;
+    text-align: center;
+}
+
+/* Styles pour la barre de navigation */
+.nav-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #5E0000;
+    color: white;
+    padding: 10px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.nav-bar a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 16px;
+    margin: 0 5px;
+    border-radius: 3px;
+    transition: background-color 0.3s;
+}
+.nav-bar a:hover {
+    background-color: #7E2020;
+}
+.nav-bar a.active {
+    background-color: #7E2020;
+    font-weight: bold;
+}
+.content {
+    margin-top: 60px; /* Espace pour la barre de navigation */
+    padding-bottom: 20px;
+}
+@media (max-width: 768px) {
+.section {
+    columns: 1 !important; /* Forcer une seule colonne sur petits écrans */
+}
+
+/* Ajuster la taille des textes */
+h1 {
+    font-size: 20pt;
+}
+
+h2 {
+    font-size: 16pt;
+}
+
+/* Ajuster l'espacement */
+.item {
+    margin-bottom: 8px;
+    padding: 8px;
+}
+}
+@media print {
+    body {
+        background: none;
+        margin: 0;
+        padding: 0;
+    }
+    .page {
+        display: block !important; /* Afficher toutes les pages pour l'impression */
+        box-shadow: none;
+        margin: 0;
+        width: 100%;
+        height: auto;
+        page-break-after: always;
+    }
+    .nav-bar {
+        display: none; /* Cacher la barre de navigation pour l'impression */
+    }
+    .content {
+        margin-top: 0;
+    }
+}
+@page {
+    margin: 0.5cm;
+    size: A4;
+    /* Supprimer les en-têtes et pieds de page par défaut du navigateur */
+    margin-header: 0;
+    margin-footer: 0;
+}
+</style>
+    </head>
+    <body>
+        <!-- Barre de navigation -->
+        <div class="nav-bar">
+            <a href="#" data-page="spellbook" class="active">Grimoire</a>
+            <a href="#" data-page="inventory">Inventaire</a>
+            <a href="#" data-page="feats">Dons</a>
+        </div>
+        
+        <!-- Conteneur principal -->
+        <div class="content">
+    
+    <div id="spellbook" class="page active">
+        <div class="page-header">
+            <h1>Grimoire de Ava Tarbois</h1>
+            <h3>Niveau 3 Prêtre (Cleric)</h3>
+        </div>
+    
+        <div class=section>
+        <h2 class="section-title">Tours de magie</h2>
+        
+    <div class="item">
+        <div class="item-header">
+            <div>Assistance surnaturelle (Guidance)</div>
+            <div class="actions">1</div>
+        </div>
+    <div class="item-traits"><span class="trait">cantrip</span><span class="trait">concentrate</span></div><div class="item-description">Vous sollicitez une assistance d'entités surnaturelles, ce qui confère à la cible un bonus de statut de +1 à un jet d'attaque, un test de Perception, un jet de sauvegarde ou un test de compétence effectué avant la fin de la durée du sort.<br>
+La cible choisit sur quel jet elle souhaite appliquer le bonus avant de lancer le dé. Le sort se termine si la cible utilise le bonus. Qu'elle l'utilise ou non, la cible est ensuite temporairement immunisée pendant une heure.<br>
+<hr />
+<strong>Effet : Assistance surnaturelle</strong><br>
+<strong>Effet : Immunité à Assistance surnaturelle</strong><br></div></div>
+    <div class="item">
+        <div class="item-header">
+            <div>Bouclier (Shield)</div>
+            <div class="actions">1</div>
+        </div>
+    <div class="item-traits"><span class="trait">cantrip</span><span class="trait">concentrate</span><span class="trait">force</span></div><div class="item-description">Vous levez un bouclier de force magique. Ceci compte comme si vous utilisiez Lever un bouclier, vous octroyant un bonus de circonstances de +1 à la CA jusqu'au début de votre prochain tour, mais cela ne nécessite aucune main pour l'utiliser.<br>
+Tant que le sort est actif, vous pouvez utiliser la réaction <strong>Blocage au bouclier</strong> avec votre bouclier magique. Le bouclier possède une Solidité de 5. Vous pouvez utiliser la réaction du sort pour réduire les dégâts de tout sort ou effet magique, même s'il n'inflige pas des dégâts physiques. Après avoir effectué Blocage au bouclier, le sort se termine et vous ne pouvez plus le lancer de nouveau pendant 10 minutes.<br>
+<hr />
+<strong>Effet : Bouclier</strong><br>
+<strong>Effet : Immunité à bouclier</strong><br>
+<hr />
+<strong>Intensifié (+2)</strong> La Solidité du bouclier augmente de 5.<br></div></div>
+    <div class="item">
+        <div class="item-header">
+            <div>Détection de la magie (Detect Magic)</div>
+            <div class="actions">2</div>
+        </div>
+    <div class="item-traits"><span class="trait">cantrip</span><span class="trait">concentrate</span><span class="trait">detection</span><span class="trait">manipulate</span></div><div class="item-description">Vous envoyez une pulsation qui enregistre la présence de magie. Vous ne recevez aucune information au-delà de la présence ou de l'absence de magie. Vous pouvez choisir d'ignorer la magie dont vous avez déjà pleinement conscience, tels que les objets magiques et les sorts actifs appartenant à vos alliés et vous.<br>
+Vous ne détectez la magie d'illusion que si cet effet de magie possède un rang inférieur au rang de votre sort de <em>Détection de la magie</em>. Quoi qu'il en soit, les objets qui possèdent une aura d'illusion mais qui n'ont pas une apparence trompeuse (telle qu'une <em>Potion d'invisibilité</em>) se détectent comme à l'ordinaire.<br>
+<hr />
+<strong>Intensifié (3e)</strong> Vous apprenez le rang ou le niveau du plus puissant effet magique, à l'appréciation du MJ.<br>
+<strong>Intensifié (4e)</strong> Comme pour le niveau 3 mais vous localisez aussi la source de la magie de plus haut rang. Comme pour un sens imprécis, vous n'apprenez pas son emplacement exact mais vous réduisez sa source à un cube de 1,50 mètre de côté (ou la plus proche de ça si la source est de plus grande taille).<br></div></div>
+    <div class="item">
+        <div class="item-header">
+            <div>Fléchettes aiguilles (Needle Darts)</div>
+            <div class="actions">2</div>
+        </div>
+    <div class="item-traits"><span class="trait">attack</span><span class="trait">cantrip</span><span class="trait">concentrate</span><span class="trait">manipulate</span><span class="trait">metal</span></div><div class="item-description">Vous façonnez trois aiguilles à partir d'un morceau de métal en votre possession et les envoyer voler en formation vers une cible. Faites un jet d'attaque de sort contre la CA de votre cible. Les aiguilles infligent 3d4 dégâts perforants et pourraient provoquer un saignement.<br>
+Les aiguilles transmettent les propriétés spéciales du métal dont elles sont constituées. Par exemple, les aiguilles en fer froid infligent des dégâts supplémentaires aux créatures ayant une faiblesse au fer froid. Toutes les aiguilles sont faites du même métal et le métal vous revient après l'attaque.<br>
+<hr />
+<strong>Succès critique</strong> La cible subit le double des dégâts et <strong>1 dégât de saignement</strong>.<br>
+<strong>Succès</strong> La cible subit la totalité des dégâts.<br>
+<hr />
+<strong>Intensifié (+1)</strong> Vous envoyez une aiguille supplémentaire, ce qui augmente les dégâts normaux de 1d4 et les dégâts de saignement sur un coup critique de 1.<br></div></div>
+    <div class="item">
+        <div class="item-header">
+            <div>Hymne obsédant (Haunting Hymn)</div>
+            <div class="actions">2</div>
+        </div>
+    <div class="item-traits"><span class="trait">auditory</span><span class="trait">cantrip</span><span class="trait">concentrate</span><span class="trait">manipulate</span><span class="trait">sonic</span></div><div class="item-description">Vous faites résonner un hymne assourdissant que seules les créatures de la zone peuvent entendre. L'hymne inflige 1d8 dégâts sonores, avec un jet de Vigueur basique. Si une cible obtient un échec critique, elle est également <strong>Sourde</strong> pendant 1 minute.<br>
+<hr />
+<strong>Intensifié (+2)</strong> Les dégâts augmentent de 1d8.<br></div></div></div>
+        <div class=section-item-unique>
+        <h2 class="section-title">Sorts focalisés</h2>
+        
+    <div class="item">
+        <div class="item-header">
+            <div>Gaver (Overstuff)</div>
+            <div class="actions">2</div>
+        </div>
+    <div class="item-traits"><span class="trait">cleric</span><span class="trait">concentrate</span><span class="trait">focus</span><span class="trait">manipulate</span></div><div class="item-description">Une énorme quantité de nourriture et de boisson rassasie la cible. Elle reçoit la valeur de nutrition d'un repas complet et doit faire un jet de Vigueur. Une cible rendue <strong>Nauséeuse</strong> par le sort subit une pénalité de statut de -3 mètres à sa Vitesse jusqu'à ce qu'elle ne soit plus Nauséeuse.<br>
+<hr />
+<strong>Succès critique</strong> La cible n'est pas affectée.<br>
+<strong>Succès</strong> La cible est <strong>Nauséeuse 1</strong> mais si elle dépense une action pour mettre fin à l'état, elle réussit automatiquement.<br>
+<strong>Échec</strong> La cible est Nauséeuse 1.<br>
+<strong>Échec critique</strong> La cible est Nauséeuse 2.<br></div></div></div>
+            <div class=section>
+            <h2 class="section-title">Sorts de niveau 1</h2>
+            
+    <div class="item">
+        <div class="item-header">
+            <div>Arme runique (Runic Weapon)</div>
+            <div class="actions">2</div>
+        </div>
+    <div class="item-traits"><span class="trait">concentrate</span><span class="trait">manipulate</span></div><div class="item-description">L'arme scintille de magie avec des runes gravées temporairement tout du long. La cible devient une <em>arme de frappe +1</em>, ce qui lui procure un bonus d'objet de +1 aux jets d'attaques et fait passer à deux les dés de dégâts de l'arme<br>
+<hr />
+<strong>Intensifié (6e)</strong> L'arme est <em>de frappe supérieure +2</em>.<br>
+<strong>Intensifié (9e)</strong> L'arme est <em>de frappe majeure +3</em>.<br>
+<strong>Effet : Arme runique</strong><br></div></div>
+    <div class="item">
+        <div class="item-header">
+            <div>Guérison (Heal)</div>
+            <div class="actions">1 to 3</div>
+        </div>
+    <div class="item-traits"><span class="trait">healing</span><span class="trait">manipulate</span><span class="trait">vitality</span></div><div class="item-description">Vous canalisez de l'énergie vitale pour soigner les vivants ou blesser les morts-vivants. Si la cible est une créature vivante consentante, vous lui redonnez 1d8 Points de vie. Si la cible est un mort-vivant, vous lui infligez ce montant de dégâts de vitalité et elle obtient un jet de Vigueur basique. Le nombre d'actions que vous passez à Lancer ce sort détermine ses cibles, sa portée, sa zone et d'autres paramètres.<br>
+<hr />
+<span class="action-glyph">1</span> Le sort a une portée de contact.<br>
+<span class="action-glyph">2</span> <strong>(concentration)</strong> Le sort a une portée de 9 mètres. Si vous soignez une créature vivante, augmentez de 8 les Points de vie récupérés.<br>
+<span class="action-glyph">3</span> <strong>(concentration)</strong> Vous dispersez de l'énergie vitale dans une <strong>émanation de 9 mètres</strong>. Cela cible toutes les créatures vivantes et mortes-vivantes dans l'explosion.<br>
+<hr />
+<strong>Intensifié (+1)</strong> Le montant des soins ou des dégâts augmente de 1d8 et les soins supplémentaires de la version à 2 actions augmentent de 8.<br></div></div>
+    <div class="item">
+        <div class="item-header">
+            <div>Pas rapide (Fleet Step)</div>
+            <div class="actions">2</div>
+        </div>
+    <div class="item-traits"><span class="trait">concentrate</span><span class="trait">manipulate</span></div><div class="item-description">Vous obtenez un bonus de statut de +9 mètres à votre Vitesse.<br>
+<strong>Effet : Pas rapide</strong><br></div></div>
+    <div class="item">
+        <div class="item-header">
+            <div>Sanctuaire (Sanctuary)</div>
+            <div class="actions">2</div>
+        </div>
+    <div class="item-traits"><span class="trait">concentrate</span><span class="trait">manipulate</span></div><div class="item-description">Vous protégez une créature grâce à une énergie protectrice qui détourne les attaques ennemies. Les créatures qui tentent d'attaquer la cible doivent effectuer un jet de Volonté à chaque fois. Si la cible utilise une action hostile, le sort se termine.<br>
+<hr />
+<strong>Succès critique</strong> <em>Sanctuaire</em> prend fin.<br>
+<strong>Succès</strong> La créature peut tenter son attaque et n'importe quelle autre attaque contre la cible ce tour.<br>
+<strong>Échec</strong> La créature ne peut pas attaquer la cible et perd son action. Elle ne peut plus tenter d'attaque contre la cible ce tour.<br>
+<strong>Échec critique</strong> La créature perd son action et ne peut pas tenter d'attaquer la cible pendant le reste de la durée de <em>Sanctuaire</em>.<br></div></div></div>
+            <div class=section>
+            <h2 class="section-title">Sorts de niveau 2</h2>
+            
+    <div class="item">
+        <div class="item-header">
+            <div>Abrutir (Stupefy)</div>
+            <div class="actions">2</div>
+        </div>
+    <div class="item-traits"><span class="trait">concentrate</span><span class="trait">manipulate</span><span class="trait">mental</span></div><div class="item-description">Vous engourdissez l'esprit de la cible en fonction de son jet de Volonté.<br>
+<hr />
+<strong>Succès critique</strong> La cible n'est pas affectée.<br>
+<strong>Succès</strong> La cible est <strong>Stupéfiée 1</strong> jusqu'au début de votre prochain tour.<br>
+<strong>Échec</strong> La cible est <strong>Stupéfiée 2</strong> pendant 1 minute.<br>
+<strong>Échec critique</strong> La cible est <strong>Stupéfiée 3</strong> pendant 1 minute.<br></div></div>
+    <div class="item">
+        <div class="item-header">
+            <div>Manifestation of Spirits</div>
+            <div class="actions">2</div>
+        </div>
+    <div class="item-traits"><span class="trait">concentrate</span><span class="trait">manipulate</span><span class="trait">mental</span></div><div class="item-description">You open the target's eyes to the plethora of spirits surrounding it—and it sees all these spirits as menacing and powerful. The target must attempt a Will save.<br><hr /><strong>Critical Success</strong> The target is unaffected.<br>
+<strong>Success</strong> The target believes every spirit it sees is an imminent threat. It's <strong>Stupefied 3</strong> for 1 round.<br>
+<strong>Failure</strong> As success, but the effect lasts 1 minute.<br>
+<strong>Critical Failure</strong> As failure, and the target becomes <strong>Confused</strong> for 1 round.<br><hr /><strong>Heightened (6th)</strong> You can target up to 5 creatures.<br></div></div>
+    <div class="item">
+        <div class="item-header">
+            <div>Vendetta du sang (Blood Vendetta)</div>
+            <div class="actions">reaction</div>
+        </div>
+    <div class="item-traits"><span class="trait">curse</span></div><div class="item-description"><strong>Conditions</strong> Vous pouvez saigner.<br>
+<strong>Déclencheur</strong> Une créature vous inflige des dégâts perforants, tranchants ou des dégâts de saignement.<br>
+<hr />
+Vous maudissez la cible, la punissant pour avoir eu l'audace de répandre votre sang. La cible subit 2d6 dégâts de saignement et doit tenter un jet de Volonté.<br>
+<hr />
+<strong>Succès critique</strong> La cible n'est pas affectée.<br>
+<strong>Succès</strong> La cible ne subit que la moitié des dégâts de saignement.<br>
+<strong>Échec</strong> La cible subit la totalité des dégâts de saignement. Jusqu'à ce que le saignement s'arrête, la cible a une faiblesse 1 contre les dégâts perforants et tranchants. <strong>Effet : Vendetta du sang</strong><br>
+<strong>Échec critique</strong> Comme en cas d'échec mais la cible subit le double des dégâts de saignement.<br>
+<hr />
+<strong>Intensifié (+2)</strong> Les dégâts de saignement augmentent de 2d6.<br></div></div></div></div>
+    <div id="inventory" class="page">
+        <div class="page-header">
+            <h1>Inventaire de Ava Tarbois</h1>
+            <h3>Niveau 3 Prêtre (Cleric)</h3>
+        </div>
+    
+            <div class=section>
+            <h2 class="section-title">Armes</h2>
+            
+    <div class="item">
+        <div class="item-header">
+            <div>Rapière (Rapier)</div>
+    <div>1d6 piercing</div></div><div class="item-traits"><span class="trait">deadly-d8</span><span class="trait">disarm</span><span class="trait">finesse</span></div><div class="metadata"><span class="meta-item">Portée: None</span><span class="meta-item">Encombrement: 1</span></div><div class="item-description"><p>La rapière est une longue et fine lame perforante, avec une garde en coupe. Elle est prisée de beaucoup en tant qu'arme de duel.</p></div></div>
+    <div class="item">
+        <div class="item-header">
+            <div>Bandelettes de coups puissants (Handwraps of Mighty Blows)</div>
+    <div>1d4 bludgeoning</div></div><div class="item-traits"><span class="trait">invested</span><span class="trait">magical</span></div><div class="metadata"><span class="meta-item">Portée: None</span><span class="meta-item">Encombrement: 0</span></div><div class="item-description"><p>En investissant ces bandelettes de tissu brodées, vous devez méditer en les enroulant sur vos mains. Des runes d'arme sont inscrites sur ces bandelettes pour que vos attaques à mains nues bénéficient des avantages qu'elles procurent. Vos attaques à mains nues fonctionnent ainsi comme des armes magiques.</p>
+<p>Par exemple, des <em>Bandelettes de coups puissants de frappe +1</em> vous confèrent un bonus d'objet de +1 à vos jets d'attaque à mains nues et augmentent les dégâts de vos attaques à mains nues qui infligent ainsi non pas un mais deux dés d'arme (2d4 au lieu de 1d4 normalement, mais si vos poings ont un dé de dégâts différent ou si vous avez d'autres attaques à mains nues, utilisez deux dés de la taille correspondante).</p>
+<p>Vous pouvez améliorer, ajouter et transférer des runes depuis et vers les bandelettes, tout comme vous le feriez avec une arme, et vous pouvez aussi fixer dessus des talismans. Le cas échéant, considérez les bandelettes comme des armes de corps-à-corps du groupe pugilat ayant un Encombrement léger. Les runes de propriété ne s'appliquent que si l'attaque à mains nues que vous utilisez le permet. Par exemple, une propriété applicable à une arme tranchante ne fonctionne pas quand vous attaquez avec votre poing mais elle s'applique si vous attaquez avec des griffes ou tout autre attaque à mains nues tranchante.</p></div></div>
+    <div class="item">
+        <div class="item-header">
+            <div>Nocturne</div>
+    <div>1d8 slashing</div></div><div class="item-traits"><span class="trait">intelligent</span><span class="trait">two-hand-d12</span></div><div class="metadata"><span class="meta-item">Portée: None</span><span class="meta-item">Encombrement: 0.1</span></div><div class="item-description"><p>Epée dont la lame semble taillé dans un morceau de nuit pétrifiée</p><p></p><p><strong>Activation - cauchemar</strong> <span class="action-glyph">R</span> (mental, illusion)</p><p><strong>Fréquence</strong> Une fois par jour</p><p><strong>Déclencheur</strong> Vous touchez avec nocturne</p><p>La cible de l'attaque est assailli part une représentation de ses peurs enfouies, elle subi 3d6 dégâts mentaux avec un jet de volonté basique sur une échec la cible est aussi effrayé 1 et sur un échec critique 2</p></div></div></div>
+            <div class=section-item-unique>
+            <h2 class="section-title">Armures</h2>
+            
+    <div class="item">
+        <div class="item-header">
+            <div>Cotte de mailles (Chain Mail)</div>
+    <div>CA +4</div></div><div class="item-traits"><span class="trait">flexible</span><span class="trait">noisy</span></div><div class="metadata"><span class="meta-item">Limite Dex: 1</span><span class="meta-item">Encombrement: 3</span></div><div class="item-description"><p>Une cotte de mailles est composée de plusieurs pièces d'armure constituées de petits anneaux en métal reliés entre eux en un maillage protecteur. Elle comprend généralement une chemise de mailles, des jambières, deux bras et une coiffe pour la tête, protégeant conjointement la plus grande partie du corps.</p></div></div></div>
+            <div class=section>
+            <h2 class="section-title">Équipement</h2>
+            
+    <div class="item">
+        <div class="item-header">
+            <div>Corde (Rope)</div>
+    </div><div class="metadata"><span class="meta-item">Encombrement: 0.1</span></div><div class="item-description"><p>15 mètres de corde.</p></div></div>
+    <div class="item">
+        <div class="item-header">
+            <div>Outre (Waterskin)</div>
+    </div><div class="metadata"><span class="meta-item">Encombrement: 0.1</span></div><div class="item-description"><p>Quand elle est remplie, une outre contient environ l'équivalent d'1 jour d'eau pour une créature de taille Petite ou Moyenne.</p></div></div>
+    <div class="item">
+        <div class="item-header">
+            <div>Silex et amorce (Flint and Steel)</div>
+    </div><div class="metadata"><span class="meta-item">Encombrement: 0</span></div><div class="item-description"><p>Les silex et amorces sont utiles pour allumer un feu si vous avez le temps de capter une étincelle, mais leur utilisation prend généralement trop de temps pour être pratique lors d'une rencontre. Même dans des conditions idéales, l'utilisation des silex et amorces pour générer une flamme nécessite au moins 3 actions, et souvent beaucoup plus de temps.</p></div></div>
+    <div class="item">
+        <div class="item-header">
+            <div>Torche (Torch)</div>
+    </div><div class="metadata"><span class="meta-item">Encombrement: 0.1</span></div><div class="item-description"><p>Une torche émet une lumière vive dans un rayon de 6 mètres (et une lumière faible dans les 6 mètres au-delà) pendant 1 heure. Elle peut être utilisée comme une arme improvisée qui inflige 1d4 dégâts contondants plus 1 dégât de feu.</p></div></div>
+    <div class="item">
+        <div class="item-header">
+            <div>Sac de couchage (Bedroll)</div>
+    </div><div class="metadata"><span class="meta-item">Encombrement: 0.1</span></div><div class="item-description"><p>Un sac de couchage enroulable.</p></div></div>
+    <div class="item">
+        <div class="item-header">
+            <div>Savon (Soap)</div>
+    </div><div class="metadata"><span class="meta-item">Encombrement: 0</span></div><div class="item-description"><p>Pain de savon.</p></div></div>
+    <div class="item">
+        <div class="item-header">
+            <div>Symbole religieux en bois (Religious Symbol (Wooden))</div>
+    </div><div class="metadata"><span class="meta-item">Encombrement: 0.1</span></div><div class="item-description"><p>Ce morceau en bois ou en argent est décoré d'une représentation de divinité. Certains lanceurs de sorts divins tels les prêtres, peuvent utiliser le symbole religieux de leur divinité pour lancer des sorts divins et disposer des capacités divines. Un symbole religieux peut être porté sur le corps, au bout d'une chaîne, épinglé en une broche ou être tenu en main.</p></div></div></div>
+            <div class=section>
+            <h2 class="section-title">Consommables</h2>
+            
+    <div class="item">
+        <div class="item-header">
+            <div>Craie (Chalk)</div>
+    </div><div class="metadata"><span class="meta-item">Encombrement: 0</span></div></div>
+    <div class="item">
+        <div class="item-header">
+            <div>Rations</div>
+    </div><div class="metadata"><span class="meta-item">Encombrement: 0.1</span></div></div>
+    <div class="item">
+        <div class="item-header">
+            <div>vin de baie du désert 20°</div>
+    </div><div class="item-traits"><span class="trait">consumable</span></div><div class="metadata"><span class="meta-item">Encombrement: 0.1</span></div></div>
+    <div class="item">
+        <div class="item-header">
+            <div>Billes de fronde (Sling Bullets)</div>
+    </div><div class="metadata"><span class="meta-item">Encombrement: 0.1</span></div><div class="item-description"><p>Il s'agit de petites billes de métal, généralement en fer ou en plomb, conçues pour être utilisées comme munitions pour les frondes.</p></div></div></div>
+            <div class=section>
+            <h2 class="section-title">Trésors</h2>
+            
+    <div class="item">
+        <div class="item-header">
+            <div>Pièces d'or (Gold Pieces)</div>
+    </div><div class="metadata"><span class="meta-item">Encombrement: 1</span></div></div>
+    <div class="item">
+        <div class="item-header">
+            <div>Pièces d'argent (Silver Pieces)</div>
+    </div><div class="metadata"><span class="meta-item">Encombrement: 1</span></div></div>
+    <div class="item">
+        <div class="item-header">
+            <div>Pièces de cuivre (Copper Pieces)</div>
+    </div><div class="metadata"><span class="meta-item">Encombrement: 1</span></div></div></div></div>
+    <div id="feats" class="page">
+        <div class="page-header">
+            <h1>Dons et capacités de Ava Tarbois</h1>
+            <h3>Niveau 3 Prêtre (Cleric)</h3>
+        </div>
+    
+            <div class=section-item-unique>
+            <h2 class="section-title">Dons d'ascendance</h2>
+            
+    <div class="item">
+        <div class="item-header">
+            <div>Lié aux éons (Aeonbound)</div>
+            <div>Niveau 1</div>
+        </div>
+    <div class="item-traits"><span class="trait">lineage</span><span class="trait">nephilim</span></div><div class="item-description"><p>Votre lignée est influencée ou directement liés aux habitants surnaturels de la Cité parfaite d'Axis, un royaume d'ordre pur et absolu. Cette énergie imprègne votre corps et l'aide à maintenir sa cohérence, en résistant aux effets qui mineraient ses fonctions physiologiques ou altéreraient votre forme ordonnée. Vous et vos alliés pouvez Soigner vos blessures sans avoir recours au matériel de guérisseur. Une fois par jour, lorsque quelqu'un obtient un échec ou un échec critique sur un test de Traitement des blessures, vous pouvez vous concentrer sur votre cohésion interne pour augmenter le degré de réussite d'un cran.</p></div></div></div>
+            <div class=section>
+            <h2 class="section-title">Dons de classe</h2>
+            
+    <div class="item">
+        <div class="item-header">
+            <div>Simplicité mortelle (Deadly Simplicity)</div>
+            <div>Niveau 1</div>
+        </div>
+    <div class="item-traits"><span class="trait">cleric</span></div><div class="metadata"><span class="meta-item">Prérequis: divinité dont l'arme de prédilection est une arme simple ou une attaque à mains nues, qualifié avec l'arme de prédilection de votre divinité</span></div><div class="item-description"><p>Quand vous maniez l'arme de prédilection de votre divinité, augmentez la taille du dé de dégâts de cette arme d'un cran.</p>
+<p>Si l'arme de prédilection de votre divinité est une attaque à mains nues (comme le poing, si vous vénérez Irori) et que son dé de dégâts est inférieur au d6, augmentez à la place la taille de son dé de dégâts au d6.</p></div></div>
+    <div class="item">
+        <div class="item-header">
+            <div>Dévouement : Guerrier magique (Magic Warrior Dedication)</div>
+            <div>Niveau 2</div>
+        </div>
+    <div class="item-traits"><span class="trait">archetype</span><span class="trait">dedication</span></div><div class="metadata"><span class="meta-item">Prérequis: pouvoir de lancer des sorts focalisés</span></div><div class="item-description"><p><strong>Accès</strong> Vous venez des Étendues du Mwangi</p>
+<hr />
+<p>Vous avez pris la décision de porter un masque anonyme et avez prêté le serment des guerriers magiques. Vous êtes qualifié au choix dans la compétence Arcanes ou Nature et dans la compétence Connaissances des guerriers magiques ; si vous êtes déjà qualifié vous devenez expert.</p>
+<p>Vous cachez votre identité derrière un masque à l'effigie d'un animal de votre choix parmi les types généraux d'animaux du sort <strong>Forme animale</strong>. Vous obtenez un bonus de circonstances de +1 aux jets de sauvegarde contre des effets de divination mais refuser d'ôter votre masque peut parfois vous apporter quelques ennuis dans les lieux qui ne respectent pas ou ne comprennent pas la tradition des guerriers magiques.</p>
+<p>Lorsque vous choisissez ce don, si une créature découvre votre vrai visage ou votre nom, vous perdez les pouvoirs de cet archétype. Ceci ne prend pas en compte les alliés proches qui étaient au courant de votre décision de porter le masque avant votre dévouement, à moins qu'ils n'en parlent à quelqu'un d'autre. Afin de regagner vos pouvoirs, vous devez abandonner votre masque, en obtenir un nouveau à l'effigie d'un autre animal et Réapprendre votre don de Dévouement : Guerrier magique pour un nouveau don de Dévouement : Guerrier magique lié à votre nouveau masque.</p>
+<p>Vos sorts focalisés obtenus grâce à l'archétype guerrier magique ont la même tradition que vos autres sorts (choisissez-en une si
+vous avez des sorts de différentes traditions.)</p>
+<hr />
+<p><strong>Guerrier magique</strong>.</p></div></div>
+    <div class="item">
+        <div class="item-header">
+            <div>Arsenal blasonné (Emblazon Armament)</div>
+            <div>Niveau 2</div>
+        </div>
+    <div class="item-traits"><span class="trait">cleric</span><span class="trait">exploration</span></div><div class="item-description"><p>En gravant minutieusement une image sacrée sur un objet physique, vous vous cuirassez pour la bataille. Vous pouvez passer 10 minutes à blasonner le symbole de votre divinité sur une arme ou un bouclier. Le symbole ne disparaît qu'au bout d'un an mais si vous utilisez Arsenal blasonné, tout symbole que vous avez précédemment gravé et tout symbole déjà gravé sur cet objet disparaît instantanément.</p>
+<p>L'objet emblasoné devient un symbole religieux de votre divinité en plus de sa destination première et il bénéficie d'un autre avantage déterminé par le type d'objet. Les avantages s'appliquent pour les seuls fidèles de la divinité représentée par le symbole, mais les autres peuvent toujours utiliser l'objet normalement.</p>
+<ul>
+<li><strong>Bouclier</strong> Le bouclier bénéficie d'un bonus de statut de +1 à sa Solidité (il réduit ainsi plus de dégâts avec la réaction Blocage au bouclier).</li>
+<li><strong>Arme</strong> L'utilisateur de l'arme bénéficie d'un bonus de statut de +1 aux jets de dégâts.</li>
+</ul>
+<p><strong>Effet : Arsenal blasonné</strong></p></div></div></div>
+            <div class=section>
+            <h2 class="section-title">Dons de compétence</h2>
+            
+    <div class="item">
+        <div class="item-header">
+            <div>Médecine militaire (Battle Medicine)</div>
+            <div>Niveau 1</div>
+        </div>
+    <div class="item-traits"><span class="trait">general</span><span class="trait">healing</span><span class="trait">manipulate</span><span class="trait">skill</span></div><div class="metadata"><span class="meta-item">Prérequis: qualifié en Médecine</span></div><div class="item-description"><p><strong>Conditions</strong> Vous portez ou transportez du Matériel de guérisseur.</p>
+<hr />
+<p>Vous pouvez vous rafistoler ou rafistoler un allié adjacent, même en combat. Faites un test de Médecine avec le même DD que pour <strong>Soigner les blessures</strong> et restaurez un montant de Points de vie correspondant. Cela ne retire pas l'état <strong>Blessé</strong>. Comme avec Soigner les blessures, vous pouvez tenter des tests contre des DD plus élevés si vous avez le degré de maîtrise minimum. La cible est alors temporairement <strong>immunisée</strong> à votre Médecine militaire pendant 1 journée. Cela ne la rend pas immunisée, ni ne compte, comme Soigner les blessures.</p></div></div>
+    <div class="item">
+        <div class="item-header">
+            <div>Chercheur en médecine (Medical Researcher)</div>
+            <div>Niveau 1</div>
+        </div>
+    <div class="item-traits"><span class="trait">general</span><span class="trait">skill</span></div><div class="metadata"><span class="meta-item">Prérequis: qualifié en Médecine</span></div><div class="item-description"><p>Kassi vous a enseigné non seulement comment appliquer des remèdes avec vos compétences médicales mais aussi comment les fabriquer vous-mêmes. Lorsque vous <strong>Fabriquez</strong> des kits de guérison, des vaccins, des suppresseurs de dépendance, des antidotes, des antimaladies, des élixirs de vie ou autres objets non magiques médicaux ou de soins, vous pouvez utiliser Médecine au lieu d'Artisanat.</p></div></div>
+    <div class="item">
+        <div class="item-header">
+            <div>Infirmier (Ward Medic)</div>
+            <div>Niveau 2</div>
+        </div>
+    <div class="item-traits"><span class="trait">general</span><span class="trait">skill</span></div><div class="metadata"><span class="meta-item">Prérequis: expert en Médecine</span></div><div class="item-description"><p>Vous avez étudié dans de grands services médicaux, traitant plusieurs patients à la fois et répondant à tous leurs besoins. Quand vous utilisez <strong>Soigner une maladie</strong> ou <strong>Soigner les blessures</strong>, vous pouvez traiter jusqu'à deux cibles. Si vous êtes maître en Médecine, vous pouvez traiter jusqu'à quatre cibles et jusqu'à huit si vous êtes légendaire.</p></div></div></div>
+            <div class=section-item-unique>
+            <h2 class="section-title">Dons généraux</h2>
+            
+    <div class="item">
+        <div class="item-header">
+            <div>Blocage au bouclier (Shield Block)</div>
+            <div>Niveau 1</div>
+        </div>
+    <div class="item-traits"><span class="trait">general</span></div><div class="item-description"><p><strong>Déclencheur</strong> Alors que votre bouclier est levé, vous devriez subir des dégâts physiques (contondants, perforants ou tranchants) d'une attaque</p>
+<hr />
+<p>Vous interposez votre bouclier pour vous protéger du coup. Votre bouclier vous empêche de subir un nombre de dégâts égal à la Solidité du bouclier. Vous et le bouclier subissez chacun les dégâts restants, brisant ou détruisant éventuellement le bouclier.</p></div></div></div>
+            <div class=section>
+            <h2 class="section-title">Ancestryfeature</h2>
+            
+    <div class="item">
+        <div class="item-header">
+            <div>Cryptomnésie (Cryptomnesia)</div>
+            <div>Niveau 1</div>
+        </div>
+    <div class="item-traits"><span class="trait">samsaran</span></div><div class="item-description"><p>Vous retenez des parcelles de connaissances de vos vies précédentes. Vous obtenez un bonus de circonstances de +1 à vos tests de compétences pour lesquelles vous êtes inexpérimenté.</p></div></div>
+    <div class="item">
+        <div class="item-header">
+            <div>Âme vagabonde (Wanderer's Soul)</div>
+            <div>Niveau 1</div>
+        </div>
+    <div class="item-traits"><span class="trait">samsaran</span></div><div class="item-description"><p>Votre âme est particulièrement capable de revenir dans le cycle de la réincarnation. Lorsque vous êtes sujet de <strong>Rappel à la vie</strong>, <strong>Réincarnation</strong> ou d'un rituel similaire qui devrait vous ramener à la vie, l'incantateur primaire utilise le résultat d'un degré de succès supérieur à ce qu'il obtenu sur son jet. Vous revenez toujours à la vie en tant que samsaran, même si le rituel devrait vous réincarner au sein d'un corps d'une ascendance différente.</p></div></div></div>
+            <div class=section>
+            <h2 class="section-title">Classfeature</h2>
+            
+    <div class="item-long">
+        <div class="item-header">
+            <div>Divinité (Prêtre) (Deity (Cleric)) (Cayden Cailéan (Cayden Cailean))</div>
+            <div>Niveau 1</div>
+        </div>
+    <div class="item-traits"><span class="trait">cleric</span></div><div class="item-description"><p>En tant que prêtre, vous êtes le serviteur mortel d'une divinité que vous vénérez plus que toutes les autres. Votre divinité vous accorde la maîtrise qualifiée dans une compétence et avec l'arme de prédilection de votre divinité. Si l'arme de prédilection de votre divinité n'est pas courante, vous obtenez également accès à cette arme.</p>
+<p>Votre divinité ajoute également des sorts à votre liste de sorts. Vous pouvez les préparer comme n'importe quel autre sort de votre liste de sorts divins dès que vous pouvez préparer des sorts de ce rang en tant que prêtre. Tout sort qui ne fait pas normalement partie de la liste des sorts divins reste un sort divin si vous le préparez de cette manière.</p>
+<h2>Sanctification</h2>
+<p>En fonction votre divinité, sa sanctification peut vous rendre saint ou impie. Cela vous donne le trait saint ou impie, qui vous range d'un côté d'un conflit pour les âmes des plans et peut être référencé dans d'autres capacités. Si vous "pouvez être" saint ou impie en fonction de votre divinité, vous faites ce choix et, si vous "devez" être saint ou impie, vous obtenez automatiquement le trait. Si vous obtenez le trait opposé d'une manière ou d'une autre, vous perdez le trait précédent jusqu'à ce que vous accomplissiez un rituel de <em>Pénitence</em>.</p>
+<h2>Anathème</h2>
+<p>Commettre des actes fondamentalement opposés aux idéaux de votre divinité sont des anathèmes à votre foi. Apprendre ou lancer des sorts, commettre des actes et utiliser des objets qui sont anathèmes à votre divinité vous retirent des bonnes grâces de votre divinité.</p>
+<p>Lancer des sorts avec le trait impie est presque toujours anathème pour les divinités qui n'autorisent pas une sanctification impie et lancer des sorts saint est quelque fois anathèmes à ceux qui n'autorisent pas la sanctification sainte. De manière similaire, lancer des sorts qui sont anathèmes aux principes ou buts de votre foi pourraient interférer avec le lien que vous entretenez avec votre divinité. Par exemple, lancer un sort pour créer un mort-vivant serait anathème pour Pharasma, la déesse de la mort. Beaucoup d'actions qui sont anathèmes n'apparaissent pas dans la liste formelle d'une divinité. Pour les cas limites, vous et votre MJ déterminez quels actes sont anathèmes.</p>
+<p>Si vous accomplissez suffisamment d'actes qui sont anathèmes pour votre divinité, vous perdez les capacités magiques qui viennent de votre lien avec votre divinité. Les capacités de classe que vous perdez sont déterminées par le MJ, mais ils incluent notamment votre source divine et toutes les incantations de prêtre. Ces capacités peuvent être regagnées seulement si vous vous repentez en conduisant un rituel de <em>Pénitence</em>.</p></div></div>
+    <div class="item">
+        <div class="item-header">
+            <div>Doctrine</div>
+            <div>Niveau 1</div>
+        </div>
+    <div class="item-traits"><span class="trait">cleric</span></div><div class="item-description"><p>Même parmi les fidèles d'une même divinité, les approches varient. Au niveau 1, vous choisissez entre Prêtre cloîtré ou prêtre combattant et vous obtenez les avantages de sa première doctrine. Aux niveaux 3, puis tous les 4 niveaux par la suite, vous obtenez un autre avantage de votre doctrine.</p>
+<p>Voici les différentes doctrines :</p>
+<ul>
+<li><strong>Prêtre cloîtré</strong></li>
+<li><strong>Prêtre combattant</strong>.</li>
+</ul></div></div>
+    <div class="item">
+        <div class="item-header">
+            <div>Doctrine : Premier dogme (First Doctrine)</div>
+            <div>Niveau 1</div>
+        </div>
+    <div class="item-traits"><span class="trait">cleric</span></div><div class="item-description"><p>Vous gagnez le premier dogme de votre doctrine:</p>
+<ul>
+<li><strong>Prêtre cloîtré</strong></li>
+<li><strong>Prêtre combattant</strong></li>
+</ul></div></div>
+    <div class="item">
+        <div class="item-header">
+            <div>Prêtre combattant (Warpriest)</div>
+            <div>Niveau 1</div>
+        </div>
+    <div class="item-traits"><span class="trait">cleric</span></div><div class="item-description"><p>Vous vous êtes entraîné auprès de la doctrine la plus militante de votre église, vous concentrant à la fois sur les sorts et le combat.</p>
+<p><strong>Première doctrine (1er)</strong> vous êtes qualifié avec les armures légères et intermédiaires et vous êtes expert en jets de Vigueur. Vous obtenez le don général <strong>Blocage au bouclier</strong>, une réaction pour réduire les dégâts avec un bouclier. Si l'arme de prédilection de votre divinité est simple ou une attaque à mains nues, vous obtenez le don de prêtre <strong>Simplicité mortelle</strong>. Au niveau 13, si vous obtenez la capacité de classe <strong>Défense divine</strong>, vous devenez aussi expert avec les armures légères et intermédiaires.</p>
+<p><strong>Deuxième doctrine (3e)</strong> vous êtes qualifié avec les armes de guerre.</p>
+<p><strong>Troisième doctrine (7e)</strong> vous devenez expert avec les attaques à mains nues, les armes simples et l'arme de prédilection de votre divinité. Quand vous obtenez un coup critique sur un jet d'attaque en maniant cette dernière, vous appliquez l'effet critique spécialisé de l'arme ; Vous pouvez utiliser le DD de vos sorts au lieu de votre DD de classe.</p>
+<p><strong>Quatrième doctrine (11e)</strong> votre degré de maîtrise en modificateur d'attaque de sort et en statistiques de DD passe à expert.</p>
+<p><strong>Cinquième doctrine (15e)</strong> votre degré de maîtrise en jets de Vigueur passe à maître. Quand vous obtenez un succès sur un jet de Vigueur, il devient un succès critique.</p>
+<p><strong>Dernière doctrine (19e)</strong> Votre degré de maîtrise avec l'arme de prédilection de votre divinté, le modificateur d'attaque de sorts et en DD de sorts passe à maître.</p></div></div>
+    <div class="item">
+        <div class="item-header">
+            <div>Première doctrine (Prêtre combattant) (First Doctrine (Warpriest))</div>
+            <div>Niveau 1</div>
+        </div>
+    <div class="item-traits"><span class="trait">cleric</span></div><div class="item-description"><p>Vous êtes qualifié avec les armures légères et intermédiaires et vous êtes expert en jets de Vigueur. Vous obtenez le don général <strong>Blocage au bouclier</strong>, une réaction pour réduire les dégâts avec un bouclier. Si l'arme de prédilection de votre divinité est simple ou une attaque à mains nues, vous obtenez le don de prêtre <strong>Simplicité mortelle</strong>. Au niveau 13, si vous obtenez la capacité de classe <strong>Défense divine</strong>, vous devenez aussi expert avec les armures légères et intermédiaires.</p></div></div>
+    <div class="item-long">
+        <div class="item-header">
+            <div>Incantation de prêtre (Cleric Spellcasting)</div>
+            <div>Niveau 1</div>
+        </div>
+    <div class="item-traits"><span class="trait">cleric</span></div><div class="item-description"><p>Votre divinité vous accorde le pouvoir de lancer des sorts divins. Vous êtes un lanceur de sorts et vous pouvez lancer des sorts de la tradition divine en utilisant l'activité Lancer un sort. En tant que prêtre, vos chants invoquent généralement votre divinité et ses puissants serviteurs par leur nom ou leur titre, alors que vos gestes sont suivis par des symboles sacrés ou d'autres représentations de votre divinité.</p>
+<p>Au niveau 1, vous pouvez préparer chaque matin deux sorts de rang 1 et cinq tours de magie que vous choisissez parmi les sorts courants de la liste des sorts divins du livre de base ou issus des autres sorts divins auxquels vous avez accès et avez appris par l'activité Apprendre un sort. Les sorts préparés vous restent disponibles jusqu'à ce que vous les lanciez ou jusqu'à ce que vous prépariez vos sorts de nouveau. Le nombre de sorts que vous pouvez préparer chaque jour s'appelle vos emplacements de sorts.</p>
+<p>Lorsque vous gagnez un niveau de prêtre, le nombre de sorts que vous pouvez préparer chaque jour augmente, tout comme le plus haut rang du sort que vous pouvez lancer, comme indiqué dans le tableau des sorts de prêtre quotidiens.</p>
+<p>Certains de vos sorts nécessitent que vous fassiez une attaque de sort pour déterminer leur efficacité ou obligent vos ennemis à faire un jet contre le DD de votre sort (en général un jet de sauvegarde). Comme votre attribut essentiel est la Sagesse, votre modificateur d'attaque de sort et le DD de sorts utilisent votre modificateur de Sagesse.</p>
+<h2>Intensification de sorts</h2>
+<p>Lorsque vous obtenez des emplacements de sorts de rang 2 et supérieur, vous pouvez remplir ces emplacements avec des versions plus puissantes de sorts de rang inférieur. Ceci augmente le rang du sort, l'intensifiant pour correspondre à l'emplacement du sort. Nombre de sorts possèdent des améliorations spécifiques lorsqu'ils sont intensifiés à certains rangs.</p>
+<h2>Tours de magie</h2>
+<p>Certains de vos sorts sont des tours de magie. Un tour de magie est un type spécifique de sort qui n'utilise pas d'emplacement de sort. Vous pouvez lancer un tour de magie à volonté, n'importe quel nombre de fois par jour. Un tour de magie est toujours intensifié automatiquement à la moitié de votre niveau arrondi au supérieur — c'est habituellement égal au plus haut rang de vos emplacements de sorts de prêtre que vous possédez. Par exemple, en tant que prêtre de niveau 1, vos tours de magie sont de rang 1 et en tant que prêtre de niveau 5, vos tours de magie sont des sorts de rang 3.</p></div></div>
+    <div class="item">
+        <div class="item-header">
+            <div>Source divine (Divine Font) (Guérison)</div>
+            <div>Niveau 1</div>
+        </div>
+    <div class="item-traits"><span class="trait">cleric</span></div><div class="item-description"><p>Par la bénédiction que vous accorde votre divinité, vous obtenez des sorts supplémentaires qui canalisent soit la force de vie appelée vitalité, soit son opposé, le vide. Quand vous préparez vos sorts chaque jour, vous pouvez préparer des sorts <strong>Guérison</strong> ou <strong>Mise à mal</strong> supplémentaires, en fonction de votre divinité. Le sort de source divine que votre divinité vous accorde est indiqué dans l'entrée Source divine de votre divinité. Si les deux sont indiqués, vous pouvez choisir entre <em>Guérison</em> ou <em>Mise à mal</em>. Une fois que vous avez choisi, vous ne pouvez plus changer votre choix sauf en cas d'intervention divine.</p>
+<ul>
+<li><strong>Source de guérison</strong> Chaque jour, vous obtenez 4 emplacements de sort supplémentaires du rang le plus élevé des emplacements de vos sorts. Vous ne pouvez préparer que des sorts de <em>Guérison</em> dans ces emplacements. Au niveau 5, le nombre des emplacements de sorts supplémentaires passe à 5 et au niveau 15, le nombre total d'emplacements de sorts supplémentaires passe à 6.</li>
+<li><strong>Source de mise à mal</strong> Chaque jour, vous obtenez 4 emplacements de sort supplémentaires du rang le plus élevé des emplacements de vos sorts. Vous ne pouvez préparer que des sorts de <em>Mise à mal</em> dans ces emplacements. Au niveau 5, le nombre des emplacements de sorts supplémentaires passe à 5 et au niveau 15, le nombre total d'emplacements de sorts supplémentaires passe à 6.</li>
+</ul></div></div>
+    <div class="item">
+        <div class="item-header">
+            <div>Doctrine : deuxième dogme (Second Doctrine)</div>
+            <div>Niveau 3</div>
+        </div>
+    <div class="item-traits"><span class="trait">cleric</span></div><div class="item-description"><p>Vous gagnez le deuxième dogme de votre doctrine :</p>
+<ul>
+<li><strong>Prêtre cloîtré</strong></li>
+<li><strong>Prêtre combattant</strong></li>
+</ul></div></div>
+    <div class="item">
+        <div class="item-header">
+            <div>Deuxième doctrine (Prêtre combattant) (Second Doctrine (Warpriest))</div>
+            <div>Niveau 3</div>
+        </div>
+    <div class="item-traits"><span class="trait">cleric</span></div><div class="item-description"><p>Vous êtes qualifié avec les armes de guerre.</p></div></div></div></div>
+        </div>
+        <script>
+    document.addEventListener('DOMContentLoaded', function() {
+    // Code existant pour la navigation entre les pages
+    function showPage(pageId) {
+        // Cacher toutes les pages
+        document.querySelectorAll('.page').forEach(function(page) {
+            page.classList.remove('active');
+        });
+        
+        // Afficher la page sélectionnée
+        document.getElementById(pageId).classList.add('active');
+        
+        // Mettre à jour les liens actifs dans la barre de navigation
+        document.querySelectorAll('.nav-bar a').forEach(function(link) {
+            if (link.getAttribute('data-page') === pageId) {
+                link.classList.add('active');
+            } else {
+                link.classList.remove('active');
+            }
+        });
+    }
+    
+    // Ajouter des écouteurs d'événements pour les liens de navigation
+    document.querySelectorAll('.nav-bar a').forEach(function(link) {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            showPage(this.getAttribute('data-page'));
+        });
+    });
+    
+    // Afficher la première page par défaut
+    showPage('spellbook');
+    
+    // NOUVEAU CODE: Gestion du clic sur les en-têtes pour afficher/cacher les descriptions
+    document.querySelectorAll('.item-header').forEach(function(header) {
+        header.addEventListener('click', function() {
+            // Toggle la classe active sur l'en-tête (pour changer l'indicateur visuel)
+            this.classList.toggle('active');
+            
+            // Trouver la description associée à cet en-tête
+            var description = this.parentNode.querySelector('.item-description');
+            
+            // Afficher ou cacher la description
+            if (description) {
+                if (description.style.display === 'block') {
+                    description.style.display = 'none';
+                } else {
+                    description.style.display = 'block';
+                }
+            }
+        });
+    });
+});
+    </script>
+    </body>
+    </html>
+    
