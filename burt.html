@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+    <html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Personnage - Burt</title>
+        <style>
+    
+.page {
+    padding: 20px;
+    box-sizing: border-box;
+    width: 100%; /* Largeur responsive */
+    max-width: 21cm; /* Maximum de 21cm */
+    margin: 0 auto;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    display: none; /* Cacher toutes les pages par défaut */
+}
+.page.active {
+    display: block; /* Afficher uniquement la page active */
+}
+.page-header {
+    text-align: center;
+    border-bottom: 2px solid #5E0000;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+h1, h2, h3, h4 {
+    font-family: 'Pathfinder', 'Times New Roman', serif;
+    margin-top: 0;
+    color: #5E0000;
+}
+h1 {
+    font-size: 24pt;
+    margin-bottom: 10px;
+}
+h2 {
+    font-size: 18pt;
+    border-bottom: 1px solid #5E0000;
+    padding-bottom: 5px;
+    margin-top: 20px;
+}
+h3 {
+    font-size: 14pt;
+    margin-bottom: 5px;
+}
+.section-title {
+    font-size: 18pt;
+    border-bottom: 1px solid #5E0000;
+    padding-bottom: 5px;
+    margin-top: 0px;
+    column-span: all; /* L'élément s'étend sur toutes les colonnes */
+}
+.section {
+    columns: 2;
+    gap: 10px;
+    background-color: #F0E6D2;
+    border: 1px solid #D4C8B0;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 15px;
+    width: calc(100% - 20px);
+    break-inside: avoid-page;
+}
+.section-item-unique {
+    gap: 10px;
+    background-color: #F0E6D2;
+    border: 1px solid #D4C8B0;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 15px;
+    width: calc(100% - 20px);
+    break-inside: avoid-page;
+}
+.item {
+    margin-bottom: 10px;
+    background-color: #FFFFFF;
+    border: 1px solid #E0D8C0;
+    border-radius: 5px;
+    padding: 10px;
+    box-sizing: border-box;
+    break-inside: avoid-column;
+}
+.item-long {
+    margin-bottom: 10px;
+    background-color: #FFFFFF;
+    border: 1px solid #E0D8C0;
+    border-radius: 5px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+/* Cacher les URL et autres informations ajoutées automatiquement */
+:root {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+}
+.item-header {
+    display: grid;
+    grid-template-columns: 10fr 1fr 1fr auto;
+    border-bottom: 1px solid #E0D8C0;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    /* afficher la description */
+    cursor: pointer;
+}
+/* Ajoute un indicateur visuel (triangle) */
+.item-header::after {
+    content: "▶"; /* Triangle pointant vers la droite quand fermé */
+    color: #5E0000;
+    margin-left: 10px;
+    font-size: 10pt;
+    align-self: center;
+}
+
+/* Change l'indicateur quand la description est affichée */
+.item-header.active::after {
+    content: "▼"; /* Triangle pointant vers le bas quand ouvert */
+}
+.item-traits {
+    margin-top: 5px;
+}
+.trait {
+    display: inline-block;
+    background-color: #F0E6D2;
+    border: 1px solid #D4C8B0;
+    border-radius: 3px;
+    padding: 2px 5px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    font-size: 9pt;
+    color: #5E0000;
+}
+.item-description {
+    margin-top: 8px;
+    font-size: 10pt;
+    /* cacher le texte */
+    display: none;
+}
+.metadata {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    font-size: 10pt;
+    color: #666;
+    margin-top: 5px;
+}
+.meta-item {
+    margin-right: 10px;
+}
+.actions {
+    color: #5E0000;
+    font-weight: bold;
+    align-self: center;
+    text-align: center;
+}
+
+/* Styles pour la barre de navigation */
+.nav-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #5E0000;
+    color: white;
+    padding: 10px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.nav-bar a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 16px;
+    margin: 0 5px;
+    border-radius: 3px;
+    transition: background-color 0.3s;
+}
+.nav-bar a:hover {
+    background-color: #7E2020;
+}
+.nav-bar a.active {
+    background-color: #7E2020;
+    font-weight: bold;
+}
+.content {
+    margin-top: 60px; /* Espace pour la barre de navigation */
+    padding-bottom: 20px;
+}
+@media (max-width: 768px) {
+.section {
+    columns: 1 !important; /* Forcer une seule colonne sur petits écrans */
+}
+
+/* Ajuster la taille des textes */
+h1 {
+    font-size: 20pt;
+}
+
+h2 {
+    font-size: 16pt;
+}
+
+/* Ajuster l'espacement */
+.item {
+    margin-bottom: 8px;
+    padding: 8px;
+}
+}
+@media print {
+    body {
+        background: none;
+        margin: 0;
+        padding: 0;
+    }
+    .page {
+        display: block !important; /* Afficher toutes les pages pour l'impression */
+        box-shadow: none;
+        margin: 0;
+        width: 100%;
+        height: auto;
+        page-break-after: always;
+    }
+    .nav-bar {
+        display: none; /* Cacher la barre de navigation pour l'impression */
+    }
+    .content {
+        margin-top: 0;
+    }
+}
+@page {
+    margin: 0.5cm;
+    size: A4;
+    /* Supprimer les en-têtes et pieds de page par défaut du navigateur */
+    margin-header: 0;
+    margin-footer: 0;
+}
+</style>
+    </head>
+    <body>
+        <!-- Barre de navigation -->
+        <div class="nav-bar">
+            <a href="#" data-page="spellbook" class="active">Grimoire</a>
+            <a href="#" data-page="inventory">Inventaire</a>
+            <a href="#" data-page="feats">Dons</a>
+        </div>
+        
+        <!-- Conteneur principal -->
+        <div class="content">
+    
+    <div id="spellbook" class="page active">
+        <div class="page-header">
+            <h1>Grimoire de Burt</h1>
+            <h3>Niveau 3 Franc-tireur (Gunslinger)</h3>
+        </div>
+    </div>
+    <div id="inventory" class="page">
+        <div class="page-header">
+            <h1>Inventaire de Burt</h1>
+            <h3>Niveau 3 Franc-tireur (Gunslinger)</h3>
+        </div>
+    
+            <div class=section>
+            <h2 class="section-title">Armes</h2>
+            
+    <div class="item">
+        <div class="item-header">
+            <div>Idée claire (Pic trompeur)</div>
+    <div>1d6 bludgeoning</div></div><div class="item-traits"><span class="trait">backstabber</span><span class="trait">fatal-d10</span><span class="trait">kobold</span><span class="trait">modular</span></div><div class="metadata"><span class="meta-item">Portée: None</span><span class="meta-item">Encombrement: 1</span></div><div class="item-description"><p>Cet ingénieux pic de guerre kobold masque plusieurs pièges cachés que l'utilisateur peut activer pour tromper et embrouiller ses adversaires avec une variété de lames pernicieuses et de surfaces contondantes.</p></div></div>
+    <div class="item">
+        <div class="item-header">
+            <div>Orphée (Arquebuse)</div>
+    <div>1d8 piercing</div></div><div class="item-traits"><span class="trait">concussive</span><span class="trait">fatal-d12</span><span class="trait">kickback</span></div><div class="metadata"><span class="meta-item">Portée: 150</span><span class="meta-item">Encombrement: 2</span></div><div class="item-description"><p>C'est un fusil long qui offre une portée supérieure à la moyenne des armes à feu, bien que le long canon et le recul féroce rendent l'arme particulièrement instable à moins qu'un trépied ou un autre support ne soit utilisé pour la stabiliser. L'arquebuse est l'une des armes longues les plus utilisées parmi les soldats de Fort Dongun et d'Alkenastre.</p></div></div>
+    <div class="item">
+        <div class="item-header">
+            <div>SandMan (Tromblon)</div>
+    <div>1d8 piercing</div></div><div class="item-traits"><span class="trait">concussive</span><span class="trait">scatter-10</span></div><div class="metadata"><span class="meta-item">Portée: 40</span><span class="meta-item">Encombrement: 2</span></div><div class="item-description"><p>Cette arme tire des plombs à partir d'un canon en forme de trompette, ce qui en fait un excellent choix pour chasser le gibier dans les broussailles ou infliger des dégâts dans une zone courte et large. Les franc-tireurs aventuriers portent souvent un tromblon pour faire face aux nuées de vermine et autres menaces similaires.</p>
+<hr />
+<p>Cette arme utilise des <strong>Munitions (Tromblon)</strong></p></div></div></div>
+            <div class=section-item-unique>
+            <h2 class="section-title">Armures</h2>
+            
+    <div class="item">
+        <div class="item-header">
+            <div>Armure en cuir (Leather Armor)</div>
+    <div>CA +1</div></div><div class="metadata"><span class="meta-item">Limite Dex: 4</span><span class="meta-item">Encombrement: 1</span></div><div class="item-description"><p>Mélange de cuir bouilli souple et moulé, une telle armure confère une protection accompagnée d'une souplesse maximale.</p></div></div></div>
+            <div class=section>
+            <h2 class="section-title">Équipement</h2>
+            
+    <div class="item">
+        <div class="item-header">
+            <div>Matériel de voleur (Thieves' Toolkit)</div>
+    </div><div class="metadata"><span class="meta-item">Encombrement: 0.1</span></div><div class="item-description"><p>Vous avez besoin de matériel de voleur pour <strong>Crocheter une serrure</strong> ou <strong>Désamorcer un dispositif</strong> utilisant votre compétence de Vol</p>
+<p>Si les outils sont brisés, vous pouvez les réparer en remplaçant les crochets par des <strong>Crochets de remplacement</strong> appropriés. Cela ne nécessite pas que vous utilisiez l'action Réparer. Si vous portez votre matériel, vous pouvez le sortir et le ranger au cours de la même action qui l'utilise.</p></div></div>
+    <div class="item">
+        <div class="item-header">
+            <div>Corde (Rope)</div>
+    </div><div class="metadata"><span class="meta-item">Encombrement: 0.1</span></div><div class="item-description"><p>15 mètres de corde.</p></div></div>
+    <div class="item">
+        <div class="item-header">
+            <div>Kit d'escalade (Climbing Kit)</div>
+    </div><div class="metadata"><span class="meta-item">Encombrement: 1</span></div><div class="item-description"><p>Cette sacoche comprend 15 mètres de corde, des poulies, une douzaine de pitons, un marteau, un grappin et un jeu de crampons. Le kit d'escalade vous permet de vous accrocher au mur que vous escaladez, en vous déplaçant à la moitié de votre Vitesse habituelle (minimum 1,50 mètre), mais en vous permettant d'effectuer un @Check[flat|dc:5] lorsque vous obtenez un échec critique en voulant empêcher une chute. Un kit ne contient de matériel que pour un seul grimpeur; chaque grimpeur a besoin de son propre kit. Si vous transportez votre kit d'escalade, vous pouvez le sortir et le ranger durant l'action qui permet de l'utiliser.</p></div></div>
+    <div class="item">
+        <div class="item-header">
+            <div>Silex et amorce (Flint and Steel)</div>
+    </div><div class="metadata"><span class="meta-item">Encombrement: 0</span></div><div class="item-description"><p>Les silex et amorces sont utiles pour allumer un feu si vous avez le temps de capter une étincelle, mais leur utilisation prend généralement trop de temps pour être pratique lors d'une rencontre. Même dans des conditions idéales, l'utilisation des silex et amorces pour générer une flamme nécessite au moins 3 actions, et souvent beaucoup plus de temps.</p></div></div></div>
+            <div class=section>
+            <h2 class="section-title">Consommables</h2>
+            
+    <div class="item">
+        <div class="item-header">
+            <div>Munition (Arquebuse) (Rounds (Arquebus))</div>
+    </div><div class="item-traits"><span class="trait">alchemical</span></div><div class="metadata"><span class="meta-item">Encombrement: 0.1</span></div><div class="item-description"><p>Les armes à feu nécessitent des munitions composées d'un projectile et de poudre noire. La composition d'une munition peut varier, mais il s'agit généralement soit d'une cartouche en papier préemballée, comprenant la bourre, la balle et la poudre noire, soit de grenaille en vrac emballée manuellement. Certaines armes, comme les couleuvrines et les tromblons, peuvent tirer d'autres matériaux, mais leurs munitions ont le même prix en raison du coût de la poudre noire. Comme la fabrication de munitions d'armes à feu nécessite la création de poudre noire, vous avez besoin du don <strong>Artisanat alchimique</strong> pour les fabriquer. Les balles d'armes à feu sont une option valide pour les munitions magiques, tout comme les flèches ou les carreaux. La fabrication de munitions d'arme à feu magiques nécessite que vous soyez capable de fabriquer des objets alchimiques et magiques.</p></div></div>
+    <div class="item">
+        <div class="item-header">
+            <div>Munitions (Tromblon) (Rounds (Blunderbuss))</div>
+    </div><div class="item-traits"><span class="trait">alchemical</span></div><div class="metadata"><span class="meta-item">Encombrement: 0.1</span></div><div class="item-description"><p>Les armes à feu nécessitent des munitions composées d'un projectile et de poudre noire. La composition d'une munition peut varier, mais il s'agit généralement soit d'une cartouche en papier préemballée, comprenant la bourre, la balle et la poudre noire, soit de grenaille en vrac emballée manuellement. Certaines armes, comme les couleuvrines et les tromblons, peuvent tirer d'autres matériaux, mais leurs munitions ont le même prix en raison du coût de la poudre noire. Comme la fabrication de munitions d'armes à feu nécessite la création de poudre noire, vous avez besoin du don <strong>Artisanat alchimique</strong> pour les fabriquer. Les balles d'armes à feu sont une option valide pour les munitions magiques, tout comme les flèches ou les carreaux. La fabrication de munitions d'arme à feu magiques nécessite que vous soyez capable de fabriquer des objets alchimiques et magiques.</p></div></div>
+    <div class="item">
+        <div class="item-header">
+            <div>Rations</div>
+    </div><div class="metadata"><span class="meta-item">Encombrement: 0.1</span></div></div>
+    <div class="item">
+        <div class="item-header">
+            <div>Vin de baies de désert - 20 ° Alcool</div>
+    </div><div class="item-traits"><span class="trait">alchemical</span><span class="trait">consumable</span><span class="trait">drug</span><span class="trait">ingested</span><span class="trait">poison</span></div><div class="metadata"><span class="meta-item">Encombrement: 0.1</span></div><div class="item-description"><p>L'alcool est une substance commune disponible sous des formes étonnamment variées. Le prix d'une dose d'alcool dépend du breuvage spécifique. Vous ne pouvez récupérer de l'état Nauséeux tant que vous êtes affecté par l'alcool.</p>
+<p>Si vous obtenez un échec sur un jet de sauvegarde contre l'alcool autre que le jet initial, le degré de l'affliction n'augmente pas ; la seule manière de l'augmenter est de boire davantage d'alcool.</p>
+<hr />
+<p><strong>Activation</strong> <span class="action-glyph">1</span> Interagir (Ingéré)</p>
+<p><strong>Jet de sauvegarde</strong> @Check[fortitude|dc:12]</p>
+<p><strong>Délai</strong> 10 minutes</p>
+<p><strong>Stade 1</strong> bonus d'objet de +1 aux jets de sauvegarde contre la terreur (10 minutes)</p>
+<p><strong>Stade 2</strong> <strong>Pris au dépourvu</strong>, bonus d'objet de +1 aux jets de sauvegarde contre la terreur (10 minutes)</p>
+<p><strong>Stade 3</strong> <strong>Maladroit 1</strong>, Pris au dépourvu, <strong>Stupéfié 2</strong> (10 minutes)</p>
+<p><strong>Stade 4</strong> <strong>Maladroit 2</strong> et <strong>Nauséeux 2</strong> (10 minutes)</p>
+<p><strong>Stade 5</strong> Maladroit 2, Nauséeux 2 et Stupéfié 2 (10 minutes)</p>
+<p><strong>Stade 6</strong> <strong>Inconscient</strong> (8 heures)</p>
+<p><strong>Stade 7</strong> mort</p></div></div>
+    <div class="item">
+        <div class="item-header">
+            <div>Poudre noire (Dose) (Black Powder (Dose))</div>
+    </div><div class="item-traits"><span class="trait">alchemical</span><span class="trait">consumable</span></div><div class="metadata"><span class="meta-item">Encombrement: 0</span></div><div class="item-description"><p><strong>Munition</strong> balle</p>
+<p><strong>Activation</strong> <span class="action-glyph">1</span> (manipulation)</p>
+<hr />
+<p>La poudre noire est une substance alchimique volatile et explosive couramment utilisée dans la production de munitions pour armes à feu. La poudre noire devient inerte et inutilisable lorsqu'elle est mouillée et doit être conservée dans un récipient hermétique et étanche.</p>
+<p>Plus petite unité de poudre noire qui permet toujours une simple utilisation, une dose peut être un simple paquet de papier autour de la poudre noire ou elle peut être emballée avec une balle ou un plomb métallique pour être utilisée comme munition. Lorsqu'elle est allumée avec une mèche ou exposée à une flamme directe, une dose de poudre noire explose. Elle n'est pas assez puissante pour causer des dégâts, mais elle fait un bruit fort et peut déclencher d'autres explosions. Une mèche pour une dose peut être créée en faisant quelques tours de papier autour et permet de faire exploser la dose le tour qui suit son allumage.</p></div></div></div>
+            <div class=section>
+            <h2 class="section-title">Trésors</h2>
+            
+    <div class="item">
+        <div class="item-header">
+            <div>Pièces d'or (Gold Pieces)</div>
+    </div><div class="metadata"><span class="meta-item">Encombrement: 1</span></div></div>
+    <div class="item">
+        <div class="item-header">
+            <div>Pièces d'argent (Silver Pieces)</div>
+    </div><div class="metadata"><span class="meta-item">Encombrement: 1</span></div></div>
+    <div class="item">
+        <div class="item-header">
+            <div>Pièces de cuivre (Copper Pieces)</div>
+    </div><div class="metadata"><span class="meta-item">Encombrement: 1</span></div></div>
+    <div class="item">
+        <div class="item-header">
+            <div>Chapeau de Morgus Montanera</div>
+    </div><div class="metadata"><span class="meta-item">Encombrement: 0</span></div></div></div></div>
+    <div id="feats" class="page">
+        <div class="page-header">
+            <h1>Dons et capacités de Burt</h1>
+            <h3>Niveau 3 Franc-tireur (Gunslinger)</h3>
+        </div>
+    
+            <div class=section-item-unique>
+            <h2 class="section-title">Dons d'ascendance</h2>
+            
+    <div class="item">
+        <div class="item-header">
+            <div>Détaler (Scamper)</div>
+            <div>Niveau 1</div>
+        </div>
+    <div class="item-traits"><span class="trait">kobold</span></div><div class="item-description"><p><strong>Conditions</strong> Vous êtes adjacent à au moins un ennemi.</p>
+<hr />
+<p>Vous Marchez rapidement jusqu'à votre Vitesse, avec un bonus de statut de +1,50 mètre à votre Vitesse et vous obtenez un bonus de circonstances de +2 à la CA contre les réactions déclenchées par ce déplacement. Vous devez terminer ce déplacement dans une case qui n'est pas adjacente à un ennemi.</p></div></div></div>
+            <div class=section>
+            <h2 class="section-title">Dons de classe</h2>
+            
+    <div class="item">
+        <div class="item-header">
+            <div>Rechargement risqué (Risky Reload)</div>
+            <div>Niveau 2</div>
+        </div>
+    <div class="item-traits"><span class="trait">flourish</span><span class="trait">gunslinger</span></div><div class="item-description"><p><strong>Conditions</strong> Vous maniez une arme à feu.</p>
+<hr />
+<p>Vous avez mis en pratique une technique pour recharger rapidement votre arme à feu, mais tenter d'utiliser cette technique est un pari dangereux quant à l'efficacité de votre arme à feu. Interagissez pour recharger une arme à feu, puis faites une Frappe avec cette arme à feu. Si la Frappe échoue, l'arme à feu a des ratés.</p></div></div>
+    <div class="item">
+        <div class="item-header">
+            <div>Dévouement : Tireur d'élite inattendu (Unexpected Sharpshooter Dedication)</div>
+            <div>Niveau 2</div>
+        </div>
+    <div class="item-traits"><span class="trait">archetype</span><span class="trait">dedication</span></div><div class="item-description"><p><strong>Fréquence</strong> Une fois par jour</p>
+<hr />
+<p>Qui a besoin de compétence lorsqu'il bénéficie déjà d'une satanée chance ? Quelques fois, votre tir touche miraculeusement, en dépit du fait que vous avez semblé glisser lorsque vous avez appuyé sur la détente ou alors que vous ne visiez pas votre adversaire lorsque vous avez tiré. Vous obtenez l'activité <strong>Tir accidentel</strong>.</p>
+<hr />
+<p><strong>Tireur d'élite inattendu</strong>.</p></div></div>
+    <div class="item">
+        <div class="item-header">
+            <div>Fabricant de munitions (Munitions Crafter)</div>
+            <div>Niveau 1</div>
+        </div>
+    <div class="item-traits"><span class="trait">gunslinger</span></div><div class="item-description"><p>Les balles et les bombes peuvent être rares dans certaines régions, vous avez donc appris à fabriquer les vôtres. Vous devenez qualifié en Artisanat et obtenez les avantages d'Alchimie avancée. Vous pouvez utiliser les avantages d'Alchimie avancée pour créer un nombre de consommables quotidiens égal à 4 + la moitié de votre niveau (arrondi au supérieur). Ces consommables doivent être des bombes ou des munitions alchimiques.</p>
+<p>Vous obtenez un recueil de formules qui inclut la formule de la poudre noire et quatre types de munitions alchimiques ou de bombes de niveau 1 courante ou peu courantes de votre choix.</p>
+<p>Lorsque vous fabriquez des munitions alchimiques, y compris la poudre noire en doses ou en balles, en utilisant Alchimie avancée, vous créez les munitions par lots de 4 (ce qui signifie que si vous êtes niveau 4 et que vous utilisez tous vos lots de réactifs d'alchimie avancée, vous pourriez créer un maximum de 24 balles). Vous ne pouvez pas utiliser Alchimie avancée pour Fabriquer des cornes ou des tonneaux de poudre noire.</p></div></div></div>
+            <div class=section>
+            <h2 class="section-title">Dons de compétence</h2>
+            
+    <div class="item">
+        <div class="item-header">
+            <div>Contrebandier expérimenté (Experienced Smuggler)</div>
+            <div>Niveau 1</div>
+        </div>
+    <div class="item-traits"><span class="trait">general</span><span class="trait">skill</span></div><div class="metadata"><span class="meta-item">Prérequis: qualifié en Discrétion</span></div><div class="item-description"><p>Vous faites souvent passer des choses en contrebande sous le nez des autorités. Quand le MJ effectue votre test de Discrétion pour voir si un observateur passif remarque un petit objet que vous avez dissimulé, le MJ utilise le plus élevé entre le résultat obtenu ou 10, en y ajoutant votre modificateur de Discrétion pour déterminer le résultat de votre test de Discrétion. Si vous êtes maître en Discrétion, le MJ utilise le nombre obtenu ou 15 et, si vous êtes légendaire, vous réussissez automatiquement à masquer un petit objet aux yeux des observateurs passifs. Cela ne procure aucun avantage face à une créature qui tente un test de Perception en recherchant activement des objets cachés.</p>
+<hr />
+<p><strong>Note pour la PFS</strong> Ce don vous permet de Gagner de l'argent avec Connaissance de la pègre pour des tâches de votre niveau -1 (au lieu de niveau -2 habituellement).</p></div></div>
+    <div class="item">
+        <div class="item-header">
+            <div>Artisanat alchimique (Alchemical Crafting)</div>
+            <div>Niveau 1</div>
+        </div>
+    <div class="item-traits"><span class="trait">general</span><span class="trait">skill</span></div><div class="metadata"><span class="meta-item">Prérequis: qualifié en Artisanat</span></div><div class="item-description"><p>Vous pouvez utiliser l'activité Artisanat pour créer des objets alchimiques. Quand vous choisissez ce don, vous ajoutez immédiatement les formules de quatre objets alchimiques courants de niveau 1 à votre recueil.</p></div></div>
+    <div class="item">
+        <div class="item-header">
+            <div>Chute féline (Cat Fall)</div>
+            <div>Niveau 1</div>
+        </div>
+    <div class="item-traits"><span class="trait">general</span><span class="trait">skill</span></div><div class="metadata"><span class="meta-item">Prérequis: qualifié en Acrobaties</span></div><div class="item-description"><p>Vos acrobaties aériennes félines vous permettent d'amortir vos chutes. Traitez les chutes comme étant de 3 mètres plus courtes. Si vous êtes expert en Acrobaties, traitez les chutes comme étant de 7,50 mètres plus courtes. Si vous êtes maître en Acrobaties, traitez-les comme étant de 15 mètres plus courtes. Si vous êtes légendaire en Acrobaties, vous retombez toujours sur vos pieds et ne subissez pas de dégâts, quelle que soit la distance de la chute.</p></div></div></div>
+            <div class=section-item-unique>
+            <h2 class="section-title">Dons généraux</h2>
+            
+    <div class="item">
+        <div class="item-header">
+            <div>Robustesse (Toughness)</div>
+            <div>Niveau 1</div>
+        </div>
+    <div class="item-traits"><span class="trait">general</span></div><div class="item-description"><p>Votre corps peut supporter plus de châtiments que la plupart avant de succomber. Augmentez votre maximum de Points de vie de votre niveau. Vous réduisez le DD des tests de récupération de 1.</p></div></div></div>
+            <div class=section>
+            <h2 class="section-title">Classfeature</h2>
+            
+    <div class="item">
+        <div class="item-header">
+            <div>Voies du franc-tireur (Gunslinger's Way)</div>
+            <div>Niveau 1</div>
+        </div>
+    <div class="item-traits"><span class="trait">gunslinger</span></div><div class="item-description"><p>Tous les francs-tireurs suivent une voie particulière, une combinaison d'une philosophie et d'un style de combat qui définit à la fois la manière dont ils combattent et les armes avec lesquelles ils excellent. Au niveau 1, votre voie vous accorde un exploit initial, une unique action de recharge appelée un <em>rechargement du tireur</em> et une compétence avec une compétence particulière. Vous obtenez aussi des exploits avancés et supérieurs aux niveaux supérieurs, ainsi qu'un accès à des dons propres à chaque voie. Les voies du franc-tireur sont les suivantes.</p>
+<p><strong><strong>Voie de l'avant-garde</strong></strong> Vous comptez sur un style brutal de combat qui utilise des armes lourdes et des attaques explosives.</p>
+<p><strong><strong>Voie du pistolame</strong></strong> Vous préférez les armes à feu qui fonctionnent bien à la fois au corps-à-corps et au combat à distance, particulièrement celles qui vous permettent de faire preuve d'un peu de style et d'élégance.</p>
+<p><strong><strong>Voie du pistoléro</strong></strong> Vous gardez soigneusement vos distances - les 10 pas du duelliste - pistolet en main.</p>
+<p><strong><strong>Voie du sortiléro</strong></strong> (archétype de classe) Vous utilisez un petit peu de magie et beaucoup de puissance de feu pour apposer votre marque sur le monde.</p>
+<p><strong><strong>Voie du tireur d'élite</strong></strong> Vous pratiquez un style méthodique de tir, frappant d'un abri lointain.</p>
+<p><strong><strong>Voie du vagabond</strong></strong> Vous errez sur le champ de bataille, autant à votre aise dans la mêlée et en dehors.</p></div></div>
+    <div class="item">
+        <div class="item-header">
+            <div>Voie du tireur d'élite (Way of the Sniper)</div>
+            <div>Niveau 1</div>
+        </div>
+    <div class="item-traits"><span class="trait">gunslinger</span></div><div class="item-description"><p>Vous pratiquez un style de tir qui repose sur une précision infaillible et le placement parfait de votre premier tir. Vous restez caché ou à distance, vous restez en dehors de la mêlée en apportant la mort invisible à vos ennemis.</p>
+<p><strong>Compétence de voie</strong> Discrétion</p>
+<p><strong>Rechargement du tireur</strong> <strong>Rechargement à couvert</strong></p>
+<p><strong>Exploits</strong> <em>Initial</em> <strong>Un tir, un mort</strong> <em>Avancé</em> <strong>Tir vital</strong> <em>Supérieur</em> <strong>Tir fantôme</strong></p></div></div>
+    <div class="item">
+        <div class="item-header">
+            <div>Précision du tireur (Slinger's Precision)</div>
+            <div>Niveau 1</div>
+        </div>
+    <div class="item-traits"><span class="trait">gunslinger</span></div><div class="item-description"><p>Vous infligez 2 dégâts de précision supplémentaires avec les Frappes portées en utilisant des arbalètes qui ne sont pas à répétition et vous infligez 1d4 dégâts de précision supplémentaires sur les Frappes en utilisant les armes à feu qui ne sont pas à répétition.</p>
+<p>Si vous avez Légende de la gâchette, vous infligez 3 points de dégâts de précision supplémentaires avec les Frappes portées en utilisant une arbalète qui n'est pas à répétition et vous infligez 1d6 dégâts de précision supplémentaires sur les Frappes en utilisant les armes à feu qui ne sont pas à répétition.</p>
+<p>Si vous utilisez une arme combinée dont la forme à distance est une arme à feu ou une arbalète, vous utilisez votre maîtrise avec les armes à feu et les arbalètes pour les attaques faites avec la configuration au corps-à-corps de cette arme.</p></div></div>
+    <div class="item">
+        <div class="item-header">
+            <div>Obstiné (Stubborn)</div>
+            <div>Niveau 3</div>
+        </div>
+    <div class="item-traits"><span class="trait">gunslinger</span></div><div class="item-description"><p>Vous n'aimez pas qu'on vous dise quoi faire et vous n'abandonnez pas. Votre maîtrise avec les jets de Volonté passe à expert. Lorsque vous obtenez un échec, mais pas un échec critique, sur un jet de Volonté contre un effet qui vous donnerait l'état Contrôlé, vous pouvez tenter un second jet de sauvegarde contre cet effet au début de votre prochain tour. Si vous réussissez votre second jet, l'état Contrôlé prend fin mais les autres effets demeurent. Comme à l'ordinaire, un échec avec ce second jet ne vous permet pas de tenter un troisième jet au tour suivant.</p></div></div></div></div>
+        </div>
+        <script>
+    document.addEventListener('DOMContentLoaded', function() {
+    // Code existant pour la navigation entre les pages
+    function showPage(pageId) {
+        // Cacher toutes les pages
+        document.querySelectorAll('.page').forEach(function(page) {
+            page.classList.remove('active');
+        });
+        
+        // Afficher la page sélectionnée
+        document.getElementById(pageId).classList.add('active');
+        
+        // Mettre à jour les liens actifs dans la barre de navigation
+        document.querySelectorAll('.nav-bar a').forEach(function(link) {
+            if (link.getAttribute('data-page') === pageId) {
+                link.classList.add('active');
+            } else {
+                link.classList.remove('active');
+            }
+        });
+    }
+    
+    // Ajouter des écouteurs d'événements pour les liens de navigation
+    document.querySelectorAll('.nav-bar a').forEach(function(link) {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            showPage(this.getAttribute('data-page'));
+        });
+    });
+    
+    // Afficher la première page par défaut
+    showPage('spellbook');
+    
+    // NOUVEAU CODE: Gestion du clic sur les en-têtes pour afficher/cacher les descriptions
+    document.querySelectorAll('.item-header').forEach(function(header) {
+        header.addEventListener('click', function() {
+            // Toggle la classe active sur l'en-tête (pour changer l'indicateur visuel)
+            this.classList.toggle('active');
+            
+            // Trouver la description associée à cet en-tête
+            var description = this.parentNode.querySelector('.item-description');
+            
+            // Afficher ou cacher la description
+            if (description) {
+                if (description.style.display === 'block') {
+                    description.style.display = 'none';
+                } else {
+                    description.style.display = 'block';
+                }
+            }
+        });
+    });
+});
+    </script>
+    </body>
+    </html>
+    
