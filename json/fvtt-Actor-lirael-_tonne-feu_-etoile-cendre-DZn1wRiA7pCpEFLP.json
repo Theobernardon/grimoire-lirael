@@ -109,7 +109,7 @@
   "system": {
     "attributes": {
       "hp": {
-        "value": 39,
+        "value": 50,
         "temp": 0
       },
       "speed": {
@@ -131,7 +131,7 @@
         "details": ""
       },
       "level": {
-        "value": 3
+        "value": 4
       },
       "biography": {
         "appearance": "",
@@ -251,7 +251,8 @@
           ],
           "5": [
             "int",
-            "con"
+            "con",
+            "cha"
           ],
           "10": [
             "dex",
@@ -285,6 +286,18 @@
         },
         {
           "uuid": "Compendium.pf2e.equipment-srd.Item.FYv6k2zkd0MJ93la"
+        },
+        {
+          "uuid": "Compendium.pf2e.equipment-srd.Item.IhRPEmA2JlYNiCPK"
+        },
+        {
+          "uuid": "Compendium.pf2e.equipment-srd.Item.WnNvHEYObRivN1wI"
+        },
+        {
+          "uuid": "Compendium.pf2e.equipment-srd.Item.zHzAZRDVtl2NFqyh"
+        },
+        {
+          "uuid": "Compendium.pf2e.equipment-srd.Item.EVaMsTsWhdPkCtrg"
         }
       ]
     }
@@ -1803,14 +1816,16 @@
         "subitems": [],
         "bonusDamage": {
           "value": 0
-        }
+        },
+        "selectedAmmoId": "tzqLzjy1CrR4l6qW"
       },
       "type": "weapon",
       "_stats": {
         "coreVersion": "13.347",
         "systemId": "pf2e",
         "systemVersion": "7.3.1",
-        "lastModifiedBy": null
+        "lastModifiedBy": "87SnZLj4hGkSav9U",
+        "modifiedTime": 1759168667089
       },
       "effects": [],
       "folder": null,
@@ -2682,10 +2697,18 @@
               {
                 "id": "Xr6TTsitiS8xuAKW",
                 "expended": false
+              },
+              {
+                "id": "0yyg9eyYeyHC16Qg",
+                "expended": false
+              },
+              {
+                "id": "D9lNr2TIBmDpsmZD",
+                "expended": false
               }
             ],
             "value": 0,
-            "max": 5
+            "max": 7
           },
           "slot1": {
             "prepared": [
@@ -2706,10 +2729,14 @@
               {
                 "id": "LPdl3JMIX3vryfw4",
                 "expended": false
+              },
+              {
+                "id": "dgtF3QJtbSs64K3l",
+                "expended": false
               }
             ],
             "value": 0,
-            "max": 1
+            "max": 2
           },
           "slot3": {
             "prepared": [],
@@ -2772,7 +2799,7 @@
         "systemId": "pf2e",
         "systemVersion": "7.3.1",
         "createdTime": 1756223006367,
-        "modifiedTime": 1756223532266,
+        "modifiedTime": 1759166700053,
         "lastModifiedBy": "87SnZLj4hGkSav9U"
       }
     },
@@ -4922,16 +4949,1142 @@
         }
       },
       "_id": "kJkpH0UalCNrqqC7"
+    },
+    {
+      "_id": "Rj7LtEE8XrGn1kfj",
+      "folder": "cbsBMDCgI7cZ31xm",
+      "img": "icons/sundries/books/book-red-exclamation.webp",
+      "name": "Tir basique (Basic Shooting)",
+      "system": {
+        "actionType": {
+          "value": "passive"
+        },
+        "actions": {
+          "value": null
+        },
+        "category": "class",
+        "description": {
+          "value": "<p>Vous obtenez un don de franc-tireur de niveau 1 ou 2 de votre choix.</p>",
+          "gm": ""
+        },
+        "level": {
+          "value": 4,
+          "taken": 4
+        },
+        "prerequisites": {
+          "value": [
+            {
+              "value": "Dévouement : Franc-tireur"
+            }
+          ]
+        },
+        "publication": {
+          "license": "ORC",
+          "remaster": true,
+          "title": "Pathfinder Guns & Gears",
+          "authors": ""
+        },
+        "rules": [
+          {
+            "adjustName": false,
+            "choices": {
+              "filter": [
+                "item:category:class",
+                "item:trait:gunslinger",
+                {
+                  "lte": [
+                    "item:level",
+                    2
+                  ]
+                }
+              ],
+              "itemType": "feat"
+            },
+            "flag": "basicShooting",
+            "key": "ChoiceSet",
+            "prompt": "PF2E.SpecificRule.Prompt.LevelOneOrTwoClassFeat",
+            "selection": "Compendium.pf2e.feats-srd.Item.lFVqejlf52cdYrZy"
+          },
+          {
+            "key": "GrantItem",
+            "uuid": "{item|flags.pf2e.rulesSelections.basicShooting}",
+            "flag": "munitionsCrafter"
+          }
+        ],
+        "traits": {
+          "rarity": "common",
+          "value": [
+            "archetype"
+          ],
+          "otherTags": []
+        },
+        "slug": "basic-shooting",
+        "_migration": {
+          "version": 0.941,
+          "previous": null
+        },
+        "onlyLevel1": false,
+        "maxTakable": 1,
+        "subfeatures": {
+          "proficiencies": {},
+          "senses": {},
+          "suppressedFeatures": []
+        },
+        "location": "archetype-4"
+      },
+      "type": "feat",
+      "_stats": {
+        "coreVersion": "13.347",
+        "systemId": "pf2e",
+        "systemVersion": "7.3.1",
+        "createdTime": 1759160066465,
+        "modifiedTime": 1759160066465,
+        "lastModifiedBy": "87SnZLj4hGkSav9U"
+      },
+      "effects": [],
+      "sort": 0,
+      "flags": {
+        "babele": {
+          "translated": true,
+          "hasTranslation": true,
+          "originalName": "Basic Shooting"
+        },
+        "pf2e": {
+          "itemGrants": {
+            "munitionsCrafter": {
+              "id": "XYakc5GhXQJL4Teo",
+              "onDelete": "detach"
+            }
+          }
+        }
+      }
+    },
+    {
+      "folder": "BYo2A4Ls3y1QuXTt",
+      "img": "icons/sundries/books/book-red-exclamation.webp",
+      "name": "Fabricant de munitions (Munitions Crafter)",
+      "system": {
+        "actionType": {
+          "value": "passive"
+        },
+        "actions": {
+          "value": null
+        },
+        "category": "class",
+        "description": {
+          "value": "<p>Les balles et les bombes peuvent être rares dans certaines régions, vous avez donc appris à fabriquer les vôtres. Vous devenez qualifié en Artisanat et obtenez les avantages d'Alchimie avancée. Vous pouvez utiliser les avantages d'Alchimie avancée pour créer un nombre de consommables quotidiens égal à 4 + la moitié de votre niveau (arrondi au supérieur). Ces consommables doivent être des bombes ou des munitions alchimiques.</p>\n<p>Vous obtenez un recueil de formules qui inclut la formule de la poudre noire et quatre types de munitions alchimiques ou de bombes de niveau 1 courante ou peu courantes de votre choix.</p>\n<p>Lorsque vous fabriquez des munitions alchimiques, y compris la poudre noire en doses ou en balles, en utilisant Alchimie avancée, vous créez les munitions par lots de 4 (ce qui signifie que si vous êtes niveau 4 et que vous utilisez tous vos lots de réactifs d'alchimie avancée, vous pourriez créer un maximum de 24 balles). Vous ne pouvez pas utiliser Alchimie avancée pour Fabriquer des cornes ou des tonneaux de poudre noire.</p>",
+          "gm": ""
+        },
+        "level": {
+          "value": 1
+        },
+        "prerequisites": {
+          "value": []
+        },
+        "publication": {
+          "license": "ORC",
+          "remaster": true,
+          "title": "Pathfinder Guns & Gears",
+          "authors": ""
+        },
+        "rules": [
+          {
+            "key": "GrantItem",
+            "uuid": "Compendium.pf2e.feats-srd.Item.is3Oz9wt11lNq62K",
+            "flag": "alchemicalCrafting"
+          },
+          {
+            "key": "ActiveEffectLike",
+            "mode": "upgrade",
+            "path": "system.skills.crafting.rank",
+            "value": 1
+          },
+          {
+            "batchSizes": {
+              "other": [
+                {
+                  "definition": [
+                    {
+                      "or": [
+                        "item:category:ammo",
+                        "item:slug:black-powder-dose"
+                      ]
+                    }
+                  ],
+                  "quantity": 4
+                }
+              ]
+            },
+            "craftableItems": [
+              "item:trait:alchemical",
+              {
+                "or": [
+                  "item:category:ammo",
+                  "item:group:bomb",
+                  "item:slug:black-powder-dose"
+                ]
+              }
+            ],
+            "isDailyPrep": true,
+            "key": "CraftingAbility",
+            "label": "PF2E.SpecificRule.Alchemist.AdvancedAlchemy",
+            "maxSlots": "4 + ceil(@actor.level / 2)",
+            "slug": "advanced-alchemy",
+            "prepared": [
+              {
+                "uuid": "Compendium.pf2e.equipment-srd.Item.IhRPEmA2JlYNiCPK",
+                "quantity": 16,
+                "expended": true
+              },
+              {
+                "uuid": "Compendium.pf2e.equipment-srd.Item.WnNvHEYObRivN1wI",
+                "quantity": 8,
+                "expended": true
+              }
+            ]
+          }
+        ],
+        "traits": {
+          "rarity": "common",
+          "value": [
+            "gunslinger"
+          ],
+          "otherTags": []
+        },
+        "slug": "munitions-crafter",
+        "_migration": {
+          "version": 0.941,
+          "previous": null
+        },
+        "onlyLevel1": false,
+        "maxTakable": 1,
+        "subfeatures": {
+          "proficiencies": {},
+          "senses": {},
+          "suppressedFeatures": []
+        },
+        "location": null
+      },
+      "type": "feat",
+      "_stats": {
+        "coreVersion": "13.347",
+        "systemId": "pf2e",
+        "systemVersion": "7.3.1",
+        "createdTime": 1759160066465,
+        "modifiedTime": 1759168157062,
+        "lastModifiedBy": "87SnZLj4hGkSav9U"
+      },
+      "effects": [],
+      "sort": 0,
+      "flags": {
+        "babele": {
+          "translated": true,
+          "hasTranslation": true,
+          "originalName": "Munitions Crafter"
+        },
+        "pf2e": {
+          "grantedBy": {
+            "id": "Rj7LtEE8XrGn1kfj",
+            "onDelete": "cascade"
+          },
+          "itemGrants": {
+            "alchemicalCrafting": {
+              "id": "tcXOSYDjopQ72Fg5",
+              "onDelete": "detach"
+            }
+          }
+        }
+      },
+      "_id": "XYakc5GhXQJL4Teo"
+    },
+    {
+      "folder": "y1yqadf5jPHJk1jW",
+      "img": "icons/sundries/books/book-red-exclamation.webp",
+      "name": "Artisanat alchimique (Alchemical Crafting)",
+      "system": {
+        "actionType": {
+          "value": "passive"
+        },
+        "actions": {
+          "value": null
+        },
+        "category": "skill",
+        "description": {
+          "value": "<p>Vous pouvez utiliser l'activité Artisanat pour créer des objets alchimiques. Quand vous choisissez ce don, vous ajoutez immédiatement les formules de quatre objets alchimiques courants de niveau 1 à votre recueil.</p>",
+          "gm": ""
+        },
+        "level": {
+          "value": 1
+        },
+        "prerequisites": {
+          "value": [
+            {
+              "value": "qualifié en Artisanat"
+            }
+          ]
+        },
+        "publication": {
+          "license": "ORC",
+          "remaster": true,
+          "title": "Pathfinder Player Core",
+          "authors": ""
+        },
+        "rules": [],
+        "traits": {
+          "rarity": "common",
+          "value": [
+            "general",
+            "skill"
+          ],
+          "otherTags": []
+        },
+        "slug": "alchemical-crafting",
+        "_migration": {
+          "version": 0.941,
+          "previous": null
+        },
+        "onlyLevel1": false,
+        "maxTakable": 1,
+        "subfeatures": {
+          "proficiencies": {},
+          "senses": {},
+          "suppressedFeatures": []
+        },
+        "location": null
+      },
+      "type": "feat",
+      "_stats": {
+        "coreVersion": "13.347",
+        "systemId": "pf2e",
+        "systemVersion": "7.3.1",
+        "createdTime": 1759160066465,
+        "modifiedTime": 1759160066465,
+        "lastModifiedBy": "87SnZLj4hGkSav9U"
+      },
+      "effects": [],
+      "sort": 0,
+      "flags": {
+        "babele": {
+          "translated": true,
+          "hasTranslation": true,
+          "originalName": "Alchemical Crafting"
+        },
+        "pf2e": {
+          "grantedBy": {
+            "id": "XYakc5GhXQJL4Teo",
+            "onDelete": "cascade"
+          }
+        }
+      },
+      "_id": "tcXOSYDjopQ72Fg5"
+    },
+    {
+      "_id": "DPVhPumyfXCkE4bq",
+      "folder": "y1yqadf5jPHJk1jW",
+      "img": "icons/sundries/books/book-red-exclamation.webp",
+      "name": "Inventeur de génie (Inventor)",
+      "system": {
+        "actionType": {
+          "value": "passive"
+        },
+        "actions": {
+          "value": null
+        },
+        "category": "skill",
+        "description": {
+          "value": "<p>Vous êtes un génie en Artisanat, facilement capable de déterminer comment les choses sont faites et de créer de nouvelles inventions. Vous pouvez utiliser les périodes d'Intermède pour inventer une formule courante que vous ne connaissez pas encore. Ceci fonctionne comme l'activité Artisanat : vous dépensez la moitié du prix de la formule à l'avance, tentez un test d'Artisanat et, sur un succès, soit vous finissez la formule en payant le reste du prix, soit vous continuez à y travailler plus longtemps pour en réduire les coûts. La différence réside dans le fait que vous passez le temps supplémentaire en recherche, conception et développement, plutôt que dans la création d'un objet. Une fois que c'est terminé, vous rajoutez la nouvelle formule que vous avez inventée à votre recueil de formules.</p>\n<p>Le MJ peut vous autoriser à inventer des formules peu courantes ou rares, habituellement avec un DD augmenté. Vous aurez besoin du don Artisanat alchimique pour inventer des formules alchimiques et Artisanat magique pour inventer des formules magiques.</p>",
+          "gm": ""
+        },
+        "level": {
+          "value": 2,
+          "taken": 4
+        },
+        "prerequisites": {
+          "value": [
+            {
+              "value": "expert en Artisanat"
+            }
+          ]
+        },
+        "publication": {
+          "license": "ORC",
+          "remaster": true,
+          "title": "Pathfinder Player Core",
+          "authors": ""
+        },
+        "rules": [],
+        "traits": {
+          "rarity": "common",
+          "value": [
+            "downtime",
+            "general",
+            "skill"
+          ],
+          "otherTags": []
+        },
+        "slug": "inventor",
+        "_migration": {
+          "version": 0.941,
+          "previous": null
+        },
+        "onlyLevel1": false,
+        "maxTakable": 1,
+        "subfeatures": {
+          "proficiencies": {},
+          "senses": {},
+          "suppressedFeatures": []
+        },
+        "location": "skill-4"
+      },
+      "type": "feat",
+      "_stats": {
+        "coreVersion": "13.347",
+        "systemId": "pf2e",
+        "systemVersion": "7.3.1",
+        "createdTime": 1759160373903,
+        "modifiedTime": 1759160373903,
+        "lastModifiedBy": "87SnZLj4hGkSav9U"
+      },
+      "effects": [],
+      "sort": 0,
+      "flags": {
+        "babele": {
+          "translated": true,
+          "hasTranslation": true,
+          "originalName": "Inventor"
+        }
+      }
+    },
+    {
+      "_id": "A5H0qMx7wYB654iX",
+      "folder": "pCqf1zzdYxJ29gRS",
+      "img": "icons/sundries/books/book-red-exclamation.webp",
+      "name": "Expansion de tour de magie (Cantrip Expansion)",
+      "system": {
+        "actionType": {
+          "value": "passive"
+        },
+        "actions": {
+          "value": null
+        },
+        "category": "class",
+        "description": {
+          "value": "<p><strong>Barde, Oracle, Ensorceleur</strong> Vos recherches permettent de diversifier votre gamme de sorts simples.</p>\n<p><strong>Prêtre</strong> Vous étudiez une gamme plus large de sorts simples.</p>\n<p><strong>Magus, Magicien</strong> Une étude attentive vous permet de préparer une gamme de sorts plus amples pour chaque situation.</p>\n<p><strong>Psychiste</strong> Vous étendez ce que votre esprit peut accomplir.</p>\n<p><strong>Sorcier</strong> Votre patron reconnaît vos besoins pour de la diversité et vous accorde le pouvoir de préparer une gamme plus large de sorts simples.</p>\n<hr />\n<p><strong>Préparé</strong> Vous pouvez préparer deux tours de magie supplémentaires chaque jour.</p>\n<p><strong>Spontané</strong> Ajoutez deux tours de magie supplémentaires de votre liste de sorts à votre répertoire.</p>",
+          "gm": ""
+        },
+        "level": {
+          "value": 2,
+          "taken": 4
+        },
+        "prerequisites": {
+          "value": []
+        },
+        "publication": {
+          "license": "ORC",
+          "remaster": true,
+          "title": "Pathfinder Player Core",
+          "authors": ""
+        },
+        "rules": [],
+        "traits": {
+          "rarity": "common",
+          "value": [
+            "bard",
+            "cleric",
+            "magus",
+            "oracle",
+            "psychic",
+            "sorcerer",
+            "witch",
+            "wizard"
+          ],
+          "otherTags": []
+        },
+        "slug": "cantrip-expansion",
+        "_migration": {
+          "version": 0.941,
+          "previous": null
+        },
+        "onlyLevel1": false,
+        "maxTakable": 1,
+        "subfeatures": {
+          "proficiencies": {},
+          "senses": {},
+          "suppressedFeatures": []
+        },
+        "location": "class-4"
+      },
+      "type": "feat",
+      "_stats": {
+        "coreVersion": "13.347",
+        "systemId": "pf2e",
+        "systemVersion": "7.3.1",
+        "createdTime": 1759160527411,
+        "modifiedTime": 1759160527411,
+        "lastModifiedBy": "87SnZLj4hGkSav9U"
+      },
+      "effects": [],
+      "sort": 0,
+      "flags": {
+        "babele": {
+          "translated": true,
+          "hasTranslation": true,
+          "originalName": "Cantrip Expansion"
+        }
+      }
+    },
+    {
+      "_id": "D9lNr2TIBmDpsmZD",
+      "folder": "D7UVaOiB40wTR6kv",
+      "img": "systems/pf2e/icons/spells/warp-step.webp",
+      "name": "Pas déformant (Warp Step)",
+      "system": {
+        "description": {
+          "gm": "",
+          "value": "<p>Lorsque vous marchez, la terre se déforme sous vos pieds et vos pas s'allongent, la distance se réduit et tout semble juste un peu plus proche. Vous obtenez un bonus de statut de +1,50 mètre à votre Vitesse jusqu'à la fin de votre tour. Puis, vous Marchez rapidement deux fois. Vous pouvez utiliser <em>Pas déformant</em> pour Creuser, Escalader, Nager ou Voler au lieu de marcher rapidement si vous disposez du type de mouvement correspondant.</p>\n<p>@UUID[Compendium.pf2e.spell-effects.Item.9Tl9jGUKoj0wS73d]{Effet : Pas déformant}</p>"
+        },
+        "rules": [],
+        "slug": "warp-step",
+        "_migration": {
+          "version": 0.941,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "cantrip",
+            "concentrate",
+            "manipulate"
+          ],
+          "rarity": "common",
+          "traditions": [
+            "arcane",
+            "occult"
+          ]
+        },
+        "publication": {
+          "title": "Pathfinder Dark Archive",
+          "authors": "",
+          "license": "OGL",
+          "remaster": false
+        },
+        "level": {
+          "value": 1
+        },
+        "requirements": "",
+        "target": {
+          "value": ""
+        },
+        "range": {
+          "value": ""
+        },
+        "area": null,
+        "time": {
+          "value": "2"
+        },
+        "duration": {
+          "value": "",
+          "sustained": false
+        },
+        "damage": {},
+        "defense": null,
+        "cost": {
+          "value": ""
+        },
+        "location": {
+          "value": "Eyv8zuG4dRsf1Q1X"
+        },
+        "counteraction": false
+      },
+      "type": "spell",
+      "_stats": {
+        "coreVersion": "13.347",
+        "systemId": "pf2e",
+        "systemVersion": "7.3.1",
+        "createdTime": 1759161310004,
+        "modifiedTime": 1759161310004,
+        "lastModifiedBy": "87SnZLj4hGkSav9U"
+      },
+      "effects": [],
+      "sort": 0,
+      "flags": {
+        "babele": {
+          "translated": true,
+          "hasTranslation": true,
+          "originalName": "Warp Step"
+        }
+      }
+    },
+    {
+      "_id": "0yyg9eyYeyHC16Qg",
+      "folder": "D7UVaOiB40wTR6kv",
+      "img": "icons/magic/light/orb-shadow-blue.webp",
+      "name": "Coup de vent (Gale Blast)",
+      "system": {
+        "description": {
+          "gm": "",
+          "value": "<p>Du vent s'échappe de vos mains tendues et tourbillonne autour de vous dans une émanation de 1,50 mètre. Chaque créature dans la zone subit 1d6 dégâts contondants, avec un jet de Vigueur.</p>\n<hr />\n<p><strong>Succès critique</strong> La créature n'est pas affectée.</p>\n<p><strong>Succès</strong> La créature ne subit que la moitié des dégâts.</p>\n<p><strong>Échec</strong> La créature subit la totalité des dégâts et est repoussée de 1,50 mètre par rapport à vous.</p>\n<p><strong>Échec critique</strong> La créature subit le double des dégâts et est repoussée de 3 mètres par rapport à vous.</p>\n<hr />\n<p><strong>Intensifié (+1)</strong> Les dégâts augmentent de 1d6.</p>"
+        },
+        "rules": [],
+        "slug": "gale-blast",
+        "_migration": {
+          "version": 0.941,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "air",
+            "cantrip",
+            "concentrate",
+            "manipulate"
+          ],
+          "rarity": "common",
+          "traditions": [
+            "arcane",
+            "primal"
+          ]
+        },
+        "publication": {
+          "title": "Pathfinder Player Core 2",
+          "authors": "",
+          "license": "ORC",
+          "remaster": true
+        },
+        "level": {
+          "value": 1
+        },
+        "requirements": "",
+        "target": {
+          "value": ""
+        },
+        "range": {
+          "value": ""
+        },
+        "area": {
+          "type": "emanation",
+          "value": 5
+        },
+        "time": {
+          "value": "2"
+        },
+        "duration": {
+          "value": "",
+          "sustained": false
+        },
+        "damage": {
+          "0": {
+            "applyMod": false,
+            "category": null,
+            "formula": "1d6",
+            "kinds": [
+              "damage"
+            ],
+            "materials": [],
+            "type": "bludgeoning"
+          }
+        },
+        "defense": {
+          "save": {
+            "basic": false,
+            "statistic": "fortitude"
+          }
+        },
+        "cost": {
+          "value": ""
+        },
+        "location": {
+          "value": "Eyv8zuG4dRsf1Q1X"
+        },
+        "counteraction": false,
+        "heightening": {
+          "area": 0,
+          "damage": {
+            "0": "1d6"
+          },
+          "interval": 1,
+          "type": "interval"
+        }
+      },
+      "type": "spell",
+      "_stats": {
+        "coreVersion": "13.347",
+        "systemId": "pf2e",
+        "systemVersion": "7.3.1",
+        "createdTime": 1759162062424,
+        "modifiedTime": 1759162062424,
+        "lastModifiedBy": "87SnZLj4hGkSav9U"
+      },
+      "effects": [],
+      "sort": 0,
+      "flags": {
+        "babele": {
+          "translated": true,
+          "hasTranslation": true,
+          "originalName": "Gale Blast"
+        }
+      }
+    },
+    {
+      "_id": "Vgbr2suIs7hKuVXt",
+      "folder": "T8AzYUgNIAgTJ9Iz",
+      "img": "systems/pf2e/icons/spells/mage-armor.webp",
+      "name": "Armure mystique (Mystic Armor)",
+      "system": {
+        "description": {
+          "gm": "",
+          "value": "<p>Vous vous entourez d'énergie magique scintillante qui vous confère un bonus d'objet de +1 à la CA et un modificateur de Dextérité maximum de +5. Tant que vous portez l'Armure mystique, vous utilisez votre maîtrise sans armure pour calculer votre CA.</p>\n<p>@UUID[Compendium.pf2e.spell-effects.Item.qkwb5DD3zmKwvbk0]{Effet : Armure mystique}</p>\n<hr />\n<p><strong>Intensifié (4e)</strong> Vous bénéficiez d'un bonus d'objet de +1 aux jets de sauvegarde.</p>\n<p><strong>Intensifié (6e)</strong> Le bonus d'objet à la CA passe à +2 et vous bénéficiez d'un bonus d'objet de +1 aux jets de sauvegarde.</p>\n<p><strong>Intensifié (8e)</strong> Le bonus d'objet à la CA passe à +2 et vous bénéficiez d'un bonus d'objet de +2 aux jets de sauvegarde.</p>\n<p><strong>Intensifié (10e)</strong> Le bonus d'objet à la CA passe à +3 et vous bénéficiez d'un bonus d'objet de +3 aux jets de sauvegarde.</p>"
+        },
+        "rules": [],
+        "slug": "mystic-armor",
+        "_migration": {
+          "version": 0.941,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "concentrate",
+            "manipulate"
+          ],
+          "rarity": "common",
+          "traditions": [
+            "arcane",
+            "divine",
+            "occult",
+            "primal"
+          ]
+        },
+        "publication": {
+          "title": "Pathfinder Player Core",
+          "authors": "",
+          "license": "ORC",
+          "remaster": true
+        },
+        "level": {
+          "value": 1
+        },
+        "requirements": "",
+        "target": {
+          "value": ""
+        },
+        "range": {
+          "value": ""
+        },
+        "area": null,
+        "time": {
+          "value": "2"
+        },
+        "duration": {
+          "value": "jusqu'à vos prochains préparatifs quotidiens",
+          "sustained": false
+        },
+        "damage": {},
+        "defense": null,
+        "cost": {
+          "value": ""
+        },
+        "location": {
+          "value": "Eyv8zuG4dRsf1Q1X"
+        },
+        "counteraction": false
+      },
+      "type": "spell",
+      "_stats": {
+        "coreVersion": "13.347",
+        "systemId": "pf2e",
+        "systemVersion": "7.3.1",
+        "createdTime": 1759165744867,
+        "modifiedTime": 1759165744867,
+        "lastModifiedBy": "87SnZLj4hGkSav9U"
+      },
+      "effects": [],
+      "sort": 0,
+      "flags": {
+        "babele": {
+          "translated": true,
+          "hasTranslation": true,
+          "originalName": "Mystic Armor"
+        }
+      }
+    },
+    {
+      "_id": "dgtF3QJtbSs64K3l",
+      "folder": "lPzcDrjGDFbzuF2r",
+      "img": "icons/magic/fire/projectile-fireball-orange-yellow.webp",
+      "name": "Sticky Fire",
+      "system": {
+        "description": {
+          "gm": "",
+          "value": "<p>You send a bubble of viscous liquid that sparks into flame. Make a spell attack roll against the target's AC, dealing 1d8 fire damage and 1d8 persistent fire damage on a hit. The target is @UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{Enfeebled 1} until they recover from their persistent fire damage.</p><hr /><p><strong>Heightened (+2)</strong> The initial and persistent fire damage increase by 1d8.</p>"
+        },
+        "rules": [],
+        "slug": "sticky-fire",
+        "_migration": {
+          "version": 0.941,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "attack",
+            "concentrate",
+            "fire",
+            "manipulate"
+          ],
+          "rarity": "common",
+          "traditions": [
+            "arcane",
+            "primal"
+          ]
+        },
+        "publication": {
+          "title": "Pathfinder Battlecry!",
+          "authors": "",
+          "license": "ORC",
+          "remaster": true
+        },
+        "level": {
+          "value": 2
+        },
+        "requirements": "",
+        "target": {
+          "value": "1 creature"
+        },
+        "range": {
+          "value": "60 feet"
+        },
+        "area": null,
+        "time": {
+          "value": "2"
+        },
+        "duration": {
+          "value": "",
+          "sustained": false
+        },
+        "damage": {
+          "Y4V4JBiCLTGoazyp": {
+            "applyMod": false,
+            "category": null,
+            "formula": "1d8",
+            "kinds": [
+              "damage"
+            ],
+            "materials": [],
+            "type": "fire"
+          },
+          "iCnezETP96bUMaKq": {
+            "applyMod": false,
+            "category": "persistent",
+            "formula": "1d8",
+            "kinds": [
+              "damage"
+            ],
+            "materials": [],
+            "type": "fire"
+          }
+        },
+        "defense": null,
+        "cost": {
+          "value": ""
+        },
+        "location": {
+          "value": "Eyv8zuG4dRsf1Q1X"
+        },
+        "counteraction": false,
+        "heightening": {
+          "area": 0,
+          "damage": {
+            "Y4V4JBiCLTGoazyp": "1d8",
+            "iCnezETP96bUMaKq": "1d8"
+          },
+          "interval": 2,
+          "type": "interval"
+        }
+      },
+      "type": "spell",
+      "_stats": {
+        "coreVersion": "13.347",
+        "systemId": "pf2e",
+        "systemVersion": "7.3.1",
+        "createdTime": 1759166027777,
+        "modifiedTime": 1759166027777,
+        "lastModifiedBy": "87SnZLj4hGkSav9U"
+      },
+      "effects": [],
+      "sort": 0,
+      "flags": {
+        "babele": {
+          "translated": true,
+          "hasTranslation": false,
+          "originalName": "Sticky Fire"
+        }
+      }
+    },
+    {
+      "_id": "ZhgcOAjAGfroH9o3",
+      "img": "icons/magic/water/orb-water-bubbles.webp",
+      "name": "Munition élémentaire inférieure - froid (Elemental Ammunition (Lesser, Cold))",
+      "system": {
+        "description": {
+          "gm": "",
+          "value": "<p><strong>Munition</strong> toutes</p>\n<p><strong>Activation</strong> <span class=\"action-glyph\">1</span> (manipulation)</p>\n<hr />\n<p>Lorsqu'elle est activée, le réservoir de réactifs alchimiques de la <em>munition élémentaire</em> est atomisé à l'impact, infligeant 1 dégât de froid persistant à la cible et 1 dégât d'éclaboussure de froid en plus des dégâts normalement infligés par l'attaque. Chaque type de dégât nécessite une formule de <em>munition élémentaire</em> différente. La munition obtient le trait froid.</p>"
+        },
+        "rules": [
+          {
+            "damageCategory": "persistent",
+            "damageType": "cold",
+            "key": "FlatModifier",
+            "selector": "{item|id}-damage",
+            "value": 1
+          },
+          {
+            "damageCategory": "splash",
+            "damageType": "cold",
+            "key": "FlatModifier",
+            "selector": "{item|id}-damage",
+            "value": 1
+          }
+        ],
+        "slug": "elemental-ammunition-lesser-cold",
+        "_migration": {
+          "version": 0.941,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "alchemical",
+            "cold",
+            "consumable",
+            "infused",
+            "splash"
+          ],
+          "rarity": "common"
+        },
+        "publication": {
+          "title": "Pathfinder Treasure Vault (Remastered)",
+          "authors": "",
+          "license": "ORC",
+          "remaster": true
+        },
+        "level": {
+          "value": 1
+        },
+        "quantity": 8,
+        "baseItem": null,
+        "bulk": {
+          "value": 0
+        },
+        "hp": {
+          "value": 0,
+          "max": 0
+        },
+        "hardness": 0,
+        "price": {
+          "value": {
+            "gp": 3
+          },
+          "per": 1
+        },
+        "equipped": {
+          "carryType": "worn"
+        },
+        "containerId": null,
+        "size": "tiny",
+        "material": {
+          "type": null,
+          "grade": null
+        },
+        "identification": {
+          "status": "identified",
+          "unidentified": {
+            "name": "",
+            "img": "",
+            "data": {
+              "description": {
+                "value": ""
+              }
+            }
+          },
+          "misidentified": {}
+        },
+        "category": "ammo",
+        "uses": {
+          "value": 1,
+          "max": 1,
+          "autoDestroy": true
+        },
+        "damage": null,
+        "usage": {
+          "value": "held-in-one-hand"
+        },
+        "stackGroup": null,
+        "spell": null,
+        "temporary": true
+      },
+      "type": "consumable",
+      "_stats": {
+        "coreVersion": "13.347",
+        "systemId": "pf2e",
+        "systemVersion": "7.3.1",
+        "createdTime": 1759168157256,
+        "modifiedTime": 1759168994680,
+        "lastModifiedBy": "87SnZLj4hGkSav9U"
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "flags": {
+        "babele": {
+          "translated": true,
+          "hasTranslation": true,
+          "originalName": "Elemental Ammunition (Lesser, Cold)"
+        }
+      }
+    },
+    {
+      "_id": "tzqLzjy1CrR4l6qW",
+      "img": "icons/magic/lightning/barrier-shield-orb-pink.webp",
+      "name": "Munition élémentaire inférieure - électricité (Elemental Ammunition (Lesser, Electricity))",
+      "system": {
+        "description": {
+          "gm": "",
+          "value": "<p><strong>Munition</strong> toutes</p>\n<p><strong>Activation</strong> <span class=\"action-glyph\">1</span> (manipulation)</p>\n<hr />\n<p>Lorsqu'elle est activée, le réservoir de réactifs alchimiques de la <em>munition élémentaire</em> est atomisé à l'impact, infligeant 1 dégât d'électricité persistant à la cible et 1 dégât d'éclaboussure d'électricité en plus des dégâts normalement infligés par l'attaque. Chaque type de dégât nécessite une formule de <em>munition élémentaire</em> différente. La munition obtient le trait électricité.</p>"
+        },
+        "rules": [
+          {
+            "damageCategory": "persistent",
+            "damageType": "electricity",
+            "key": "FlatModifier",
+            "selector": "{item|id}-damage",
+            "value": 1
+          },
+          {
+            "damageCategory": "splash",
+            "damageType": "electricity",
+            "key": "FlatModifier",
+            "selector": "{item|id}-damage",
+            "value": 1
+          }
+        ],
+        "slug": "elemental-ammunition-lesser-electricity",
+        "_migration": {
+          "version": 0.941,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "alchemical",
+            "consumable",
+            "electricity",
+            "infused",
+            "splash"
+          ],
+          "rarity": "common"
+        },
+        "publication": {
+          "title": "Pathfinder Treasure Vault (Remastered)",
+          "authors": "",
+          "license": "ORC",
+          "remaster": true
+        },
+        "level": {
+          "value": 1
+        },
+        "quantity": 16,
+        "baseItem": null,
+        "bulk": {
+          "value": 0
+        },
+        "hp": {
+          "value": 0,
+          "max": 0
+        },
+        "hardness": 0,
+        "price": {
+          "value": {
+            "gp": 3
+          }
+        },
+        "equipped": {
+          "carryType": "worn"
+        },
+        "containerId": null,
+        "size": "tiny",
+        "material": {
+          "type": null,
+          "grade": null
+        },
+        "identification": {
+          "status": "identified",
+          "unidentified": {
+            "name": "",
+            "img": "",
+            "data": {
+              "description": {
+                "value": ""
+              }
+            }
+          },
+          "misidentified": {}
+        },
+        "category": "ammo",
+        "uses": {
+          "value": 1,
+          "max": 1,
+          "autoDestroy": true
+        },
+        "damage": null,
+        "usage": {
+          "value": "held-in-one-hand"
+        },
+        "stackGroup": null,
+        "spell": null,
+        "temporary": true
+      },
+      "type": "consumable",
+      "_stats": {
+        "coreVersion": "13.347",
+        "systemId": "pf2e",
+        "systemVersion": "7.3.1",
+        "createdTime": 1759168157256,
+        "modifiedTime": 1759168946625,
+        "lastModifiedBy": "87SnZLj4hGkSav9U"
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "flags": {
+        "babele": {
+          "translated": true,
+          "hasTranslation": true,
+          "originalName": "Elemental Ammunition (Lesser, Electricity)"
+        }
+      }
     }
   ],
   "folder": null,
-  "flags": {},
+  "flags": {
+    "pf2e": {
+      "freeCrafting": false,
+      "quickAlchemy": false,
+      "dailyCraftingComplete": true
+    }
+  },
   "_stats": {
     "coreVersion": "13.347",
     "systemId": "pf2e",
     "systemVersion": "7.3.1",
     "createdTime": 1754479259726,
-    "modifiedTime": 1756222960573,
+    "modifiedTime": 1759168157128,
     "lastModifiedBy": "87SnZLj4hGkSav9U",
     "exportSource": {
       "worldId": "oblivion",
