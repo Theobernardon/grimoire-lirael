@@ -109,7 +109,7 @@
   "system": {
     "attributes": {
       "hp": {
-        "value": 50,
+        "value": 61,
         "temp": 0
       },
       "speed": {
@@ -131,7 +131,7 @@
         "details": ""
       },
       "level": {
-        "value": 4
+        "value": 5
       },
       "biography": {
         "appearance": "",
@@ -159,7 +159,7 @@
         "value": "str"
       },
       "xp": {
-        "value": 0,
+        "value": 264,
         "min": 0,
         "max": 1000,
         "pct": 0
@@ -252,7 +252,8 @@
           "5": [
             "int",
             "con",
-            "cha"
+            "cha",
+            "dex"
           ],
           "10": [
             "dex",
@@ -298,6 +299,9 @@
         },
         {
           "uuid": "Compendium.pf2e.equipment-srd.Item.EVaMsTsWhdPkCtrg"
+        },
+        {
+          "uuid": "Compendium.pf2e.equipment-srd.Item.FKPuzveKRNJhA1mi"
         }
       ]
     }
@@ -1775,8 +1779,8 @@
         "identification": {
           "status": "identified",
           "unidentified": {
-            "name": "",
-            "img": "",
+            "name": "Pistolet de duel inhabituel",
+            "img": "systems/pf2e/icons/unidentified_item_icons/weapon.webp",
             "data": {
               "description": {
                 "value": ""
@@ -1824,8 +1828,8 @@
         "coreVersion": "13.347",
         "systemId": "pf2e",
         "systemVersion": "7.3.1",
-        "lastModifiedBy": "87SnZLj4hGkSav9U",
-        "modifiedTime": 1759168667089
+        "lastModifiedBy": "JxXa7KZZD1GFhXka",
+        "modifiedTime": 1760465799616
       },
       "effects": [],
       "folder": null,
@@ -2722,7 +2726,7 @@
               }
             ],
             "value": 0,
-            "max": 2
+            "max": 0
           },
           "slot2": {
             "prepared": [
@@ -2739,9 +2743,18 @@
             "max": 2
           },
           "slot3": {
-            "prepared": [],
+            "prepared": [
+              {
+                "id": "sooLXI8W0EgjT2Qb",
+                "expended": false
+              },
+              {
+                "id": "lYmkmhcwxlw8u0vw",
+                "expended": false
+              }
+            ],
             "value": 0,
-            "max": 0
+            "max": 2
           },
           "slot4": {
             "prepared": [],
@@ -2799,7 +2812,7 @@
         "systemId": "pf2e",
         "systemVersion": "7.3.1",
         "createdTime": 1756223006367,
-        "modifiedTime": 1759166700053,
+        "modifiedTime": 1760100697126,
         "lastModifiedBy": "87SnZLj4hGkSav9U"
       }
     },
@@ -5132,13 +5145,28 @@
             "slug": "advanced-alchemy",
             "prepared": [
               {
+                "uuid": "Compendium.pf2e.equipment-srd.Item.FKPuzveKRNJhA1mi",
+                "quantity": 12,
+                "expended": true
+              },
+              {
                 "uuid": "Compendium.pf2e.equipment-srd.Item.IhRPEmA2JlYNiCPK",
-                "quantity": 16,
+                "quantity": 4,
                 "expended": true
               },
               {
                 "uuid": "Compendium.pf2e.equipment-srd.Item.WnNvHEYObRivN1wI",
-                "quantity": 8,
+                "quantity": 4,
+                "expended": true
+              },
+              {
+                "uuid": "Compendium.pf2e.equipment-srd.Item.zHzAZRDVtl2NFqyh",
+                "quantity": 4,
+                "expended": true
+              },
+              {
+                "uuid": "Compendium.pf2e.equipment-srd.Item.EVaMsTsWhdPkCtrg",
+                "quantity": 4,
                 "expended": true
               }
             ]
@@ -5171,7 +5199,7 @@
         "systemId": "pf2e",
         "systemVersion": "7.3.1",
         "createdTime": 1759160066465,
-        "modifiedTime": 1759168157062,
+        "modifiedTime": 1760962643960,
         "lastModifiedBy": "87SnZLj4hGkSav9U"
       },
       "effects": [],
@@ -5826,7 +5854,717 @@
       }
     },
     {
-      "_id": "ZhgcOAjAGfroH9o3",
+      "img": "systems/pf2e/icons/equipment/staves/staff-of-evocation.webp",
+      "name": "Bâton de pouvoir élémentaire (Staff of Elemental Power)",
+      "system": {
+        "description": {
+          "gm": "",
+          "value": "<p>Ce bâton est effilé à la base et sculpté en une torsade sertie de pierres précieuses au sommet. Lorsque vous maniez ce bâton, vous bénéficiez d'un bonus de circonstances de +2 aux tests pour identifier des créatures élémentaires.</p>\n<p><strong>Activation</strong> Lancer un sort</p>\n<p><strong>Effet</strong> Vous dépensez un certain nombre de charges du bâton pour lancer un sort de sa liste.</p>\n<ul>\n    <li><strong>Tour de magie</strong> @UUID[Compendium.pf2e.spells-srd.Item.IxhGEKl63R4QBvkj]{Morsure du froid}</li>\n    <li><strong>1er</strong> @UUID[Compendium.pf2e.spells-srd.Item.y6rAdMK6EFlV6U0t]{Cracher du feu}, @UUID[Compendium.pf2e.spells-srd.Item.Rn2LkoSq1XhLsODV]{Frappe de débris}, @UUID[Compendium.pf2e.spells-srd.Item.zDJS8E66UI0himqV]{Frappe tonitruante}</li>\n    <li><strong>2e</strong> @UUID[Compendium.pf2e.spells-srd.Item.Fr58LDSrbndgld9n]{Résistance à l'énergie}, @UUID[Compendium.pf2e.spells-srd.Item.ZxHC7V7HtjUsB8zH]{Trait flamboyant}</li>\n</ul>\n<hr />\n<p><strong>Conditions de fabrication</strong> Fournir une incantation de tous les sorts de la liste et à tous les rangs énumérés.</p>"
+        },
+        "rules": [
+          {
+            "key": "FlatModifier",
+            "predicate": [
+              "target:trait:elemental",
+              {
+                "or": [
+                  "action:recall-knowledge",
+                  "action:identify"
+                ]
+              }
+            ],
+            "selector": "skill-check",
+            "type": "circumstance",
+            "value": 2
+          }
+        ],
+        "slug": "staff-of-elemental-power",
+        "_migration": {
+          "version": 0.941,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "magical",
+            "staff",
+            "two-hand-d8"
+          ],
+          "rarity": "common"
+        },
+        "publication": {
+          "title": "Pathfinder GM Core",
+          "authors": "",
+          "license": "ORC",
+          "remaster": true
+        },
+        "level": {
+          "value": 6
+        },
+        "quantity": 1,
+        "baseItem": "staff",
+        "bulk": {
+          "value": 1
+        },
+        "hp": {
+          "value": 0,
+          "max": 0
+        },
+        "hardness": 0,
+        "price": {
+          "value": {
+            "gp": 230
+          }
+        },
+        "equipped": {
+          "carryType": "held",
+          "invested": null,
+          "handsHeld": 1
+        },
+        "containerId": null,
+        "size": "tiny",
+        "material": {
+          "type": null,
+          "grade": null
+        },
+        "identification": {
+          "status": "identified",
+          "unidentified": {
+            "name": "Bâton inhabituel",
+            "img": "systems/pf2e/icons/unidentified_item_icons/staves.webp",
+            "data": {
+              "description": {
+                "value": ""
+              }
+            }
+          },
+          "misidentified": {}
+        },
+        "usage": {
+          "value": "held-in-one-hand"
+        },
+        "category": "simple",
+        "group": "club",
+        "bonus": {
+          "value": 0
+        },
+        "damage": {
+          "dice": 1,
+          "die": "d4",
+          "damageType": "bludgeoning",
+          "persistent": null
+        },
+        "splashDamage": {
+          "value": 0
+        },
+        "range": null,
+        "expend": null,
+        "reload": {
+          "value": null
+        },
+        "runes": {
+          "potency": 0,
+          "striking": 0,
+          "property": []
+        },
+        "specific": null,
+        "subitems": [],
+        "bonusDamage": {
+          "value": 0
+        }
+      },
+      "type": "weapon",
+      "_stats": {
+        "coreVersion": "13.347",
+        "systemId": "pf2e",
+        "systemVersion": "7.3.1",
+        "createdTime": 1760045897935,
+        "modifiedTime": 1760465808461,
+        "lastModifiedBy": "JxXa7KZZD1GFhXka"
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "flags": {
+        "babele": {
+          "translated": true,
+          "hasTranslation": true,
+          "originalName": "Staff of Elemental Power"
+        }
+      },
+      "_id": "raGDnPteylkCiTO0"
+    },
+    {
+      "_id": "xhgsmIl8Dww3ouQ2",
+      "folder": "A1FTK66O47zvWear",
+      "img": "icons/sundries/books/book-red-exclamation.webp",
+      "name": "Énergiser les ailes (Energize Wings)",
+      "system": {
+        "actionType": {
+          "value": "passive"
+        },
+        "actions": {
+          "value": null
+        },
+        "category": "ancestry",
+        "description": {
+          "value": "<p><strong>Fréquence</strong> Une fois par heure</p>\n<hr />\n<p>Vous ravivez votre magie pour énergiser vos ailes, les transformant temporairement en des formes majestueuses et scintillantes. Pendant 1 minute, vous obtenez une Vitesse de vol de 9 mètres.</p>",
+          "gm": ""
+        },
+        "level": {
+          "value": 5,
+          "taken": 5
+        },
+        "prerequisites": {
+          "value": [
+            {
+              "value": "Ailes évanescentes"
+            }
+          ]
+        },
+        "publication": {
+          "license": "OGL",
+          "remaster": false,
+          "title": "Pathfinder Lost Omens Ancestry Guide",
+          "authors": ""
+        },
+        "rules": [
+          {
+            "key": "FlatModifier",
+            "predicate": [
+              "evanescent-wings",
+              {
+                "not": "feat:heros-wings"
+              }
+            ],
+            "selector": "fly-speed",
+            "value": 10
+          }
+        ],
+        "selfEffect": {
+          "name": "Effect: Energize Wings",
+          "uuid": "Compendium.pf2e.feat-effects.Item.8E5SCmFndGAvgkTw"
+        },
+        "traits": {
+          "rarity": "common",
+          "value": [
+            "concentrate",
+            "morph",
+            "primal",
+            "sprite"
+          ],
+          "otherTags": []
+        },
+        "slug": "energize-wings",
+        "_migration": {
+          "version": 0.941,
+          "previous": null
+        },
+        "onlyLevel1": false,
+        "maxTakable": 1,
+        "subfeatures": {
+          "proficiencies": {},
+          "senses": {},
+          "suppressedFeatures": []
+        },
+        "location": "ancestry-5"
+      },
+      "type": "feat",
+      "_stats": {
+        "coreVersion": "13.347",
+        "systemId": "pf2e",
+        "systemVersion": "7.3.1",
+        "createdTime": 1760098181489,
+        "modifiedTime": 1760098181489,
+        "lastModifiedBy": "87SnZLj4hGkSav9U"
+      },
+      "effects": [],
+      "sort": 0,
+      "flags": {
+        "babele": {
+          "translated": true,
+          "hasTranslation": true,
+          "originalName": "Energize Wings"
+        }
+      }
+    },
+    {
+      "_id": "sooLXI8W0EgjT2Qb",
+      "folder": "4fJHnYFqH0VjZXPv",
+      "img": "systems/pf2e/icons/spells/firework-blast.webp",
+      "name": "Explosion pyrotechnique (Firework Blast)",
+      "system": {
+        "description": {
+          "gm": "",
+          "value": "<p>Vous créez une importante démonstration d'explosions bruyantes et colorées. Les explosions infligent 4d6 dégâts de feu. Les créatures qui obtiennent un échec sur leur jet de sauvegarde doivent tenter un jet de @Check[fortitude] supplémentaire. Les créatures qui obtiennent un échec critique sur leurs jets de sauvegarde subissent une pénalité de circonstances de -2 sur ce jet de Vigueur.</p>\n<hr />\n<p><strong>Succès</strong> La créature n'est pas affectée.</p>\n<p><strong>Échec</strong> La créature est @UUID[Compendium.pf2e.conditionitems.Item.XgEqL1kFApUbl5Z2]{Aveugle} et @UUID[Compendium.pf2e.conditionitems.Item.9PR9y0bi4JPKnHPR]{Sourde} pendant 1 round.</p>\n<p><strong>Échec critique</strong> La créature est Aveugle pendant 1 round et @UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]{Éblouie} et Sourde pendant 1 minute.</p>\n<hr />\n<p><strong>Intensifié (+1)</strong> Les dégâts augmentent de 2d6.</p>"
+        },
+        "rules": [],
+        "slug": "firework-blast",
+        "_migration": {
+          "version": 0.941,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "concentrate",
+            "manipulate"
+          ],
+          "rarity": "uncommon",
+          "traditions": [
+            "arcane"
+          ]
+        },
+        "publication": {
+          "title": "Pathfinder Lost Omens Firebrands",
+          "authors": "",
+          "license": "OGL",
+          "remaster": false
+        },
+        "level": {
+          "value": 3
+        },
+        "requirements": "",
+        "target": {
+          "value": ""
+        },
+        "range": {
+          "value": "150 mètres"
+        },
+        "area": {
+          "type": "burst",
+          "value": 20
+        },
+        "time": {
+          "value": "2"
+        },
+        "duration": {
+          "value": "",
+          "sustained": false
+        },
+        "damage": {
+          "0MD5xTKLlw8jZPKU": {
+            "applyMod": false,
+            "category": null,
+            "formula": "4d6",
+            "kinds": [
+              "damage"
+            ],
+            "materials": [],
+            "type": "fire"
+          }
+        },
+        "defense": {
+          "save": {
+            "basic": true,
+            "statistic": "reflex"
+          }
+        },
+        "cost": {
+          "value": ""
+        },
+        "location": {
+          "value": "Eyv8zuG4dRsf1Q1X"
+        },
+        "counteraction": false,
+        "heightening": {
+          "damage": {
+            "0MD5xTKLlw8jZPKU": "2d6"
+          },
+          "interval": 1,
+          "type": "interval"
+        }
+      },
+      "type": "spell",
+      "_stats": {
+        "coreVersion": "13.347",
+        "systemId": "pf2e",
+        "systemVersion": "7.3.1",
+        "createdTime": 1760099584632,
+        "modifiedTime": 1760099584632,
+        "lastModifiedBy": "87SnZLj4hGkSav9U"
+      },
+      "effects": [],
+      "sort": 0,
+      "flags": {
+        "babele": {
+          "translated": true,
+          "hasTranslation": true,
+          "originalName": "Firework Blast"
+        }
+      }
+    },
+    {
+      "_id": "lYmkmhcwxlw8u0vw",
+      "folder": "4fJHnYFqH0VjZXPv",
+      "img": "icons/skills/melee/strike-stake-gray.webp",
+      "name": "Rétrécir un objet (Shrink Item)",
+      "system": {
+        "description": {
+          "gm": "",
+          "value": "<p>Vous faites rétrécir la cible jusqu'à la taille approximative d'une pièce de monnaie avec un Encombrement négligeable. Vous pouvez Révoquer le sort et le sort se termine si vous jetez l'objet sur une surface solide. L'objet ne peut pas être utilisé pour attaquer ou infliger des dégâts au cours du processus de retour à sa taille normale. S'il n'y a pas de place pour que l'objet retrouve sa taille normale quand le sort se termine, la durée du sort se prolonge jusqu'à ce que l'objet soit dans un lieu assez grand pour lui permettre de prendre sa taille normale.</p>"
+        },
+        "rules": [],
+        "slug": "shrink-item",
+        "_migration": {
+          "version": 0.941,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "concentrate",
+            "manipulate",
+            "polymorph"
+          ],
+          "rarity": "common",
+          "traditions": [
+            "arcane"
+          ]
+        },
+        "publication": {
+          "title": "Pathfinder Player Core 2",
+          "authors": "",
+          "license": "ORC",
+          "remaster": true
+        },
+        "level": {
+          "value": 3
+        },
+        "requirements": "",
+        "target": {
+          "value": "1 objet non magique jusqu'à 6 mètres cube en volume et jusqu'à 80 Encombrement"
+        },
+        "range": {
+          "value": "contact"
+        },
+        "area": null,
+        "time": {
+          "value": "10 minutes"
+        },
+        "duration": {
+          "value": "jusqu'à vos prochains préparatifs quotidiens",
+          "sustained": false
+        },
+        "damage": {},
+        "defense": null,
+        "cost": {
+          "value": ""
+        },
+        "location": {
+          "value": "Eyv8zuG4dRsf1Q1X"
+        },
+        "counteraction": false
+      },
+      "type": "spell",
+      "_stats": {
+        "coreVersion": "13.347",
+        "systemId": "pf2e",
+        "systemVersion": "7.3.1",
+        "createdTime": 1760100455568,
+        "modifiedTime": 1760100455568,
+        "lastModifiedBy": "87SnZLj4hGkSav9U"
+      },
+      "effects": [],
+      "sort": 0,
+      "flags": {
+        "babele": {
+          "translated": true,
+          "hasTranslation": true,
+          "originalName": "Shrink Item"
+        }
+      }
+    },
+    {
+      "img": "icons/magic/symbols/symbol-lightning-bolt.webp",
+      "name": "Expertise en Réflexes (Reflex Expertise)",
+      "system": {
+        "actionType": {
+          "value": "passive"
+        },
+        "actions": {
+          "value": null
+        },
+        "category": "classfeature",
+        "description": {
+          "value": "<p>Vous avez développé un talent pour esquiver le danger. Vous devenez expert en jets de Réflexes.</p>",
+          "gm": ""
+        },
+        "level": {
+          "value": 5
+        },
+        "prerequisites": {
+          "value": []
+        },
+        "publication": {
+          "license": "ORC",
+          "remaster": true,
+          "title": "Pathfinder Player Core 2",
+          "authors": ""
+        },
+        "rules": [],
+        "subfeatures": {
+          "proficiencies": {
+            "reflex": {
+              "rank": 2,
+              "attribute": null
+            }
+          },
+          "senses": {},
+          "suppressedFeatures": []
+        },
+        "traits": {
+          "rarity": "common",
+          "value": [
+            "barbarian",
+            "bard",
+            "champion",
+            "cleric",
+            "druid",
+            "guardian",
+            "sorcerer",
+            "witch",
+            "wizard"
+          ],
+          "otherTags": []
+        },
+        "slug": "reflex-expertise",
+        "_migration": {
+          "version": 0.941,
+          "previous": null
+        },
+        "onlyLevel1": false,
+        "maxTakable": 1,
+        "location": "FNgpPhHxErZIShOI"
+      },
+      "type": "feat",
+      "_stats": {
+        "coreVersion": "13.347",
+        "systemId": "pf2e",
+        "systemVersion": "7.3.1",
+        "createdTime": 1760100749507,
+        "modifiedTime": 1760100749507,
+        "lastModifiedBy": "87SnZLj4hGkSav9U"
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "flags": {
+        "babele": {
+          "translated": true,
+          "hasTranslation": true,
+          "originalName": "Reflex Expertise"
+        }
+      },
+      "_id": "O9eE8zl5H6g9IpVS"
+    },
+    {
+      "img": "icons/skills/melee/hand-grip-sword-red.webp",
+      "name": "Expertise avec les armes (Weapon Expertise)",
+      "system": {
+        "actionType": {
+          "value": "passive"
+        },
+        "actions": {
+          "value": null
+        },
+        "category": "classfeature",
+        "description": {
+          "value": "<p><strong>Bretteur</strong> Vous vous consacrez à l'apprentissage approfondi des subtilités de vos armes. Vous devenez expert avec les armes simples, les armes de guerre et les attaques à mains nues. Vous obtenez l'accès aux effets de critique spécialisé de toutes les armes pour lesquelles vous êtes expert.</p>\n<p><strong>Champion, enquêteur, exalté, magus</strong> Vous vous consacrez à l'apprentissage approfondi des subtilités de vos armes. Vous devenez expert avec les armes simples, les armes de guerre et les attaques à mains nues.</p>\n<p><strong>Conjurateur</strong> L'entraînement et la magie ont amélioré votre technique martiale. Vous devenez expert avec les armes simples et les attaques à mains nues.</p>\n<p><strong>Druide, kinétiste, ensorceleur</strong> Vous avez amélioré votre compétence au combat. Vous devenez expert avec les armes simples et les attaques à mains nues.</p>\n<p><strong>Psychiste</strong> L'entraînement et la magie ont amélioré votre technique martiale. Vous devenez expert avec les armes simples et les attaques à mains nues.</p>\n<p><strong>Magicien, sorcier</strong> Par l'intermédiaire de la seule expérience, vous avez amélioré votre technique avec vos armes. Vous devenez expert avec les armes simples et les attaques à mains nues.</p>\n<p><strong>Oracle</strong> Vous vous consacrez à l'apprentissage approfondi des subtilités de vos armes. Vous devenez expert avec les armes simples et les attaques à mains nues.</p>",
+          "gm": ""
+        },
+        "level": {
+          "value": 5
+        },
+        "prerequisites": {
+          "value": []
+        },
+        "publication": {
+          "license": "ORC",
+          "remaster": true,
+          "title": "Pathfinder Player Core",
+          "authors": ""
+        },
+        "rules": [
+          {
+            "key": "ActiveEffectLike",
+            "mode": "upgrade",
+            "path": "system.proficiencies.attacks.martial.rank",
+            "predicate": [
+              {
+                "or": [
+                  "class:champion",
+                  "class:exemplar",
+                  "class:guardian",
+                  "class:investigator",
+                  "class:magus",
+                  "class:swashbuckler"
+                ]
+              }
+            ],
+            "value": 2
+          },
+          {
+            "key": "CriticalSpecialization",
+            "predicate": [
+              {
+                "gte": [
+                  "item:proficiency:rank",
+                  2
+                ]
+              },
+              "class:swashbuckler"
+            ]
+          },
+          {
+            "itemId": "{item|id}",
+            "key": "ItemAlteration",
+            "mode": "add",
+            "property": "traits",
+            "value": "{actor|class.slug}"
+          },
+          {
+            "itemId": "{item|id}",
+            "key": "ItemAlteration",
+            "mode": "override",
+            "property": "description",
+            "value": [
+              {
+                "text": "PF2E.SpecificRule.ClassFeatures.WeaponExpertise.{actor|class.slug}.Description"
+              }
+            ]
+          }
+        ],
+        "subfeatures": {
+          "proficiencies": {
+            "simple": {
+              "rank": 2,
+              "attribute": null
+            },
+            "unarmed": {
+              "rank": 2,
+              "attribute": null
+            }
+          },
+          "senses": {},
+          "suppressedFeatures": []
+        },
+        "traits": {
+          "rarity": "common",
+          "value": [
+            "champion",
+            "druid",
+            "exemplar",
+            "guardian",
+            "investigator",
+            "kineticist",
+            "magus",
+            "oracle",
+            "psychic",
+            "sorcerer",
+            "swashbuckler",
+            "witch",
+            "wizard"
+          ],
+          "otherTags": []
+        },
+        "slug": "weapon-expertise",
+        "_migration": {
+          "version": 0.941,
+          "previous": null
+        },
+        "onlyLevel1": false,
+        "maxTakable": 1,
+        "location": "FNgpPhHxErZIShOI"
+      },
+      "type": "feat",
+      "_stats": {
+        "coreVersion": "13.347",
+        "systemId": "pf2e",
+        "systemVersion": "7.3.1",
+        "createdTime": 1760100749507,
+        "modifiedTime": 1760100749507,
+        "lastModifiedBy": "87SnZLj4hGkSav9U"
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "flags": {
+        "babele": {
+          "translated": true,
+          "hasTranslation": true,
+          "originalName": "Weapon Expertise"
+        }
+      },
+      "_id": "lZQ6wljHvL4IDC8R"
+    },
+    {
+      "img": "systems/pf2e/icons/conditions/frightened.webp",
+      "name": "Effrayé",
+      "system": {
+        "description": {
+          "value": "<p>Vous êtes paralysé par la peur et vous luttez pour ne pas céder à la panique. L'état effrayé est toujours accompagné d'une valeur. Vous subissez une pénalité de statut égal à cette valeur pour tous vos tests et DD. Sauf indication contraire, la valeur de votre état effrayé décroît de 1 à la fin de chacun de vos tours.</p>",
+          "gm": ""
+        },
+        "group": null,
+        "overrides": [],
+        "publication": {
+          "license": "ORC",
+          "remaster": true,
+          "title": "Pathfinder Player Core",
+          "authors": ""
+        },
+        "references": {
+          "children": [],
+          "overriddenBy": [],
+          "overrides": [],
+          "parent": null
+        },
+        "rules": [
+          {
+            "key": "FlatModifier",
+            "selector": "all",
+            "slug": "frightened",
+            "type": "status",
+            "value": "-@item.badge.value"
+          }
+        ],
+        "traits": {
+          "value": [],
+          "otherTags": []
+        },
+        "value": {
+          "isValued": true,
+          "value": 1
+        },
+        "slug": "frightened",
+        "_migration": {
+          "version": 0.941,
+          "previous": null
+        },
+        "fromSpell": false,
+        "persistent": null
+      },
+      "type": "condition",
+      "_stats": {
+        "coreVersion": "13.347",
+        "systemId": "pf2e",
+        "systemVersion": "7.3.1",
+        "createdTime": 1760473276253,
+        "modifiedTime": 1760473276253,
+        "lastModifiedBy": "JxXa7KZZD1GFhXka"
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "flags": {},
+      "_id": "6R10BhzMuZu3QeSh"
+    },
+    {
+      "_id": "u7QJuF9b7uivt22q",
       "img": "icons/magic/water/orb-water-bubbles.webp",
       "name": "Munition élémentaire inférieure - froid (Elemental Ammunition (Lesser, Cold))",
       "system": {
@@ -5876,7 +6614,7 @@
         "level": {
           "value": 1
         },
-        "quantity": 8,
+        "quantity": 4,
         "baseItem": null,
         "bulk": {
           "value": 0
@@ -5933,8 +6671,8 @@
         "coreVersion": "13.347",
         "systemId": "pf2e",
         "systemVersion": "7.3.1",
-        "createdTime": 1759168157256,
-        "modifiedTime": 1759168994680,
+        "createdTime": 1760962644211,
+        "modifiedTime": 1760962644211,
         "lastModifiedBy": "87SnZLj4hGkSav9U"
       },
       "effects": [],
@@ -5949,31 +6687,31 @@
       }
     },
     {
-      "_id": "tzqLzjy1CrR4l6qW",
-      "img": "icons/magic/lightning/barrier-shield-orb-pink.webp",
-      "name": "Munition élémentaire inférieure - électricité (Elemental Ammunition (Lesser, Electricity))",
+      "_id": "zW6G74qJDY77hr5H",
+      "img": "icons/magic/acid/dissolve-drip-droplet-smoke.webp",
+      "name": "Munition élémentaire inférieure - acide (Elemental Ammunition (Lesser, Acid))",
       "system": {
         "description": {
           "gm": "",
-          "value": "<p><strong>Munition</strong> toutes</p>\n<p><strong>Activation</strong> <span class=\"action-glyph\">1</span> (manipulation)</p>\n<hr />\n<p>Lorsqu'elle est activée, le réservoir de réactifs alchimiques de la <em>munition élémentaire</em> est atomisé à l'impact, infligeant 1 dégât d'électricité persistant à la cible et 1 dégât d'éclaboussure d'électricité en plus des dégâts normalement infligés par l'attaque. Chaque type de dégât nécessite une formule de <em>munition élémentaire</em> différente. La munition obtient le trait électricité.</p>"
+          "value": "<p><strong>Munition</strong> toutes</p>\n<p><strong>Activation</strong> <span class=\"action-glyph\">1</span> (manipulation)</p>\n<hr />\n<p>Lorsqu'elle est activée, le réservoir de réactifs alchimiques de la <em>munition élémentaire</em> est atomisé à l'impact, infligeant 1 dégât d'acide persistant à la cible et 1 dégât d'éclaboussure d'acide en plus des dégâts normalement infligés par l'attaque. Chaque type de dégât nécessite une formule de <em>munition élémentaire</em> différente. La munition obtient le trait acide.</p>"
         },
         "rules": [
           {
             "damageCategory": "persistent",
-            "damageType": "electricity",
+            "damageType": "acid",
             "key": "FlatModifier",
             "selector": "{item|id}-damage",
             "value": 1
           },
           {
             "damageCategory": "splash",
-            "damageType": "electricity",
+            "damageType": "acid",
             "key": "FlatModifier",
             "selector": "{item|id}-damage",
             "value": 1
           }
         ],
-        "slug": "elemental-ammunition-lesser-electricity",
+        "slug": "elemental-ammunition-lesser-acid",
         "_migration": {
           "version": 0.941,
           "lastMigration": null,
@@ -5982,9 +6720,9 @@
         "traits": {
           "otherTags": [],
           "value": [
+            "acid",
             "alchemical",
             "consumable",
-            "electricity",
             "infused",
             "splash"
           ],
@@ -5999,7 +6737,7 @@
         "level": {
           "value": 1
         },
-        "quantity": 16,
+        "quantity": 4,
         "baseItem": null,
         "bulk": {
           "value": 0
@@ -6055,8 +6793,252 @@
         "coreVersion": "13.347",
         "systemId": "pf2e",
         "systemVersion": "7.3.1",
-        "createdTime": 1759168157256,
-        "modifiedTime": 1759168946625,
+        "createdTime": 1760962644211,
+        "modifiedTime": 1760962644211,
+        "lastModifiedBy": "87SnZLj4hGkSav9U"
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "flags": {
+        "babele": {
+          "translated": true,
+          "hasTranslation": true,
+          "originalName": "Elemental Ammunition (Lesser, Acid)"
+        }
+      }
+    },
+    {
+      "_id": "PAsJqTFc7SNCHexb",
+      "img": "icons/magic/unholy/orb-droplet-pink.webp",
+      "name": "Munition élémentaire inférieure - poison (Elemental Ammunition (Lesser, Poison))",
+      "system": {
+        "description": {
+          "gm": "",
+          "value": "<p><strong>Munition</strong> toutes</p>\n<p><strong>Activation</strong> <span class=\"action-glyph\">1</span> (manipulation)</p>\n<hr />\n<p>Lorsqu'elle est activée, le réservoir de réactifs alchimiques de la <em>munition élémentaire</em> est atomisé à l'impact, infligeant 1 dégât de poison persistant à la cible et 1 dégât d'éclaboussure de poison en plus des dégâts normalement infligés par l'attaque. Chaque type de dégât nécessite une formule de <em>munition élémentaire</em> différente. La munition obtient le trait poison.</p>"
+        },
+        "rules": [
+          {
+            "damageCategory": "persistent",
+            "damageType": "poison",
+            "key": "FlatModifier",
+            "selector": "{item|id}-damage",
+            "value": 1
+          },
+          {
+            "damageCategory": "splash",
+            "damageType": "poison",
+            "key": "FlatModifier",
+            "selector": "{item|id}-damage",
+            "value": 1
+          }
+        ],
+        "slug": "elemental-ammunition-lesser-poison",
+        "_migration": {
+          "version": 0.941,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "alchemical",
+            "consumable",
+            "infused",
+            "poison",
+            "splash"
+          ],
+          "rarity": "common"
+        },
+        "publication": {
+          "title": "Pathfinder Treasure Vault (Remastered)",
+          "authors": "",
+          "license": "ORC",
+          "remaster": true
+        },
+        "level": {
+          "value": 1
+        },
+        "quantity": 4,
+        "baseItem": null,
+        "bulk": {
+          "value": 0
+        },
+        "hp": {
+          "value": 0,
+          "max": 0
+        },
+        "hardness": 0,
+        "price": {
+          "value": {
+            "gp": 3
+          }
+        },
+        "equipped": {
+          "carryType": "worn"
+        },
+        "containerId": null,
+        "size": "tiny",
+        "material": {
+          "type": null,
+          "grade": null
+        },
+        "identification": {
+          "status": "identified",
+          "unidentified": {
+            "name": "",
+            "img": "",
+            "data": {
+              "description": {
+                "value": ""
+              }
+            }
+          },
+          "misidentified": {}
+        },
+        "category": "ammo",
+        "uses": {
+          "value": 1,
+          "max": 1,
+          "autoDestroy": true
+        },
+        "damage": null,
+        "usage": {
+          "value": "held-in-one-hand"
+        },
+        "stackGroup": null,
+        "spell": null,
+        "temporary": true
+      },
+      "type": "consumable",
+      "_stats": {
+        "coreVersion": "13.347",
+        "systemId": "pf2e",
+        "systemVersion": "7.3.1",
+        "createdTime": 1760962644211,
+        "modifiedTime": 1760962644211,
+        "lastModifiedBy": "87SnZLj4hGkSav9U"
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "flags": {
+        "babele": {
+          "translated": true,
+          "hasTranslation": true,
+          "originalName": "Elemental Ammunition (Lesser, Poison)"
+        }
+      }
+    },
+    {
+      "_id": "tLPVzbpnhtHbnXIK",
+      "img": "icons/magic/lightning/barrier-shield-orb-pink.webp",
+      "name": "Munition élémentaire inférieure - électricité (Elemental Ammunition (Lesser, Electricity))",
+      "system": {
+        "description": {
+          "gm": "",
+          "value": "<p><strong>Munition</strong> toutes</p>\n<p><strong>Activation</strong> <span class=\"action-glyph\">1</span> (manipulation)</p>\n<hr />\n<p>Lorsqu'elle est activée, le réservoir de réactifs alchimiques de la <em>munition élémentaire</em> est atomisé à l'impact, infligeant 1 dégât d'électricité persistant à la cible et 1 dégât d'éclaboussure d'électricité en plus des dégâts normalement infligés par l'attaque. Chaque type de dégât nécessite une formule de <em>munition élémentaire</em> différente. La munition obtient le trait électricité.</p>"
+        },
+        "rules": [
+          {
+            "damageCategory": "persistent",
+            "damageType": "electricity",
+            "key": "FlatModifier",
+            "selector": "{item|id}-damage",
+            "value": 1
+          },
+          {
+            "damageCategory": "splash",
+            "damageType": "electricity",
+            "key": "FlatModifier",
+            "selector": "{item|id}-damage",
+            "value": 1
+          }
+        ],
+        "slug": "elemental-ammunition-lesser-electricity",
+        "_migration": {
+          "version": 0.941,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "alchemical",
+            "consumable",
+            "electricity",
+            "infused",
+            "splash"
+          ],
+          "rarity": "common"
+        },
+        "publication": {
+          "title": "Pathfinder Treasure Vault (Remastered)",
+          "authors": "",
+          "license": "ORC",
+          "remaster": true
+        },
+        "level": {
+          "value": 1
+        },
+        "quantity": 4,
+        "baseItem": null,
+        "bulk": {
+          "value": 0
+        },
+        "hp": {
+          "value": 0,
+          "max": 0
+        },
+        "hardness": 0,
+        "price": {
+          "value": {
+            "gp": 3
+          }
+        },
+        "equipped": {
+          "carryType": "worn"
+        },
+        "containerId": null,
+        "size": "tiny",
+        "material": {
+          "type": null,
+          "grade": null
+        },
+        "identification": {
+          "status": "identified",
+          "unidentified": {
+            "name": "",
+            "img": "",
+            "data": {
+              "description": {
+                "value": ""
+              }
+            }
+          },
+          "misidentified": {}
+        },
+        "category": "ammo",
+        "uses": {
+          "value": 1,
+          "max": 1,
+          "autoDestroy": true
+        },
+        "damage": null,
+        "usage": {
+          "value": "held-in-one-hand"
+        },
+        "stackGroup": null,
+        "spell": null,
+        "temporary": true
+      },
+      "type": "consumable",
+      "_stats": {
+        "coreVersion": "13.347",
+        "systemId": "pf2e",
+        "systemVersion": "7.3.1",
+        "createdTime": 1760962644211,
+        "modifiedTime": 1760962644211,
         "lastModifiedBy": "87SnZLj4hGkSav9U"
       },
       "effects": [],
@@ -6069,6 +7051,926 @@
           "originalName": "Elemental Ammunition (Lesser, Electricity)"
         }
       }
+    },
+    {
+      "_id": "lyFdWhGSY3WusKVf",
+      "img": "icons/weapons/ammunition/shot-round-lead.webp",
+      "name": "Munition (Pistolet de duel) (Rounds (Dueling Pistol))",
+      "system": {
+        "description": {
+          "gm": "",
+          "value": "<p>Les armes à feu nécessitent des munitions composées d'un projectile et de poudre noire. La composition d'une munition peut varier, mais il s'agit généralement soit d'une cartouche en papier préemballée, comprenant la bourre, la balle et la poudre noire, soit de grenaille en vrac emballée manuellement. Certaines armes, comme les couleuvrines et les tromblons, peuvent tirer d'autres matériaux, mais leurs munitions ont le même prix en raison du coût de la poudre noire. Comme la fabrication de munitions d'armes à feu nécessite la création de poudre noire, vous avez besoin du don @UUID[Compendium.pf2e.feats-srd.Item.is3Oz9wt11lNq62K]{Artisanat alchimique} pour les fabriquer. Les balles d'armes à feu sont une option valide pour les munitions magiques, tout comme les flèches ou les carreaux. La fabrication de munitions d'arme à feu magiques nécessite que vous soyez capable de fabriquer des objets alchimiques et magiques.</p>"
+        },
+        "rules": [],
+        "slug": "rounds-dueling-pistol",
+        "_migration": {
+          "version": 0.941,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "alchemical",
+            "infused"
+          ],
+          "rarity": "common"
+        },
+        "publication": {
+          "title": "Pathfinder Guns & Gears",
+          "authors": "",
+          "license": "ORC",
+          "remaster": true
+        },
+        "level": {
+          "value": 0
+        },
+        "quantity": 12,
+        "baseItem": null,
+        "bulk": {
+          "value": 0.1
+        },
+        "hp": {
+          "value": 0,
+          "max": 0
+        },
+        "hardness": 0,
+        "price": {
+          "value": {
+            "sp": 1
+          },
+          "per": 10
+        },
+        "equipped": {
+          "carryType": "worn"
+        },
+        "containerId": null,
+        "size": "tiny",
+        "material": {
+          "type": null,
+          "grade": null
+        },
+        "identification": {
+          "status": "identified",
+          "unidentified": {
+            "name": "",
+            "img": "",
+            "data": {
+              "description": {
+                "value": ""
+              }
+            }
+          },
+          "misidentified": {}
+        },
+        "category": "ammo",
+        "uses": {
+          "value": 1,
+          "max": 1,
+          "autoDestroy": true
+        },
+        "damage": null,
+        "usage": {
+          "value": "held-in-one-hand"
+        },
+        "stackGroup": "rounds10",
+        "spell": null,
+        "temporary": true
+      },
+      "type": "consumable",
+      "_stats": {
+        "coreVersion": "13.347",
+        "systemId": "pf2e",
+        "systemVersion": "7.3.1",
+        "createdTime": 1760962644211,
+        "modifiedTime": 1760962644211,
+        "lastModifiedBy": "87SnZLj4hGkSav9U"
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "flags": {
+        "babele": {
+          "translated": true,
+          "hasTranslation": true,
+          "originalName": "Rounds (Dueling Pistol)"
+        }
+      }
+    },
+    {
+      "name": "Sort Arcanique Charges",
+      "type": "spellcastingEntry",
+      "system": {
+        "description": {
+          "gm": "",
+          "value": ""
+        },
+        "rules": [],
+        "slug": null,
+        "_migration": {
+          "version": 0.941,
+          "lastMigration": null
+        },
+        "traits": {
+          "otherTags": []
+        },
+        "publication": {
+          "title": "",
+          "authors": "",
+          "license": "OGL",
+          "remaster": false
+        },
+        "ability": {
+          "value": "int"
+        },
+        "spelldc": {
+          "value": 0,
+          "dc": 0
+        },
+        "tradition": {
+          "value": "arcane"
+        },
+        "prepared": {
+          "value": "charges"
+        },
+        "showSlotlessLevels": {
+          "value": true
+        },
+        "proficiency": {
+          "value": 1,
+          "slug": ""
+        },
+        "slots": {
+          "slot0": {
+            "prepared": [],
+            "value": 0,
+            "max": 0
+          },
+          "slot1": {
+            "prepared": [],
+            "value": 3,
+            "max": 3
+          },
+          "slot2": {
+            "prepared": [],
+            "value": 0,
+            "max": 0
+          },
+          "slot3": {
+            "prepared": [],
+            "value": 0,
+            "max": 0
+          },
+          "slot4": {
+            "prepared": [],
+            "value": 0,
+            "max": 0
+          },
+          "slot5": {
+            "prepared": [],
+            "value": 0,
+            "max": 0
+          },
+          "slot6": {
+            "prepared": [],
+            "value": 0,
+            "max": 0
+          },
+          "slot7": {
+            "prepared": [],
+            "value": 0,
+            "max": 0
+          },
+          "slot8": {
+            "prepared": [],
+            "value": 0,
+            "max": 0
+          },
+          "slot9": {
+            "prepared": [],
+            "value": 0,
+            "max": 0
+          },
+          "slot10": {
+            "prepared": [],
+            "value": 0,
+            "max": 0
+          },
+          "slot11": {
+            "prepared": [],
+            "value": 0,
+            "max": 0
+          }
+        },
+        "autoHeightenLevel": {
+          "value": null
+        }
+      },
+      "_id": "NiDyuUyItFDqPLL8",
+      "img": "systems/pf2e/icons/default-icons/spellcastingEntry.svg",
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "13.347",
+        "systemId": "pf2e",
+        "systemVersion": "7.3.1",
+        "createdTime": 1760962853236,
+        "modifiedTime": 1760963048762,
+        "lastModifiedBy": "87SnZLj4hGkSav9U"
+      }
+    },
+    {
+      "folder": "D7UVaOiB40wTR6kv",
+      "img": "icons/magic/movement/trail-streak-impact-blue.webp",
+      "name": "Morsure du froid (Frostbite)",
+      "system": {
+        "description": {
+          "gm": "",
+          "value": "<p>Un orbe de froid mordant se concentre autour de votre cible, refroidissant son corps. La cible subit 2d4 dégâts de froid avec un jet de Vigueur basique. En cas d'échec critique, la cible obtient une faiblesse 1 aux dégâts contondants jusqu'au début de votre prochain tour.</p>\n<p>@UUID[Compendium.pf2e.spell-effects.Item.DdqWMj7cuf4S1bgr]{Effet : Morsure du froid}</p>\n<hr />\n<p><strong>Intensifié (+1)</strong> Les dégâts augmentent de 1d4 et la faiblesse sur un coup critique augmente de 1.</p>"
+        },
+        "rules": [],
+        "slug": "frostbite",
+        "_migration": {
+          "version": 0.941,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "cantrip",
+            "cold",
+            "concentrate",
+            "manipulate"
+          ],
+          "rarity": "common",
+          "traditions": [
+            "arcane",
+            "primal"
+          ]
+        },
+        "publication": {
+          "title": "Pathfinder Player Core",
+          "authors": "",
+          "license": "ORC",
+          "remaster": true
+        },
+        "level": {
+          "value": 1
+        },
+        "requirements": "",
+        "target": {
+          "value": "1 créature"
+        },
+        "range": {
+          "value": "18 mètres"
+        },
+        "area": null,
+        "time": {
+          "value": "2"
+        },
+        "duration": {
+          "value": "",
+          "sustained": false
+        },
+        "damage": {
+          "3bsJUDEgedKhPx6T": {
+            "applyMod": false,
+            "category": null,
+            "formula": "2d4",
+            "kinds": [
+              "damage"
+            ],
+            "materials": [],
+            "type": "cold"
+          }
+        },
+        "defense": {
+          "save": {
+            "basic": true,
+            "statistic": "fortitude"
+          }
+        },
+        "cost": {
+          "value": ""
+        },
+        "location": {
+          "value": "NiDyuUyItFDqPLL8"
+        },
+        "counteraction": false,
+        "heightening": {
+          "damage": {
+            "3bsJUDEgedKhPx6T": "1d4"
+          },
+          "interval": 1,
+          "type": "interval"
+        }
+      },
+      "type": "spell",
+      "_stats": {
+        "coreVersion": "13.347",
+        "systemId": "pf2e",
+        "systemVersion": "7.3.1",
+        "createdTime": 1760962941306,
+        "modifiedTime": 1760962941306,
+        "lastModifiedBy": "87SnZLj4hGkSav9U"
+      },
+      "effects": [],
+      "sort": 0,
+      "flags": {
+        "babele": {
+          "translated": true,
+          "hasTranslation": true,
+          "originalName": "Frostbite"
+        }
+      },
+      "_id": "ntegvCR5x3wGVbde"
+    },
+    {
+      "folder": "T8AzYUgNIAgTJ9Iz",
+      "img": "systems/pf2e/icons/spells/dragon-breath.webp",
+      "name": "Cracher du feu (Breathe Fire)",
+      "system": {
+        "description": {
+          "gm": "",
+          "value": "<p>Une projection de flammes jaillit de votre bouche. Vous infligez 2d6 dégâts de feu aux créatures dans la zone avec un jet de Réflexes basique.</p>\n<hr />\n<p><strong>Intensifié (+1)</strong> Les dégâts augmentent de 2d6.</p>"
+        },
+        "rules": [],
+        "slug": "breathe-fire",
+        "_migration": {
+          "version": 0.941,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "concentrate",
+            "fire",
+            "manipulate"
+          ],
+          "rarity": "common",
+          "traditions": [
+            "arcane",
+            "primal"
+          ]
+        },
+        "publication": {
+          "title": "Pathfinder Player Core",
+          "authors": "",
+          "license": "ORC",
+          "remaster": true
+        },
+        "level": {
+          "value": 1
+        },
+        "requirements": "",
+        "target": {
+          "value": ""
+        },
+        "range": {
+          "value": ""
+        },
+        "area": {
+          "type": "cone",
+          "value": 15
+        },
+        "time": {
+          "value": "2"
+        },
+        "duration": {
+          "value": "",
+          "sustained": false
+        },
+        "damage": {
+          "0": {
+            "applyMod": false,
+            "category": null,
+            "formula": "2d6",
+            "kinds": [
+              "damage"
+            ],
+            "materials": [],
+            "type": "fire"
+          }
+        },
+        "defense": {
+          "save": {
+            "basic": true,
+            "statistic": "reflex"
+          }
+        },
+        "cost": {
+          "value": ""
+        },
+        "location": {
+          "value": "NiDyuUyItFDqPLL8",
+          "heightenedLevel": 1
+        },
+        "counteraction": false,
+        "heightening": {
+          "damage": {
+            "0": "2d6"
+          },
+          "interval": 1,
+          "type": "interval"
+        }
+      },
+      "type": "spell",
+      "_stats": {
+        "coreVersion": "13.347",
+        "systemId": "pf2e",
+        "systemVersion": "7.3.1",
+        "createdTime": 1760962944195,
+        "modifiedTime": 1760962944195,
+        "lastModifiedBy": "87SnZLj4hGkSav9U"
+      },
+      "effects": [],
+      "sort": 0,
+      "flags": {
+        "babele": {
+          "translated": true,
+          "hasTranslation": true,
+          "originalName": "Breathe Fire"
+        }
+      },
+      "_id": "J91yxuno2nSP0rNA"
+    },
+    {
+      "folder": "T8AzYUgNIAgTJ9Iz",
+      "img": "icons/magic/earth/projectiles-stone-salvo-gray.webp",
+      "name": "Frappe de débris (Pummeling Rubble)",
+      "system": {
+        "description": {
+          "gm": "",
+          "value": "<p>Une pluie de lourdes pierres vole dans les airs face à vous. Les débris infligent 2d4 dégâts contondants à chaque créature dans la zone. Chaque créature doit tenter un jet de Réflexes.</p>\n<hr />\n<p><strong>Succès critique</strong> La créature n'est pas affectée.</p>\n<p><strong>Succès</strong> La créature ne subit que la moitié des dégâts.</p>\n<p><strong>Échec</strong> La créature subit la totalité des dégâts et est repoussée de 1,50 mètre en face de vous.</p>\n<p><strong>Échec critique</strong> La créature subit le double des dégâts et est repoussée de 3 mètres en face de vous.</p>\n<hr />\n<p><strong>Intensifié (+1)</strong> les dégâts augmentent de 2d4.</p>"
+        },
+        "rules": [],
+        "slug": "pummeling-rubble",
+        "_migration": {
+          "version": 0.941,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "concentrate",
+            "earth",
+            "manipulate"
+          ],
+          "rarity": "common",
+          "traditions": [
+            "arcane",
+            "primal"
+          ]
+        },
+        "publication": {
+          "title": "Pathfinder Player Core",
+          "authors": "",
+          "license": "ORC",
+          "remaster": true
+        },
+        "level": {
+          "value": 1
+        },
+        "requirements": "",
+        "target": {
+          "value": ""
+        },
+        "range": {
+          "value": ""
+        },
+        "area": {
+          "type": "cone",
+          "value": 15
+        },
+        "time": {
+          "value": "2"
+        },
+        "duration": {
+          "value": "",
+          "sustained": false
+        },
+        "damage": {
+          "0": {
+            "applyMod": false,
+            "category": null,
+            "formula": "2d4",
+            "kinds": [
+              "damage"
+            ],
+            "materials": [],
+            "type": "bludgeoning"
+          }
+        },
+        "defense": {
+          "save": {
+            "basic": false,
+            "statistic": "reflex"
+          }
+        },
+        "cost": {
+          "value": ""
+        },
+        "location": {
+          "value": "NiDyuUyItFDqPLL8",
+          "heightenedLevel": 1
+        },
+        "counteraction": false,
+        "heightening": {
+          "area": 0,
+          "damage": {
+            "0": "2d4"
+          },
+          "interval": 1,
+          "type": "interval"
+        }
+      },
+      "type": "spell",
+      "_stats": {
+        "coreVersion": "13.347",
+        "systemId": "pf2e",
+        "systemVersion": "7.3.1",
+        "createdTime": 1760962946008,
+        "modifiedTime": 1760962946008,
+        "lastModifiedBy": "87SnZLj4hGkSav9U"
+      },
+      "effects": [],
+      "sort": 0,
+      "flags": {
+        "babele": {
+          "translated": true,
+          "hasTranslation": true,
+          "originalName": "Pummeling Rubble"
+        }
+      },
+      "_id": "1hwFYMD9FAem0I3H"
+    },
+    {
+      "folder": "T8AzYUgNIAgTJ9Iz",
+      "img": "systems/pf2e/icons/spells/shocking-grasp.webp",
+      "name": "Frappe tonitruante (Thunderstrike)",
+      "system": {
+        "description": {
+          "gm": "",
+          "value": "<p>Vous appelez une traînée de foudre qui éclate en tonnant, infligeant 1d12 dégâts électriques et 1d4 dégâts de son à la cible qui bénéficie d'un jet de Réflexes basique. Une cible portant une armure métallique ou composée de métal subit une pénalité de circonstances de -1 à son jet de sauvegarde et, si elle est blessée par ce sort, est @UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{Maladroite 1} pendant 1 round.</p>\n<hr />\n<p><strong>Intensifié (+1)</strong> Les dégâts augmentent de 1d12 d'électricité et 1d4 dégâts de son.</p>"
+        },
+        "rules": [],
+        "slug": "thunderstrike",
+        "_migration": {
+          "version": 0.941,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "concentrate",
+            "electricity",
+            "manipulate",
+            "sonic"
+          ],
+          "rarity": "common",
+          "traditions": [
+            "arcane",
+            "primal"
+          ]
+        },
+        "publication": {
+          "title": "Pathfinder Player Core",
+          "authors": "",
+          "license": "ORC",
+          "remaster": true
+        },
+        "level": {
+          "value": 1
+        },
+        "requirements": "",
+        "target": {
+          "value": "1 créature"
+        },
+        "range": {
+          "value": "36 mètres"
+        },
+        "area": null,
+        "time": {
+          "value": "2"
+        },
+        "duration": {
+          "value": "",
+          "sustained": false
+        },
+        "damage": {
+          "6aFqAhfOSz7ukuwr": {
+            "applyMod": false,
+            "category": null,
+            "formula": "1d12",
+            "kinds": [
+              "damage"
+            ],
+            "materials": [],
+            "type": "electricity"
+          },
+          "K00cW8XZuHvutOhE": {
+            "applyMod": false,
+            "category": null,
+            "formula": "1d4",
+            "kinds": [
+              "damage"
+            ],
+            "materials": [],
+            "type": "sonic"
+          }
+        },
+        "defense": {
+          "save": {
+            "basic": true,
+            "statistic": "reflex"
+          }
+        },
+        "cost": {
+          "value": ""
+        },
+        "location": {
+          "value": "NiDyuUyItFDqPLL8",
+          "heightenedLevel": 1
+        },
+        "counteraction": false,
+        "heightening": {
+          "damage": {
+            "6aFqAhfOSz7ukuwr": "1d12",
+            "K00cW8XZuHvutOhE": "1d4"
+          },
+          "interval": 1,
+          "type": "interval"
+        }
+      },
+      "type": "spell",
+      "_stats": {
+        "coreVersion": "13.347",
+        "systemId": "pf2e",
+        "systemVersion": "7.3.1",
+        "createdTime": 1760962948312,
+        "modifiedTime": 1760962948312,
+        "lastModifiedBy": "87SnZLj4hGkSav9U"
+      },
+      "effects": [],
+      "sort": 0,
+      "flags": {
+        "babele": {
+          "translated": true,
+          "hasTranslation": true,
+          "originalName": "Thunderstrike"
+        }
+      },
+      "_id": "YkqrcJz8rCabkkOs"
+    },
+    {
+      "folder": "lPzcDrjGDFbzuF2r",
+      "img": "icons/magic/defensive/shield-barrier-deflect-teal.webp",
+      "name": "Résistance à l'énergie (Resist Energy)",
+      "system": {
+        "description": {
+          "gm": "",
+          "value": "<p>Un bouclier d'énergie élémentaire protège une créature contre un type de dégâts d'énergie.</p>\n<p>Choisissez les dégâts d'acide, d'électricité, de feu, de froid ou de son. La cible et son équipement gagnent une résistance 5 contre le type de dégâts choisi.</p>\n<p>@UUID[Compendium.pf2e.spell-effects.Item.con2Hzt47JjpuUej]{Effet : Résistance à l'énergie}</p>\n<hr />\n<p><strong>Intensifié (4e)</strong> La résistance passe à 10 et vous pouvez cibler jusqu'à 2 créatures.</p>\n<p><strong>Intensifié (7e)</strong> La résistance passe à 15 et vous pouvez cibler jusqu'à 5 créatures.</p>"
+        },
+        "rules": [],
+        "slug": "resist-energy",
+        "_migration": {
+          "version": 0.941,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "concentrate",
+            "manipulate"
+          ],
+          "rarity": "common",
+          "traditions": [
+            "arcane",
+            "divine",
+            "occult",
+            "primal"
+          ]
+        },
+        "publication": {
+          "title": "Pathfinder Player Core",
+          "authors": "",
+          "license": "ORC",
+          "remaster": true
+        },
+        "level": {
+          "value": 2
+        },
+        "requirements": "",
+        "target": {
+          "value": "1 créature"
+        },
+        "range": {
+          "value": "contact"
+        },
+        "area": null,
+        "time": {
+          "value": "2"
+        },
+        "duration": {
+          "value": "10 minutes",
+          "sustained": false
+        },
+        "damage": {},
+        "defense": null,
+        "cost": {
+          "value": ""
+        },
+        "location": {
+          "value": "NiDyuUyItFDqPLL8",
+          "heightenedLevel": 2
+        },
+        "counteraction": false,
+        "heightening": {
+          "levels": {
+            "4": {
+              "target": {
+                "value": "2 créatures"
+              }
+            },
+            "7": {
+              "target": {
+                "value": "5 créatures"
+              }
+            }
+          },
+          "type": "fixed"
+        }
+      },
+      "type": "spell",
+      "_stats": {
+        "coreVersion": "13.347",
+        "systemId": "pf2e",
+        "systemVersion": "7.3.1",
+        "createdTime": 1760962952659,
+        "modifiedTime": 1760962952659,
+        "lastModifiedBy": "87SnZLj4hGkSav9U"
+      },
+      "effects": [],
+      "sort": 0,
+      "flags": {
+        "babele": {
+          "translated": true,
+          "hasTranslation": true,
+          "originalName": "Resist Energy"
+        }
+      },
+      "_id": "lhWXRZtTrd1au1oJ"
+    },
+    {
+      "folder": "lPzcDrjGDFbzuF2r",
+      "img": "icons/magic/fire/projectile-fireball-smoke-orange.webp",
+      "name": "Trait flamboyant (Blazing Bolt)",
+      "system": {
+        "description": {
+          "gm": "",
+          "value": "<p>Vous tirez un rayon de chaleur et de flammes. Faites un jet d'attaque de sort contre une unique créature. Si vous touchez, la cible subit 2d6 dégâts de feu et, sur un coup critique, la cible subit le double des dégâts.</p>\n<p>Pour chaque action supplémentaire utilisée lorsque vous Lancez le sort, vous pouvez tirer un rayon supplémentaire sur une cible différente, jusqu'à un maximum de trois rayons ciblant trois cibles différentes pour 3 actions. Ces attaques augmentent chacune votre pénalité d'attaques multiples mais vous n'augmentez pas votre pénalité d'attaques multiples jusqu'à ce que vous ayez fait toutes les attaques de sorts de <em>Trait flamboyant</em>. Si vous dépensez 2 actions ou plus pour Lancer le sort, les dégâts passent à 4d6 dégâts de feu sur une attaque réussie et elle inflige toujours le double des dégâts sur un coup critique.</p>\n<hr />\n<p><strong>Intensifié (+1)</strong> Les dégâts infligés à chaque cible augmentent de 1d6 pour la version à 1 action ou de 2d6 pour les versions à 2 et 3 actions.</p>"
+        },
+        "rules": [],
+        "slug": "blazing-bolt",
+        "_migration": {
+          "version": 0.941,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "attack",
+            "concentrate",
+            "fire",
+            "manipulate"
+          ],
+          "rarity": "common",
+          "traditions": [
+            "arcane",
+            "primal"
+          ]
+        },
+        "publication": {
+          "title": "Pathfinder Player Core",
+          "authors": "",
+          "license": "ORC",
+          "remaster": true
+        },
+        "level": {
+          "value": 2
+        },
+        "requirements": "",
+        "target": {
+          "value": "1 ou plusieurs créatures"
+        },
+        "range": {
+          "value": "18 mètres"
+        },
+        "area": null,
+        "time": {
+          "value": "1 to 3"
+        },
+        "duration": {
+          "value": "",
+          "sustained": false
+        },
+        "damage": {},
+        "defense": null,
+        "cost": {
+          "value": ""
+        },
+        "location": {
+          "value": "NiDyuUyItFDqPLL8"
+        },
+        "counteraction": false,
+        "overlays": {
+          "hqiwae0wgehycnex": {
+            "_id": "hqiwae0wgehycnex",
+            "overlayType": "override",
+            "sort": 2,
+            "system": {
+              "damage": {
+                "d80radfbikwjogmr": {
+                  "applyMod": false,
+                  "category": null,
+                  "formula": "4d6",
+                  "materials": [],
+                  "type": "fire"
+                }
+              },
+              "heightening": {
+                "damage": {
+                  "d80radfbikwjogmr": "2d6"
+                },
+                "interval": 1,
+                "type": "interval"
+              },
+              "target": {
+                "value": "2 or more creatures"
+              },
+              "time": {
+                "value": "2 or 3"
+              }
+            }
+          },
+          "wlrbtv7c5shfmdh1": {
+            "_id": "wlrbtv7c5shfmdh1",
+            "overlayType": "override",
+            "sort": 1,
+            "system": {
+              "damage": {
+                "tgzp2lzatpg4c9a5": {
+                  "applyMod": false,
+                  "category": null,
+                  "formula": "2d6",
+                  "materials": [],
+                  "type": "fire"
+                }
+              },
+              "heightening": {
+                "damage": {
+                  "tgzp2lzatpg4c9a5": "1d6"
+                },
+                "interval": 1,
+                "type": "interval"
+              },
+              "target": {
+                "value": "1 creature"
+              },
+              "time": {
+                "value": "1"
+              }
+            }
+          }
+        }
+      },
+      "type": "spell",
+      "_stats": {
+        "coreVersion": "13.347",
+        "systemId": "pf2e",
+        "systemVersion": "7.3.1",
+        "createdTime": 1760962957340,
+        "modifiedTime": 1760962957340,
+        "lastModifiedBy": "87SnZLj4hGkSav9U"
+      },
+      "effects": [],
+      "sort": 0,
+      "flags": {
+        "babele": {
+          "translated": true,
+          "hasTranslation": true,
+          "originalName": "Blazing Bolt"
+        }
+      },
+      "_id": "Lk9Yi1g3TfGHycXt"
     }
   ],
   "folder": null,
@@ -6084,7 +7986,7 @@
     "systemId": "pf2e",
     "systemVersion": "7.3.1",
     "createdTime": 1754479259726,
-    "modifiedTime": 1759168157128,
+    "modifiedTime": 1760962644059,
     "lastModifiedBy": "87SnZLj4hGkSav9U",
     "exportSource": {
       "worldId": "oblivion",
